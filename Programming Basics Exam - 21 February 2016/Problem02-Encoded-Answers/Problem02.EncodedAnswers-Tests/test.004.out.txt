@@ -1,0 +1,5 @@
+b b b d d d c c c a a a b b b d d d c c c a a a b b b a a a
+Answer A: 9
+Answer B: 9
+Answer C: 6
+Answer D: 6

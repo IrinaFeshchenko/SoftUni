@@ -1,0 +1,6 @@
+Go 3 steps to the right, Ani.
+Go 2 steps to the left, Ani.
+Go 1 steps to the left, Ani.
+Go 1 steps to the right, Ani.
+Go 3 steps to the right, Ani.
+Moved a total of 10 steps.

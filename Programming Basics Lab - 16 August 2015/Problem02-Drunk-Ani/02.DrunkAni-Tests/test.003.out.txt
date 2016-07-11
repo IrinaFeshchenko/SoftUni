@@ -1,0 +1,5 @@
+Stay there, Ani.
+Go 1 steps to the right, Ani.
+Stay there, Ani.
+Go 1 steps to the left, Ani.
+Moved a total of 2 steps.

@@ -1,0 +1,6 @@
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\PerfectGirlfriend\PerfectGirlfriend\bin\Debug\PerfectGirlfriend.exe.config
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\PerfectGirlfriend\PerfectGirlfriend\bin\Debug\PerfectGirlfriend.exe
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\PerfectGirlfriend\PerfectGirlfriend\bin\Debug\PerfectGirlfriend.pdb
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\PerfectGirlfriend\PerfectGirlfriend\obj\Debug\PerfectGirlfriend.exe
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\PerfectGirlfriend\PerfectGirlfriend\obj\Debug\PerfectGirlfriend.pdb
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\PerfectGirlfriend\PerfectGirlfriend\obj\Debug\PerfectGirlfriend.csprojResolveAssemblyReference.cache

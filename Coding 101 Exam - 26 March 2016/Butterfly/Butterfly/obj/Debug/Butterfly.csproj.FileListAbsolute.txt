@@ -1,0 +1,6 @@
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\Butterfly\Butterfly\bin\Debug\Butterfly.exe.config
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\Butterfly\Butterfly\bin\Debug\Butterfly.exe
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\Butterfly\Butterfly\bin\Debug\Butterfly.pdb
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\Butterfly\Butterfly\obj\Debug\Butterfly.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\Butterfly\Butterfly\obj\Debug\Butterfly.exe
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\Butterfly\Butterfly\obj\Debug\Butterfly.pdb

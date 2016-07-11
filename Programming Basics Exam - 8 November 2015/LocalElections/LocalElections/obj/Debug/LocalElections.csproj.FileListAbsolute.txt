@@ -1,0 +1,6 @@
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\LocalElections\LocalElections\bin\Debug\LocalElections.exe.config
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\LocalElections\LocalElections\bin\Debug\LocalElections.exe
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\LocalElections\LocalElections\bin\Debug\LocalElections.pdb
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\LocalElections\LocalElections\obj\Debug\LocalElections.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\LocalElections\LocalElections\obj\Debug\LocalElections.exe
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\LocalElections\LocalElections\obj\Debug\LocalElections.pdb

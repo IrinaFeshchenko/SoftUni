@@ -1,0 +1,20 @@
+ulong number;
+private static void SetBitToOne(int bit)
+{
+	number = number | ((ulong)1 << bit);
+}
+
+ulong number;
+private static void SetBitToZero(int bit)
+{
+	number = number & ~((ulong)1 << bit);
+}
+
+ulong number;
+private static void ShowBitValue()
+{   //traverse in reverse and show bits values
+	for (int i = (64 - 1); i >= 0; i--)
+	{
+		Console.Write((number>>i)&1);
+	}
+}

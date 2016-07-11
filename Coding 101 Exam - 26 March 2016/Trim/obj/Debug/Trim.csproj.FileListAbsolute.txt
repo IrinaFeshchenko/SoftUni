@@ -1,0 +1,6 @@
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\Trim\bin\Debug\Trim.exe.config
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\Trim\bin\Debug\Trim.exe
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\Trim\bin\Debug\Trim.pdb
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\Trim\obj\Debug\Trim.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\Trim\obj\Debug\Trim.exe
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\Trim\obj\Debug\Trim.pdb

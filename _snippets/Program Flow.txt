@@ -1,0 +1,23 @@
+
+long amount = long.Parse(Console.ReadLine());
+
+string command;
+while ((command = Console.ReadLine())!= "Exam Over")
+{
+	string[] param = command.Split();
+	long amount = long.Parse(param[0]);
+	string type = param[1];
+
+	if (type == "beers")
+	{
+
+	}
+	else if (type == "sixpacks")
+	{
+
+	}
+	else if (type == "cases")
+	{
+
+	}
+}

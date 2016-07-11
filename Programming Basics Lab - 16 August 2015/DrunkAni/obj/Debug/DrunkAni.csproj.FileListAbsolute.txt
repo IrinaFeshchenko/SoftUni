@@ -1,0 +1,6 @@
+C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\DrunkAni\bin\Debug\DrunkAni.exe.config
+C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\DrunkAni\bin\Debug\DrunkAni.exe
+C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\DrunkAni\bin\Debug\DrunkAni.pdb
+C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\DrunkAni\obj\Debug\DrunkAni.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\DrunkAni\obj\Debug\DrunkAni.exe
+C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\DrunkAni\obj\Debug\DrunkAni.pdb

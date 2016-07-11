@@ -1,0 +1,6 @@
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\SmartLilly\SmartLilly\bin\Debug\SmartLilly.exe.config
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\SmartLilly\SmartLilly\bin\Debug\SmartLilly.exe
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\SmartLilly\SmartLilly\bin\Debug\SmartLilly.pdb
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\SmartLilly\SmartLilly\obj\Debug\SmartLilly.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\SmartLilly\SmartLilly\obj\Debug\SmartLilly.exe
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\SmartLilly\SmartLilly\obj\Debug\SmartLilly.pdb

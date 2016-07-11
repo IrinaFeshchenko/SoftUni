@@ -1,0 +1,6 @@
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\EncodedAnswers\bin\Debug\EncodedAnswers.exe.config
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\EncodedAnswers\bin\Debug\EncodedAnswers.exe
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\EncodedAnswers\bin\Debug\EncodedAnswers.pdb
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\EncodedAnswers\obj\Debug\EncodedAnswers.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\EncodedAnswers\obj\Debug\EncodedAnswers.exe
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\EncodedAnswers\obj\Debug\EncodedAnswers.pdb

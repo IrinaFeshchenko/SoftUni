@@ -1,0 +1,6 @@
+C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\CoffeeSupplies\bin\Debug\CoffeeSupplies.exe.config
+C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\CoffeeSupplies\bin\Debug\CoffeeSupplies.exe
+C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\CoffeeSupplies\bin\Debug\CoffeeSupplies.pdb
+C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\CoffeeSupplies\obj\Debug\CoffeeSupplies.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\CoffeeSupplies\obj\Debug\CoffeeSupplies.exe
+C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\CoffeeSupplies\obj\Debug\CoffeeSupplies.pdb

@@ -1,0 +1,7 @@
+1024
+pepper 8
+salt 9
+salt 4
+pepper 12
+salt 3
+end

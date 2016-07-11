@@ -1,0 +1,6 @@
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 6 March 2016\TrainingLab\bin\Debug\TrainingLab.exe.config
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 6 March 2016\TrainingLab\bin\Debug\TrainingLab.exe
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 6 March 2016\TrainingLab\bin\Debug\TrainingLab.pdb
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 6 March 2016\TrainingLab\obj\Debug\TrainingLab.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 6 March 2016\TrainingLab\obj\Debug\TrainingLab.exe
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 6 March 2016\TrainingLab\obj\Debug\TrainingLab.pdb

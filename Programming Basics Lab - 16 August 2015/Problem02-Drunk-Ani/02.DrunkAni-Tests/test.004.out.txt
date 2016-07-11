@@ -1,0 +1,14 @@
+Go 399999999 steps to the right, Ani.
+Go 399999998 steps to the left, Ani.
+Go 399999998 steps to the right, Ani.
+Go 399999999 steps to the left, Ani.
+Go 399999997 steps to the right, Ani.
+Go 399999996 steps to the left, Ani.
+Go 399999996 steps to the right, Ani.
+Go 399999997 steps to the left, Ani.
+Go 399999995 steps to the right, Ani.
+Go 399999995 steps to the left, Ani.
+Go 399999994 steps to the right, Ani.
+Go 399999994 steps to the left, Ani.
+Go 399999993 steps to the right, Ani.
+Moved a total of 5199999951 steps.

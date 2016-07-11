@@ -1,0 +1,6 @@
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\SudokuResults\SudokuResults\bin\Debug\SudokuResults.exe.config
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\SudokuResults\SudokuResults\obj\Debug\SudokuResults.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\SudokuResults\SudokuResults\bin\Debug\SudokuResults.exe
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\SudokuResults\SudokuResults\bin\Debug\SudokuResults.pdb
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\SudokuResults\SudokuResults\obj\Debug\SudokuResults.exe
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\SudokuResults\SudokuResults\obj\Debug\SudokuResults.pdb

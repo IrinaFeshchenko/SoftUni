@@ -1,0 +1,5 @@
+C:\Users\user\Documents\Softuni\_PROGRAMING BASICS - юли 2016\TriangleOf55Stars\bin\Debug\TriangleOf55Stars.exe.config
+C:\Users\user\Documents\Softuni\_PROGRAMING BASICS - юли 2016\TriangleOf55Stars\bin\Debug\TriangleOf55Stars.exe
+C:\Users\user\Documents\Softuni\_PROGRAMING BASICS - юли 2016\TriangleOf55Stars\bin\Debug\TriangleOf55Stars.pdb
+C:\Users\user\Documents\Softuni\_PROGRAMING BASICS - юли 2016\TriangleOf55Stars\obj\Debug\TriangleOf55Stars.exe
+C:\Users\user\Documents\Softuni\_PROGRAMING BASICS - юли 2016\TriangleOf55Stars\obj\Debug\TriangleOf55Stars.pdb

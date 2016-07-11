@@ -1,0 +1,5 @@
+a c b b a a b c d b b a
+Answer A: 4
+Answer B: 5
+Answer C: 2
+Answer D: 1

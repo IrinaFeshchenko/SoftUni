@@ -1,0 +1,6 @@
+C:\Users\user\Documents\Softuni\Programming Basics Sample Exam - 28 November 2015\TakeThePlaneDown\TakeThePlaneDown\bin\Debug\TakeThePlaneDown.exe.config
+C:\Users\user\Documents\Softuni\Programming Basics Sample Exam - 28 November 2015\TakeThePlaneDown\TakeThePlaneDown\bin\Debug\TakeThePlaneDown.exe
+C:\Users\user\Documents\Softuni\Programming Basics Sample Exam - 28 November 2015\TakeThePlaneDown\TakeThePlaneDown\bin\Debug\TakeThePlaneDown.pdb
+C:\Users\user\Documents\Softuni\Programming Basics Sample Exam - 28 November 2015\TakeThePlaneDown\TakeThePlaneDown\obj\Debug\TakeThePlaneDown.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Softuni\Programming Basics Sample Exam - 28 November 2015\TakeThePlaneDown\TakeThePlaneDown\obj\Debug\TakeThePlaneDown.exe
+C:\Users\user\Documents\Softuni\Programming Basics Sample Exam - 28 November 2015\TakeThePlaneDown\TakeThePlaneDown\obj\Debug\TakeThePlaneDown.pdb

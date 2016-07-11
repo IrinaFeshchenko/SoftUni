@@ -1,0 +1,6 @@
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\ShuffleBits\ShuffleBits\bin\Debug\ShuffleBits.exe.config
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\ShuffleBits\ShuffleBits\bin\Debug\ShuffleBits.exe
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\ShuffleBits\ShuffleBits\bin\Debug\ShuffleBits.pdb
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\ShuffleBits\ShuffleBits\obj\Debug\ShuffleBits.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\ShuffleBits\ShuffleBits\obj\Debug\ShuffleBits.exe
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\ShuffleBits\ShuffleBits\obj\Debug\ShuffleBits.pdb

@@ -1,0 +1,5 @@
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\MagicCombination\MagicCombination\bin\Debug\MagicCombination.exe.config
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\MagicCombination\MagicCombination\bin\Debug\MagicCombination.exe
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\MagicCombination\MagicCombination\bin\Debug\MagicCombination.pdb
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\MagicCombination\MagicCombination\obj\Debug\MagicCombination.exe
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\MagicCombination\MagicCombination\obj\Debug\MagicCombination.pdb

@@ -1,0 +1,2 @@
+Connect charger -> 1%
+Programs left -> 3

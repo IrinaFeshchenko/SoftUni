@@ -1,0 +1,6 @@
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\VegetableMarket\bin\Debug\VegetableMarket.exe.config
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\VegetableMarket\bin\Debug\VegetableMarket.exe
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\VegetableMarket\bin\Debug\VegetableMarket.pdb
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\VegetableMarket\obj\Debug\VegetableMarket.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\VegetableMarket\obj\Debug\VegetableMarket.exe
+C:\Users\user\Documents\Softuni\Coding 101 Exam - 26 March 2016\VegetableMarket\obj\Debug\VegetableMarket.pdb

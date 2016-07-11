@@ -1,0 +1,6 @@
+C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\WaterSupplies\bin\Debug\WaterSupplies.exe.config
+C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\WaterSupplies\bin\Debug\WaterSupplies.exe
+C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\WaterSupplies\bin\Debug\WaterSupplies.pdb
+C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\WaterSupplies\obj\Debug\WaterSupplies.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\WaterSupplies\obj\Debug\WaterSupplies.exe
+C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\WaterSupplies\obj\Debug\WaterSupplies.pdb

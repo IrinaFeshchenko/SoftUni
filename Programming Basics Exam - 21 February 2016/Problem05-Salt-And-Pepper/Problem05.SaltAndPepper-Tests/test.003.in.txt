@@ -1,0 +1,6 @@
+12
+salt 5
+pepper 5
+salt 4
+salt 55
+end

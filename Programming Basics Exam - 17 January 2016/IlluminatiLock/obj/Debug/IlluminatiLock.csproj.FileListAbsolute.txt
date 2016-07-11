@@ -1,0 +1,6 @@
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\IlluminatiLock\bin\Debug\IlluminatiLock.exe.config
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\IlluminatiLock\bin\Debug\IlluminatiLock.exe
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\IlluminatiLock\bin\Debug\IlluminatiLock.pdb
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\IlluminatiLock\obj\Debug\IlluminatiLock.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\IlluminatiLock\obj\Debug\IlluminatiLock.exe
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\IlluminatiLock\obj\Debug\IlluminatiLock.pdb

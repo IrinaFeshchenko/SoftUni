@@ -1,0 +1,6 @@
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\PassionDays\bin\Debug\PassionDays.exe.config
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\PassionDays\bin\Debug\PassionDays.exe
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\PassionDays\bin\Debug\PassionDays.pdb
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\PassionDays\obj\Debug\PassionDays.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\PassionDays\obj\Debug\PassionDays.exe
+C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\PassionDays\obj\Debug\PassionDays.pdb

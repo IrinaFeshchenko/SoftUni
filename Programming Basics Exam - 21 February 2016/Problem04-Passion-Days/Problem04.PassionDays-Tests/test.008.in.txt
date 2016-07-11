@@ -1,0 +1,4 @@
+45
+mall.Enter
+.
+mall.Exit
