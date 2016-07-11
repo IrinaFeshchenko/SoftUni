@@ -18,3 +18,6 @@ private static void ShowBitValue()
 		Console.Write((number>>i)&1);
 	}
 }
+
+// flip bit N
+bit ^= (1 << N);
