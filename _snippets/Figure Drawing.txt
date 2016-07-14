@@ -24,7 +24,8 @@ for (int i = (n / 2)-1; i >=0; i--)
 	Console.WriteLine("{0}##{1}#{2}#{1}##{0}", d1, d2, d3);
 }
 
-Dictionary<string, int> day = new Dictionary<string, int>()
-{
-	{"Monday",1 },{"Tuesday",2 },{"Wednesday",3 },{"Thursday",4},{"Friday",5 },{"Saturday",6 },{"Sunday",7 }
-};
+/////////////////////////
+// increase variables size
+// test edge cases, +1 and -1, with odd and even number of parameters(if flipping values)
+// reread conditions, special cases;
+
