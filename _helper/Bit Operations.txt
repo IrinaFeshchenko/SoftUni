@@ -1,0 +1,74 @@
+
+// flip bit N
+bit ^= (1 << N);
+
+//copy bit from one ulong to a new all-zero ulong
+ulong currentBit = number & (1UL << i);
+outputNumber |= currentBit;
+
+// set bit to one
+ulong number;
+private static void SetBitToOne(int bit)
+{
+	number = number | ((ulong)1 << bit);
+}
+
+// set bit to zero
+ulong number;
+private static void SetBitToZero(int bit)
+{
+	number = number & ~((ulong)1 << bit);
+}
+
+//traverse in reverse and show bits values
+ulong number;
+private static void ShowBitValue()
+{   
+	for (int i = (64 - 1); i >= 0; i--)
+	{
+		Console.Write((number>>i)&1);
+	}
+	Console.WriteLine();
+}
+
+//reverse bits order
+private static void ReverseBitsOrder()
+{
+	ulong b=0;
+	for (int i = 0; i < 64; i++)
+	{
+		currentBit = ((num & (1UL << i))>>i)<<(64-1-i);
+		b |= currentBit;
+	}
+	num = b;
+}
+
+// traverse binary matrix in diagonal and set each position to 1
+private static void fillLeftUp(int row, int rcol)
+{
+	for (; (row >= 0) && (rcol < n); row--, rcol++)
+	{
+		board[row] |= (1 << rcol);
+	}
+}
+private static void fillLeftDown(int row, int rcol)
+{
+	for (; (row <n) && (rcol < n); row++, rcol++)
+	{
+		board[row] |= (1 << rcol);
+	}
+}
+private static void fillRighttUp(int row, int rcol)
+{
+	for (; (row >= 0) && (rcol >= 0); row--, rcol--)
+	{
+		board[row] |= (1 << rcol);
+	}
+}
+private static void fillRightDown(int row, int rcol)
+{
+	for (; (row < n) && (rcol >=0); row++, rcol--)
+	{
+		board[row] |= (1 << rcol);
+	}
+}
