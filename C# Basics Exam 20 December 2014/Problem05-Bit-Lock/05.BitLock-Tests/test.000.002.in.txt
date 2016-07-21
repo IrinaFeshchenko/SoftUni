@@ -1,0 +1,7 @@
+3 7 4095 900 9 121 256 3222
+check 6
+check 11
+0 right 13
+2 left 3
+check 2
+end

@@ -1,0 +1,8 @@
+0 1 2 3 4 5 6 7
+check 2
+1 right 1
+7 left 7
+check 11
+check 0
+4 left 0
+end

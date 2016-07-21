@@ -1,0 +1,9 @@
+500 982 871 35 873 3521 1249 5
+check 0
+check 3
+3 right 3
+5 right 200
+check 0
+2 right 32
+check 0
+end

@@ -8,6 +8,10 @@ decimal m = decimal.Parse(Console.ReadLine());
 
 string s = Console.ReadLine();
 
+uint[] num = Console.ReadLine().Split()
+	.Select(uint.Parse)
+	.ToArray();
+
 string command;
 while ((command = Console.ReadLine())!= "Exam Over")
 {

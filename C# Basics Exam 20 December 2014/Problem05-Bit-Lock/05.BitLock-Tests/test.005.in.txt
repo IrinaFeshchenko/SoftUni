@@ -1,0 +1,22 @@
+1 1 1 1 1 1 1 1
+0 left 0
+1 left 1
+2 left 2
+3 left 5
+4 left 7
+5 left 9
+6 left 10
+7 left 11
+check 0
+check 1
+check 2
+check 3
+check 4
+check 5
+check 6
+check 7
+check 8
+check 9
+check 10
+check 11
+end

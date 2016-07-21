@@ -1,0 +1,6 @@
+4095 4095 0 352 983 2359 845 70
+5 right 0
+3 left 0
+check 0
+6 right 21
+end
