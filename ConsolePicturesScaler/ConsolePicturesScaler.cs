@@ -15,10 +15,58 @@ class ConsolePicturesScaler
         public char simbol;
         public int count = 0;
         public int increment = 0;
-        public int parentRow;
-        public int height;
-        public string rowType;
     }
+
+    private class DotRow:IEnumerable<Dot>
+    {
+        private List<Dot> dot= new List<Dot>();
+        private int count;
+
+        public Dot this[int index]
+        {
+            get
+            {
+                return dot[index];
+            }
+            set
+            {
+                dot[index] = value;
+            }
+        }
+
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+            set
+            {
+                count = value;
+            }
+        }
+
+        public void Add(Dot d)
+        {
+            this.dot.Add(d);
+            this.count = 0;
+        }
+
+        public IEnumerator<Dot> GetEnumerator()
+        {
+            foreach (var d in dot)
+            {
+                yield return d;
+            };
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
+
+
 
     private class ZipDot
     {
@@ -87,18 +135,33 @@ class ConsolePicturesScaler
         //  for compressed dynamic rows dwraw rows While(d0Size > or < count) "count" of dots on the LAS ROW that is the SAME NUMBER on DIFFERENT SCALERS
         //  when checking patterns: if the dot is in the middle of the row allow 2X deviation, to allow for left and right deviation => (dotNew - dotOld<=4) OR dont check deviation ?
 
-        // split pic on rows
-        string[] rows1 = pic1.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
-        string[] rows2 = pic2.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
+        // split pic on string rows
+        string[] picture1 = pic1.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
+        string[] picture2 = pic2.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
 
-        // record all rows
-        List<List<Dot>> Rows1 = new List<List<Dot>>();
-        Rows1.Add(RowPattern(rows1[0]));
-        for (int i = 1; i < rows1.Length; i++)
+        DotRow dr = new DotRow();
+        // record the first row and iterate from second, comparing each row pattern with the previous row pattern
+        List<DotRow> rows1 = new List<DotRow>();
+        rows1.Add(RowPattern(picture1[0]));
+        for (int i = 1; i < picture1.Length; i++)
         {
-            if (RowIsStatic(rows1, i))
+            if (RowHasNewPattern(picture1, i))
             {
-                Rows1.Add(RowPattern(rows1[i]));
+                rows1.Add(RowPattern(picture1[i]));            
+            }
+            else
+            {
+                rows1[rows1.Count() - 1].Count++;
+            }
+        }
+        Print2(rows1);
+
+        List<DotRow> rows2 = new List<DotRow>();
+        for (int i = 1; i < picture2.Length; i++)
+        {
+            if (RowHasNewPattern(picture2, i))
+            {
+                rows2.Add(RowPattern(picture2[i]));
             }
             else
             {
@@ -106,33 +169,23 @@ class ConsolePicturesScaler
             }
         }
 
-        List<List<Dot>> staicRows2 = new List<List<Dot>>();
-        for (int i = 0; i < rows2.Length; i++)
-        {
-            if (RowIsStatic(rows2, i))
-            {
-                staicRows2.Add(RowPattern(rows2[i]));
-            }
-        }
-
-        List<ZipRow> ZippedRows = new List<ZipRow>();
-
-        for (int i = 0; i < Rows1.Count; i++)
-        {
-            //compress row of patterns using two patterns compare and scalers
-            ZipRow zRowPattern = CompressRowPattern(Rows1[i], staicRows2[i], scaler1, scaler2);// set proper scaler
-            ZippedRows.Add(zRowPattern);
-        }
-
-        // output
-        Console.WriteLine("---------------start------------");
-
-        int scaler = 6;
-        Print(ZippedRows, scaler);
+        //  List<ZipRow> ZippedRows = new List<ZipRow>();
+        //
+        //  for (int i = 0; i < rows1.Count; i++)
+        //  {
+        //      //compress row of patterns using two patterns compare and scalers
+        //      ZipRow zRowPattern = CompressRowPattern(rows1[i], rows2[i], scaler1, scaler2);// set proper scaler
+        //      ZippedRows.Add(zRowPattern);
+        //  }
+        //
+        //  int scaler = 6;
+        //  Print(ZippedRows, scaler);
     }
 
     private static void Print(List<ZipRow> ZippedRows, int scaler)
     {
+        // output
+        Console.WriteLine("---------------start------------");
         foreach (var row in ZippedRows)
         {
             foreach (var pattern in row.pattern)
@@ -171,6 +224,23 @@ class ConsolePicturesScaler
             Console.WriteLine();
         }
 
+        Console.WriteLine();
+        Console.WriteLine("---------------end------------");
+    }
+
+    private static void Print2(List<DotRow> rows)
+    {
+        // output
+        Console.WriteLine("---------------start------------");
+        foreach (var row in rows)
+        {
+            foreach (var pattern in row)
+            {
+                string simbol = new string(pattern.simbol, pattern.count);
+                Console.Write(simbol);
+            }
+            Console.WriteLine();
+        }
         Console.WriteLine();
         Console.WriteLine("---------------end------------");
     }
@@ -256,16 +326,16 @@ class ConsolePicturesScaler
         return zRowPattern;
     }
 
-    private static bool RowIsStatic(string[] rows, int index)
+    private static bool RowHasNewPattern(string[] rows, int index)
     {
-        bool isStatic = true;
+        bool hasNewPattern = true;
 
         if (RowPatternsMatch(rows, index, index - 1))
         {
-            isStatic = false;
+            hasNewPattern = false;
         }
 
-        return isStatic;
+        return hasNewPattern;
     }
 
     private static bool RowIsChild(string[] rows, int index)
@@ -286,16 +356,16 @@ class ConsolePicturesScaler
 
     private static bool RowPatternsMatch(string[] rows, int index1, int index2)
     {
-        List<Dot> row1 = RowPattern(rows[index1]);
-        List<Dot> row2 = RowPattern(rows[index2]);
+        DotRow row1 = RowPattern(rows[index1]);
+        DotRow row2 = RowPattern(rows[index2]);
         bool rowPatternsMatch = true;
 
-        if (row1.Count != row2.Count)
+        if (row1.Count() != row2.Count())
         {
             return false;
         }
 
-        for (int i = 0; i < row1.Count; i++)
+        for (int i = 0; i < row1.Count(); i++)
         {
             if (row1[i].simbol != row2[i].simbol)
             {
@@ -303,24 +373,20 @@ class ConsolePicturesScaler
             }
         }
 
-        for (int i = 0; i < row1.Count; i++)
+        for (int i = 0; i < row1.Count(); i++)
         {
             if (Math.Abs(row1[i].count - row2[i].count) > 2)
             {
                 return false;
-            }
-            else
-            {
-               // row1[].
             }
         }
 
         return rowPatternsMatch;
     }
 
-    private static List<Dot> RowPattern(string row)
+    private static DotRow RowPattern(string row)
     {
-        List<Dot> rowPattern = new List<Dot>();
+        DotRow rowPattern = new DotRow();
         rowPattern.Add(new Dot(row[0], 1));
 
         for (int i = 1; i < row.Length; i++)
@@ -328,9 +394,9 @@ class ConsolePicturesScaler
             if (row[i] == row[i - 1])
             {
                 // increase the count if the simbol is the same
-                Dot tmp = rowPattern[rowPattern.Count - 1];
+                Dot tmp = rowPattern[rowPattern.Count() - 1];
                 tmp.count++;
-                rowPattern[rowPattern.Count - 1] = tmp;
+                rowPattern[rowPattern.Count() - 1] = tmp;
             }
             else
             {
