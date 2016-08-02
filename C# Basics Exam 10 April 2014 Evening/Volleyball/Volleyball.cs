@@ -14,17 +14,17 @@ namespace Namespace
             int holidays = int.Parse(Console.ReadLine());
             int weekendsInHometow = int.Parse(Console.ReadLine());
 
-            decimal normalPlays = (48 - weekendsInHometow )* 3m / 4m;
-            decimal holidayPlays = (holidays * 2m) / 3m;
-            decimal hometownPlays = weekendsInHometow;
+            double normalPlays = (48 - weekendsInHometow )* 3.0 / 4.0;
+            double holidayPlays = holidays * 2.0 / 3.0;
+            double hometownPlays = weekendsInHometow;
 
-            decimal totalPlays = normalPlays + holidayPlays + hometownPlays;
+            double totalPlays = normalPlays + holidayPlays + hometownPlays;
             if (t == "leap")
             {
-                totalPlays *= 1.15m;
+                totalPlays *= 1.15;
             }
 
-            Console.WriteLine(Math.Round(totalPlays));
+            Console.WriteLine((int)totalPlays);
         }
     }
 }
