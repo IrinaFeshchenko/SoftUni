@@ -24,15 +24,11 @@ namespace Namespace
                     lenght *= 100;
                 }
 
-                if (lenght < 20 && type == "centimeters")
+                if (lenght >= 20 )
                 {
-                    lenght = 0;
-                }
-                else
-                {
+                    totalLenght += lenght;
                     cablesCount++;
-                }
-                totalLenght += lenght;
+                }            
             }
             totalLenght -= (cablesCount - 1) * 3;
 
