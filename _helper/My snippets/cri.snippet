@@ -2,9 +2,9 @@
 <CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>crlia</Title>
-			<Shortcut>crlia</Shortcut>
-			<Description>Code snippet for int[] num = Console.ReadLine</Description>
+			<Title>cri</Title>
+			<Shortcut>cri</Shortcut>
+			<Description>Code snippet for int i = Console.ReadLine</Description>
 			<Author>Me</Author>
 			<SnippetTypes>
 				<SnippetType>Expansion</SnippetType>
@@ -17,7 +17,7 @@
 					<Function>SimpleTypeName(global::System.Console)</Function>
 				</Literal>
 			</Declarations>
-			<Code Language="csharp"><![CDATA[int[] num = $SystemConsole$.ReadLine($end$).Split().Select(int.Parse).ToArray();]]>
+			<Code Language="csharp"><![CDATA[int i = int.Parse($SystemConsole$.ReadLine($end$));]]>
 			</Code>
 		</Snippet>
 	</CodeSnippet>
