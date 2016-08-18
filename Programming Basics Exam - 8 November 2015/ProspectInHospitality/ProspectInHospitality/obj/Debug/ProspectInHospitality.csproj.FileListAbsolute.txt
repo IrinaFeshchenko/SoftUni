@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\ProspectInHospitality\ProspectInHospitality\bin\Debug\ProspectInHospitality.exe.config
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\ProspectInHospitality\ProspectInHospitality\bin\Debug\ProspectInHospitality.exe
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\ProspectInHospitality\ProspectInHospitality\bin\Debug\ProspectInHospitality.pdb
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\ProspectInHospitality\ProspectInHospitality\obj\Debug\ProspectInHospitality.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\ProspectInHospitality\ProspectInHospitality\obj\Debug\ProspectInHospitality.exe
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 8 November 2015\ProspectInHospitality\ProspectInHospitality\obj\Debug\ProspectInHospitality.pdb

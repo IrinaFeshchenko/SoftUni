@@ -1,5 +1,0 @@
-C:\Users\user\Documents\Softuni\Programming Basics Sample Exam - 28 November 2015\AceOfDiamonds\AceOfDiamonds\bin\Debug\AceOfDiamonds.exe.config
-C:\Users\user\Documents\Softuni\Programming Basics Sample Exam - 28 November 2015\AceOfDiamonds\AceOfDiamonds\bin\Debug\AceOfDiamonds.exe
-C:\Users\user\Documents\Softuni\Programming Basics Sample Exam - 28 November 2015\AceOfDiamonds\AceOfDiamonds\bin\Debug\AceOfDiamonds.pdb
-C:\Users\user\Documents\Softuni\Programming Basics Sample Exam - 28 November 2015\AceOfDiamonds\AceOfDiamonds\obj\Debug\AceOfDiamonds.exe
-C:\Users\user\Documents\Softuni\Programming Basics Sample Exam - 28 November 2015\AceOfDiamonds\AceOfDiamonds\obj\Debug\AceOfDiamonds.pdb

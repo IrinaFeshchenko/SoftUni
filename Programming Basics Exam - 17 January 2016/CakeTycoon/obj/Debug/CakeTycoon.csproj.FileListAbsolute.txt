@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\CakeTycoon\bin\Debug\CakeTycoon.exe.config
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\CakeTycoon\bin\Debug\CakeTycoon.exe
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\CakeTycoon\bin\Debug\CakeTycoon.pdb
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\CakeTycoon\obj\Debug\CakeTycoon.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\CakeTycoon\obj\Debug\CakeTycoon.exe
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\CakeTycoon\obj\Debug\CakeTycoon.pdb

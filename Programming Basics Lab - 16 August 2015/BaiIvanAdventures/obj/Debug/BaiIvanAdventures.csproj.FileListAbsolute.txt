@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\BaiIvanAdventures\BaiIvanAdventures\bin\Debug\BaiIvanAdventures.exe.config
-C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\BaiIvanAdventures\BaiIvanAdventures\bin\Debug\BaiIvanAdventures.exe
-C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\BaiIvanAdventures\BaiIvanAdventures\bin\Debug\BaiIvanAdventures.pdb
-C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\BaiIvanAdventures\BaiIvanAdventures\obj\Debug\BaiIvanAdventures.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\BaiIvanAdventures\BaiIvanAdventures\obj\Debug\BaiIvanAdventures.exe
-C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\BaiIvanAdventures\BaiIvanAdventures\obj\Debug\BaiIvanAdventures.pdb

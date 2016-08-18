@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\PhoneProcesses\bin\Debug\PhoneProcesses.exe.config
-C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\PhoneProcesses\bin\Debug\PhoneProcesses.exe
-C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\PhoneProcesses\bin\Debug\PhoneProcesses.pdb
-C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\PhoneProcesses\obj\Debug\PhoneProcesses.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\PhoneProcesses\obj\Debug\PhoneProcesses.exe
-C:\Users\user\Documents\Softuni\Programming Basics Lab - 16 August 2015\PhoneProcesses\obj\Debug\PhoneProcesses.pdb

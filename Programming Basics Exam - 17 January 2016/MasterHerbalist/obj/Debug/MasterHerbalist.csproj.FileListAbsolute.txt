@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\MasterHerbalist\bin\Debug\MasterHerbalist.exe.config
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\MasterHerbalist\bin\Debug\MasterHerbalist.exe
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\MasterHerbalist\bin\Debug\MasterHerbalist.pdb
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\MasterHerbalist\obj\Debug\MasterHerbalist.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\MasterHerbalist\obj\Debug\MasterHerbalist.exe
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\MasterHerbalist\obj\Debug\MasterHerbalist.pdb

@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\MatrixOperator\bin\Debug\MatrixOperator.exe.config
-C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\MatrixOperator\bin\Debug\MatrixOperator.exe
-C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\MatrixOperator\bin\Debug\MatrixOperator.pdb
-C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\MatrixOperator\obj\Debug\MatrixOperator.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\MatrixOperator\obj\Debug\MatrixOperator.exe
-C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\MatrixOperator\obj\Debug\MatrixOperator.pdb

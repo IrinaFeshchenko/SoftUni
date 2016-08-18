@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\ImpressTheGirlfriend\ImpressTheGirlfriend\bin\Debug\ImpressTheGirlfriend.exe.config
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\ImpressTheGirlfriend\ImpressTheGirlfriend\bin\Debug\ImpressTheGirlfriend.exe
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\ImpressTheGirlfriend\ImpressTheGirlfriend\bin\Debug\ImpressTheGirlfriend.pdb
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\ImpressTheGirlfriend\ImpressTheGirlfriend\obj\Debug\ImpressTheGirlfriend.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\ImpressTheGirlfriend\ImpressTheGirlfriend\obj\Debug\ImpressTheGirlfriend.exe
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\ImpressTheGirlfriend\ImpressTheGirlfriend\obj\Debug\ImpressTheGirlfriend.pdb

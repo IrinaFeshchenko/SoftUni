@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\BeerStock\bin\Debug\BeerStock.exe.config
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\BeerStock\bin\Debug\BeerStock.exe
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\BeerStock\bin\Debug\BeerStock.pdb
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\BeerStock\obj\Debug\BeerStock.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\BeerStock\obj\Debug\BeerStock.exe
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\BeerStock\obj\Debug\BeerStock.pdb

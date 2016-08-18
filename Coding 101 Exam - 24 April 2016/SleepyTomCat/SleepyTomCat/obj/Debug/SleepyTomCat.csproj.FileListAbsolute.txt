@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\SleepyTomCat\SleepyTomCat\bin\Debug\SleepyTomCat.exe.config
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\SleepyTomCat\SleepyTomCat\bin\Debug\SleepyTomCat.exe
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\SleepyTomCat\SleepyTomCat\bin\Debug\SleepyTomCat.pdb
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\SleepyTomCat\SleepyTomCat\obj\Debug\SleepyTomCat.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\SleepyTomCat\SleepyTomCat\obj\Debug\SleepyTomCat.exe
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\SleepyTomCat\SleepyTomCat\obj\Debug\SleepyTomCat.pdb

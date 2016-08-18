@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\Operations\Operations\bin\Debug\Operations.exe.config
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\Operations\Operations\bin\Debug\Operations.exe
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\Operations\Operations\bin\Debug\Operations.pdb
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\Operations\Operations\obj\Debug\Operations.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\Operations\Operations\obj\Debug\Operations.exe
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\Operations\Operations\obj\Debug\Operations.pdb

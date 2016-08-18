@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Softuni\PopulationAggregation\bin\Debug\PopulationAggregation.exe.config
-C:\Users\user\Documents\Softuni\PopulationAggregation\bin\Debug\PopulationAggregation.exe
-C:\Users\user\Documents\Softuni\PopulationAggregation\bin\Debug\PopulationAggregation.pdb
-C:\Users\user\Documents\Softuni\PopulationAggregation\obj\Debug\PopulationAggregation.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Softuni\PopulationAggregation\obj\Debug\PopulationAggregation.exe
-C:\Users\user\Documents\Softuni\PopulationAggregation\obj\Debug\PopulationAggregation.pdb

@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Softuni\ArrayModifier\bin\Debug\ArrayModifier.exe.config
-C:\Users\user\Documents\Softuni\ArrayModifier\bin\Debug\ArrayModifier.exe
-C:\Users\user\Documents\Softuni\ArrayModifier\bin\Debug\ArrayModifier.pdb
-C:\Users\user\Documents\Softuni\ArrayModifier\obj\Debug\ArrayModifier.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Softuni\ArrayModifier\obj\Debug\ArrayModifier.exe
-C:\Users\user\Documents\Softuni\ArrayModifier\obj\Debug\ArrayModifier.pdb
