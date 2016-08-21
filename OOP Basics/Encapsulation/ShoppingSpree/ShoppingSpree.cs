@@ -1,6 +1,4 @@
-﻿
-
-namespace Namespace
+﻿namespace Namespace
 {
     using System;
     using System.Collections.Generic;
@@ -23,7 +21,6 @@ namespace Namespace
             {
                 return name;
             }
-
             private set
             {
                 if (value == null || value == string.Empty)
@@ -41,11 +38,19 @@ namespace Namespace
             {
                 return cost;
             }
-
             private set
             {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Money cannot be negative");
+                }
                 cost = value;
             }
+        }
+
+        public override string ToString()
+        {
+            return this.Name;
         }
     }
 
@@ -53,13 +58,13 @@ namespace Namespace
     {
         private string name;
         private decimal money;
-        private List<Product> prooducts;
+        private List<Product> products;
 
         public Person(string name, decimal money)
         {
             Name = name;
             Money = money;
-            prooducts = new List<Product>();
+            products = new List<Product>();
         }
 
         public string Name
@@ -68,12 +73,11 @@ namespace Namespace
             {
                 return name;
             }
-
             private set
             {
                 if (value == null || value == string.Empty)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("Name cannot be empty");
                 }
 
                 name = value;
@@ -86,20 +90,38 @@ namespace Namespace
             {
                 return money;
             }
-
             set
             {
-                if (value <=0)
+                if (value < 0)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("Money cannot be negative");
                 }
                 money = value;
             }
         }
 
-        public void Add(Product product)
+        public void BuyProduct(Product product)
         {
-            this.prooducts.Add(product);
+            if (this.Money < product.Cost)
+            {
+                throw new InvalidOperationException($"{this.Name} can't afford {product.Name}");
+            }
+
+            this.Money -= product.Cost;
+            this.products.Add(product);
+        }
+
+        public override string ToString()
+        {
+            string product = string.Join(", ",this.products);
+            if (string.IsNullOrEmpty(product))
+            {
+                product = "Nothing bought";
+            }
+
+            string name = this.Name;
+            string result = $"{name} - {product}";
+            return result;
         }
     }
 
@@ -107,33 +129,58 @@ namespace Namespace
     {
         public static void Main()
         {
-            string[] param = Console.ReadLine().Trim().Split(new[] {';'}, StringSplitOptions.RemoveEmptyEntries);
-            List<Person> persons = new List<Person>();
-            foreach (var person in param)
+            string[] tokens = Console.ReadLine().Trim().Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+            Dictionary<string, Person> persons = new Dictionary<string, Person>();
+            CreateEntity(tokens,persons);
+
+            tokens = Console.ReadLine().Trim().Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+            Dictionary<string, Product> products = new Dictionary<string, Product>();
+            CreateEntity(tokens, products);
+
+            string line;
+            while ((line = Console.ReadLine()).Trim() != "END")
             {
-                string[] p = person.Split('=');
-                persons.Add(new Person(p[0],decimal.Parse(p[1])));
-            }
+                string[] param = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-            param = Console.ReadLine().Trim().Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-            List<Product> products = new List<Product>();
-            foreach (var product in param)
-            {
-                string[] p = product.Split('=');
-                products.Add(new Product(p[0], decimal.Parse(p[1])));
-            }
+                string personName = param[0];
+                string productName = param[1];
+                Person person = persons[personName];
+                Product product = products[productName];
 
-            string command;
-            while ((command = Console.ReadLine()).Trim() != "END")
-            {
-                string[] pr = command.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-                string name = pr[0];
-                string product = pr[1];
-
-                if (persons.Select(p => (p.Name == name)))
+                try
                 {
+                    person.BuyProduct(product);
+                    Console.WriteLine($"{personName} bought {productName}");
+                }
+                catch (InvalidOperationException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
 
+            foreach (var person in persons.Values)
+            {
+                Console.WriteLine(person);
+            }
+        }
+
+        private static void CreateEntity<T>(string[] token,Dictionary<string,T> collection)
+        {
+            foreach (var item in token)
+            {
+                string[] p = item.Split('=');
+                string name = p[0];
+                decimal money = decimal.Parse(p[1]);
+
+                try
+                {
+                    T newEntity = (T)Activator.CreateInstance(typeof(T), new Object[] { name, money });
+                    collection.Add(name, newEntity);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.InnerException.Message);
+                    Environment.Exit(0);
                 }
             }
         }
