@@ -131,11 +131,11 @@
         {
             string[] tokens = Console.ReadLine().Trim().Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
             Dictionary<string, Person> persons = new Dictionary<string, Person>();
-            CreateEntity(tokens,persons);
+            CreateEntity<Person>(tokens,persons);
 
             tokens = Console.ReadLine().Trim().Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
             Dictionary<string, Product> products = new Dictionary<string, Product>();
-            CreateEntity(tokens, products);
+            CreateEntity<Product>(tokens, products);
 
             string line;
             while ((line = Console.ReadLine()).Trim() != "END")
