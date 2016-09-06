@@ -11,7 +11,7 @@ namespace Namespace
         static void Main()
         {
             int n = int.Parse(Console.ReadLine());
-
+            n++;
             bool[] p = new bool[n];
 
             for (int i = 0; i < n; i++)
