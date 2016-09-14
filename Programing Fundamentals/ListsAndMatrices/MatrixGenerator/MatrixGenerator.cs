@@ -80,22 +80,19 @@ namespace Namespace
 
         private static void DrowC(int rows, int cols)
         {
-            decimal[,] matrx = new decimal[rows, cols];
+            decimal[,] matrix = new decimal[rows, cols];
             int digit = 1;
             int row = rows - 1;
             int col = 0;
 
             for (int i = 0; i < rows * cols; i++)
             {
-                matrx[row, col] = digit;
-                digit++;
-                row++;
-                col++;
+                matrix[row++, col++] = digit++;
 
                 if (row == rows)
                 {
                     row = (rows - 1 - col) >= 0 ? (rows - 1 - col) : 0;
-                    col = (col - rows+1)<0 ? 0 : (col - rows+1);
+                    col = (col - rows + 1) < 0 ? 0 : (col - rows + 1);
                 }
 
                 if ((col == cols) && (row < rows))
@@ -105,12 +102,67 @@ namespace Namespace
                 }
             }
 
-            PrintMatrix(matrx);
+            PrintMatrix(matrix);
         }
 
+        enum Direction { down, right, up, left };
         private static void DrowD(int rows, int cols)
         {
-            throw new NotImplementedException();
+            decimal[,] matrix = new decimal[rows, cols];
+            int digit = 1;
+            int row = 0;
+            int col = 0;
+            int left = 0;
+            int right = cols - 1;
+            int top = 0;
+            int bottom = rows - 1;
+            Direction direction = Direction.down;
+
+            while (digit <= rows * cols)
+            {
+                if (direction == Direction.down)  //move down
+                {
+                    for (row = top; row <= bottom; row++)
+                    {
+                        matrix[row, col] = digit++;
+                    }
+                    row--;
+                    direction = Direction.right;
+                    left++;
+                }
+                else if (direction == Direction.right) //move right
+                {
+                    for (col = left; col <= right; col++)
+                    {
+                        matrix[row, col] = digit++;
+                    }
+                    col--;
+                    direction = Direction.up;
+                    bottom--;
+                }
+                else if (direction == Direction.up) // move up
+                {
+                    for (row = bottom; row >= top; row--)
+                    {
+                        matrix[row, col] = digit++;
+                    }
+                    row++;
+                    direction = Direction.left;
+                    right--;
+                }
+                else if (direction == Direction.left) // move left
+                {
+                    for (col = right; col >= left; col--)
+                    {
+                        matrix[row, col] = digit++;
+                    }
+                    col++;
+                    direction = Direction.down;
+                    top++;
+                }
+            }
+
+            PrintMatrix(matrix);
         }
 
         private static void PrintMatrix(decimal[,] matrx)
