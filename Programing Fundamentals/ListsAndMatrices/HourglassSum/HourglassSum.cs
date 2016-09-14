@@ -6,14 +6,12 @@ namespace Namespace
     using System.Collections.Generic;
     using System.Linq;
 
-    class MaxPlatform
+    class HourglassSum
     {
         static void Main()
         {
-            int[] par = Console.ReadLine().Split().Select(int.Parse).ToArray();
-
-            int rows = par[0];
-            int cols = par[1];
+            int rows = 6;
+            int cols = 6;
             int platformSize = 3;
             decimal[,] m = new decimal[rows, cols];
 
@@ -21,7 +19,7 @@ namespace Namespace
             for (int i = 0; i < rows; i++)
             {
                 int[] line = Console.ReadLine()
-                    .Split(new[] {' '},StringSplitOptions.RemoveEmptyEntries)
+                    .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
                     .Select(int.Parse).ToArray();
                 for (int j = 0; j < cols; j++)
                 {
@@ -50,27 +48,15 @@ namespace Namespace
             }
 
             Console.WriteLine(maxSum);
-            for (int i = maxRow; i < maxRow + platformSize; i++)
-            {
-                for (int j = maxCol; j < maxCol + platformSize; j++)
-                {
-                    Console.Write(m[i,j]+" ");
-                }
-                Console.WriteLine();
-            }
         }
 
         private static decimal GetSum(decimal[,] m, int row, int col, int platformSize)
         {
-            decimal sum = 0;
-            for (int i = row; i < row + platformSize; i++)
-            {
-                for (int j = col; j < col + platformSize; j++)
-                {
-                    sum += m[i, j];
-                }
-            }
+            decimal sum = m[row ,col] + m[row, col+1] + m[row, col+2] +
+                                       m[row+1, col+1] +
+                        m[row+2, col] + m[row+2, col+1] + m[row+2, col+2];
             return sum;
         }
     }
 }
+
