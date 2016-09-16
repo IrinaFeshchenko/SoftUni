@@ -57,24 +57,57 @@ namespace Namespace
             CountRight(matrix);
             CountDown(matrix);
 
-            var bestCandidates = OrderByBestCandidates(matrix).ToList();
-            FindLargestFrame(matrix, bestCandidates);
             List<Frame> frames = new List<Frame>();
+            var bestCandidates = OrderByBestCandidates(matrix).ToList();
+            FindLargestFrame(matrix, bestCandidates, frames);
             //RecordFrames(matrix,frames);//find largest rectangle area
             ShowResult(frames);
         }
 
-        private static void FindLargestFrame(cell[,] matrix, List<cell> bestCandidates)
+        private static void FindLargestFrame(cell[,] matrix, List<cell> bestCandidates, List<Frame> frames)
         {
             int maxRect = 0;
             foreach (var cell in bestCandidates)
             {
-                int farRow = cell.row + cell.countUp-1;
+                int width = cell.countLeft;
+                int height = cell.countUp;
+
+                if (width*height<maxRect) // if next candidates cannot have bigger area, stop checking;
+                {
+                    break;
+                }
+
+                int farRow = cell.row + cell.countUp - 1;
                 int farCol = cell.col + cell.countLeft - 1;
 
-                while (farRow>0||farCol>0)
+                while (farRow > 0 || farCol > 0)
                 {
+                    int farWidth = matrix[farRow, farCol].countRight;
+                    int farHeight = matrix[farRow, farCol].countDown;
 
+                    if (farWidth>=width&&farHeight>=height)
+                    {
+                        int currentRect = width * height;
+                        if (currentRect>=maxRect)
+                        {
+                            maxRect = currentRect;
+                            frames.Add(new Frame(width:width,height:height ));
+                            break;
+                        }                     
+                    }
+                    else
+                    {
+                        if (farRow > farCol)
+                        {
+                            farRow--;
+                            width--;
+                        }
+                        else
+                        {
+                            farCol--;
+                            height--;
+                        }
+                    }
                 }
             }
         }
@@ -89,10 +122,11 @@ namespace Namespace
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    result.Add(matrix[i,j]);
+                    result.Add(matrix[i, j]);
                 }
             }
-            result = result.OrderByDescending(cell=> cell.countUp+cell.countLeft).ToList();
+
+            result = result.OrderByDescending(cell => cell.countUp * cell.countLeft).ToList();
             return (IEnumerable<cell>)result;
         }
 
@@ -100,6 +134,7 @@ namespace Namespace
         {
             int rows = matrix.GetLength(0);
             int cols = matrix.GetLength(1);
+
             // count down, left to right
             for (int col = 0; col < cols; col++)
             {
@@ -126,12 +161,13 @@ namespace Namespace
         {
             int rows = matrix.GetLength(0);
             int cols = matrix.GetLength(1);
+
             // count right, top to bottom
             for (int row = 0; row < rows; row++)
             {
                 var lastValue = matrix[row, 0].value;
 
-                for (int col = 1; col <cols; col++)
+                for (int col = 1; col < cols; col++)
                 {
                     var currentValue = matrix[row, col].value;
 
@@ -152,10 +188,11 @@ namespace Namespace
         {
             int rows = matrix.GetLength(0);
             int cols = matrix.GetLength(1);
+
             // count left, top to bottom
             for (int row = 0; row < rows; row++)
             {
-                var lastValue = matrix[row, cols-1].value;
+                var lastValue = matrix[row, cols - 1].value;
 
                 for (int col = (cols - 2); col >= 0; col--)
                 {
@@ -163,7 +200,7 @@ namespace Namespace
 
                     if (currentValue == lastValue)
                     {
-                        matrix[row, col].countLeft = matrix[row, col+1].countLeft + 1;
+                        matrix[row, col].countLeft = matrix[row, col + 1].countLeft + 1;
                     }
                     else
                     {
@@ -178,6 +215,7 @@ namespace Namespace
         {
             int rows = matrix.GetLength(0);
             int cols = matrix.GetLength(1);
+
             // count up, left to right
             for (int col = 0; col < cols; col++)
             {
@@ -202,17 +240,18 @@ namespace Namespace
 
         private static void ShowResult(List<Frame> frames)
         {
-            var result = frames
-                .Where(f =>
-                (f.Height * f.Width) == frames
-                                      .Select(fr => fr.Height * fr.Width).Max());
-            foreach (var frame in result)
+           // var result = frames
+           //     .Where(f =>
+           //     (f.Height * f.Width) == frames
+           //                             .Select(fr => fr.Height * fr.Width)
+           //                             .Max());
+            foreach (var frame in frames)
             {
                 Console.WriteLine($"{frame.Height}x{frame.Width}");
             }
         }
 
-        private static void RecordFrames(cell[,] matrix, List<Frame> frames)
+        private static void FindLargestArea(cell[,] matrix, List<Frame> frames)
         {
             int rows = matrix.GetLength(0);
             int cols = matrix.GetLength(1);
@@ -221,11 +260,11 @@ namespace Namespace
             for (int i = 0; i < rows; i++)
             {
                 queue.Enqueue(matrix[i, 0]);
-                AddFrame(frames,queue);
+                AddFrame(frames, queue);
 
                 for (int j = 1; j < cols; j++)
                 {
-                    if (queue.Peek().value == matrix[i,j].value)
+                    if (queue.Peek().value == matrix[i, j].value)
                     {
                         queue.Enqueue(matrix[i, j]);
                         AddFrame(frames, queue);
@@ -235,7 +274,7 @@ namespace Namespace
                         while (queue.Count != 0)
                         {
                             queue.Dequeue();
-                            if (queue.Count!=0)
+                            if (queue.Count != 0)
                             {
                                 AddFrame(frames, queue);
                             }
@@ -250,11 +289,11 @@ namespace Namespace
 
         private static void AddFrame(List<Frame> frames, Queue<cell> queue)
         {
-          //  Frame f = new Frame(width: queue.Count,
-          //                    height: queue
-          //                    .Select(cell => cell.count)
-          //                    .Min());
-          //frames.Add(f);
+            Frame f = new Frame(width: queue.Count,
+                              height: queue
+                              .Select(cell => cell.countUp)
+                              .Min());
+            frames.Add(f);
         }
 
         private static void ReadInputMatrix(cell[,] matrix)
@@ -297,7 +336,7 @@ namespace Namespace
             {
                 for (int col = 0; col < cols; col++)
                 {
-                    Console.Write(matrix[row,col].countDown + " ");
+                    Console.Write(matrix[row, col].countDown + " ");
                 }
                 Console.WriteLine();
             }
