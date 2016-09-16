@@ -240,60 +240,10 @@ namespace Namespace
 
         private static void ShowResult(List<Frame> frames)
         {
-           // var result = frames
-           //     .Where(f =>
-           //     (f.Height * f.Width) == frames
-           //                             .Select(fr => fr.Height * fr.Width)
-           //                             .Max());
             foreach (var frame in frames)
             {
                 Console.WriteLine($"{frame.Height}x{frame.Width}");
             }
-        }
-
-        private static void FindLargestArea(cell[,] matrix, List<Frame> frames)
-        {
-            int rows = matrix.GetLength(0);
-            int cols = matrix.GetLength(1);
-            Queue<cell> queue = new Queue<cell>();
-
-            for (int i = 0; i < rows; i++)
-            {
-                queue.Enqueue(matrix[i, 0]);
-                AddFrame(frames, queue);
-
-                for (int j = 1; j < cols; j++)
-                {
-                    if (queue.Peek().value == matrix[i, j].value)
-                    {
-                        queue.Enqueue(matrix[i, j]);
-                        AddFrame(frames, queue);
-                    }
-                    else
-                    {
-                        while (queue.Count != 0)
-                        {
-                            queue.Dequeue();
-                            if (queue.Count != 0)
-                            {
-                                AddFrame(frames, queue);
-                            }
-                        }
-
-                        queue = new Queue<cell>();
-                        queue.Enqueue(matrix[i, j]);
-                    }
-                }
-            }
-        }
-
-        private static void AddFrame(List<Frame> frames, Queue<cell> queue)
-        {
-            Frame f = new Frame(width: queue.Count,
-                              height: queue
-                              .Select(cell => cell.countUp)
-                              .Min());
-            frames.Add(f);
         }
 
         private static void ReadInputMatrix(cell[,] matrix)
@@ -324,21 +274,6 @@ namespace Namespace
                 {
                     matrix[i, j] = new cell();
                 }
-            }
-        }
-
-        private static void PrintMatrixCounts(cell[,] matrix)
-        {
-            int rows = matrix.GetLength(0);
-            int cols = matrix.GetLength(1);
-
-            for (int row = 0; row < rows; row++)
-            {
-                for (int col = 0; col < cols; col++)
-                {
-                    Console.Write(matrix[row, col].countDown + " ");
-                }
-                Console.WriteLine();
             }
         }
     }
