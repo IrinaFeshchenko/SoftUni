@@ -11,7 +11,7 @@ namespace Namespace
         public int Height { get; set; }
         public int Width { get; set; }
 
-        public Frame(int width, int height)
+        public Frame(int height, int width)
         {
             this.Height = height;
             this.Width = width;
@@ -20,7 +20,7 @@ namespace Namespace
 
     public class cell
     {
-        public int value { get; set; }
+        public long value { get; set; }
         public int row { get; set; }
         public int col { get; set; }
         public int countUp { get; set; }
@@ -44,9 +44,9 @@ namespace Namespace
     {
         static void Main()
         {
-            int[] num = Console.ReadLine().Split().Select(int.Parse).ToArray();
-            int rows = num[0];
-            int cols = num[1];
+            long[] num = Console.ReadLine().Split().Select(long.Parse).ToArray();
+            long rows = num[0];
+            long cols = num[1];
             cell[,] matrix = new cell[rows, cols];
 
             InitialiseEmptyMatrix(matrix);
@@ -56,56 +56,43 @@ namespace Namespace
             CountLeft(matrix);
             CountRight(matrix);
             CountDown(matrix);
-
             List<Frame> frames = new List<Frame>();
             var bestCandidates = OrderByBestCandidates(matrix).ToList();
             FindLargestFrame(matrix, bestCandidates, frames);
-            //RecordFrames(matrix,frames);//find largest rectangle area
             ShowResult(frames);
         }
 
         private static void FindLargestFrame(cell[,] matrix, List<cell> bestCandidates, List<Frame> frames)
         {
-            int maxRect = 0;
+            long maxRect = 0;
             foreach (var cell in bestCandidates)
             {
-                int width = cell.countLeft;
-                int height = cell.countUp;
-
-                if (width*height<maxRect) // if next candidates cannot have bigger area, stop checking;
-                {
-                    break;
-                }
-
+                int row = cell.row;
+                int col = cell.col;
+                //int width = cell.countLeft;
+                //int height = cell.countUp;
                 int farRow = cell.row + cell.countUp - 1;
                 int farCol = cell.col + cell.countLeft - 1;
 
-                while (farRow > 0 || farCol > 0)
+                for (int i = row; i <= farRow; i++)
                 {
-                    int farWidth = matrix[farRow, farCol].countRight;
-                    int farHeight = matrix[farRow, farCol].countDown;
+                    for (int j = col; j <= farCol; j++)
+                    {
+                        int farWidth = matrix[i, j].countRight;
+                        int farHeight = matrix[i, j].countDown;
+                        int height = i - row + 1;
+                        int width = j - col + 1;
+                        if ((farWidth >= width) && 
+                            (farHeight >= height) && 
+                            (width*height>=maxRect))
+                        {
+                            if (width * height > maxRect)
+                            {
+                                frames.Clear();
+                                maxRect = width * height;
+                            }
 
-                    if (farWidth>=width&&farHeight>=height)
-                    {
-                        int currentRect = width * height;
-                        if (currentRect>=maxRect)
-                        {
-                            maxRect = currentRect;
-                            frames.Add(new Frame(width:width,height:height ));
-                            break;
-                        }                     
-                    }
-                    else
-                    {
-                        if (farRow > farCol)
-                        {
-                            farRow--;
-                            width--;
-                        }
-                        else
-                        {
-                            farCol--;
-                            height--;
+                            frames.Add(new Frame(width: width, height: height));
                         }
                     }
                 }
@@ -240,10 +227,12 @@ namespace Namespace
 
         private static void ShowResult(List<Frame> frames)
         {
-            foreach (var frame in frames)
-            {
-                Console.WriteLine($"{frame.Height}x{frame.Width}");
-            }
+
+            Console.WriteLine(
+                string.Join(", ", frames.Select(
+                    f => string.Format($"{f.Height}x{f.Width}")
+                    ).OrderBy(x => x.ToString()
+                    )));
         }
 
         private static void ReadInputMatrix(cell[,] matrix)
@@ -253,7 +242,7 @@ namespace Namespace
 
             for (int i = 0; i < rows; i++)
             {
-                int[] line = Console.ReadLine().Split().Select(int.Parse).ToArray();
+                long[] line = Console.ReadLine().Split().Select(long.Parse).ToArray();
                 for (int j = 0; j < cols; j++)
                 {
                     matrix[i, j].value = line[j];
