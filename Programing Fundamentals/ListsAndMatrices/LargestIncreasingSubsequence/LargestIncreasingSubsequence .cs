@@ -48,8 +48,7 @@ namespace Namespace
                                         .Select(y => y.Count)
                                         .Max())
                                         .Select(z=>z.Index)
-                                        .FirstOrDefault();
-                                        
+                                        .FirstOrDefault();                                      
 
             Stack<int> stack = new Stack<int>();
             do
