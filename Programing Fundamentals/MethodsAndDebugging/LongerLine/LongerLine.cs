@@ -22,44 +22,26 @@ namespace LongerLine
 
         public double GetDistanceToCentre()
         {
-            double distance = Math.Sqrt(this.x * this.x + this.y * this.y);
+            double distance = (double)Math.Sqrt(this.x * this.x + this.y * this.y);
             return distance;
         }
     }
 
-    public class Line : IComparable
+    public class Line
     {
         public Point startPoint { get; set; }
         public Point endPoint { get; set; }
 
         public Line()
         {
+            this.startPoint = new Point();
+            this.endPoint = new Point();
         }
 
         public Line(Point start, Point end)
         {
             this.startPoint = start;
             this.endPoint = end;
-        }
-
-        public int CompareTo(object obj)
-        {
-            Line secondLine = (Line)obj;
-            double thisLineLenght = this.GetLenght();
-            double secondLineLenght = secondLine.GetLenght();
-
-            if (thisLineLenght < secondLineLenght)
-            {
-                return -1;
-            }
-            else if (thisLineLenght > secondLineLenght)
-            {
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
         }
 
         public double GetLenght()
@@ -70,7 +52,7 @@ namespace LongerLine
             double y2 = this.endPoint.y;
 
             double lenght = Math.Sqrt(Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2));
-            return Math.Abs(lenght);
+            return lenght;
         }
     }
 
@@ -81,7 +63,7 @@ namespace LongerLine
             Line firstLine = ReadLine();
             Line secondLine = ReadLine();
 
-            if (firstLine.CompareTo(secondLine) >= 0)
+            if (firstLine.GetLenght() >= secondLine.GetLenght())
             {
                 Print(firstLine);
             }
@@ -94,22 +76,19 @@ namespace LongerLine
         private static Line ReadLine()
         {
             Line line = new Line();
-            line.startPoint = new Point();
             line.startPoint.x = double.Parse(Console.ReadLine());
             line.startPoint.y = double.Parse(Console.ReadLine());
-            line.endPoint = new Point();
             line.endPoint.x = double.Parse(Console.ReadLine());
             line.endPoint.y = double.Parse(Console.ReadLine());
             return line;
         }
-
 
         private static void Print(Line line)
         {
             Point p1 = new Point(line.startPoint.x, line.startPoint.y);
             Point p2 = new Point(line.endPoint.x, line.endPoint.y);
 
-            if (p1.GetDistanceToCentre() < p2.GetDistanceToCentre())
+            if (p1.GetDistanceToCentre() <= p2.GetDistanceToCentre())
             {
                 Console.WriteLine($"({p1.x}, {p1.y})({p2.x}, {p2.y})");
             }
