@@ -1,6 +1,4 @@
-﻿
-
-namespace Namespace
+﻿namespace Namespace
 {
     using System;
     using System.Collections.Generic;
