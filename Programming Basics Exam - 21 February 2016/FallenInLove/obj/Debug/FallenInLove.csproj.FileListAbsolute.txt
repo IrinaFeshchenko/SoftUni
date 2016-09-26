@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\FallenInLove\bin\Debug\FallenInLove.exe.config
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\FallenInLove\bin\Debug\FallenInLove.exe
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\FallenInLove\bin\Debug\FallenInLove.pdb
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\FallenInLove\obj\Debug\FallenInLove.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\FallenInLove\obj\Debug\FallenInLove.exe
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\FallenInLove\obj\Debug\FallenInLove.pdb

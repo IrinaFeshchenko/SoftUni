@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\SoftUniAirline\bin\Debug\SoftUniAirline.exe.config
-C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\SoftUniAirline\bin\Debug\SoftUniAirline.exe
-C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\SoftUniAirline\bin\Debug\SoftUniAirline.pdb
-C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\SoftUniAirline\obj\Debug\SoftUniAirline.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\SoftUniAirline\obj\Debug\SoftUniAirline.exe
-C:\Users\user\Documents\Softuni\Programming Fundamentals Sample Exam II - June 2016\SoftUniAirline\obj\Debug\SoftUniAirline.pdb

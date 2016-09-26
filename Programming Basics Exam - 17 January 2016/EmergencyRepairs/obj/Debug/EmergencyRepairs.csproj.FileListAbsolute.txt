@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\EmergencyRepairs\bin\Debug\EmergencyRepairs.exe.config
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\EmergencyRepairs\bin\Debug\EmergencyRepairs.exe
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\EmergencyRepairs\bin\Debug\EmergencyRepairs.pdb
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\EmergencyRepairs\obj\Debug\EmergencyRepairs.exe
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\EmergencyRepairs\obj\Debug\EmergencyRepairs.pdb
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 17 January 2016\EmergencyRepairs\obj\Debug\EmergencyRepairs.csprojResolveAssemblyReference.cache

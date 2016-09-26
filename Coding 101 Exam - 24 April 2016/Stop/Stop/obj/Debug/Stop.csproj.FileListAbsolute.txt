@@ -1,5 +1,0 @@
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\Stop\Stop\bin\Debug\Stop.exe.config
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\Stop\Stop\bin\Debug\Stop.exe
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\Stop\Stop\bin\Debug\Stop.pdb
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\Stop\Stop\obj\Debug\Stop.exe
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\Stop\Stop\obj\Debug\Stop.pdb

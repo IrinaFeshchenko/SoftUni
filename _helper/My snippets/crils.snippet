@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>crils</Title>
+			<Shortcut>crils</Shortcut>
+			<Description>Code snippet for List(int) nums = Console.ReadLine</Description>
+			<Author>Me</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="false">
+					<ID>SystemConsole</ID>
+					<Function>SimpleTypeName(global::System.Console)</Function>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp"><![CDATA[List<int> nums = $SystemConsole$.ReadLine().Split().Select(int.Parse).ToList();$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

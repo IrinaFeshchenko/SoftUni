@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\SaltAndPepper\bin\Debug\SaltAndPepper.exe.config
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\SaltAndPepper\bin\Debug\SaltAndPepper.exe
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\SaltAndPepper\bin\Debug\SaltAndPepper.pdb
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\SaltAndPepper\obj\Debug\SaltAndPepper.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\SaltAndPepper\obj\Debug\SaltAndPepper.exe
-C:\Users\user\Documents\Softuni\Programming Basics Exam - 21 February 2016\SaltAndPepper\obj\Debug\SaltAndPepper.pdb

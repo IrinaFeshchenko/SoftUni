@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\RepairingTheTiles\RepairingTheTiles\bin\Debug\RepairingTheTiles.exe.config
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\RepairingTheTiles\RepairingTheTiles\bin\Debug\RepairingTheTiles.exe
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\RepairingTheTiles\RepairingTheTiles\bin\Debug\RepairingTheTiles.pdb
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\RepairingTheTiles\RepairingTheTiles\obj\Debug\RepairingTheTiles.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\RepairingTheTiles\RepairingTheTiles\obj\Debug\RepairingTheTiles.exe
-C:\Users\user\Documents\Softuni\Coding 101 Exam - 24 April 2016\RepairingTheTiles\RepairingTheTiles\obj\Debug\RepairingTheTiles.pdb
