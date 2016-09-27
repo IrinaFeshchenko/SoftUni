@@ -18,6 +18,8 @@ namespace Namespace
     {
         static void Main()
         {
+            int z = 100;
+            Console.WriteLine("{0:e}",z);
             int n = int.Parse(Console.ReadLine());
 
             Sale[] sales = new Sale[n];
