@@ -9,5 +9,5 @@ function sumAndVat(input){
     console.log("total = " +sum *1.20);
 }
 
-
+N
 sumAndVat(['1.20', '2.60', '3.50']);
