@@ -46,4 +46,6 @@ while ((command = Console.ReadLine()).Trim()!= "Exam Over")
 // ">>>>>----->----->>>>>----->".split(">>----->") = ">>>----->>>" 
 // ,to prevent add new character like space: ">>> ----->"
 //
-// ordered in alphabetical order for collections
+// result ordered in alphabetical order for collections
+//
+// use Console.WriteLine(stringbuilder) instead Console.Wtriteline((array of numbers).ToString())

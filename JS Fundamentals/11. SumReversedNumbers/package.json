@@ -1,0 +1,9 @@
+{
+  "name": "11.-sum-reversed-numbers",
+  "version": "0.0.0",
+  "description": "11. SumReversedNumbers",
+  "main": "app.js",
+  "author": {
+    "name": "user"
+  }
+}
