@@ -46,6 +46,9 @@ while ((command = Console.ReadLine()).Trim()!= "Exam Over")
 // ">>>>>----->----->>>>>----->".split(">>----->") = ">>>----->>>" 
 // ,to prevent add new character like space: ">>> ----->"
 //
-// result ordered in alphabetical order for collections
+// alphabetical order for collections
 //
-// use Console.WriteLine(stringbuilder) instead Console.Wtriteline((array of numbers).ToString())
+// WriteLine(stringbuilder) instead Wtriteline((array of numbers).ToString())
+//
+// team names can be empty Strings "??team??___????_1:2"
+// team point at str[pos] can be more than one char;

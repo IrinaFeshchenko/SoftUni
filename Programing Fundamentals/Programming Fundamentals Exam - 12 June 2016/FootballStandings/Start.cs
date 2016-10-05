@@ -40,6 +40,7 @@ namespace FootballStandings
                 GameResult game = DecriptInput(key, input);
 
                 RecordGameResults(game, teams);
+
             }
 
             PrintResult(teams);
@@ -101,13 +102,16 @@ namespace FootballStandings
         {
             GameResult gameResult = new GameResult();
 
-            Regex regex = new Regex(Regex.Escape(key) + @"([\w]+)" + Regex.Escape(key));
+            Regex regex = new Regex(Regex.Escape(key) + @"([\w]*)" + Regex.Escape(key));
             var v = regex.Matches(input);
-            gameResult.FirstTeam = string.Join("", v[0].ToString().Replace(key, "").ToUpper().Reverse());
-            gameResult.SecondTeam = string.Join("", v[1].ToString().Replace(key, "").ToUpper().Reverse()); 
 
-            gameResult.FirstTeamScored = input[input.Length - 3] - '0';
-            gameResult.SecondTeamScored = input[input.Length - 1] - '0';
+            gameResult.FirstTeam = string.Join("", v[0].ToString().Replace(key, "").ToUpper().Reverse());
+            gameResult.SecondTeam = string.Join("", v[1].ToString().Replace(key, "").ToUpper().Reverse());
+
+            string[] tokens = input.Split(' ');
+            long[] goals = tokens[2].Split(':').Select(long.Parse).ToArray();
+            gameResult.FirstTeamScored = goals[0];
+            gameResult.SecondTeamScored = goals[1];
             return gameResult;
         }
     }
