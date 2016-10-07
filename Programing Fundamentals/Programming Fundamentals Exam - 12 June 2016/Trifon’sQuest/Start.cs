@@ -1,6 +1,4 @@
-﻿
-
-namespace TrifonsQuest
+﻿namespace TrifonsQuest
 {
     using System;
     using System.Collections.Generic;
@@ -9,21 +7,24 @@ namespace TrifonsQuest
     public class Hero
     {
         public long Health { get; set; }
+
         public long Turns { get; set; }
+
         public Cell Position { get; set; }
     }
 
     public class Cell
     {
-        public long row { get; set; }
-        public long col { get; set; }
+        public long Row { get; set; }
+
+        public long Col { get; set; }
     }
 
     public class Start
     {
-        static void Main()
+        public static void Main()
         {
-            Cell startCell = new Cell() { row = 0, col = 0 };
+            Cell startCell = new Cell() { Row = 0, Col = 0 };
             long health = ReadHealth();
 
             Hero trifon = new Hero()
@@ -37,7 +38,7 @@ namespace TrifonsQuest
             bool success = true;
             while (true)
             {
-                bool isAlive = CurrentCellAction(matrix,trifon);
+                bool isAlive = CurrentCellAction(matrix, trifon);
                 if (!isAlive)
                 {
                     trifon.Turns++;
@@ -45,13 +46,14 @@ namespace TrifonsQuest
                     break;
                 }
 
-                trifon.Position = MoveNext(matrix,trifon.Position);
-                if (trifon.Position.col == matrix.GetLength(1))
+                trifon.Position = MoveNext(matrix, trifon.Position);
+                if (trifon.Position.Col == matrix.GetLength(1))
                 {
                     trifon.Turns++;
                     success = true;
                     break;
                 }
+
                 trifon.Turns++;
             }
 
@@ -63,22 +65,22 @@ namespace TrifonsQuest
             }
             else
             {
-                Console.WriteLine($"Died at: [{trifon.Position.row}, {trifon.Position.col}]");
+                Console.WriteLine($"Died at: [{trifon.Position.Row}, {trifon.Position.Col}]");
             }
         }
 
         private static bool CurrentCellAction(char[,] matrix, Hero trifon)
         {
             bool isAlive = true;
-            long row = trifon.Position.row;
-            long col = trifon.Position.col;
-            char obstacle = matrix[row,col];
+            long row = trifon.Position.Row;
+            long col = trifon.Position.Col;
+            char obstacle = matrix[row, col];
 
             if (obstacle == 'F')
             {
                 long lostHealth = trifon.Turns / 2;
-                trifon.Health = Math.Max(trifon.Health - lostHealth,0);
-                if (trifon.Health==0)
+                trifon.Health = Math.Max(trifon.Health - lostHealth, 0);
+                if (trifon.Health == 0)
                 {
                     isAlive = false;
                 }
@@ -94,8 +96,9 @@ namespace TrifonsQuest
             }
             else if (obstacle == 'E')
             {
-                //nothing happens
+                // nothing happens
             }
+
             return isAlive;
         }
 
@@ -103,7 +106,7 @@ namespace TrifonsQuest
         {
             Cell nextCell = new Cell();
 
-            if (position.col%2 !=0)
+            if (position.Col % 2 != 0)
             {
                 nextCell = MoveUp(matrix, position);
             }
@@ -111,14 +114,15 @@ namespace TrifonsQuest
             {
                 nextCell = MoveDown(matrix, position);
             }
+
             return nextCell;
         }
 
         private static Cell MoveUp(char[,] matrix, Cell position)
         {
-            long row = position.row;
+            long row = position.Row;
             long rows = matrix.GetLength(0);
-            long col = position.col;
+            long col = position.Col;
             long cols = matrix.GetLength(1);
             Cell nextCell = new Cell();
 
@@ -130,20 +134,21 @@ namespace TrifonsQuest
             {
                 row--;
             }
-            nextCell.row = row;
-            nextCell.col = col;
+
+            nextCell.Row = row;
+            nextCell.Col = col;
             return nextCell;
         }
 
         private static Cell MoveDown(char[,] matrix, Cell position)
         {
-            long row = position.row;
+            long row = position.Row;
             long rows = matrix.GetLength(0);
-            long col = position.col;
+            long col = position.Col;
             long cols = matrix.GetLength(1);
             Cell nextCell = new Cell();
 
-            if (row == rows-1)
+            if (row == rows - 1)
             {
                 col++;
             }
@@ -151,8 +156,9 @@ namespace TrifonsQuest
             {
                 row++;
             }
-            nextCell.row = row;
-            nextCell.col = col;
+
+            nextCell.Row = row;
+            nextCell.Col = col;
             return nextCell;
         }
 
@@ -175,6 +181,7 @@ namespace TrifonsQuest
                     matrix[i, j] = line[j];
                 }
             }
+
             return matrix;
         }
     }

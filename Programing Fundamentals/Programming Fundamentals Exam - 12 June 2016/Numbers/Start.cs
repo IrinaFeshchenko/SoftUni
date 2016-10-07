@@ -12,9 +12,16 @@ namespace Numbers
         {
             long[] num = Console.ReadLine().Split().Select(long.Parse).ToArray();
 
-            var result = num.Where(x => x > num.Average()).OrderByDescending(x=>x).Take(5);
+            var result = num.Where(x => x > num.Average()).OrderByDescending(x => x).Take(5);
 
-            Console.WriteLine(string.Join(" ",result));
+            if (result.Count() == 0)
+            {
+                Console.WriteLine("No");
+            }
+            else
+            {
+                Console.WriteLine(string.Join(" ", result));
+            }
         }
     }
 }
