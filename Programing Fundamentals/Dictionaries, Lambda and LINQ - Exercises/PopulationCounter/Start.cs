@@ -8,7 +8,7 @@
     {
         public static void Main()
         {
-            Dictionary<string, Dictionary<string, int>> population = new Dictionary<string, Dictionary<string, int>>();
+            Dictionary<string, Dictionary<string, long>> population = new Dictionary<string, Dictionary<string, long>>();
 
             while (true)
             {
@@ -22,11 +22,11 @@
 
                 string city = args[0];
                 string country = args[1];
-                int people = int.Parse(args[2]);
+                long people = long.Parse(args[2]);
 
                 if (!population.ContainsKey(country))
                 {
-                    population.Add(country, new Dictionary<string, int>());
+                    population.Add(country, new Dictionary<string, long>());
                 }
 
                 population[country].Add(city, people);
@@ -37,7 +37,7 @@
 
             foreach (var country in sortedCountries)
             {
-                int totalPopulation = country.Value.Select(x => x.Value).Sum();
+                long totalPopulation = country.Value.Select(x => x.Value).Sum();
 
                 Console.WriteLine($"{country.Key} (total population: {totalPopulation})");
 
