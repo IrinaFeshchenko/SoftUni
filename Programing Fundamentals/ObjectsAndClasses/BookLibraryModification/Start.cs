@@ -36,7 +36,7 @@
 
             var library = ParseInput(n);
 
-            var books = library.Books.OrderBy(x=>x.ReleaseDate).ThenBy(z => z.Author);
+            var books = library.Books.OrderBy(x=>x.ReleaseDate).ThenBy(z => z.Title);
 
             var date = DateTime.ParseExact(Console.ReadLine(), "d.M.yyyy", CultureInfo.InvariantCulture);
 
@@ -62,7 +62,7 @@
                 book.Title = args[0];
                 book.Author = args[1];
                 book.Publisher = args[2];
-                book.ReleaseDate = DateTime.ParseExact(args[3], "d.M.yyyy", CultureInfo.InvariantCulture);
+                book.ReleaseDate = DateTime.ParseExact(args[3], "dd.MM.yyyy", CultureInfo.InvariantCulture);
                 book.Isbn = args[4];
                 book.Price = decimal.Parse(args[5]);
 
