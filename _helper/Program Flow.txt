@@ -51,4 +51,6 @@ while ((command = Console.ReadLine()).Trim()!= "Exam Over")
 // WriteLine(stringbuilder) instead Wtriteline((array of numbers).ToString())
 //
 // team names can be empty Strings "??team??___????_1:2"
-// team point at str[pos] can be more than one char;
+// team point at str[pos] can be more than one char
+//
+// coffee supplies => "out of coffe messages" should be printed when occure in the body of the program, not from a collection later;
