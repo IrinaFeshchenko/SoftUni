@@ -37,3 +37,20 @@ while ((command = Console.ReadLine()).Trim()!= "Exam Over")
 	}
 }
 
+/////////////////////////
+// increase variables size eg.(int to long)
+// test edge cases, +1 and -1, with odd and even number of parameters(if flipping values)
+// reread conditions, special cases;
+//
+// concatenating strings after split, may create new patterns:
+// ">>>>>----->----->>>>>----->".split(">>----->") = ">>>----->>>" 
+// ,to prevent add new character like space: ">>> ----->"
+//
+// alphabetical order for collections
+//
+// WriteLine(stringbuilder) instead Wtriteline((array of numbers).ToString())
+//
+// team names can be empty Strings "??team??___????_1:2"
+// team point at str[pos] can be more than one char
+//
+// coffee supplies => "out of coffe messages" should be printed when occure in the body of the program, not from a collection later;

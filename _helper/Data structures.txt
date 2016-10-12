@@ -1,3 +1,15 @@
+//regex: one or many words with space @ and numbers
+Regex rg = new Regex(@"(?<singer>(\w+ )+)@(?<venue>(\w+ )+)(?<ticketPrice>\d+ )(?<ticketCount>\d+)");
+Match match = rg.Match(input);
+
+string venue = match.Groups["venue"].Value.Trim();
+string singer = match.Groups["singer"].Value.Trim();
+string ticketPrice = match.Groups["ticketPrice"].Value.Trim();
+string ticketCount = match.Groups["ticketCount"].Value.Trim();
+decimal profit = decimal.Parse(ticketCount) * decimal.Parse(ticketPrice);
+// Lepa Brena @Sunny Beach 25 3500
+// Ceca @Beach 70 15000
+
 // Dictionaries ..........................................................................
 Dictionary<string, int> day = new Dictionary<string, int>()
 {

@@ -1,0 +1,9 @@
+{
+  "name": "string-of-numbers",
+  "version": "0.0.0",
+  "description": "StringOfNumbers",
+  "main": "app.js",
+  "author": {
+    "name": "user"
+  }
+}

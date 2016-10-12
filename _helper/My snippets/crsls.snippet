@@ -18,7 +18,9 @@
 				</Literal>
 			</Declarations>
 			<Code Language="csharp">
-        <![CDATA[List<string> line = $SystemConsole$.ReadLine().Split().ToList();$end$]]>
+        <![CDATA[List<string> line = $SystemConsole$.ReadLine()
+										   .Split(new[] { ' ' },StringSplitOptions.RemoveEmptyEntries)
+										   .ToList();$end$]]>
 			</Code>
 		</Snippet>
 	</CodeSnippet>

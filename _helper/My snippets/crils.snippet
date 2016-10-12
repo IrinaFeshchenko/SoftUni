@@ -17,7 +17,11 @@
 					<Function>SimpleTypeName(global::System.Console)</Function>
 				</Literal>
 			</Declarations>
-			<Code Language="csharp"><![CDATA[List<int> nums = $SystemConsole$.ReadLine().Split().Select(int.Parse).ToList();$end$]]>
+			<Code Language="csharp">
+        <![CDATA[List<int> nums = $SystemConsole$.ReadLine()
+										.Split(new[] { ' ' },StringSplitOptions.RemoveEmptyEntries)
+										.Select(int.Parse)
+										.ToList();$end$]]>
 			</Code>
 		</Snippet>
 	</CodeSnippet>
