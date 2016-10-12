@@ -42,3 +42,23 @@ Dec	Hx	Oct Html	Char	Dec	Hx	Oct	Html	Char	Dec	Hx	Oct	Html	Char
 40	28	050	 &#40;	(		83	53	123	&#83;	S		126	7E	176	&#126;	~
 41	29	051	 &#41;	)		84	54	124	&#84;	T		127	7F	177	&#127;	DEL
 42	2A	052	 &#42;	*		85	55	125	&#85;	U
+
+
+// read text file encoding
+        public static Encoding GetEncoding(string filename)
+        {
+            // Read the BOM
+            var bom = new byte[4];
+            using (var file = new FileStream(filename, FileMode.Open, FileAccess.Read))
+            {
+                file.Read(bom, 0, 4);
+            }
+
+            // Analyze the BOM
+            if (bom[0] == 0x2b && bom[1] == 0x2f && bom[2] == 0x76) return Encoding.UTF7;
+            if (bom[0] == 0xef && bom[1] == 0xbb && bom[2] == 0xbf) return Encoding.UTF8;
+            if (bom[0] == 0xff && bom[1] == 0xfe) return Encoding.Unicode; //UTF-16LE
+            if (bom[0] == 0xfe && bom[1] == 0xff) return Encoding.BigEndianUnicode; //UTF-16BE
+            if (bom[0] == 0 && bom[1] == 0 && bom[2] == 0xfe && bom[3] == 0xff) return Encoding.UTF32;
+            return Encoding.ASCII;
+        }
