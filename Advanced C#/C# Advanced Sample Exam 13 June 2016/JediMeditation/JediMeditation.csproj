@@ -7,8 +7,8 @@
     <ProjectGuid>{787C53C5-3454-4A78-BDF6-F57CE9484525}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MultiplyTargetedCell</RootNamespace>
-    <AssemblyName>MultiplyTargetedCell</AssemblyName>
+    <RootNamespace>JediMeditation</RootNamespace>
+    <AssemblyName>JediMeditation</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MultiplyTargetedCell.cs" />
+    <Compile Include="Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
