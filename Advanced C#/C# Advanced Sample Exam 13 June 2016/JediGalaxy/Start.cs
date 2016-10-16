@@ -23,7 +23,7 @@
                 }
             }
 
-            int sum = 0;
+            long sum = 0;
             string input;
             while ((input = Console.ReadLine()) != "Let the Force be with you")
             {
