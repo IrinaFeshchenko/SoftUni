@@ -21,7 +21,7 @@
         private static BigInteger NToDecimal(string number, int numBase)
         {
             BigInteger result = 0;
-            long power = 1;
+            BigInteger power = 1;
 
             for (int i = 0; i < number.Length; i++)
             {
