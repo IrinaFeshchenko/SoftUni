@@ -38,6 +38,8 @@ while ((command = Console.ReadLine()).Trim()!= "Exam Over")
 }
 
 /////////////////////////
+// StringBuilder.Append or AppendLine
+//
 // increase variables size eg.(int to long)
 // test edge cases, +1 and -1, with odd and even number of parameters(if flipping values)
 // reread conditions, special cases;
