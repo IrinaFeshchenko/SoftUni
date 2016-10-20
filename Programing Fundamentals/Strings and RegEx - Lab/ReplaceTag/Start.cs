@@ -18,7 +18,7 @@
 
                 if (line == "end")
                     break;
-                text.Append(line);
+                text.AppendLine(line);
             }
 
             string pattern = @"<a.*?href\s*=(?<one>.*?)>(?<two>.*?)<\/a>";
