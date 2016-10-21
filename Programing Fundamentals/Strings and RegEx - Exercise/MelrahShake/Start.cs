@@ -10,6 +10,7 @@
     {
         public static void Main()
         {
+            Console.WriteLine(2/2);
             string text = Console.ReadLine();
             string pattern = Console.ReadLine();
             
@@ -23,13 +24,13 @@
                     text = text.Remove(last, pattern.Length);
                     text = text.Remove(first, pattern.Length);
 
-                    Console.WriteLine("Shake it.");
+                    Console.WriteLine("Shaked it.");
 
                     if (pattern.Length < 3)
                     {
                         if (pattern.Length == 2)
                         {
-                            pattern = pattern[1].ToString();
+                            pattern = pattern[0].ToString();
                         }
                         else if (pattern.Length == 1)
                         {
@@ -52,7 +53,7 @@
 
         private static void Finish(string text)
         {
-            Console.WriteLine("No shake");
+            Console.WriteLine("No shake.");
             Console.WriteLine(text);
         }
     }
