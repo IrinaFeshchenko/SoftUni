@@ -38,6 +38,10 @@ while ((command = Console.ReadLine()).Trim()!= "Exam Over")
 }
 
 /////////////////////////
+//string split separator can be whitespace instead space  s.Split(new char[0], StringSplitOptons....)
+//
+// on numbers in strings trim leading zeroes
+//
 // StringBuilder.Append or AppendLine
 //
 // increase variables size eg.(int to long)
