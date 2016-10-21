@@ -38,7 +38,10 @@ while ((command = Console.ReadLine()).Trim()!= "Exam Over")
 }
 
 /////////////////////////
-//string split separator can be whitespace instead space  s.Split(new char[0], StringSplitOptons....)
+// group regex maches in a single string , before further processing (UseYourChainsBuddy)
+//
+//string split separator can be whitespace instead of space, so use  s.Split(new char[0], StringSplitOptons....) 
+//  or Split(new []{' ','\t'}) - includes split \t for tabs
 //
 // on numbers in strings trim leading zeroes
 //
