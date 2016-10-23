@@ -187,7 +187,7 @@
                                 }
                             }
                         }
-
+                 
                         Console.WriteLine("[" + string.Join(", ", result) + "]"); 
                     }
                 }
@@ -223,7 +223,7 @@
                                 }
                             }
                         }
-
+                        result.Reverse();
                         Console.WriteLine("[" + string.Join(", ", result) + "]"); 
                     }
                 }
