@@ -1,6 +1,4 @@
-﻿
-
-namespace Namespace
+﻿namespace Namespace
 {
     using System;
     using System.Collections.Generic;
@@ -23,6 +21,7 @@ namespace Namespace
             teams.Add("Tottenham", 0);
             decimal profit = 0;
             string command;
+			
             while ((command = Console.ReadLine()) != "End of the league.")
             {
                 string[] param = command.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
