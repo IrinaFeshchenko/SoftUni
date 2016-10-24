@@ -7,77 +7,67 @@
     using System.Text;
     using System.Text.RegularExpressions;
 
-    public class Method
+    public class MethodInfo
     {
-        public Method()
+        public MethodInfo()
         {
-            this.InternalMethods = new List<string>();
+            Methods = new List<string>();
         }
         public string Name { get; set; }
-        public List<string> InternalMethods { get; set; }
+        public List<string> Methods{ get; set; }
     }
 
     public class Start
     {
-        public static void Main()
+        static void Main()
         {
             int n = int.Parse(Console.ReadLine());
+            string input = ReadInput(n);
+            List<MethodInfo> methods = ExtractMethods(input);
+            PrintResult(methods);
+        }
 
-            List<Method> methods = new List<Method>();
-            Method method = new Method();
-
-            bool inMethod = false;
-
-            for (int i = 0; i < n; i++)
+        private static void PrintResult(List<MethodInfo> methods)
+        {
+            var orderedMethods = methods.OrderByDescending(x => x.Methods.Count).ThenBy(x=>x.Name);
+            foreach (MethodInfo methodInfo in orderedMethods)
             {
-                string textLine = Console.ReadLine();
-
-                Regex staticMethodRegex = new Regex($"static\\s+.+\\s+(\\w+)\\(");
-
-                if (staticMethodRegex.IsMatch(textLine))
-                {
-                    if (inMethod)
-                    {
-                        method.InternalMethods = method.InternalMethods.OrderBy(x=>x).ToList();
-                        methods.Add(method);
-                    }
-
-                    method = new Method();
-
-                    method.Name = staticMethodRegex.Match(textLine).Groups[1].Value;
-
-                    inMethod = true;
-                }
-                else if (inMethod)
-                {
-                    Regex internalMethodRegex = new Regex($"[^n][^e][^w]\\W+([A-Z]{{1}}\\w+)\\s*\\(");
-
-                    var matches = internalMethodRegex.Matches(textLine);
-
-                    foreach (Match item in matches)
-                    {
-                        string match = item.Groups[1].Value;
-                        if (match != "for" && match != "" && match!= "while" && match != "switch")
-                        {
-                            method.InternalMethods.Add(match);
-                        }
-                    }
-                }
-            }
-            method.InternalMethods = method.InternalMethods.OrderBy(x => x).ToList();
-            methods.Add(method);
-
-            var ordereddMethods = methods.OrderByDescending(x=>x.InternalMethods.Count).ThenBy(x=>x.Name);
-
-            foreach (var m in ordereddMethods)
-            {
-                Console.WriteLine($"{m.Name} -> {m.InternalMethods.Count} -> {string.Join(", ",m.InternalMethods)}");
+                var orderedIntMethods = methodInfo.Methods.OrderBy(x => x);
+                Console.WriteLine($"{methodInfo.Name} -> {methodInfo.Methods.Count} -> {string.Join(", ", orderedIntMethods)}");
             }
         }
 
-        static void Ind1_23(string[] args)
+        private static List<MethodInfo> ExtractMethods(string input)
         {
+            string[] parts = input.Split(new string[] { "static" }, StringSplitOptions.RemoveEmptyEntries);
+            List<MethodInfo> methods = new List<MethodInfo>();
+            string pattern = @"([A-Z]\w*)\s*\(";
 
+            foreach (var part in parts)
+            {
+                MethodInfo methodInfo = new MethodInfo();
+                var matches = Regex.Matches(part, pattern);
+
+                methodInfo.Name = matches[0].Groups[1].Value;
+                for (int i = 1; i < matches.Count; i++)
+                {
+                    methodInfo.Methods.Add(matches[i].Groups[1].Value);
+                }
+
+                methods.Add(methodInfo);
+            }
+
+            return methods;
+        }
+
+        private static string ReadInput(int n)
+        {
+            StringBuilder input = new StringBuilder();
+            for (int i = 0; i < n; i++)
+            {
+                input.Append(Console.ReadLine());
+            }
+            return input.ToString();
         }
     }
 }

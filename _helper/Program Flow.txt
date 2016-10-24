@@ -23,6 +23,8 @@ while ((command = Console.ReadLine()).Trim()!= "Exam Over")
 }
 
 /////////////////////////
+// "continue" instead "break", to skip invalid input lines.
+//
 //input  format can be array of strings instead numbers, sorting string numbers works difrently
 //
 // group regex maches in a single string , before further processing (UseYourChainsBuddy)
@@ -44,7 +46,9 @@ while ((command = Console.ReadLine()).Trim()!= "Exam Over")
 //
 // alphabetical order for collections
 //
-// WriteLine(stringbuilder) instead Wtriteline((array of numbers).ToString())
+// repeating dragon Names in collection are ignored ???
+//
+// WriteLine(stringbuilder) instead Wtriteline((array of numbers).ToString()) for memory limit.
 //
 // team names can be empty Strings "??team??___????_1:2"
 // team point at str[pos] can be more than one char

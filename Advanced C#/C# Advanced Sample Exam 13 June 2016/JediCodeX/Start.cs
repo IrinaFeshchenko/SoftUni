@@ -23,8 +23,6 @@
             string namePattern = Console.ReadLine();
             string messagePattern = Console.ReadLine();
 
-            int[] messagesIndexes = Console.ReadLine().Split().Select(int.Parse).ToArray();
-
             Regex nameRegex = new Regex(Regex.Escape(namePattern) + @"([a-zA-Z]{" + namePattern.Length + @"})(?![a-zA-Z])");
             Regex messageRegex = new Regex(Regex.Escape(messagePattern) + @"([a-zA-Z0-9]{" + messagePattern.Length + @"})(?![a-zA-Z0-9])");
 
@@ -36,6 +34,7 @@
             {
                 jedis.Add(jediMatch.Groups[1].Value);
             }
+            jedis = jedis.Distinct().ToList();
 
             MatchCollection messageMatches = messageRegex.Matches(text.ToString());
             foreach (Match messageMatch in messageMatches)
@@ -45,17 +44,18 @@
 
             List<string> output = new List<string>();
 
-            int curentJediIndex = 0;
+            int jedyIndex = 0;
 
-            for (int i = 0; i < messagesIndexes.Length; i++)
+            int[] messagesIndexes = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+            foreach (var index in messagesIndexes)
             {
-                if (messagesIndexes[i]-1 < messages.Count)
+                if (index >= 0 && index < messages.Count)
                 {
-                    output.Add(string.Format("{0} - {1}", jedis[curentJediIndex], messages[messagesIndexes[i] - 1]));
-                    curentJediIndex++;
+                    output.Add(string.Format("{0} - {1}", jedis[jedyIndex++], messages[index]));
                 }
 
-                if (curentJediIndex >= jedis.Count)
+                if (jedyIndex == jedis.Count)
                 {
                     break;
                 }
