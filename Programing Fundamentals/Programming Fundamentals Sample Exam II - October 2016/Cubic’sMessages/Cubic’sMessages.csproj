@@ -7,8 +7,8 @@
     <ProjectGuid>{787C53C5-3454-4A78-BDF6-F57CE9484525}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CubicAssault</RootNamespace>
-    <AssemblyName>CubicAssault</AssemblyName>
+    <RootNamespace>Cubic_sMessages</RootNamespace>
+    <AssemblyName>Cubic’sMessages</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

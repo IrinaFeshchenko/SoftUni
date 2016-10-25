@@ -44,7 +44,7 @@
             string pattern = @"([A-Z]\w*)\s*\(";
 
             foreach (var part in parts)
-            {
+            {u
                 MethodInfo methodInfo = new MethodInfo();
                 var matches = Regex.Matches(part, pattern);
 
@@ -65,7 +65,7 @@
             StringBuilder input = new StringBuilder();
             for (int i = 0; i < n; i++)
             {
-                input.Append(Console.ReadLine());
+                input.AppendLine(Console.ReadLine());
             }
             return input.ToString();
         }

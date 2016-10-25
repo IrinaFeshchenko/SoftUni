@@ -63,6 +63,7 @@
                     events.Add(id, new EventInfo());
                     events[id].eventName = eventName;
                 }
+
                 if (events[id].eventName == eventName)
                 {
                     foreach (var participant in participants)
