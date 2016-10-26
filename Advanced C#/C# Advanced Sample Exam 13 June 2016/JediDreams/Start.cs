@@ -13,7 +13,6 @@
         {
             Methods = new List<string>();
         }
-        public string Name { get; set; }
         public List<string> Methods{ get; set; }
     }
 
@@ -23,38 +22,43 @@
         {
             int n = int.Parse(Console.ReadLine());
             string input = ReadInput(n);
-            List<MethodInfo> methods = ExtractMethods(input);
+            Dictionary<string,MethodInfo> methods = ExtractMethods(input);
             PrintResult(methods);
         }
 
-        private static void PrintResult(List<MethodInfo> methods)
+        private static void PrintResult(Dictionary<string,MethodInfo> methods)
         {
-            var orderedMethods = methods.OrderByDescending(x => x.Methods.Count).ThenBy(x=>x.Name);
-            foreach (MethodInfo methodInfo in orderedMethods)
+            var orderedMethods = methods.OrderByDescending(x => x.Value.Methods.Count).ThenBy(x=>x.Key);
+            foreach (var methodInfo in orderedMethods)
             {
-                var orderedIntMethods = methodInfo.Methods.OrderBy(x => x);
-                Console.WriteLine($"{methodInfo.Name} -> {methodInfo.Methods.Count} -> {string.Join(", ", orderedIntMethods)}");
+                var orderedIntMethods = methodInfo.Value.Methods.OrderBy(x => x);
+                Console.WriteLine($"{methodInfo.Key} -> {methodInfo.Value.Methods.Count} -> {string.Join(", ", orderedIntMethods)}");
             }
         }
 
-        private static List<MethodInfo> ExtractMethods(string input)
+        private static Dictionary<string,MethodInfo> ExtractMethods(string input)
         {
             string[] parts = input.Split(new string[] { "static" }, StringSplitOptions.RemoveEmptyEntries);
-            List<MethodInfo> methods = new List<MethodInfo>();
-            string pattern = @"([A-Z]\w*)\s*\(";
+            Dictionary<string,MethodInfo> methods = new Dictionary<string, MethodInfo>();
+            string pattern = @"([A-Za-z]*[A-Z]+[A-Za-z]*)\s*\(";
 
             foreach (var part in parts)
-            {u
-                MethodInfo methodInfo = new MethodInfo();
-                var matches = Regex.Matches(part, pattern);
-
-                methodInfo.Name = matches[0].Groups[1].Value;
-                for (int i = 1; i < matches.Count; i++)
+            {
+                if (Regex.IsMatch(part,pattern))
                 {
-                    methodInfo.Methods.Add(matches[i].Groups[1].Value);
-                }
+                    var matches = Regex.Matches(part, pattern);
+                    string staticName = matches[0].Groups[1].Value;
 
-                methods.Add(methodInfo);
+                    if (!methods.ContainsKey(staticName))
+                    {
+                        methods.Add(staticName, new MethodInfo());
+                    }
+
+                    for (int i = 1; i < matches.Count; i++)
+                    {
+                        methods[staticName].Methods.Add(matches[i].Groups[1].Value);// ????????????????
+                    }
+                }
             }
 
             return methods;
@@ -65,7 +69,7 @@
             StringBuilder input = new StringBuilder();
             for (int i = 0; i < n; i++)
             {
-                input.AppendLine(Console.ReadLine());
+                input.Append(Console.ReadLine());
             }
             return input.ToString();
         }

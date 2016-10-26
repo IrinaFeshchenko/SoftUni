@@ -15,16 +15,16 @@
             while ((input = Console.ReadLine()) != "Over!")
             {
                 int n = int.Parse(Console.ReadLine());
-                string pattern = $"^\\d+([A-Za-z]{{{n}}})[^A-Za-z]";
+                string pattern = $"(^\\d+)([A-Za-z]{{{n}}})(.*)";
 
                 if (Regex.IsMatch(input, pattern))
                 {
                     var message = Regex.Match(input,pattern).Groups[1].Value;
+                    var part = Regex.Match(input,pattern).Groups[2].Value;
+
                     messages.Add(message);
                 }
             }
-
-            ;
         }
     }
 }
