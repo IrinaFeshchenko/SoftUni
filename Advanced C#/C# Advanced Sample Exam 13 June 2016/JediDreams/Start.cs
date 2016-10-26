@@ -13,7 +13,7 @@
         {
             Methods = new List<string>();
         }
-        public List<string> Methods{ get; set; }
+        public List<string> Methods { get; set; }
     }
 
     public class Start
@@ -21,42 +21,54 @@
         static void Main()
         {
             int n = int.Parse(Console.ReadLine());
-            string input = ReadInput(n);
-            Dictionary<string,MethodInfo> methods = ExtractMethods(input);
+            List<string> input = ReadInput(n);
+            Dictionary<string, MethodInfo> methods = ExtractMethods(input);
             PrintResult(methods);
         }
 
-        private static void PrintResult(Dictionary<string,MethodInfo> methods)
+        private static void PrintResult(Dictionary<string, MethodInfo> methods)
         {
-            var orderedMethods = methods.OrderByDescending(x => x.Value.Methods.Count).ThenBy(x=>x.Key);
+            var orderedMethods = methods.OrderByDescending(x => x.Value.Methods.Count).ThenBy(x => x.Key);
             foreach (var methodInfo in orderedMethods)
             {
-                var orderedIntMethods = methodInfo.Value.Methods.OrderBy(x => x);
-                Console.WriteLine($"{methodInfo.Key} -> {methodInfo.Value.Methods.Count} -> {string.Join(", ", orderedIntMethods)}");
+                if (methodInfo.Value.Methods.Count != 0)
+                {
+                    var orderedIntMethods = methodInfo.Value.Methods.OrderBy(x => x);
+                    Console.WriteLine($"{methodInfo.Key} -> {methodInfo.Value.Methods.Count} -> {string.Join(", ", orderedIntMethods)}");
+                }
+                else
+                {
+                    Console.WriteLine($"{methodInfo.Key} -> None");
+                }
             }
         }
 
-        private static Dictionary<string,MethodInfo> ExtractMethods(string input)
+        private static Dictionary<string, MethodInfo> ExtractMethods(List<string> input)
         {
-            string[] parts = input.Split(new string[] { "static" }, StringSplitOptions.RemoveEmptyEntries);
-            Dictionary<string,MethodInfo> methods = new Dictionary<string, MethodInfo>();
-            string pattern = @"([A-Za-z]*[A-Z]+[A-Za-z]*)\s*\(";
+            Dictionary<string, MethodInfo> methods = new Dictionary<string, MethodInfo>();
+            string mainPattern = @"static\s+.*?\s+([a-zA-Z]*[A-Z]+[a-zA-Z]*)\s*\(";
+            string intPattern = @"([A-Za-z]*[A-Z]+[A-Za-z]*)\s*\(";
 
-            foreach (var part in parts)
+            string currentMethod = string.Empty;
+
+            foreach (var line in input)
             {
-                if (Regex.IsMatch(part,pattern))
+                if (Regex.IsMatch(line, mainPattern))
                 {
-                    var matches = Regex.Matches(part, pattern);
-                    string staticName = matches[0].Groups[1].Value;
+                    currentMethod = Regex.Match(line, mainPattern).Groups[1].Value;
 
-                    if (!methods.ContainsKey(staticName))
+                    if (!methods.ContainsKey(currentMethod))
                     {
-                        methods.Add(staticName, new MethodInfo());
+                        methods.Add(currentMethod, new MethodInfo());
                     }
+                }
+                else if (Regex.IsMatch(line, intPattern) && currentMethod != string.Empty)
+                {
+                    var matches = Regex.Matches(line, intPattern);
 
-                    for (int i = 1; i < matches.Count; i++)
+                    foreach (Match match in matches)
                     {
-                        methods[staticName].Methods.Add(matches[i].Groups[1].Value);// ????????????????
+                        methods[currentMethod].Methods.Add(match.Groups[1].Value);
                     }
                 }
             }
@@ -64,14 +76,14 @@
             return methods;
         }
 
-        private static string ReadInput(int n)
+        private static List<string> ReadInput(int n)
         {
-            StringBuilder input = new StringBuilder();
+            List<string> input = new List<string>();
             for (int i = 0; i < n; i++)
             {
-                input.Append(Console.ReadLine());
+                input.Add(Console.ReadLine());
             }
-            return input.ToString();
+            return input;
         }
     }
 }
