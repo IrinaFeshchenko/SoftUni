@@ -1,8 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using JediDreams;
 
-namespace JediDreams
+namespace JediDreams.Test
 {
     [TestClass]
     public class UnitTest1
@@ -63,12 +64,13 @@ namespace JediDreams
             List<string> input = new List<string>();
             foreach (var line in lines)
             {
-                lines.Add(inputText[n]);
+              //  input.Add(inputText[n]);
             }
 
             //act
-            JediDreams.Start.ExtractMethods(input);
+            var res = Start.ExtractMethods(input);
             //assert
+           // Assert();
         }
     }
 }

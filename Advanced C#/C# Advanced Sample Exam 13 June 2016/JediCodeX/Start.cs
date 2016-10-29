@@ -17,14 +17,14 @@
             for (int i = 0; i < n; i++)
             {
                 string inputLine = Console.ReadLine();
-                text.AppendLine(inputLine);
+                text.Append(inputLine);
             }
 
             string namePattern = Console.ReadLine();
             string messagePattern = Console.ReadLine();
 
-            Regex nameRegex = new Regex(Regex.Escape(namePattern) + @"([a-zA-Z]{" + namePattern.Length + @"})(?![a-zA-Z])");
-            Regex messageRegex = new Regex(Regex.Escape(messagePattern) + @"([a-zA-Z0-9]{" + messagePattern.Length + @"})(?![a-zA-Z0-9])");
+            Regex nameRegex = new Regex(Regex.Escape(namePattern) + @"([a-zA-Z]{" + namePattern.Length + @"})($|\W)");
+            Regex messageRegex = new Regex(Regex.Escape(messagePattern) + @"([a-zA-Z0-9]{" + messagePattern.Length + @"})($|\W)");
 
             List<string> jedis = new List<string>();
             List<string> messages = new List<string>();

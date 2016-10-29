@@ -48,7 +48,7 @@
         {
             bool isValidIndex = true;
 
-            if (index<0 || index > len )
+            if (index<0 || index >= len )
             {
                 isValidIndex = false;
             }

@@ -43,7 +43,7 @@
             }
         }
 
-        private static Dictionary<string, MethodInfo> ExtractMethods(List<string> input)
+        public static Dictionary<string, MethodInfo> ExtractMethods(List<string> input)
         {
             Dictionary<string, MethodInfo> methods = new Dictionary<string, MethodInfo>();
             string mainPattern = @"static\s+.*?\s+([a-zA-Z]*[A-Z]+[a-zA-Z]*)\s*\(";
