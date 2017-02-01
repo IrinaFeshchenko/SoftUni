@@ -1,7 +1,7 @@
 USE Gringotts
 GO
 
-SELECT FirstLetter 
+SELECT FirstLetter
 FROM(
 	SELECT LEFT(FirstName,1) AS FirstLetter
 	FROM WizzardDeposits
