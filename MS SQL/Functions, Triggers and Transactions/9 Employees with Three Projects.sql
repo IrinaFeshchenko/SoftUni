@@ -1,7 +1,7 @@
 USE SoftUni
 GO
 
-CREATE proc usp_AssignProject(@emloyeeId INT, @projectID INT)
+CREATE PROC usp_AssignProject(@emloyeeId INT, @projectID INT)
 AS
 	BEGIN TRANSACTION
 		INSERT INTO EmployeesProjects(EmployeeID, ProjectID)
