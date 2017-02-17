@@ -1,5 +1,3 @@
-begin tran
-
 create table CustomerReviews(
 ReviewID int primary key,
 ReviewContent varchar(255) not null,
@@ -14,5 +12,3 @@ AccountNumber varchar(10) not null,
 Balance decimal(10,2) not null,
 CustomerID int foreign key references Customers(CustomerID)
 )
-
-rollback
