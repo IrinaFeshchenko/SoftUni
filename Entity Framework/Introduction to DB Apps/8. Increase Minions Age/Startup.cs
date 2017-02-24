@@ -40,7 +40,16 @@
             SqlCommand command = new SqlCommand();
             string[] parameters = GetParameters(ids, command);
             command.Connection = connection;
-            command.CommandText = $"UPDATE Minions SET Name = UPPER(LEFT(Name,1))+LOWER(SUBSTRING(Name,2,LEN(Name))) WHERE Id in ({string.Join(", ", parameters)})";
+            command.CommandText = $@"
+UPDATE Minions 
+SET Name = UPPER(LEFT(Name,1)) +
+case
+when  (charindex(' ',Name) <2) then LOWER(SUBSTRING(Name,2,LEN(Name)))
+when  (charindex(' ',Name) >1) then LOWER(SUBSTRING(Name,2,charindex(' ',Name,2)-1)) +
+UPPER(SUBSTRING(Name,charindex(' ',Name,2)+1,1)) +
+LOWER(SUBSTRING(Name,charindex(' ',Name,2)+2,LEN(Name)))
+end
+where Id in ({string.Join(", ", parameters)})";
             command.ExecuteNonQuery();
         }
 
