@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Initial Setup", "Initial Setup\Initial Setup.csproj", "{E9375641-AF6E-44D8-B5F5-30B4E400CF1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Initial Setup", "Initial Setup\1. Initial Setup.csproj", "{E9375641-AF6E-44D8-B5F5-30B4E400CF1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Get Villains’ Names", "Get Villains’ Names\Get Villains’ Names.csproj", "{22360E16-F8B6-4DC3-8E4A-45A9D19A2B56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. Get Villains’ Names", "Get Villains’ Names\2. Get Villains’ Names.csproj", "{22360E16-F8B6-4DC3-8E4A-45A9D19A2B56}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. Get Minion Names", "3. Get Minion Names\3. Get Minion Names.csproj", "{BC91E659-EE53-4238-AB47-D6F903948CB6}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7. Print All Minion Names", "7. Print All Minion Names\7. Print All Minion Names.csproj", "{50D6D26B-3ACE-47DC-804B-02AB5B01226B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8. Increase Minions Age", "8. Increase Minions Age\8. Increase Minions Age.csproj", "{A0D1287E-1717-462A-A2A3-B76E137292AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9. Increase Age Stored Procedure", "9. Increase Age Stored Procedure\9. Increase Age Stored Procedure.csproj", "{2E85F890-1A72-44C8-980F-72CEF5263619}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{A0D1287E-1717-462A-A2A3-B76E137292AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0D1287E-1717-462A-A2A3-B76E137292AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0D1287E-1717-462A-A2A3-B76E137292AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E85F890-1A72-44C8-980F-72CEF5263619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E85F890-1A72-44C8-980F-72CEF5263619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E85F890-1A72-44C8-980F-72CEF5263619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E85F890-1A72-44C8-980F-72CEF5263619}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
