@@ -36,7 +36,8 @@ values
 ('Brunei'),
 ('Haiti'),
 ('Aruba'),
-('Grenada')
+('Grenada'),
+('Bulgaria')
 
 insert into Towns(Name, CountryId)
 values
@@ -54,7 +55,10 @@ values
 ('Cashero',4),
 ('Belmont',5),
 ('Grenville',5),
-('Tivoli',5)
+('Tivoli',5),
+('Sofia',6),
+('Varna',6),
+('Burgas',6)
 
 
 insert into Villains(Name, Evilness)
