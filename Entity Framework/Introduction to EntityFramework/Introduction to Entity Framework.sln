@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5. Employees from Seattle",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6. Add Address and Update Employee", "6. Add Address and Update Employee\6. Add Address and Update Employee.csproj", "{457DF6F8-F57F-4A6C-9D53-0AF3108C2F9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7. Find Employees in Period", "7. Find Employees in Period\7. Find Employees in Period.csproj", "{C74FB609-DC4D-4AEB-80E2-F27C875FAE52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8. Addresses by Town Name", "8. Addresses by Town Name\8. Addresses by Town Name.csproj", "{C7D84586-90DA-4526-BDF6-F3789688B73C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{457DF6F8-F57F-4A6C-9D53-0AF3108C2F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{457DF6F8-F57F-4A6C-9D53-0AF3108C2F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{457DF6F8-F57F-4A6C-9D53-0AF3108C2F9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C74FB609-DC4D-4AEB-80E2-F27C875FAE52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C74FB609-DC4D-4AEB-80E2-F27C875FAE52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C74FB609-DC4D-4AEB-80E2-F27C875FAE52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C74FB609-DC4D-4AEB-80E2-F27C875FAE52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7D84586-90DA-4526-BDF6-F3789688B73C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7D84586-90DA-4526-BDF6-F3789688B73C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7D84586-90DA-4526-BDF6-F3789688B73C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7D84586-90DA-4526-BDF6-F3789688B73C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
