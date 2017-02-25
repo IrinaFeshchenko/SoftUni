@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DD29FD9C-7407-4CB0-9BA8-7846FFA5006B}</ProjectGuid>
+    <ProjectGuid>{CC635119-EAAC-45F2-975C-0771E353F37B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_9.Employee_with_id_147</RootNamespace>
-    <AssemblyName>_9.Employee_with_id_147</AssemblyName>
+    <RootNamespace>_10.Departments_with_more_than_5_employees</RootNamespace>
+    <AssemblyName>_10.Departments_with_more_than_5_employees</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

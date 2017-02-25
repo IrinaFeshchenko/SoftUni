@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7. Find Employees in Period
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8. Addresses by Town Name", "8. Addresses by Town Name\8. Addresses by Town Name.csproj", "{C7D84586-90DA-4526-BDF6-F3789688B73C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9. Employee with id 147", "9. Employee with id 147\9. Employee with id 147.csproj", "{DD29FD9C-7407-4CB0-9BA8-7846FFA5006B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10. Departments with more than 5 employees", "10. Departments with more than 5 employees\10. Departments with more than 5 employees.csproj", "{CC635119-EAAC-45F2-975C-0771E353F37B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{C7D84586-90DA-4526-BDF6-F3789688B73C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7D84586-90DA-4526-BDF6-F3789688B73C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7D84586-90DA-4526-BDF6-F3789688B73C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD29FD9C-7407-4CB0-9BA8-7846FFA5006B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD29FD9C-7407-4CB0-9BA8-7846FFA5006B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD29FD9C-7407-4CB0-9BA8-7846FFA5006B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD29FD9C-7407-4CB0-9BA8-7846FFA5006B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC635119-EAAC-45F2-975C-0771E353F37B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC635119-EAAC-45F2-975C-0771E353F37B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC635119-EAAC-45F2-975C-0771E353F37B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC635119-EAAC-45F2-975C-0771E353F37B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
