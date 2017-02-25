@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9. Employee with id 147", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10. Departments with more than 5 employees", "10. Departments with more than 5 employees\10. Departments with more than 5 employees.csproj", "{CC635119-EAAC-45F2-975C-0771E353F37B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11. Find Latest 10 Projects", "11. Find Latest 10 Projects\11. Find Latest 10 Projects.csproj", "{FF680615-806C-4973-8B74-14A579377627}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{CC635119-EAAC-45F2-975C-0771E353F37B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC635119-EAAC-45F2-975C-0771E353F37B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC635119-EAAC-45F2-975C-0771E353F37B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF680615-806C-4973-8B74-14A579377627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF680615-806C-4973-8B74-14A579377627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF680615-806C-4973-8B74-14A579377627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF680615-806C-4973-8B74-14A579377627}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
