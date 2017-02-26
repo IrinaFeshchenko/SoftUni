@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14. First Letter", "14. Fir
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gringotts Database", "Gringotts Database\Gringotts Database.csproj", "{0013D632-19C4-4FB5-9C99-88746B475260}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15. Delete Project by Id", "15. Delete Project by Id\15. Delete Project by Id.csproj", "{D87044F4-8A16-4772-B855-7BD90AC47FBC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{0013D632-19C4-4FB5-9C99-88746B475260}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0013D632-19C4-4FB5-9C99-88746B475260}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0013D632-19C4-4FB5-9C99-88746B475260}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D87044F4-8A16-4772-B855-7BD90AC47FBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D87044F4-8A16-4772-B855-7BD90AC47FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D87044F4-8A16-4772-B855-7BD90AC47FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D87044F4-8A16-4772-B855-7BD90AC47FBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

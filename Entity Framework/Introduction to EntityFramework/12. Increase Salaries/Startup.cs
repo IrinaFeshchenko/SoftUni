@@ -18,9 +18,8 @@
                                                 e.Department.Name == "Information services");
             foreach (var e in emp)
             {
-                //e.Salary *= 1.12m;
-                //e.Salary *= 0.88m;
-                Console.WriteLine($"{e.FirstName} {e.LastName} ({e.Salary})");
+                e.Salary *= 1.12m;
+                Console.WriteLine($"{e.FirstName} {e.LastName} (${e.Salary:f6})");
             }
 
             context.SaveChanges();

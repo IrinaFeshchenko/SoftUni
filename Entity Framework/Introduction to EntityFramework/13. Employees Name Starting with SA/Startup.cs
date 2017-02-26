@@ -13,7 +13,7 @@
 
             foreach (var e in emp)
             {
-                Console.WriteLine($"{e.FirstName} {e.LastName} - {e.JobTitle} - ({e.Salary})");
+                Console.WriteLine($"{e.FirstName} {e.LastName} - {e.JobTitle} - (${e.Salary})");
             }
         }
     }
