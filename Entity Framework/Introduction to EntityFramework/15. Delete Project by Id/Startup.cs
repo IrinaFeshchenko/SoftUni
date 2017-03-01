@@ -12,9 +12,15 @@
         static void Main()
         {
             var context = new SoftUniContext();
-
             var prj = context.Projects.FirstOrDefault(p => p.ProjectID == 2);
-            // context.Projects.Remove(prj);
+            var employees = prj.Employees;
+            foreach (var e in employees)
+            {
+                e.Projects.Remove(prj);
+            }
+
+            context.Projects.Remove(prj);
+            context.SaveChanges();
             var pr = context.Projects.Take(10);
             foreach (var p in pr)
             {
