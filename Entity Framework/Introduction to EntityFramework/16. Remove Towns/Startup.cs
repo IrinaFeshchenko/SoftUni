@@ -32,6 +32,7 @@
             }
 
             context.Addresses.RemoveRange(addresses);
+            context.SaveChanges();
 
             if (count == 0)
             {
