@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. Students", "4. Students\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5. Planck Constant", "5. Planck Constant\5. Planck Constant.csproj", "{AF4F5B83-0795-486A-9E32-64322BE1BC16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6. Math Utilities", "6. Math Utilities\6. Math Utilities.csproj", "{B81C3C26-1BED-48F6-9D75-10A6E9A8AFC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{AF4F5B83-0795-486A-9E32-64322BE1BC16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF4F5B83-0795-486A-9E32-64322BE1BC16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF4F5B83-0795-486A-9E32-64322BE1BC16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B81C3C26-1BED-48F6-9D75-10A6E9A8AFC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B81C3C26-1BED-48F6-9D75-10A6E9A8AFC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B81C3C26-1BED-48F6-9D75-10A6E9A8AFC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B81C3C26-1BED-48F6-9D75-10A6E9A8AFC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
