@@ -7,8 +7,6 @@
     {
         static void Main()
         {
-            DateTime d = DateTime.ParseExact("01/01/1980", "dd/MM/yyyy", CultureInfo.InvariantCulture);
-
             Patient ivan = new Patient()
             {
                 FirstName = "Ivan",
