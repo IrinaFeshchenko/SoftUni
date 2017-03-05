@@ -17,9 +17,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6. Math Utilities", "6. Mat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7. Gringotts Database", "7. Gringotts Database\7. Gringotts Database.csproj", "{1720BE28-B5CB-4DBF-9898-34B16233F3B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8. Create User", "8. Create User\8. Create User.csproj", "{CC3F5A90-9B89-49D9-9720-BFF38A66E312}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8. Create Users", "8. Create User\8. Create Users.csproj", "{CC3F5A90-9B89-49D9-9720-BFF38A66E312}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9. Hospital Database", "9. Hospital Database\9. Hospital Database.csproj", "{BA2E148E-CE2F-45F9-AD92-64EDF7054EA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10. Hospital Database Modification", "10. Hospital Database Modification\10. Hospital Database Modification.csproj", "{EE495AED-8E83-4BC0-8BED-CC84055ED72D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11. Get Users by Email Provider", "11. Get Users by Email Provider\11. Get Users by Email Provider.csproj", "{CDFFF0E1-12D5-419A-A7A9-B00793D48020}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +67,14 @@ Global
 		{BA2E148E-CE2F-45F9-AD92-64EDF7054EA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA2E148E-CE2F-45F9-AD92-64EDF7054EA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA2E148E-CE2F-45F9-AD92-64EDF7054EA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE495AED-8E83-4BC0-8BED-CC84055ED72D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE495AED-8E83-4BC0-8BED-CC84055ED72D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE495AED-8E83-4BC0-8BED-CC84055ED72D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE495AED-8E83-4BC0-8BED-CC84055ED72D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDFFF0E1-12D5-419A-A7A9-B00793D48020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDFFF0E1-12D5-419A-A7A9-B00793D48020}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDFFF0E1-12D5-419A-A7A9-B00793D48020}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDFFF0E1-12D5-419A-A7A9-B00793D48020}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

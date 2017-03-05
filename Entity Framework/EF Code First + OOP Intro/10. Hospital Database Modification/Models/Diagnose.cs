@@ -1,4 +1,4 @@
-﻿namespace _9.Hospital_Database
+﻿namespace _10.Hospital_Database_Modification
 {
     using System.ComponentModel.DataAnnotations;
 

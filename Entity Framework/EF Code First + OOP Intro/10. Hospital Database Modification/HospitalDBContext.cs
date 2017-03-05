@@ -1,21 +1,21 @@
-namespace _9.Hospital_Database
+namespace _10.Hospital_Database_Modification
 {
     using System;
     using System.Data.Entity;
     using System.Linq;
 
-    public class HospitalDBcontext : DbContext
+    public class HospitalDBContext : DbContext
     {
-        // Your context has been configured to use a 'HospitalDBcontext' connection string from your application's 
+        // Your context has been configured to use a 'HospitalDBContext' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
-        // '_9.Hospital_Database.HospitalDBcontext' database on your LocalDb instance. 
+        // '_10.Hospital_Database_Modification.HospitalDBContext' database on your LocalDb instance. 
         // 
-        // If you wish to target a different database and/or database provider, modify the 'HospitalDBcontext' 
+        // If you wish to target a different database and/or database provider, modify the 'HospitalDBContext' 
         // connection string in the application configuration file.
-        public HospitalDBcontext()
-            : base("name=HospitalDBcontext")
+        public HospitalDBContext()
+            : base("name=HospitalDBContext")
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<HospitalDBcontext>());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<HospitalDBContext>());
         }
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 

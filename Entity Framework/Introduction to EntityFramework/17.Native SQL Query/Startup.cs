@@ -18,19 +18,21 @@
             timer.Start();
             PrintNamesWithLinq(context);
             timer.Stop();
-            Console.WriteLine($"Native: {timer.Elapsed}");
+            Console.WriteLine($"Linq: {timer.Elapsed}");
+            Console.WriteLine();
 
             timer.Restart();
-            PrintNamesWithLinq(context);
+            PrintNamesWithNativeQuery();
             timer.Stop();
-            Console.WriteLine($"Linq: {timer.Elapsed}");
+            Console.WriteLine($"Native: {timer.Elapsed}");
 
         }
 
         static void PrintNamesWithNativeQuery()
         {
             SqlConnection connection = new SqlConnection(@"data source=.\SQLEXPRESS;initial catalog=SoftUni;integrated security=True;MultipleActiveResultSets=True");
-            string query = @"select distinct e.FirstName
+            string query = @"
+select distinct e.FirstName
 from Employees e
 join EmployeesProjects ep on ep.EmployeeID = e.EmployeeID
 join Projects p on p.ProjectID = ep.ProjectID
@@ -46,7 +48,7 @@ order by e.FirstName";
                 {
                     while (reader.Read())
                     {
-                        Console.WriteLine(((string)reader["Name"]));
+                        Console.WriteLine(((string)reader["FirstName"]));
                     }
                 }
             }

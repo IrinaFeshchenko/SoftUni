@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("1. Define a class Person")]
+[assembly: AssemblyTitle("10. Hospital Database Modification")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("1. Define a class Person")]
+[assembly: AssemblyProduct("10. Hospital Database Modification")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("74e6f8ab-159e-44b3-aee6-1b00aad50cd9")]
+[assembly: Guid("ee495aed-8e83-4bc0-8bed-cc84055ed72d")]
 
 // Version information for an assembly consists of the following four values:
 //
