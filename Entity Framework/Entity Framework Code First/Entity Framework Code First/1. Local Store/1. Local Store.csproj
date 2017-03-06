@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7895FB2B-637E-4E68-ABC9-478A38B7A63E}</ProjectGuid>
+    <ProjectGuid>{3DC69BAB-716B-4409-88CE-24381E01E8DC}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_10.Hospital_Database_Modification</RootNamespace>
-    <AssemblyName>_10.Hospital_Database_Modification</AssemblyName>
+    <RootNamespace>_1.Local_Store</RootNamespace>
+    <AssemblyName>_1.Local_Store</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,28 +54,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HospitalDBContext.cs" />
-    <Compile Include="Migrations\201703060015278_InitialMigrations.cs" />
-    <Compile Include="Migrations\201703060015278_InitialMigrations.Designer.cs">
-      <DependentUpon>201703060015278_InitialMigrations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Diagnosis.cs" />
-    <Compile Include="Models\Doctor.cs" />
-    <Compile Include="Models\Medicament.cs" />
-    <Compile Include="Models\Patient.cs" />
-    <Compile Include="Models\Visitation.cs" />
+    <Compile Include="LocalStoreDBContext.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703060015278_InitialMigrations.resx">
-      <DependentUpon>201703060015278_InitialMigrations.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

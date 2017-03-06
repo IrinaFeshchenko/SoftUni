@@ -12,7 +12,7 @@
         public Patient()
         {
             Visitations = new HashSet<Visitation>();
-            Diagnoses = new HashSet<Diagnose>();
+            Diagnoses = new HashSet<Diagnosis>();
             Medicaments = new HashSet<Medicament>();
         }
 
@@ -43,10 +43,13 @@
         public virtual ICollection<Visitation> Visitations { get; set; }
         public virtual Visitation Visitation { get; set; }
 
-        public virtual ICollection<Diagnose> Diagnoses { get; set; }
-        public virtual Diagnose Diagnose { get; set; }
+        public virtual ICollection<Diagnosis> Diagnoses { get; set; }
+        public virtual Diagnosis Diagnose { get; set; }
 
         public virtual ICollection<Medicament> Medicaments { get; set; }
         public virtual Medicament Medicament { get; set; }
+
+        public int DoctorId { get; set; }
+        public virtual Doctor doctor { get; set; }
     }
 }

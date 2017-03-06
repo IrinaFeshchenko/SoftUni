@@ -20,5 +20,8 @@
 
         public virtual ICollection<Visitation> Visitations { get; set; }
         public virtual Visitation Visitation { get; set; }
+
+        public virtual ICollection<Patient> Patients { get; set; }
+        public virtual Patient Patient { get; set; }
     }
 }
