@@ -11,6 +11,9 @@
         public Customer(string name, string email, string credidCardNumber)
         {
             SalesForCustomer = new HashSet<Sale>();
+            this.Name = name;
+            this.Email = email;
+            this.CreditCardNumber = credidCardNumber;
         }
 
         public int Id { get; set; }
