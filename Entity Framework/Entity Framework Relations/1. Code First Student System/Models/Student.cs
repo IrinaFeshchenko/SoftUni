@@ -3,13 +3,13 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Data.Entity;
 
     public class Student
     {
         public Student()
         {
             Courses = new HashSet<Course>();
+            Homeworks = new HashSet<Homework>();
         }
 
         [Key]
@@ -26,5 +26,7 @@
         public DateTime Birthday { get; set; }
 
         public virtual ICollection<Course> Courses { get; set; }
+
+        public virtual ICollection<Homework> Homeworks { get; set; }
     }
 }

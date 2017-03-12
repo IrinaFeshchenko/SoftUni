@@ -2,6 +2,7 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public enum ResourceType
     {
@@ -24,5 +25,7 @@
 
         [Required]
         public string Url { get; set; }
+
+        public virtual Course Course { get; set; }
     }
 }

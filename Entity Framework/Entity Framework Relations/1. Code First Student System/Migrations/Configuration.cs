@@ -16,32 +16,40 @@ namespace _1.Code_First_Student_System.Migrations
 
         protected override void Seed(_1.Code_First_Student_System.StudentSystemContext context)
         {
+            if (context.Students.Any()||context.Cources.Any()||context.Homeworks.Any()|| context.Resources.Any())
+            {
+                return;
+            }
+
             // seed courses
             Course sql = new Course
             {
                 CourseName = "SQL",
-                StartDate = DateTime.Now,
-                EndDate = DateTime.Now.AddMonths(4),
-                Price = 100
+                Description = "procedures, triggers, transactions, views",
+                StartDate = DateTime.Now.AddMonths(-1),
+                EndDate = DateTime.Now.AddMonths(3),
+                Price = 100m
             };
 
             Course csharp = new Course
             {
                 CourseName = "C#",
-                StartDate = DateTime.Now,
-                EndDate = DateTime.Now.AddMonths(4),
-                Price = 200
+                Description = "interfaces, delegates, events",
+                StartDate = DateTime.Now.AddMonths(-1),
+                EndDate = DateTime.Now.AddMonths(3),
+                Price = 200m
             };
 
             Course js = new Course
             {
                 CourseName = "JS",
-                StartDate = DateTime.Now,
-                EndDate = DateTime.Now.AddMonths(4),
-                Price = 300
+                Description = "objects, prototypes, delegation",
+                StartDate = DateTime.Now.AddMonths(-1),
+                EndDate = DateTime.Now.AddMonths(3),
+                Price = 300m
             };
 
-            context.Cources.AddOrUpdate(sql, csharp, js);
+            context.Cources.AddOrUpdate( sql, csharp, js);
 
             // seed students
             Student aPeters = new Student
@@ -51,8 +59,6 @@ namespace _1.Code_First_Student_System.Migrations
                 Birthday = DateTime.Now.AddYears(-26),
                 Courses = new []{ sql, csharp }
             };
-            sql.Students.Add(aPeters);
-            csharp.Students.Add(aPeters);
 
             Student bLambson = new Student 
             {
@@ -61,7 +67,6 @@ namespace _1.Code_First_Student_System.Migrations
                 Birthday = DateTime.Now.AddYears(-34),
                 Courses = new[] { csharp }
             };
-            csharp.Students.Add(bLambson);
 
             Student rMiller = new Student
             {
@@ -70,10 +75,8 @@ namespace _1.Code_First_Student_System.Migrations
                 Birthday = DateTime.Now.AddYears(-18),
                 Courses = new[] { csharp , js}
             };
-            csharp.Students.Add(rMiller);
-            js.Students.Add(rMiller);
 
-            context.Students.AddOrUpdate(aPeters, bLambson, rMiller);
+            context.Students.AddOrUpdate( aPeters, bLambson, rMiller);
 
             //seed Homework
             Homework aPetersHomeworkCS = new Homework
@@ -83,7 +86,6 @@ namespace _1.Code_First_Student_System.Migrations
                 SubmissionDate = DateTime.Now,
                 Student = aPeters
             };
-            csharp.Homeworks.Add(aPetersHomeworkCS);
 
             Homework aPetersHomeworkSQL = new Homework
             {
@@ -92,7 +94,6 @@ namespace _1.Code_First_Student_System.Migrations
                 SubmissionDate = DateTime.Now,
                 Student = aPeters
             };
-            sql.Homeworks.Add(aPetersHomeworkSQL);
 
             Homework bLambsonHomeworkCS = new Homework
             {
@@ -101,7 +102,6 @@ namespace _1.Code_First_Student_System.Migrations
                 SubmissionDate = DateTime.Now,
                 Student = bLambson
             };
-            csharp.Homeworks.Add(bLambsonHomeworkCS);
 
             Homework rMillerHomeworkCS = new Homework
             {
@@ -110,7 +110,6 @@ namespace _1.Code_First_Student_System.Migrations
                 SubmissionDate = DateTime.Now,
                 Student = rMiller
             };
-            csharp.Homeworks.Add(rMillerHomeworkCS);
 
             Homework rMillerHomeworkJS = new Homework
             {
@@ -119,7 +118,6 @@ namespace _1.Code_First_Student_System.Migrations
                 SubmissionDate = DateTime.Now,
                 Student = rMiller
             };
-            js.Homeworks.Add(rMillerHomeworkJS);
 
             context.Homeworks.AddOrUpdate(aPetersHomeworkCS, aPetersHomeworkSQL, bLambsonHomeworkCS, rMillerHomeworkCS, rMillerHomeworkJS);
 
@@ -128,53 +126,51 @@ namespace _1.Code_First_Student_System.Migrations
             {
                 Name = "c# Presentation",
                 ResourceType = ResourceType.presentation,
-                Url = "www.uni.com/csharp"
+                Url = "www.uni.com/csharp",
+                Course = csharp
             };
-            sql.Resources.Add(csharpPresentation);
 
             Resource csharpLecture = new Resource()
             {
                 Name = "c# Lecture",
                 ResourceType = ResourceType.video,
-                Url = "www.uni.com/csharp"
+                Url = "www.uni.com/csharp",
+                Course = csharp
             };
-            sql.Resources.Add(csharpLecture);
 
             Resource sqlPresentation = new Resource()
             {
                 Name = "sql Presentation",
                 ResourceType = ResourceType.presentation,
-                Url = "www.uni.com/sql"
+                Url = "www.uni.com/sql",
+                Course = sql
             };
-            sql.Resources.Add(sqlPresentation);
 
             Resource sqlLecture = new Resource()
             {
                 Name = "sql Lecture",
                 ResourceType = ResourceType.video,
-                Url = "www.uni.com/sql"
+                Url = "www.uni.com/sql",
+                Course = sql
             };
-            sql.Resources.Add(sqlLecture);
 
             Resource jsPresentation = new Resource()
             {
                 Name = "js Presentation",
                 ResourceType = ResourceType.presentation,
-                Url = "www.uni.com/js"
+                Url = "www.uni.com/js",
+                Course = js
             };
-            sql.Resources.Add(jsPresentation);
 
             Resource jsLecture = new Resource()
             {
                 Name = "js Lecture",
                 ResourceType = ResourceType.video,
-                Url = "www.uni.com/js"
+                Url = "www.uni.com/js",
+                Course = js
             };
-            sql.Resources.Add(jsLecture);
 
-            context.Resources.AddOrUpdate(csharpPresentation, csharpLecture, sqlPresentation, sqlLecture, jsPresentation, jsLecture);
-
-            context.SaveChanges();
+            context.Resources.AddOrUpdate( csharpPresentation, csharpLecture, sqlPresentation, sqlLecture, jsPresentation, jsLecture);
         }
     }
 }
