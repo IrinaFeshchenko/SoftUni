@@ -80,6 +80,10 @@
     <Compile Include="Migrations\201703121410152_addIdd.Designer.cs">
       <DependentUpon>201703121410152_addIdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703121432528_AddOwnersToAlbums.cs" />
+    <Compile Include="Migrations\201703121432528_AddOwnersToAlbums.Designer.cs">
+      <DependentUpon>201703121432528_AddOwnersToAlbums.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Photographer.cs" />
@@ -111,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703121410152_addIdd.resx">
       <DependentUpon>201703121410152_addIdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703121432528_AddOwnersToAlbums.resx">
+      <DependentUpon>201703121432528_AddOwnersToAlbums.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

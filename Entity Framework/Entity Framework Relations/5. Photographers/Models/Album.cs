@@ -8,6 +8,7 @@
         {
             Pictures = new HashSet<Picture>();
             Tags = new HashSet<Tag>();
+            Photographers = new HashSet<Photographer>();
         }
 
         public int Id { get; set; }
@@ -18,7 +19,7 @@
 
         public bool IsPublic { get; set; }
 
-        public virtual Photographer Owner { get; set; }
+        public virtual ICollection<Photographer> Photographers { get; set; }
 
         public virtual ICollection<Picture> Pictures { get; set; }
 

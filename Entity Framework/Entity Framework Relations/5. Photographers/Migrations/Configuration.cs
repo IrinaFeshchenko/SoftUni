@@ -49,7 +49,7 @@ namespace _5.Photographers.Migrations
                 Name = "Vitosha",
                 BackgroundColor = "Black",
                 IsPublic = true,
-                Owner = teo
+                Photographers = new[] { teo ,jim}
             };
 
             context.Albums.AddOrUpdate(a => a.Name, vitosha);
