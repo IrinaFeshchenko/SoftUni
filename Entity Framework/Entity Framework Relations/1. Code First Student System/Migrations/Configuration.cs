@@ -108,7 +108,7 @@ namespace _1.Code_First_Student_System.Migrations
                 Content = "c# homework",
                 ContentType = ContentType.application,
                 SubmissionDate = DateTime.Now,
-                Student = aPeters
+                Student = aPeters,
             };
 
             Homework aPetersHomeworkSQL = new Homework

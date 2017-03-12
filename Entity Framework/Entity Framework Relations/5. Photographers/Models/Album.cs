@@ -7,6 +7,7 @@
         public Album()
         {
             Pictures = new HashSet<Picture>();
+            Tags = new HashSet<Tag>();
         }
 
         public int Id { get; set; }
@@ -19,8 +20,8 @@
 
         public virtual Photographer Owner { get; set; }
 
-        public int OwnerId { get; set; }
-
         public virtual ICollection<Picture> Pictures { get; set; }
+
+        public ICollection<Tag> Tags { get; set; }
     }
 }

@@ -62,6 +62,18 @@
     <Compile Include="Migrations\201703120137160_addLicenses.Designer.cs">
       <DependentUpon>201703120137160_addLicenses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703121242217_addIds.cs" />
+    <Compile Include="Migrations\201703121242217_addIds.Designer.cs">
+      <DependentUpon>201703121242217_addIds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703121242371_addIdss.cs" />
+    <Compile Include="Migrations\201703121242371_addIdss.Designer.cs">
+      <DependentUpon>201703121242371_addIdss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703121243364_addIdsss.cs" />
+    <Compile Include="Migrations\201703121243364_addIdsss.Designer.cs">
+      <DependentUpon>201703121243364_addIdsss.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Homework.cs" />
@@ -82,6 +94,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703120137160_addLicenses.resx">
       <DependentUpon>201703120137160_addLicenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703121242217_addIds.resx">
+      <DependentUpon>201703121242217_addIds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703121242371_addIdss.resx">
+      <DependentUpon>201703121242371_addIdss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703121243364_addIdsss.resx">
+      <DependentUpon>201703121243364_addIdsss.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -54,21 +54,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\TagAttribute.cs" />
     <Compile Include="Data\PhotographerContext.cs" />
     <Compile Include="Migrations\201703120331004_initial.cs" />
     <Compile Include="Migrations\201703120331004_initial.Designer.cs">
       <DependentUpon>201703120331004_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703120404021_albumsAndPictures.cs" />
-    <Compile Include="Migrations\201703120404021_albumsAndPictures.Designer.cs">
-      <DependentUpon>201703120404021_albumsAndPictures.cs</DependentUpon>
+    <Compile Include="Migrations\201703120445148_albumsAndPictures.cs" />
+    <Compile Include="Migrations\201703120445148_albumsAndPictures.Designer.cs">
+      <DependentUpon>201703120445148_albumsAndPictures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703120448284_albumsAndPictures1.cs" />
+    <Compile Include="Migrations\201703120448284_albumsAndPictures1.Designer.cs">
+      <DependentUpon>201703120448284_albumsAndPictures1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703120458360_addTags.cs" />
+    <Compile Include="Migrations\201703120458360_addTags.Designer.cs">
+      <DependentUpon>201703120458360_addTags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703121211114_addId.cs" />
+    <Compile Include="Migrations\201703121211114_addId.Designer.cs">
+      <DependentUpon>201703121211114_addId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703121410152_addIdd.cs" />
+    <Compile Include="Migrations\201703121410152_addIdd.Designer.cs">
+      <DependentUpon>201703121410152_addIdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Photographer.cs" />
     <Compile Include="Models\Picture.cs" />
+    <Compile Include="Models\Tag.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TagTransformer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -78,8 +97,20 @@
     <EmbeddedResource Include="Migrations\201703120331004_initial.resx">
       <DependentUpon>201703120331004_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703120404021_albumsAndPictures.resx">
-      <DependentUpon>201703120404021_albumsAndPictures.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120445148_albumsAndPictures.resx">
+      <DependentUpon>201703120445148_albumsAndPictures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703120448284_albumsAndPictures1.resx">
+      <DependentUpon>201703120448284_albumsAndPictures1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703120458360_addTags.resx">
+      <DependentUpon>201703120458360_addTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703121211114_addId.resx">
+      <DependentUpon>201703121211114_addId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703121410152_addIdd.resx">
+      <DependentUpon>201703121410152_addIdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -24,9 +24,16 @@ namespace _5.Photographers.Migrations
                 RegistereDate = DateTime.Now.AddDays(-20)
             };
 
-            context.Photographers.AddOrUpdate(p=>p.Username,teo);
+            Photographer jim = new Photographer
+            {
+                Username = "jim",
+                Password = "lkljklj",
+                Email = "jim@softuni.bg",
+                BirthDate = DateTime.Now,
+                RegistereDate = DateTime.Now.AddDays(-20)
+            };
 
-            context.SaveChanges();
+            context.Photographers.AddOrUpdate(p=>p.Username,teo,jim);
 
             var demoPicture = new Picture()
             {
@@ -42,12 +49,20 @@ namespace _5.Photographers.Migrations
                 Name = "Vitosha",
                 BackgroundColor = "Black",
                 IsPublic = true,
-                OwnerId = teo.Id
+                Owner = teo
             };
 
             context.Albums.AddOrUpdate(a => a.Name, vitosha);
 
             vitosha.Pictures.Add(demoPicture);
+
+            var mountainTag = new Tag()
+            {
+                Label = "#mountain"
+            };
+
+            context.Tags.AddOrUpdate(t => t.Label, mountainTag);
+            mountainTag.Albums.Add(vitosha);
             context.SaveChanges();
         }
     }
