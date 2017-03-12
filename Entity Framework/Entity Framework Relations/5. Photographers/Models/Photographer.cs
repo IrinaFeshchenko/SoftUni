@@ -8,7 +8,7 @@
     {
         public Photographer()
         {
-            Albums = new HashSet<Album>();
+            Albums = new HashSet<PhotographerAlbum>();
         }
 
         public int Id { get; set; }
@@ -23,6 +23,6 @@
 
         public DateTime BirthDate { get; set; }
 
-        public virtual ICollection<Album> Albums { get; set; }
+        public virtual ICollection<PhotographerAlbum> Albums { get; set; }
     }
 }

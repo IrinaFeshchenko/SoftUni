@@ -41,7 +41,6 @@ namespace _5.Photographers.Migrations
                 Caption = "Demo",
                 FileSystemPath = "../images/demo.png"
             };
-
             context.Pictures.AddOrUpdate(p=>p.Title, demoPicture);
 
             var vitosha = new Album()
@@ -49,12 +48,19 @@ namespace _5.Photographers.Migrations
                 Name = "Vitosha",
                 BackgroundColor = "Black",
                 IsPublic = true,
-                Photographers = new[] { teo ,jim}
             };
-
             context.Albums.AddOrUpdate(a => a.Name, vitosha);
-
             vitosha.Pictures.Add(demoPicture);
+            context.SaveChanges();
+
+            PhotographerAlbum ph = new PhotographerAlbum()
+            {
+                Photographer_Id = teo.Id,
+                Album_Id = vitosha.Id,
+                Role = Role.Viewer
+            };
+            vitosha.Photographers.Add(ph);
+            context.PhotographerAlbums.Add(ph);
 
             var mountainTag = new Tag()
             {

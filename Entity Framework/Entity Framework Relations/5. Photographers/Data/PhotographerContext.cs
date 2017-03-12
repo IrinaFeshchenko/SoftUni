@@ -18,6 +18,6 @@ namespace _5.Photographers.Data
         public virtual DbSet<Album> Albums { get; set; }
         public virtual DbSet<Picture> Pictures { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
-
+        public virtual DbSet<PhotographerAlbum> PhotographerAlbums { get; set; }
     }
 }

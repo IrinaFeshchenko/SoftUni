@@ -84,9 +84,18 @@
     <Compile Include="Migrations\201703121432528_AddOwnersToAlbums.Designer.cs">
       <DependentUpon>201703121432528_AddOwnersToAlbums.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703121448345_AddRoles.cs" />
+    <Compile Include="Migrations\201703121448345_AddRoles.Designer.cs">
+      <DependentUpon>201703121448345_AddRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703121511000_AddMany.cs" />
+    <Compile Include="Migrations\201703121511000_AddMany.Designer.cs">
+      <DependentUpon>201703121511000_AddMany.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Photographer.cs" />
+    <Compile Include="Models\PhotographerAlbum.cs" />
     <Compile Include="Models\Picture.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Startup.cs" />
@@ -118,6 +127,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703121432528_AddOwnersToAlbums.resx">
       <DependentUpon>201703121432528_AddOwnersToAlbums.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703121448345_AddRoles.resx">
+      <DependentUpon>201703121448345_AddRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703121511000_AddMany.resx">
+      <DependentUpon>201703121511000_AddMany.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
