@@ -16,7 +16,31 @@ namespace _1.Code_First_Student_System.Migrations
 
         protected override void Seed(_1.Code_First_Student_System.StudentSystemContext context)
         {
-            if (context.Students.Any()||context.Cources.Any()||context.Homeworks.Any()|| context.Resources.Any())
+            InitialSeed(context);
+            SeedLicenses(context);
+        }
+
+        private void SeedLicenses(StudentSystemContext context)
+        {
+            if (context.Licenses.Any())
+            {
+                return;
+            }
+
+            var resources = context.Resources.ToList();
+
+            foreach (var resource in resources)
+            {
+                resource.Licenses.Add(new License { Name = $"{resource.Name} Media License ", Resource = resource });
+                resource.Licenses.Add(new License { Name = $"{resource.Name} Documents License ", Resource = resource });
+            }
+
+            context.SaveChanges();
+        }
+
+        private void InitialSeed(StudentSystemContext context)
+        {
+            if (context.Students.Any() || context.Cources.Any() || context.Homeworks.Any() || context.Resources.Any())
             {
                 return;
             }
@@ -49,7 +73,7 @@ namespace _1.Code_First_Student_System.Migrations
                 Price = 300m
             };
 
-            context.Cources.AddOrUpdate( sql, csharp, js);
+            context.Cources.AddOrUpdate(sql, csharp, js);
 
             // seed students
             Student aPeters = new Student
@@ -57,10 +81,10 @@ namespace _1.Code_First_Student_System.Migrations
                 Name = "Andrew Peters",
                 RegisteredOn = DateTime.Now,
                 Birthday = DateTime.Now.AddYears(-26),
-                Courses = new []{ sql, csharp }
+                Courses = new[] { sql, csharp }
             };
 
-            Student bLambson = new Student 
+            Student bLambson = new Student
             {
                 Name = "Brice Lambson",
                 RegisteredOn = DateTime.Now,
@@ -73,10 +97,10 @@ namespace _1.Code_First_Student_System.Migrations
                 Name = "Rowan Miller",
                 RegisteredOn = DateTime.Now,
                 Birthday = DateTime.Now.AddYears(-18),
-                Courses = new[] { csharp , js}
+                Courses = new[] { csharp, js }
             };
 
-            context.Students.AddOrUpdate( aPeters, bLambson, rMiller);
+            context.Students.AddOrUpdate(aPeters, bLambson, rMiller);
 
             //seed Homework
             Homework aPetersHomeworkCS = new Homework
@@ -170,7 +194,7 @@ namespace _1.Code_First_Student_System.Migrations
                 Course = js
             };
 
-            context.Resources.AddOrUpdate( csharpPresentation, csharpLecture, sqlPresentation, sqlLecture, jsPresentation, jsLecture);
+            context.Resources.AddOrUpdate(csharpPresentation, csharpLecture, sqlPresentation, sqlLecture, jsPresentation, jsLecture);
         }
     }
 }

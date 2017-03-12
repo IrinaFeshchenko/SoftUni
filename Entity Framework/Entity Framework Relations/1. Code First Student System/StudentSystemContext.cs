@@ -22,5 +22,6 @@ namespace _1.Code_First_Student_System
 
         public virtual DbSet<Resource> Resources { get; set; }
 
+        public virtual DbSet<License> Licenses { get; set; }
     }
 }

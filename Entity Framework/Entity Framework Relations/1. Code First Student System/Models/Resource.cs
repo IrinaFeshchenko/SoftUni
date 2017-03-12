@@ -1,8 +1,7 @@
 ﻿namespace _1.Code_First_Student_System.Models
 {
-    using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
 
     public enum ResourceType
     {
@@ -14,6 +13,11 @@
 
     public class Resource
     {
+        public Resource()
+        {
+            Licenses = new HashSet<License>();
+        }
+
         [Key]
         public int Id { get; set; }
 
@@ -27,5 +31,7 @@
         public string Url { get; set; }
 
         public virtual Course Course { get; set; }
+
+        public virtual ICollection<License> Licenses { get; set; }
     }
 }
