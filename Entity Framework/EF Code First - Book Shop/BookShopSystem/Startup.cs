@@ -1,7 +1,7 @@
 ﻿namespace BookShopSystem
 {
     using Data;
-    using BookShopSystem.Migrations;
+    using Migrations;
     using System;
     using System.Data.Entity;
     using System.Linq;
