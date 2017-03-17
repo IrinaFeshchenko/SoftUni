@@ -1,9 +1,7 @@
-namespace _1.Books_Titles_by_Age_Restriction
+namespace BookShopDB.Data
 {
-    using System;
+    using Models;
     using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
 
     public partial class BookShopDBContext : DbContext
     {

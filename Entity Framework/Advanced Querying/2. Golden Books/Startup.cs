@@ -1,7 +1,7 @@
 ﻿
 namespace _2.Golden_Books
 {
-    using _1.Books_Titles_by_Age_Restriction;
+    using BookShopDB.Data;
     using System;
     using System.Linq;
 
@@ -25,6 +25,7 @@ namespace _2.Golden_Books
                                 .Where(b => b.EditionType == (int)EditionType.Gold && b.Copies < 5000)
                                 .OrderBy(b => b.Id)
                                 .Select(b => b.Title)
+                                .Where(:id")
                                 .ToList();
 
             foreach (var title in goldenBooksTitles)

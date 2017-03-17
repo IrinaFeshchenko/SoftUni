@@ -1,4 +1,4 @@
-namespace _1.Books_Titles_by_Age_Restriction
+namespace BookShopDB.Models
 {
     using System;
     using System.Collections.Generic;
