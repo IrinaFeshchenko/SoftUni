@@ -25,7 +25,6 @@ namespace _2.Golden_Books
                                 .Where(b => b.EditionType == (int)EditionType.Gold && b.Copies < 5000)
                                 .OrderBy(b => b.Id)
                                 .Select(b => b.Title)
-                                .Where(:id")
                                 .ToList();
 
             foreach (var title in goldenBooksTitles)

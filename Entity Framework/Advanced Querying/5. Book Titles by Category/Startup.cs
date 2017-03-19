@@ -15,7 +15,7 @@ namespace _5.Book_Titles_by_Category
             Console.WriteLine("Enter book categories:");
             var categories = Console.ReadLine().ToLower().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
 
-            var books = ctx.Books.Where(b => (b.Categories.Select(c=>c.Name.ToLower()).Intersect(categories)).Count()>0);
+            var books = ctx.Books.AsNoTracking().Where(b => (b.Categories.Select(c=>c.Name.ToLower()).Intersect(categories)).Count()>0);
 
             foreach (var book in books)
             {
