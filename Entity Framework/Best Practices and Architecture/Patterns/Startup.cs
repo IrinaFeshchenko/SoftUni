@@ -11,6 +11,7 @@ namespace Patterns
         {
             //RunServices();
 
+            var parser = new CommandParser();
             MyData data = new MyData()
             {
                 MyNumber = 5,
@@ -19,16 +20,13 @@ namespace Patterns
 
             while (true)
             {
-                RunCommands(data);
+                RunCommands(parser,data);
             }
         }
 
-        static void RunCommands(MyData data)
-        {
-
-
-            var parser = new CommandParser();
-            Console.WriteLine("Entercommand (greet,bye,exit,increase,print):");
+        static void RunCommands(CommandParser parser, MyData data)
+        {         
+            Console.WriteLine("Entercommand (greet,bye,exit,increase,print,report):");
             var cmd = parser.Parse(Console.ReadLine(),data);
 
             cmd.Execute();

@@ -52,6 +52,7 @@
     <Compile Include="Commands\NotFoundCommand.cs" />
     <Compile Include="Commands\PrintByeCommand.cs" />
     <Compile Include="Commands\PrintGreetingCommand.cs" />
+    <Compile Include="Commands\PrintNumberCommand.cs" />
     <Compile Include="Commands\PrintStringCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Authenticator.cs" />

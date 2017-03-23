@@ -11,7 +11,7 @@ namespace Patterns.Commands
 
         public override Command Create(MyData data)
         {
-            return new PrintByeCommand(data);
+            return new PrintStringCommand(data);
         }
 
         public override void Execute()

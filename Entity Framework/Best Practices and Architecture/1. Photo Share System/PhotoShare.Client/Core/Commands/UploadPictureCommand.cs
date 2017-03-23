@@ -2,10 +2,10 @@
 {
     using System;
 
-    public class UploadPictureCommand
+    public class UploadPictureCommand : Command
     {
         // UploadPicture <albumName> <pictureTitle> <pictureFilePath>
-        public string Execute(string[] data)
+        public override string Execute(string[] data)
         {
             throw new NotImplementedException();
         }

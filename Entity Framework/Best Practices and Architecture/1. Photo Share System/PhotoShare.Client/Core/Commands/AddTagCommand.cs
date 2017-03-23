@@ -1,25 +1,23 @@
 ﻿namespace PhotoShare.Client.Core.Commands
 {
-    using Models;
-
     using Utilities;
 
-    public class AddTagCommand
+    public class AddTagCommand: Command
     {
         // AddTag <tag>
-        public string Execute(string[] data)
+        public override string Execute(string[] data)
         {
             string tag = data[1].ValidateOrTransform();
 
-            using (PhotoShareContext context = new PhotoShareContext())
-            {
-                context.Tags.Add(new Tag
-                {
-                    Name = tag
-                });
+            //using (PhotoShareContext context = new PhotoShareContext())
+            //{
+            //    context.Tags.Add(new Tag
+            //    {
+            //        Name = tag
+            //    });
 
-                context.SaveChanges();
-            }
+            //    context.SaveChanges();
+            //}
 
             return tag + " was added successfully to database!";
         }

@@ -2,10 +2,10 @@
 {
     using System;
 
-    public class AddTagToCommand 
+    public class AddTagToCommand : Command
     {
         // AddTagTo <albumName> <tag>
-        public string Execute()
+        public override string Execute(string[] data)
         {
             throw new NotImplementedException();
         }

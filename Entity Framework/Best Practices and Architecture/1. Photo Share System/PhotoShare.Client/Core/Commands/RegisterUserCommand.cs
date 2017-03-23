@@ -1,41 +1,36 @@
 ﻿namespace PhotoShare.Client.Core.Commands
 {
     using System;
+    using Services;
 
-    using Models;
-
-    public class RegisterUserCommand
+    public class RegisterUserCommand : Command
     {
+        private UserService userService;
+        public RegisterUserCommand(UserService userService)
+        {
+            this.userService = userService;
+        }
         // RegisterUser <username> <password> <repeat-password> <email>
-        public string Execute(string[] data)
+        public override string Execute(string[] data)
         {
             string username = data[0];
             string password = data[1];
             string repeatPassword = data[2];
             string email = data[3];
 
-            if (password == repeatPassword)
+            if (this.userService.IsUserExisting(username))
+            {
+                throw new InvalidOperationException($"Username {username} is already taken!");
+            }
+
+            if (password != repeatPassword)
             {
                 throw new ArgumentException("Passwords do not match!");
             }
 
-            User user = new User
-            {
-                Username = username,
-                Password = password,
-                Email = email,
-                IsDeleted = false,
-                RegisteredOn = DateTime.Now,
-                LastTimeLoggedIn = DateTime.Now
-            };
+            this.userService.RegisterUser(username, password, email);
 
-            using (PhotoShareContext context = new PhotoShareContext())
-            {
-                context.Users.Add(user);
-                context.SaveChanges();
-            }
-
-            return "User " + user.Username + " was registered successfully!";
+            return "User " + username + " was registered successfully!";
         }
     }
 }

@@ -8,7 +8,7 @@
 
         public CommandParser()
         {
-            this.Initialize(null);
+           this.Initialize();
         }
 
         public Command Parse(string commandAsString, MyData data)
@@ -23,14 +23,16 @@
             }
         }
 
-        private void Initialize(MyData data)
+        private void Initialize()
         {
             commands = new Dictionary<string, Command>();
-            commands.Add("bye",new PrintByeCommand(data));
-            commands.Add("greet", new PrintGreetingCommand(data));
-            commands.Add("exit", new ExitCommand(data));
-            commands.Add("increase", new IncreaseNumberCommand(data));
-            commands.Add("print", new PrintStringCommand(data));
+            commands.Add("bye",new PrintByeCommand(null));
+            commands.Add("greet", new PrintGreetingCommand(null));
+            commands.Add("exit", new ExitCommand(null));
+            commands.Add("increase", new IncreaseNumberCommand(null));
+            commands.Add("print", new PrintStringCommand(null));
+            commands.Add("report", new PrintNumberCommand(null));
+
         }
     }
 }
