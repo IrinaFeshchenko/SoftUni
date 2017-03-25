@@ -1,4 +1,4 @@
-﻿namespace _2.Advanced_Mapping
+﻿namespace _3.Projection.Dtos
 {
     public class EmployeeDto
     {
@@ -8,9 +8,11 @@
 
         public decimal Salary { get; set; }
 
+        public string ManagerLastName { get; set; }
+
         public override string ToString()
         {
-            return $"  - {this.FirstName} {this.LastName} {this.Salary}";
+            return $"{this.FirstName} {this.LastName} Manager: {this.ManagerLastName??"[no manager]"}";
         }
     }
 }
