@@ -7,6 +7,7 @@ namespace PhotoShare.Client.Core.Commands
     public class AddTownCommand : Command
     {
         private TownService townService;
+
         public AddTownCommand(TownService townService)
         {
             this.townService = townService;
@@ -14,8 +15,8 @@ namespace PhotoShare.Client.Core.Commands
         // AddTown <townName> <countryName>
         public override string Execute(string[] data)
         {
-            string townName = data[1];
-            string country = data[0];
+            string townName = data[0];
+            string country = data[1];
 
             if (this.townService.IsTownExisting(townName))
             {

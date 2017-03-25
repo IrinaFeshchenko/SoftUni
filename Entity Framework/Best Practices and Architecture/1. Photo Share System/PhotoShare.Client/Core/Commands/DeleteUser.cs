@@ -1,28 +1,36 @@
 ﻿namespace PhotoShare.Client.Core.Commands
 {
+    using Models;
+    using Services;
     using System;
     using System.Linq;
 
     public class DeleteUser : Command
     {
+        private UserService userService;
+
+        public DeleteUser(UserService userService)
+        {
+            this.userService = userService;
+        }
         // DeleteUser <username>
         public override string Execute(string[] data)
         {
-            string username = data[1];
-            //using (PhotoShareContext context = new PhotoShareContext())
-            //{
-            //    var user = context.Users.FirstOrDefault(u => u.Username == username);
-            //    if (user == null)
-            //    {
-            //        throw new InvalidOperationException($"User with {username} was not found!");
-            //    }
+            string username = data[0];
 
-            //    // TODO: Delete User by username (only mark him as inactive)
-            //    context.SaveChanges();
+            if (!this.userService.IsUserExisting(username))
+            {
+                throw new InvalidOperationException($"User with {username} was not found!");
+            }
 
-            //    return $"User {username} was deleted from the database!";
-            //}
-            return null;
+            if (this.userService.IsUserDeleted(username))
+            {
+                throw new InvalidOperationException($"User {username} is already deleted!");
+            }
+
+            User user = this.userService.GetUserByUsername(username);
+            userService.DeleteUser(user);
+            return $"User {username} was deleted from the database!";
         }
     }
 }
