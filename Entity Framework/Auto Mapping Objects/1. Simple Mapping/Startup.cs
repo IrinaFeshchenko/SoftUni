@@ -22,9 +22,7 @@ namespace _1.Simple_Mapping
 
             var employeeDto = Mapper.Map<EmployeeDto>(employee);
 
-            Console.WriteLine(employeeDto.FirstName);
-            Console.WriteLine(employeeDto.LastName);
-            Console.WriteLine(employeeDto.Salary);
+            Console.WriteLine($"{employee.FirstName} - {employee.LastName} - {employee.Salary}");
         }
     }
 }

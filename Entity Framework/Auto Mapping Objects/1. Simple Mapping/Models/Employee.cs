@@ -3,7 +3,7 @@ namespace _1.Simple_Mapping
 {
     using System;
 
-    class Employee
+    public class Employee
     {
         public string FirstName { get; set; }
 
@@ -11,7 +11,7 @@ namespace _1.Simple_Mapping
 
         public decimal Salary { get; set; }
 
-        public DateTime Birthdate { get; set; }
+        public DateTime? Birthdate { get; set; }
 
         public string Address { get; set; }
     }

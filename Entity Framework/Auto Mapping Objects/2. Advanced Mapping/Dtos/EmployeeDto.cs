@@ -1,4 +1,4 @@
-﻿namespace _1.Simple_Mapping
+﻿namespace _2.Advanced_Mapping
 {
     class EmployeeDto
     {
@@ -8,5 +8,9 @@
 
         public decimal Salary { get; set; }
 
+        public override string ToString()
+        {
+            return $"  - {this.FirstName} {this.LastName} {this.Salary}";
+        }
     }
 }
