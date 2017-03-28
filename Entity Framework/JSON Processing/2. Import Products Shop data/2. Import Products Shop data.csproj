@@ -62,12 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="jsons\cars.json" />
     <None Include="jsons\categories.json" />
-    <None Include="jsons\customers.json" />
-    <None Include="jsons\parts.json" />
     <None Include="jsons\products.json" />
-    <None Include="jsons\suppliers.json" />
     <None Include="jsons\users.json" />
     <None Include="packages.config" />
   </ItemGroup>

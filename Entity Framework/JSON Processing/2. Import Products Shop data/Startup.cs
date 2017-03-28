@@ -46,8 +46,9 @@
 
                 if (num % 3 != 0)
                 {
-                    p.BuyerId = (num++ * 2 % usersCount) + 1;
+                    p.BuyerId = (num * 2 % usersCount) + 1;
                 }
+                num++;
             }
 
             context.Products.AddRange(products);
