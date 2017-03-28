@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C1A2351E-C749-40EB-B236-59339E143CE0}</ProjectGuid>
+    <ProjectGuid>{5D02F838-3B39-4DFB-8F79-F03A21BD3726}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_4.Car_Dealer</RootNamespace>
-    <AssemblyName>_4.Car_Dealer</AssemblyName>
+    <RootNamespace>_6.Car_Dealer_Query_and_Export_Data</RootNamespace>
+    <AssemblyName>_6.Car_Dealer_Query_and_Export_Data</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,8 +48,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,12 +56,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\CarsDBContext.cs" />
-    <Compile Include="Models\Car.cs" />
-    <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Part.cs" />
-    <Compile Include="Models\Sale.cs" />
-    <Compile Include="Models\Supplier.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -71,7 +63,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\4. Car Dealer\4. Car Dealer.csproj">
+      <Project>{C1A2351E-C749-40EB-B236-59339E143CE0}</Project>
+      <Name>4. Car Dealer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Jsons\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

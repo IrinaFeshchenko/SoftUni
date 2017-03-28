@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace _4.Car_Dealer.Models
 {
+    using Newtonsoft.Json;
+    using System;
+    using System.Collections.Generic;
+
     public class Customer
     {
         public Customer()
@@ -20,6 +19,7 @@ namespace _4.Car_Dealer.Models
 
         public bool IsYoungDriver { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<Sale> Sales { get; set; }
     }
 }

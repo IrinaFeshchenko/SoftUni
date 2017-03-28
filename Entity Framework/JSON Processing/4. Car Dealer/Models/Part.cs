@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _4.Car_Dealer.Models
+﻿namespace _4.Car_Dealer.Models
 {
+    using System.Collections.Generic;
+
     public class Part
     {
         public Part()

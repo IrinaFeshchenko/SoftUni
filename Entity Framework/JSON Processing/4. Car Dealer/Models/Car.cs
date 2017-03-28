@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace _4.Car_Dealer.Models
 {
+    using Newtonsoft.Json;
+    using System.Collections.Generic;
+
     public class Car
     {
         public Car()
@@ -19,10 +17,12 @@ namespace _4.Car_Dealer.Models
 
         public string Model { get; set; }
 
-        public int TraveledDistance { get; set; }
+        public long TravelledDistance { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<Sale> Sales { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<Part> Parts { get; set; }
     }
 }

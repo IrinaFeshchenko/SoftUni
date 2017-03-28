@@ -16,7 +16,7 @@ namespace _4.Car_Dealer
         public CarsDBContext()
             : base("name=CarsDBContext")
         {
-            Database.SetInitializer(new DropCreateDatabaseAlways<CarsDBContext>());
+            //Database.SetInitializer(new DropCreateDatabaseAlways<CarsDBContext>());
         }
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 
