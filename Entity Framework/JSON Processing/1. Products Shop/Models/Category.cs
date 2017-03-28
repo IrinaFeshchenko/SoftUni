@@ -14,8 +14,7 @@ namespace _1.Products_Shop.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
-        [MinLength(3),MaxLength(15)]
+        [Required, MinLength(3), MaxLength(15)]
         public string Name { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }

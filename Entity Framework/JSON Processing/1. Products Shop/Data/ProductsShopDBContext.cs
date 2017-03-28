@@ -8,7 +8,7 @@ namespace _1.Products_Shop
         public ProductsShopDBContext()
             : base("name=ProductsShopDBContext")
         {
-            Database.SetInitializer(new DropCreateDatabaseAlways<ProductsShopDBContext>());
+            //Database.SetInitializer(new DropCreateDatabaseAlways<ProductsShopDBContext>());
         }
 
         public virtual DbSet<User> Users { get; set; }

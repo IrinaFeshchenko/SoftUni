@@ -15,8 +15,7 @@ namespace _1.Products_Shop.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
-        [MinLength(3)]
+        [Required, MinLength(3)]
         public string Name { get; set; }
 
         public decimal Price { get; set; }

@@ -19,11 +19,10 @@ namespace _1.Products_Shop.Models
 
         public string FirstName { get; set; }
 
-        [Required]
-        [MinLength(3)]
+        [Required, MinLength(3)]
         public string LastName { get; set; }
 
-        public int Age { get; set; }
+        public int? Age { get; set; }
 
         public virtual ICollection<User> Users { get; set; }
 
