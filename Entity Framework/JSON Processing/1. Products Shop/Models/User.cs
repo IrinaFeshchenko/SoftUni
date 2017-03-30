@@ -10,6 +10,7 @@ namespace _1.Products_Shop.Models
         public User()
         {
             Friends = new HashSet<User>();
+            Users = new HashSet<User>();
             ProductsBuy = new HashSet<Product>();
             ProductsSell = new HashSet<Product>();
         }
