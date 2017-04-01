@@ -21,6 +21,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarDealer.Data", "CarDealer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. Import Data", "3. Import Data\3. Import Data.csproj", "{DD40BB1E-441E-4F56-A74D-5CFC2F4763AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. Query and Export Data", "4. Query and Export Data\4. Query and Export Data.csproj", "{DCBC3300-2C39-4957-9981-CE78E4225069}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5. Car Dealer Import Data", "5. Car Dealer Import Data\5. Car Dealer Import Data.csproj", "{59043152-6B52-436C-9706-9F1F5021AAA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6. Car Dealer Query and Export Data", "6. Car Dealer Query and Export Data\6. Car Dealer Query and Export Data.csproj", "{8505DC08-E039-4743-B955-2C73ADE78AAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +61,18 @@ Global
 		{DD40BB1E-441E-4F56-A74D-5CFC2F4763AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD40BB1E-441E-4F56-A74D-5CFC2F4763AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD40BB1E-441E-4F56-A74D-5CFC2F4763AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCBC3300-2C39-4957-9981-CE78E4225069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCBC3300-2C39-4957-9981-CE78E4225069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCBC3300-2C39-4957-9981-CE78E4225069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCBC3300-2C39-4957-9981-CE78E4225069}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59043152-6B52-436C-9706-9F1F5021AAA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59043152-6B52-436C-9706-9F1F5021AAA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59043152-6B52-436C-9706-9F1F5021AAA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59043152-6B52-436C-9706-9F1F5021AAA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8505DC08-E039-4743-B955-2C73ADE78AAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8505DC08-E039-4743-B955-2C73ADE78AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8505DC08-E039-4743-B955-2C73ADE78AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8505DC08-E039-4743-B955-2C73ADE78AAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

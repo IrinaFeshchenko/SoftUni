@@ -10,7 +10,7 @@
         public static void Main(string[] args)
         {
             CarDealerContext context = new CarDealerContext();
-
+            context.Database.Initialize(true);
         }
     }
 }

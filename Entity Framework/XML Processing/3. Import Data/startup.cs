@@ -3,7 +3,6 @@ namespace _3.Import_Data
 {
     using ProductsShop.Data;
     using ProductsShop.Model;
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Xml.Linq;
@@ -55,15 +54,14 @@ namespace _3.Import_Data
             {
                 Product product = new Product()
                 {
-                    Name = p.Element("name")?.Value??"null",
-                    Price = decimal.Parse(p.Element("price")?.Value??"0"),
+                    Name = p.Element("name")?.Value,
+                    Price = decimal.Parse(p.Element("price")?.Value),
                 };
-                Console.WriteLine(p.Element("price").Value);
                 product.SelledId = context.Users.Find(((num + 17) % usersCount) +1).Id;
 
                 if (num % 3 != 0)
                 {
-                    product.BuyerId = context.Users.Find((num % usersCount) +1).Id;
+                    product.BuyerId = (num % usersCount) +1;
                 }
                 num++;
                 context.Products.Add(product);
@@ -80,7 +78,7 @@ namespace _3.Import_Data
             {
                 FirstName = u.Attribute("first-name")?.Value,
                 LastName = u.Attribute("last-name")?.Value,
-                Age = int.Parse(u.Attribute("age")?.Value ?? "0")
+                Age = int.Parse(u.Attribute("age")?.Value)
             }).ToList();
 
             context.Users.AddRange(users);
