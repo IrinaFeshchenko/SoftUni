@@ -1,4 +1,4 @@
-﻿namespace TeamBuilder.App
+﻿namespace TeamBuilder.App.Utilities
 {
     public static class Constants
     {

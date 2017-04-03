@@ -1,6 +1,7 @@
 ﻿
 namespace TeamBuilder.App
 {
+    using Core;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -11,6 +12,8 @@ namespace TeamBuilder.App
     {
         static void Main()
         {
+            Engine engine = new Engine(new CommandDispatcher());
+            engine.Run();
         }
     }
 }

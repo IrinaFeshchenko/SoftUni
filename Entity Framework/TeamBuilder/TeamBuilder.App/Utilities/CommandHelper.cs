@@ -1,13 +1,9 @@
 ﻿
-namespace TeamBuilder.App
+namespace TeamBuilder.App.Utilities
 {
     using Data;
     using Models;
-    using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class CommandHelper
     {
@@ -19,7 +15,7 @@ namespace TeamBuilder.App
             }
         }
 
-        bool IsUserExisting(string username)
+        public static bool IsUserExisting(string username)
         {
             using (var context = new TeamBuilderContext())
             {
@@ -37,22 +33,34 @@ namespace TeamBuilder.App
 
         bool IsUserCreatorOfTeam(string teamName, User user)
         {
-
+            using (var context = new TeamBuilderContext())
+            {
+                return context.Teams.Any(t => t.Name == teamName && t.Creator.Id == user.Id);
+            }
         }
 
         bool IsUserCreatorOfEvent(string eventName, User user)
         {
-
+            using (var context = new TeamBuilderContext())
+            {
+                return context.Events.Any(e => e.Name == eventName && e.Creator.Id == user.Id);
+            }
         }
 
         bool IsMemberOfTeam(string teamName, string username)
         {
-
+            using (var context = new TeamBuilderContext())
+            {
+                return context.Teams.Any(t =>t.Name==teamName && t.Members.Any(m=>m.Username == username));
+            }
         }
 
         bool IsEventExisting(string eventName)
         {
-
+            using (var context = new TeamBuilderContext())
+            {
+                return context.Events.Any(e=>e.Name == eventName);
+            }
         }
 
     }

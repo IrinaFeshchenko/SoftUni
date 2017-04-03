@@ -13,7 +13,8 @@ namespace TeamBuilder.Data.Configurations
             this.Property(u => u.Username).IsRequired();
             this.Property(u => u.Password).IsRequired();
             this.Property(u => u.Username).HasColumnAnnotation(IndexAnnotation.AnnotationName,
-                                             new IndexAnnotation( new IndexAttribute("IX_Users_Username", 1) { IsUnique = true }))
+                                             new IndexAnnotation( 
+                                                 new IndexAttribute("IX_Users_Username", 1) { IsUnique = true }))
                                             .HasMaxLength(25);
             this.Property(u => u.FirstName).HasMaxLength(25);
             this.Property(u => u.LastName).HasMaxLength(25);
@@ -38,7 +39,7 @@ namespace TeamBuilder.Data.Configurations
 
             this.HasMany(u => u.ReceivedInvitations)
                 .WithRequired(i => i.InvitedUser)
-                .WillCascadeOnDelete();
+                .WillCascadeOnDelete(false);
 
         }
     }
