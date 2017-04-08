@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassDefect.Data", "MassDefect.Data\MassDefect.Data.csproj", "{B38F593B-40B2-4F04-BCC5-1DC67C7D114D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassDefect.Models", "MassDefect.Models\MassDefect.Models.csproj", "{85B980D4-EA03-464F-BCC9-2EB232775F6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassDefect.App", "MassDefect.App\MassDefect.App.csproj", "{D1E462CE-2605-4007-A10B-7DF30AD79E34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "datasets", "datasets", "{CE9AB2B6-404C-421B-8EE6-E347CBA5DDF9}"
+	ProjectSection(SolutionItems) = preProject
+		datasets\anomalies.json = datasets\anomalies.json
+		datasets\anomaly-victims.json = datasets\anomaly-victims.json
+		datasets\new-anomalies.xml = datasets\new-anomalies.xml
+		datasets\persons.json = datasets\persons.json
+		datasets\planets.json = datasets\planets.json
+		datasets\solar-systems.json = datasets\solar-systems.json
+		datasets\stars.json = datasets\stars.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassDefect.Import", "MassDefect.Import\MassDefect.Import.csproj", "{24902149-C26F-4891-9818-FE97E6C84B24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassDefect.Export", "MassDefect.Export\MassDefect.Export.csproj", "{59BD6542-70A3-4C5B-A346-A49A9F3DB5C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B38F593B-40B2-4F04-BCC5-1DC67C7D114D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B38F593B-40B2-4F04-BCC5-1DC67C7D114D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B38F593B-40B2-4F04-BCC5-1DC67C7D114D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B38F593B-40B2-4F04-BCC5-1DC67C7D114D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85B980D4-EA03-464F-BCC9-2EB232775F6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85B980D4-EA03-464F-BCC9-2EB232775F6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85B980D4-EA03-464F-BCC9-2EB232775F6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85B980D4-EA03-464F-BCC9-2EB232775F6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1E462CE-2605-4007-A10B-7DF30AD79E34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1E462CE-2605-4007-A10B-7DF30AD79E34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1E462CE-2605-4007-A10B-7DF30AD79E34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1E462CE-2605-4007-A10B-7DF30AD79E34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24902149-C26F-4891-9818-FE97E6C84B24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24902149-C26F-4891-9818-FE97E6C84B24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24902149-C26F-4891-9818-FE97E6C84B24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24902149-C26F-4891-9818-FE97E6C84B24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59BD6542-70A3-4C5B-A346-A49A9F3DB5C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59BD6542-70A3-4C5B-A346-A49A9F3DB5C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59BD6542-70A3-4C5B-A346-A49A9F3DB5C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59BD6542-70A3-4C5B-A346-A49A9F3DB5C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
