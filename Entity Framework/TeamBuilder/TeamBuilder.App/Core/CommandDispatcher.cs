@@ -3,10 +3,7 @@ namespace TeamBuilder.App.Core
 {
     using Commands;
     using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class CommandDispatcher
     {
@@ -28,6 +25,14 @@ namespace TeamBuilder.App.Core
                 case "exit":
                     ExitCommand exit = new ExitCommand();
                     exit.Execute(inputArgs); ;
+                    break;
+                case "Login":
+                    LoginCommand login = new LoginCommand();
+                    login.Execute(inputArgs); ;
+                    break;
+                case "Logout":
+                    LogoutCommand logout = new LogoutCommand();
+                    logout.Execute(inputArgs); ;
                     break;
                 default:
                     throw new NotSupportedException($"Command {commandName} not supported!");
