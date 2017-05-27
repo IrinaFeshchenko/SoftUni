@@ -6,7 +6,7 @@ namespace _1.Reverse_Numbers_with_a_Stack
     using System.Collections.Generic;
     using System.Linq;
 
-    class Startup
+    public class Startup
     {
         static void Main()
         {

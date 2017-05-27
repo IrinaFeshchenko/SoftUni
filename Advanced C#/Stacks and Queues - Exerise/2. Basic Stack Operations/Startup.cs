@@ -14,7 +14,7 @@ namespace _2.Basic_Stack_Operations
     using System.Collections.Generic;
     using System.Linq;
 
-    class Startup
+    public class Startup
     {
         static void Main()
         {

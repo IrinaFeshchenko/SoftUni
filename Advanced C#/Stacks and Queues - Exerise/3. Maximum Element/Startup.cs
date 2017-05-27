@@ -11,7 +11,7 @@ namespace _3.Maximum_Element
     using System.Collections.Generic;
     using System.Linq;
 
-    class Startup
+    public class Startup
     {
         static void Main()
         {

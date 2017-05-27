@@ -8,7 +8,7 @@ namespace _4.Basic_Queue_Operations
 
     class Startup
     {
-        static void Main()
+        public static void Main()
         {
             int[] args = Console.ReadLine()
                                 .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
