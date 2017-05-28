@@ -41,11 +41,11 @@ namespace _10.Simple_Text_Editor
                 }
                 else if (command == 2)
                 {
-                    int erazeCount = int.Parse(args[1]);
-                    int startIndex = text.Length - erazeCount;
+                    int eraseCount = int.Parse(args[1]);
+                    int startIndex = text.Length - eraseCount;
 
-                    clipboard.Push(text.ToString(startIndex, erazeCount));
-                    text.Remove(startIndex, erazeCount);
+                    clipboard.Push(text.ToString(startIndex, eraseCount));
+                    text.Remove(startIndex, eraseCount);
 
                     lastCommand.Push(command);
                 }
