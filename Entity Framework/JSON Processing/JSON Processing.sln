@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Products Shop", "1. Products Shop\1. Products Shop.csproj", "{FEAEA169-34A7-4C33-9034-1C217E4505BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. Import Products Shop data", "2. Import Products Shop data\2. Import Products Shop data.csproj", "{3B57FA72-EED3-4082-B2C0-05B95E1C53AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. Query and Export Data", "3. Query and Export Data\3. Query and Export Data.csproj", "{13775C0D-C4E5-46A5-9696-0230B6A0D7D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. Car Dealer", "4. Car Dealer\4. Car Dealer.csproj", "{C1A2351E-C749-40EB-B236-59339E143CE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5. Car Dealer Import Data", "5. Car Dealer Import Data\5. Car Dealer Import Data.csproj", "{34B60C75-CFA0-4272-AA30-B1C4AC536AE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6. Car Dealer Query and Export Data", "6. Car Dealer Query and Export Data\6. Car Dealer Query and Export Data.csproj", "{5D02F838-3B39-4DFB-8F79-F03A21BD3726}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEAEA169-34A7-4C33-9034-1C217E4505BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEAEA169-34A7-4C33-9034-1C217E4505BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEAEA169-34A7-4C33-9034-1C217E4505BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEAEA169-34A7-4C33-9034-1C217E4505BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B57FA72-EED3-4082-B2C0-05B95E1C53AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B57FA72-EED3-4082-B2C0-05B95E1C53AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B57FA72-EED3-4082-B2C0-05B95E1C53AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B57FA72-EED3-4082-B2C0-05B95E1C53AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13775C0D-C4E5-46A5-9696-0230B6A0D7D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13775C0D-C4E5-46A5-9696-0230B6A0D7D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13775C0D-C4E5-46A5-9696-0230B6A0D7D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13775C0D-C4E5-46A5-9696-0230B6A0D7D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A2351E-C749-40EB-B236-59339E143CE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A2351E-C749-40EB-B236-59339E143CE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A2351E-C749-40EB-B236-59339E143CE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A2351E-C749-40EB-B236-59339E143CE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34B60C75-CFA0-4272-AA30-B1C4AC536AE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34B60C75-CFA0-4272-AA30-B1C4AC536AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34B60C75-CFA0-4272-AA30-B1C4AC536AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34B60C75-CFA0-4272-AA30-B1C4AC536AE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D02F838-3B39-4DFB-8F79-F03A21BD3726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D02F838-3B39-4DFB-8F79-F03A21BD3726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D02F838-3B39-4DFB-8F79-F03A21BD3726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D02F838-3B39-4DFB-8F79-F03A21BD3726}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

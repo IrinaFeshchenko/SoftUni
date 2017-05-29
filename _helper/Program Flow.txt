@@ -1,20 +1,5 @@
-int n = int.Parse(Console.ReadLine());
+After r rotations the element at position i goes to position (i + r) % n.
 
-long n = long.Parse(Console.ReadLine());
-
-ulong n = ulong.Parse(Console.ReadLine());
-
-double m = double.Parse(Console.ReadLine());
-
-decimal m = decimal.Parse(Console.ReadLine());
-
-string s = Console.ReadLine().Trim();
-
-uint[] num = Console.ReadLine().Split()
-	.Select(uint.Parse)
-	.ToArray();
-
-	
 string command;
 while ((command = Console.ReadLine()).Trim()!= "Exam Over")
 {
@@ -38,6 +23,19 @@ while ((command = Console.ReadLine()).Trim()!= "Exam Over")
 }
 
 /////////////////////////
+// "continue" instead "break", to skip invalid input lines.
+//
+//input  format can be array of strings instead numbers, sorting string numbers works difrently
+//
+// group regex maches in a single string , before further processing (UseYourChainsBuddy)
+//
+//string split separator can be whitespace instead of space, so use  s.Split(new char[0], StringSplitOptons....) 
+//  or Split(new []{' ','\t'}) - includes split \t for tabs
+//
+// on numbers in strings trim leading zeroes
+//
+// StringBuilder.Append or AppendLine
+//
 // increase variables size eg.(int to long)
 // test edge cases, +1 and -1, with odd and even number of parameters(if flipping values)
 // reread conditions, special cases;
@@ -48,7 +46,9 @@ while ((command = Console.ReadLine()).Trim()!= "Exam Over")
 //
 // alphabetical order for collections
 //
-// WriteLine(stringbuilder) instead Wtriteline((array of numbers).ToString())
+// repeating dragon Names in collection are ignored ???
+//
+// WriteLine(stringbuilder) instead Wtriteline((array of numbers).ToString()) for memory limit.
 //
 // team names can be empty Strings "??team??___????_1:2"
 // team point at str[pos] can be more than one char

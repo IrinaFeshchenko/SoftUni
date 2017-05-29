@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Simple Mapping", "1. Simple Mapping\1. Simple Mapping.csproj", "{DDC67CB8-A670-4C64-AE7A-5A4F0E86D0A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. Advanced Mapping", "2. Advanced Mapping\2. Advanced Mapping.csproj", "{E0C98355-D141-46B7-8345-073EA6A48328}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. Projection", "3. Projection\3. Projection.csproj", "{A029A7D1-1388-4BCC-8BC8-539762AAFC67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDC67CB8-A670-4C64-AE7A-5A4F0E86D0A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDC67CB8-A670-4C64-AE7A-5A4F0E86D0A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDC67CB8-A670-4C64-AE7A-5A4F0E86D0A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDC67CB8-A670-4C64-AE7A-5A4F0E86D0A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0C98355-D141-46B7-8345-073EA6A48328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0C98355-D141-46B7-8345-073EA6A48328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0C98355-D141-46B7-8345-073EA6A48328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0C98355-D141-46B7-8345-073EA6A48328}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A029A7D1-1388-4BCC-8BC8-539762AAFC67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A029A7D1-1388-4BCC-8BC8-539762AAFC67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A029A7D1-1388-4BCC-8BC8-539762AAFC67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A029A7D1-1388-4BCC-8BC8-539762AAFC67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

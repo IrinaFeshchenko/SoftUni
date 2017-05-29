@@ -1,0 +1,51 @@
+distinct? order by? column names? aliases on column names? text mistyped, missed punctuatioon? float compare ad 9999 untill same lenght of digits?
+CREATE TRIGGER tr_Logs_for_insert ON Logs FOR INSERT
+AS
+BEGIN 
+	INSERT INTO NotificationEmails(Recipient,Subject, Body)
+	SELECT 
+	AccountId,
+
+	CONCAT('Balance change for account: ',CAST(AccountId AS VARCHAR)),
+
+	'On '+ CONCAT(LEFT(
+		DATENAME(M,GETDATE()),3),
+		' ',
+		FORMAT(GETDATE(), 'dd yyyy hh:mmtt')
+)
++ ' your balance was changed from ' 
++ CAST(OldSum AS VARCHAR)+ ' to ' + CAST(NewSum AS VARCHAR) + '.'
+	FROM Logs
+END
+--------------------------------------
+select top 1 * into MessageLogs --clone table schema to another table
+from Messages
+truncate table MessageLogs
+---------------------------------------------
+CREATE PROC usp_DepositMoney(@AccountId int, @moneyAmount money)
+AS
+BEGIN TRAN
+UPDATE Accounts SET Balance = Balance + @moneyAmount
+WHERE Id = @AccountId
+IF @@ROWCOUNT <> 1
+BEGIN
+	ROLLBACK
+	RAISERROR('Invalid account!', 16, 1)
+	RETURN
+END
+COMMIT
+-----------------------------------
+CREATE TRIGGER tr_Accounts_After_Update ON Accounts FOR UPDATE
+AS
+BEGIN
+	INSERT INTO Logs(AccountId, OldSum, NewSum)
+	SELECT i.id, d.Balance, i.Balance
+	FROM inserted i
+	INNER JOIN deleted d ON d.Id = i.Id
+END
+------------------------------------------------------------
+SELECT CONCAT(LEFT(
+DATENAME(M,GETDATE()),3),
+' ',
+FORMAT(GETDATE(), 'dd yyyy hh:mmtt')
+) AS DATETIME
