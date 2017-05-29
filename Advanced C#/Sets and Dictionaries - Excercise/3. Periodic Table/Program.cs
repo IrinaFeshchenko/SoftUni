@@ -1,5 +1,4 @@
-﻿
-namespace _3.Periodic_Table
+﻿namespace _3.Periodic_Table
 {
     using System;
     using System.Collections.Generic;
