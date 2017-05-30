@@ -2,15 +2,30 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     class Program
     {
         static void Main()
         {
+            string text = Console.ReadLine();
+            SortedDictionary<char, int> dic = new SortedDictionary<char, int>();
 
+            foreach (var ch in text)
+            {
+                if (!dic.ContainsKey(ch))
+                {
+                    dic.Add(ch, 1);
+                }
+                else
+                {
+                    dic[ch]++;
+                }
+            }
+
+            foreach (var ch in dic)
+            {
+                Console.WriteLine($"{ch.Key}: {ch.Value} time/s");
+            }
         }
     }
 }
