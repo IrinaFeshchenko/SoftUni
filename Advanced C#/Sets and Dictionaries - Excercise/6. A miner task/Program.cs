@@ -10,22 +10,27 @@
     {
         static void Main()
         {
-            SortedDictionary<string, string> emails = new SortedDictionary<string, string>();
+            Dictionary<string, int> resources = new Dictionary<string, int>();
             string input = string.Empty;
 
             while ((input = Console.ReadLine())!="stop")
             {
-                string name = input;
-                string email = Console.ReadLine();
+                string resourceName = input;
+                int quantity = int.Parse(Console.ReadLine());
 
-                if (emails.ContainsKey(name))
+                if (!resources.ContainsKey(resourceName))
                 {
-                    emails.Add(name,email);
+                    resources.Add(resourceName,quantity);
                 }
                 else
                 {
-
+                    resources[resourceName] += quantity;
                 }
+            }
+
+            foreach (var item in resources)
+            {
+                Console.WriteLine($"{item.Key} -> {item.Value}");
             }
         }
     }
