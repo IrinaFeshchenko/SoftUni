@@ -11,7 +11,7 @@ namespace _8.Hands_of_cards
     using System.Collections.Generic;
     using System.Linq;
 
-    class Program
+    public class Startup
     {
         static void Main()
         {

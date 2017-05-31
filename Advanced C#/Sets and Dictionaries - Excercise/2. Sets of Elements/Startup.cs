@@ -5,7 +5,7 @@ namespace _2.Sets_of_Elements
     using System.Collections.Generic;
     using System.Linq;
 
-    class Program
+    public class Startup
     {
         static void Main()
         {

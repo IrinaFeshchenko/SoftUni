@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    class Program
+    public class Startup
     {
         static void Main()
         {

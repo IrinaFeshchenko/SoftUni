@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    class Program
+    public class Startup
     {
         static void Main()
         {
