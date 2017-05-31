@@ -1,5 +1,4 @@
-﻿
-namespace _5.Phonebook
+﻿namespace _5.Phonebook
 {
     using System;
     using System.Collections.Generic;
@@ -11,7 +10,7 @@ namespace _5.Phonebook
     {
         static void Main()
         {
-            Console.WriteLine(123);
+            Console.WriteLine();
             Dictionary<string, string> phonebook = new Dictionary<string, string>();
             string command = string.Empty;
 
@@ -31,19 +30,25 @@ namespace _5.Phonebook
                 }
             }
 
+            List<string> result = new List<string>();
+
             while ((command = Console.ReadLine()) != "stop")
             {
                 string name = command;
 
                 if (phonebook.ContainsKey(name))
                 {
-                    //Console.WriteLine($"{name.key} -> {name.value}");
+                    result.Add($"{name} -> {phonebook[name]}");
                 }
                 else
 	            {
-                    Console.WriteLine("Contact simo does not exist.");
+                    result.Add($"Contact {name} does not exist.");
 	            }
+            }
 
+            foreach (var entry in result)
+            {
+                Console.WriteLine(entry);
             }
         }
     }
