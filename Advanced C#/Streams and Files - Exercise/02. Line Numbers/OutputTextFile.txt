@@ -1,0 +1,24 @@
+0 The James Webb Space Telescope (JWST), previously known as Next Generation Space Telescope (NGST), is a 
+1 part of NASA's ongoing Flagship program and developed in cooperation with the European Space Agency and 
+2 Canadian Space Agency. It is under construction and scheduled to launch in October 2018. The JWST will 
+3 offer unprecedented resolution and sensitivity from long-wavelength (orange-red) visible light, through 
+4 near-infrared to the mid-infrared (0.6 to 27 micrometers). While the Hubble Space Telescope has a 2.4-meter
+5 and will be located near the Earth–Sun L2 point. A large sunshield will keep its mirror and four science
+6 instruments below 50 K (−220 °C; −370 °F).
+7 JWST's capabilities will enable a broad range of investigations across the fields of astronomy and 
+8 cosmology.[5] One particular goal involves observing some of the most distant events and objects in the 
+9 Universe, such as the formation of the first galaxies. These types of targets are beyond the reach of 
+10 current ground and space-based instruments. Another goal is understanding the formation of stars and 
+11 planets. This will include direct imaging of exoplanets.
+12 In gestation since 1996,[6] the project represents an international collaboration of the European Space 
+13 Agency, Canadian Space Agency and team members of other countries led by NASA.[7] It is named after James 
+14 E. Webb, the second administrator of NASA, who played an integral role in the Apollo program.[8]
+15 NASA has described JWST as the scientific successor of the Hubble Space Telescope, but not a replacement, 
+16 because the capabilities are not identical.[9] JWST has the objective to see high-redshift objects, 
+17 typically both older and farther away than previous instruments could assess.[10] The result was to extend 
+18 the life of Hubble until JWST as the next generation telescope could go online.[10] This led to a radically
+19  altered design for JWST to obtain images deeper into the infrared than Hubble, and beyond the capabilities
+20  of the Infrared Space Observatory and Spitzer Space Telescope.
+21 In December 2016, NASA announced that the JWST has passed major milestones, including completion of its 
+22 primary mirror and integration of science instruments with the payload module, and is undergoing acoustic 
+23 and extreme vibration testing to simulate launch conditions
