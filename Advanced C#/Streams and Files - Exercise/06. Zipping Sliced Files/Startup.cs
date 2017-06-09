@@ -1,18 +1,17 @@
-﻿namespace _05.Slicing_File
+﻿namespace _06.Zipping_Sliced_Files
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.IO.Compression;
 
     public class Startup
     {
-        static string test = "test";
-
         static void Main()
         {
             string sourceFilePath = "../../FlickAnimation.avi";
-            string destinationDirectory = "../../SlicedFiles/";
-            string assembledFilesDir = "../../AssmbledFiles/";
+            string destinationDirectory = "../../SlicedZippedFiles/";
+            string assembledFilesDir = "../../AssmbledUnzippedFiles/";
             int parts = 5;
 
             List<string> fileNames = Slice(sourceFilePath, destinationDirectory, parts);
@@ -29,16 +28,17 @@
                 Directory.CreateDirectory(assembledFilesDir);
             }
 
-            using (FileStream writer = new FileStream(assembledFile, FileMode.Append))
+            using (var writer = new FileStream(assembledFile, FileMode.Append))
             {
                 foreach (var fileName in files)
                 {
-                    using (FileStream reader = new FileStream(fileName, FileMode.Open))
+                    using (var reader = new FileStream(fileName, FileMode.Open))
+                    using (var gzipReader = new GZipStream(reader, CompressionMode.Decompress))
                     {
                         byte[] buffer = new byte[4096];
                         int readBytes;
 
-                        while ((readBytes = reader.Read(buffer, 0, buffer.Length)) != 0)
+                        while ((readBytes = gzipReader.Read(buffer, 0, buffer.Length)) != 0)
                         {
                             writer.Write(buffer, 0, readBytes);
                         }
@@ -54,23 +54,24 @@
                 Directory.CreateDirectory(destinationDirectory);
             }
 
-            List<string> fileNames = new List<string>();
+            var fileNames = new List<string>();
 
-            using (FileStream reader = new FileStream(sourceFilePath, FileMode.Open))
+            using (var reader = new FileStream(sourceFilePath, FileMode.Open))
             {
                 var partSize = reader.Length / parts + reader.Length % parts;
 
                 for (int i = 0; i < parts; i++)
                 {
                     string filename = $"Part-{i}.avi";
-                    string destinationFilePath = $"{destinationDirectory}Part-{i}.avi";
+                    string destinationFilePath = $"{destinationDirectory}Part-{i}.zip";
                     fileNames.Add(destinationFilePath);
 
-                    using (FileStream writer = new FileStream(destinationFilePath, FileMode.Create))
+                    using (var writer = new FileStream(destinationFilePath, FileMode.Create))
+                    using (var gzipWriter = new GZipStream(writer,CompressionMode.Compress))
                     {
                         byte[] buffer = new byte[partSize];
                         int readBytes = reader.Read(buffer, 0, buffer.Length);
-                        writer.Write(buffer, 0, readBytes);
+                        gzipWriter.Write(buffer, 0, readBytes);
                     }
                 }
             }
