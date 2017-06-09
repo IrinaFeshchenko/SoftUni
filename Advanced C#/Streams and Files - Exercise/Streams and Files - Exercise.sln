@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Word Count", "03. Word 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Copy Binary File", "04. Copy Binary File\04. Copy Binary File.csproj", "{2B91F1BD-3075-42EF-98E2-BD88DD9CCCD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Slicing File", "05. Slicing File\05. Slicing File.csproj", "{66F32798-54CF-4398-8222-3883B421A3F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2B91F1BD-3075-42EF-98E2-BD88DD9CCCD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B91F1BD-3075-42EF-98E2-BD88DD9CCCD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B91F1BD-3075-42EF-98E2-BD88DD9CCCD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66F32798-54CF-4398-8222-3883B421A3F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66F32798-54CF-4398-8222-3883B421A3F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66F32798-54CF-4398-8222-3883B421A3F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66F32798-54CF-4398-8222-3883B421A3F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
