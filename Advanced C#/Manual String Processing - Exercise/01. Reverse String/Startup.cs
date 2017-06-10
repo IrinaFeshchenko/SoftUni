@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Linq;
     using System.Text;
 
@@ -10,6 +11,7 @@
         static void Main()
         {
             StringBuilder sb = new StringBuilder(Console.ReadLine());
+            var watch = Stopwatch.StartNew();
 
             int len = sb.Length;
             char c;
@@ -22,6 +24,7 @@
             }
 
             Console.WriteLine(sb);
+            Console.WriteLine(watch.Elapsed);
         }
     }
 }
