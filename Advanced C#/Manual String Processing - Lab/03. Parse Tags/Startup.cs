@@ -23,9 +23,9 @@
 
                 string toBeReplaced = inputText.Substring(tagStartIndex,tagEndIndex+closeTag.Length-tagStartIndex);
 
-                int textStartIndex = tagStartIndex + openTag.Length;
-                int textLenth = tagEndIndex - textStartIndex;
-                string replaceWith = inputText.Substring(textStartIndex,textLenth).ToUpper();
+                string replaceWith = toBeReplaced.Replace(openTag,string.Empty)
+                                                .Replace(closeTag,string.Empty)
+                                                .ToUpper();
 
                 inputText = inputText.Replace(toBeReplaced, replaceWith);
             }
