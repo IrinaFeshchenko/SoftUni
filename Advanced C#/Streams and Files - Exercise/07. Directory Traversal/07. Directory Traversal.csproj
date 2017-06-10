@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{443A8C21-5663-4789-9098-B029B86F7B4F}</ProjectGuid>
+    <ProjectGuid>{9DDD3620-4337-40E4-9562-1836193E1A83}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_06.Zipping_Sliced_Files</RootNamespace>
-    <AssemblyName>_06.Zipping_Sliced_Files</AssemblyName>
+    <RootNamespace>_07.Directory_Traversal</RootNamespace>
+    <AssemblyName>_07.Directory_Traversal</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,13 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="FlickAnimation.avi" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AssmbledUnzippedFiles\" />
-    <Folder Include="SlicedZippedFiles\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
