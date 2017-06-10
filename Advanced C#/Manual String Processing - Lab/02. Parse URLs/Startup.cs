@@ -58,19 +58,19 @@
 
         private void Parse(string input)
         {
-            string[] tokens = input.Split(new[] { protocolSeparator }, StringSplitOptions.RemoveEmptyEntries);
+            string[] args = input.Split(new[] { protocolSeparator }, StringSplitOptions.RemoveEmptyEntries);
 
             // parse protocol
-            Protocol = tokens[0];
+            Protocol = args[0];
 
             // parse server
-            int serverNameLength = tokens[1].IndexOf(resourceSeparator);
-            Server = tokens[1].Substring(0, serverNameLength);
+            int serverNameLength = args[1].IndexOf(resourceSeparator);
+            Server = args[1].Substring(0, serverNameLength);
 
             // parse resources
             int resourcesStartIndex = serverNameLength + 1;
-            int resourcesTextLength = tokens[1].Length - resourcesStartIndex;
-            Resources = tokens[1].Substring(resourcesStartIndex, resourcesTextLength);
+            int resourcesTextLength = args[1].Length - resourcesStartIndex;
+            Resources = args[1].Substring(resourcesStartIndex, resourcesTextLength);
         }
     }
 }

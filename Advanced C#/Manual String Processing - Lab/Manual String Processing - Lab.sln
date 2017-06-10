@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Students Results", "01.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Parse URLs", "02. Parse URLs\02. Parse URLs.csproj", "{3F90BE2C-DF8D-4A49-9315-0E9688F9BA65}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Parse Tags", "03. Parse Tags\03. Parse Tags.csproj", "{45B3BB48-9A6C-4F28-951F-303EC67C7C55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3F90BE2C-DF8D-4A49-9315-0E9688F9BA65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F90BE2C-DF8D-4A49-9315-0E9688F9BA65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F90BE2C-DF8D-4A49-9315-0E9688F9BA65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45B3BB48-9A6C-4F28-951F-303EC67C7C55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45B3BB48-9A6C-4F28-951F-303EC67C7C55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45B3BB48-9A6C-4F28-951F-303EC67C7C55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45B3BB48-9A6C-4F28-951F-303EC67C7C55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
