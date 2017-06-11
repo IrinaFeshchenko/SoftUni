@@ -18,13 +18,14 @@
 
         private static string SumNumbers(string firstNumber, string secondNumber)
         {
-            Stack<long> result = new Stack<long>();
+            Stack<int> result = new Stack<int>();
             int carry = 0;
             int index = 0;
-            long length = Math.Max(firstNumber.Length, secondNumber.Length);
+            int length = Math.Max(firstNumber.Length, secondNumber.Length);
 
             while (index < length || carry != 0)
             {
+                // if index is in string range, get char on that position, else return zero
                 int n1 = index >= firstNumber.Length ? 0 : firstNumber[firstNumber.Length - 1 - index] - '0';
                 int n2 = index >= secondNumber.Length ? 0 : secondNumber[secondNumber.Length - 1 - index] - '0';
 
@@ -32,7 +33,7 @@
 
                 if (sum > 9)
                 {
-                    long reminder = sum % 10;
+                    int reminder = sum % 10;
                     result.Push(reminder);
                     carry = 1;
                 }
