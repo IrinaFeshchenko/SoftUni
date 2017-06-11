@@ -8,7 +8,7 @@
     {
         static void Main()
         {
-            string text = "In 1519 Leonardo da Vinci died at the age of 67.";//Console.ReadLine();
+            string text = Console.ReadLine();
             string pattern = "[^0-9]";
 
             int count = Regex.Matches(text, pattern, RegexOptions.IgnoreCase).Count;
