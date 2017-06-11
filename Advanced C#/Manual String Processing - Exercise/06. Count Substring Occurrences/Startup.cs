@@ -6,8 +6,8 @@
     {
         static void Main()
         {
-            string text = "Welcome to the Software University (SoftUni)! Welcome to programming. Programming is wellness for developers, said Maxwell.";
-            string word = "wel";
+            string text = Console.ReadLine();
+            string word = Console.ReadLine();
 
             int index = 0;
             int count = 0;
