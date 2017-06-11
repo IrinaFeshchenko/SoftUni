@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Match Count", "01. Match Count\01. Match Count.csproj", "{F591E531-5C69-4111-B113-0581C9EBE9D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Vowel Count", "02. Vowel Count\02. Vowel Count.csproj", "{8AA3EBF4-F444-428B-8262-FFE5F50D0685}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Non-Digit Count", "03. Non-Digit Count\03. Non-Digit Count.csproj", "{492FC2ED-A6EB-4382-9A90-2558FC321368}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F591E531-5C69-4111-B113-0581C9EBE9D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F591E531-5C69-4111-B113-0581C9EBE9D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F591E531-5C69-4111-B113-0581C9EBE9D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F591E531-5C69-4111-B113-0581C9EBE9D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AA3EBF4-F444-428B-8262-FFE5F50D0685}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AA3EBF4-F444-428B-8262-FFE5F50D0685}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AA3EBF4-F444-428B-8262-FFE5F50D0685}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AA3EBF4-F444-428B-8262-FFE5F50D0685}.Release|Any CPU.Build.0 = Release|Any CPU
+		{492FC2ED-A6EB-4382-9A90-2558FC321368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{492FC2ED-A6EB-4382-9A90-2558FC321368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{492FC2ED-A6EB-4382-9A90-2558FC321368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{492FC2ED-A6EB-4382-9A90-2558FC321368}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
