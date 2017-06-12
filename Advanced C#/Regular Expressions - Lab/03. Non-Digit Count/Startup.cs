@@ -6,7 +6,7 @@
 
     public class Startup
     {
-        static void Main()
+        public static void Main()
         {
             string text = Console.ReadLine();
             string pattern = "[^0-9]";

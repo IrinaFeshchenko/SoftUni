@@ -5,9 +5,9 @@
 
     public class Startup
     {
-        static void Main()
+        public static void Main()
         {
-            string pattern = Console.ReadLine();;
+            string pattern = Console.ReadLine();
             string text = Console.ReadLine();
 
             Regex regex = new Regex(pattern);

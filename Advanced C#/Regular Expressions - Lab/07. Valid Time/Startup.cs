@@ -1,4 +1,4 @@
-﻿namespace _06.Valid_Usernames
+﻿namespace _07.Valid_Time
 {
     using System;
     using System.Text.RegularExpressions;
@@ -8,11 +8,12 @@
         public static void Main()
         {
             string input = string.Empty;
-            Regex pattern = new Regex(@"^[a-zA-Z0-9-_]{3,16}$");
 
-            while ((input = Console.ReadLine()) != "END")
+            while ((input = Console.ReadLine())!="END")
             {
-                if (pattern.IsMatch(input))
+                Regex regex = new Regex(@"^((([0][0-9]|[1][0-2]):[0-5][0-9]:[0-5][0-9] [AP]M)|12:00:00 [PA]M)$");
+                Match match= regex.Match(input);
+                if (match.Success)
                 {
                     Console.WriteLine("valid");
                 }
