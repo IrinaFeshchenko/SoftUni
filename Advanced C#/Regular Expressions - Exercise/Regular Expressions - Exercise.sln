@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Series of Letters", "03
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Replace tag", "04. Replace tag\04. Replace tag.csproj", "{3EF186CB-5C42-4242-8AFA-FE0473EFC6AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Extract Emails", "05. Extract Emails\05. Extract Emails.csproj", "{647786DC-7F53-4D9F-99DA-D19A62FC83B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3EF186CB-5C42-4242-8AFA-FE0473EFC6AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EF186CB-5C42-4242-8AFA-FE0473EFC6AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EF186CB-5C42-4242-8AFA-FE0473EFC6AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{647786DC-7F53-4D9F-99DA-D19A62FC83B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{647786DC-7F53-4D9F-99DA-D19A62FC83B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{647786DC-7F53-4D9F-99DA-D19A62FC83B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{647786DC-7F53-4D9F-99DA-D19A62FC83B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
