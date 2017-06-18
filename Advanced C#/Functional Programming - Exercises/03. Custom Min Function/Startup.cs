@@ -1,8 +1,13 @@
 ﻿namespace _03.Custom_Min_Function
 {
-    using System;    using System.Linq;
+    using System;
+    using System.Linq;
 
-    public class Startup    {        public static void Main()        {            int[] nums = Console.ReadLine()
+    public class Startup
+    {
+        public static void Main()
+        {
+            int[] nums = Console.ReadLine()
                                     .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
                                     .Select(int.Parse)
                                     .ToArray();

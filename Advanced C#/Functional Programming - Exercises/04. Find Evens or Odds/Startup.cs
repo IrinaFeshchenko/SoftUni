@@ -5,7 +5,11 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public class Startup    {        public static void Main()        {            int[] numbers = Console.ReadLine()
+    public class Startup
+    {
+        public static void Main()
+        {
+            int[] numbers = Console.ReadLine()
                                     .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
                                     .Select(int.Parse)
                                     .ToArray();

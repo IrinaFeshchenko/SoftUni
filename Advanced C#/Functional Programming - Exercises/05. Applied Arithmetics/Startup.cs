@@ -42,7 +42,6 @@
                     throw new ArgumentException("command not in the correct format");
                 }
             }
-
         }
 
         private static IEnumerable<int> Calculate(IEnumerable<int> numbers, Func<int, int> math)
