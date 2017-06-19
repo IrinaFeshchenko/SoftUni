@@ -1,9 +1,13 @@
 ﻿namespace _10.Predicate_Party_
 {
-    using System;    using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
     using System.Linq;
 
-    public class Startup    {        public static void Main()        {
+    public class Startup
+    {
+        public static void Main()
+        {
             List<string> names = Console.ReadLine()
                                         .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
                                         .ToList();
@@ -52,7 +56,7 @@
                 throw new ArgumentException("command not in the correct format");
             }
 
-            return names.OrderBy(x=>x);
+            return names;
         }
 
         private static Predicate<string> CreateTester(string[] args)
@@ -70,10 +74,7 @@
             {
                 return x => x.Length == int.Parse(args[2]);
             }
-            else
-            {
-                throw new ArgumentException("command not in the correct format");
-            }
+            return null;
         }
     }
 }
