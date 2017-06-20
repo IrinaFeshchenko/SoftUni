@@ -1,5 +1,4 @@
-﻿
-namespace SimpleJudge
+﻿namespace BashSoft
 {
     using System.IO;
 

@@ -1,4 +1,6 @@
-﻿namespace SimpleJudge
+﻿using BashSoft;
+
+namespace SimpleJudge
 {
     class Startup
     {
