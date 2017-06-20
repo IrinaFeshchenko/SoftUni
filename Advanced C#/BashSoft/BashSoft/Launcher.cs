@@ -4,7 +4,8 @@
     {
         static void Main()
         {
-            IOManager.TraverseDirectory(@"C:\SWTOOLS");
+            StudentsRepository.InitializeData();
+            StudentsRepository.GetStudentScoresFromCourse("Unity","Ivan");
         }
     }
 }

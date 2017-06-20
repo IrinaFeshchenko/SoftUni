@@ -86,7 +86,7 @@ namespace BashSoft
             return false;
         }
 
-        private static void GetStudentScoresFromCourse(string courseName, string userName)
+        public static void GetStudentScoresFromCourse(string courseName, string userName)
         {
             if (IsQueryforStudentPossible(courseName,userName))
             {
@@ -94,7 +94,7 @@ namespace BashSoft
             }
         }
 
-        private static void GetAllStudentsFromCourse(string courseName)
+        public static void GetAllStudentsFromCourse(string courseName)
         {
             if (IsQueryforCoursePossible(courseName))
             {
