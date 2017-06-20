@@ -1,12 +1,11 @@
 ﻿namespace _08.Extract_Quotations
 {
     using System;
-    using System.Collections.Generic;
     using System.Text.RegularExpressions;
 
     public class Startup
     {
-        static void Main()
+        public static void Main()
         {
             string input = Console.ReadLine();
 
