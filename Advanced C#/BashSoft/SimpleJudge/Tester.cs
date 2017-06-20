@@ -22,6 +22,22 @@
             OutputWriter.WriteMessageOnNewLine("Files read!");
         }
 
+        private static void PrintOutput(string[] mismatches, bool hasMismatch, string mismatchPath)
+        {
+            if (hasMismatch)
+            {
+                foreach (var line in mismatches)
+                {
+                    OutputWriter.WriteMessageOnNewLine(line);
+                }
+
+                File.WriteAllLines(mismatchPath, mismatches);
+                return;
+            }
+
+            OutputWriter.WriteMessageOnNewLine("Files are identical. There are no mismatches.");
+        }
+
         private static string[] GetLinesWithPossibleMismatches(string[] actualOutputLines, string[] expectedOutputLines, out bool hasMismatch)
         {
             hasMismatch = false;
