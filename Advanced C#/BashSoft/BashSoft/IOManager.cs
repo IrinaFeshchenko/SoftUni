@@ -1,5 +1,6 @@
 ﻿namespace BashSoft
 {
+    using System;
     using System.Collections.Generic;
     using System.IO;
 
@@ -50,6 +51,34 @@
         private static string GetCurrentDirectoryPath()
         {
             return SessionData.currentPath;
+        }
+
+        public static void ChangeCurrentDirectoryRelative(string relativePath)
+        {
+            if (relativePath == "..")
+            {
+                string currentPath = SessionData.currentPath;
+                int indexOfLastslash = currentPath.LastIndexOf("\\");
+                string newPath = currentPath.Substring(0, indexOfLastslash);
+                SessionData.currentPath = newPath;
+            }
+            else
+            {
+                string currentPath = SessionData.currentPath;
+                currentPath += "\\" + relativePath;
+                ChangeCurrentDirectoryAbsolute(currentPath);
+            }
+        }
+
+        private static void ChangeCurrentDirectoryAbsolute(string absolutePath)
+        {
+            if (!Directory.Exists(absolutePath))
+            {
+                OutputWriter.DisplayException(ExceptionMessages.InvalidPath);
+                return;
+            }
+
+            SessionData.currentPath = absolutePath;
         }
     }
 }
