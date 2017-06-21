@@ -5,8 +5,7 @@
         static void Main()
         {
 
-            IOManager.ChangeCurrentDirectoryAbsolute(@"c:\windows");
-            IOManager.TraverseDirectory(20);
+            IOManager.CreateDirectoryInCurrentFolder("*2");
         }
     }
 }

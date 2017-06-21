@@ -52,7 +52,14 @@
         public static void CreateDirectoryInCurrentFolder(string name)
         {
             string path = GetCurrentDirectoryPath() + "\\" + name;
-            Directory.CreateDirectory(path);
+            try
+            {
+                Directory.CreateDirectory(path);
+            }
+            catch (Exception)
+            {
+                OutputWriter.DisplayException(ExceptionMessages.ForbiddenSymbolsContainedInName);
+            }
         }
 
         private static string GetCurrentDirectoryPath()
