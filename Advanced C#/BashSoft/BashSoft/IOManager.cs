@@ -25,18 +25,26 @@
                     break;
                 }
 
-                // get all directories in current directory and enqueue them
-                foreach (var directoryPath in Directory.GetDirectories(currentPath))
+                try
                 {
-                    subFolders.Enqueue(directoryPath);
-                }
+                    // display files in directory
+                    foreach (var file in Directory.GetFiles(currentPath))
+                    {
+                        int indexOflastSlash = file.LastIndexOf("\\");
+                        string fileName = file.Substring(indexOflastSlash);
+                        OutputWriter.WriteMessageOnNewLine($"{new string('-', indexOflastSlash)}{fileName}");
+                    }
 
-                // display files in directory
-                foreach (var file in Directory.GetFiles(currentPath))
+                    // get all directories in current directory and enqueue them
+                    foreach (var directoryPath in Directory.GetDirectories(currentPath))
+                    {
+                        subFolders.Enqueue(directoryPath);
+                    }
+
+                }
+                catch (Exception)
                 {
-                    int indexOflastSlash = file.LastIndexOf("\\");
-                    string fileName = file.Substring(indexOflastSlash);
-                    OutputWriter.WriteMessageOnNewLine($"{new string('-',indexOflastSlash)}{fileName}");
+                    OutputWriter.DisplayException(ExceptionMessages.UnauthorizedAccessExceptionMessage);
                 }
 
             }
@@ -70,7 +78,7 @@
             }
         }
 
-        private static void ChangeCurrentDirectoryAbsolute(string absolutePath)
+        public static void ChangeCurrentDirectoryAbsolute(string absolutePath)
         {
             if (!Directory.Exists(absolutePath))
             {
