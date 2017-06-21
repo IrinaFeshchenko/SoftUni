@@ -42,7 +42,7 @@
                     }
 
                 }
-                catch (Exception)
+                catch (UnauthorizedAccessException)
                 {
                     OutputWriter.DisplayException(ExceptionMessages.UnauthorizedAccessExceptionMessage);
                 }
@@ -56,7 +56,7 @@
             {
                 Directory.CreateDirectory(path);
             }
-            catch (Exception)
+            catch (ArgumentException)
             {
                 OutputWriter.DisplayException(ExceptionMessages.ForbiddenSymbolsContainedInName);
             }
@@ -71,10 +71,17 @@
         {
             if (relativePath == "..")
             {
-                string currentPath = SessionData.currentPath;
-                int indexOfLastslash = currentPath.LastIndexOf("\\");
-                string newPath = currentPath.Substring(0, indexOfLastslash);
-                SessionData.currentPath = newPath;
+                try
+                {
+                    string currentPath = SessionData.currentPath;
+                    int indexOfLastslash = currentPath.LastIndexOf("\\");
+                    string newPath = currentPath.Substring(0, indexOfLastslash);
+                    SessionData.currentPath = newPath;
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    OutputWriter.DisplayException(ExceptionMessages.UnableToGoHigherInPartitionHierarachy)
+                }
             }
             else
             {
