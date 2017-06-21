@@ -46,7 +46,6 @@
                 {
                     OutputWriter.DisplayException(ExceptionMessages.UnauthorizedAccessExceptionMessage);
                 }
-
             }
         }
 
