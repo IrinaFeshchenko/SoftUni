@@ -80,7 +80,7 @@
                 }
                 catch (ArgumentOutOfRangeException)
                 {
-                    OutputWriter.DisplayException(ExceptionMessages.UnableToGoHigherInPartitionHierarachy)
+                    OutputWriter.DisplayException(ExceptionMessages.UnableToGoHigherInPartitionHierarachy);
                 }
             }
             else

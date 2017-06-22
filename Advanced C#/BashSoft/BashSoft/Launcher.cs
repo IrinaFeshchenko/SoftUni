@@ -4,8 +4,7 @@
     {
         static void Main()
         {
-
-            IOManager.CreateDirectoryInCurrentFolder("*2");
+            InputReader.StartReadingCommands();
         }
     }
 }
