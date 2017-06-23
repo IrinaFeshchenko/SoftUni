@@ -4,6 +4,7 @@ namespace BashSoft
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.Text.RegularExpressions;
 
     public static class StudentsRepository
     {
@@ -30,28 +31,35 @@ namespace BashSoft
 
             if (File.Exists(path))
             {
+                string pattern = @"([A-Z][A-Za-z#+]*_[A-Z][a-z]{2}_\d{4})\s+([A-Z][a-z]{0,3}\d{2}_\d{2,4})\s+(\d+)";
+                Regex rgx = new Regex(pattern);
                 string[] allInputLines = File.ReadAllLines(path);
 
                 foreach (var line in allInputLines)
                 {
-                    if (!string.IsNullOrEmpty(line))
+                    if (!string.IsNullOrEmpty(line) && rgx.IsMatch(line))
                     {
-                        string[] tokens = line.Split(' ');
-                        string course = tokens[0];
-                        string student = tokens[1];
-                        int mark = int.Parse(tokens[2]);
+                        Match currentMatch = rgx.Match(line);
 
-                        if (!studentsByCourse.ContainsKey(course))
+                        string courseName = currentMatch.Groups[1].Value;
+                        string student = currentMatch.Groups[2].Value;
+                        int studentScoreOnTask;
+                        bool hasParsedScore = int.TryParse(currentMatch.Groups[3].Value, out studentScoreOnTask);
+
+                        if (hasParsedScore && studentScoreOnTask >= 0 && studentScoreOnTask <= 100)
                         {
-                            studentsByCourse.Add(course, new Dictionary<string, List<int>>());
+                            if (!studentsByCourse.ContainsKey(courseName))
+                            {
+                                studentsByCourse.Add(courseName, new Dictionary<string, List<int>>());
+                            }
+
+                            if (!studentsByCourse[courseName].ContainsKey(student))
+                            {
+                                studentsByCourse[courseName].Add(student, new List<int>());
+                            }
                         }
 
-                        if (!studentsByCourse[course].ContainsKey(student))
-                        {
-                            studentsByCourse[course].Add(student, new List<int>());
-                        }
-
-                        studentsByCourse[course][student].Add(mark);
+                        studentsByCourse[courseName][student].Add(studentScoreOnTask);
 
                         isDataInitialized = true;
                         OutputWriter.WriteMessageOnNewLine("Data read!");
@@ -61,7 +69,7 @@ namespace BashSoft
             else
             {
                 OutputWriter.DisplayException(ExceptionMessages.InvalidPath);
-            }       
+            }
         }
 
         private static bool IsQueryforCoursePossible(string courseName)
@@ -82,12 +90,12 @@ namespace BashSoft
                 OutputWriter.DisplayException(ExceptionMessages.DataNotInitializedExceptionMessage);
             }
 
-            return false;        
+            return false;
         }
 
         private static bool IsQueryforStudentPossible(string courseName, string studentUserName)
         {
-            if (IsQueryforCoursePossible(courseName)&&studentsByCourse[courseName].ContainsKey(studentUserName))
+            if (IsQueryforCoursePossible(courseName) && studentsByCourse[courseName].ContainsKey(studentUserName))
             {
                 return true;
             }
@@ -101,9 +109,9 @@ namespace BashSoft
 
         public static void GetStudentScoresFromCourse(string courseName, string userName)
         {
-            if (IsQueryforStudentPossible(courseName,userName))
+            if (IsQueryforStudentPossible(courseName, userName))
             {
-                OutputWriter.PrintStudent(new KeyValuePair<string, List<int>>(userName,studentsByCourse[courseName][userName]));
+                OutputWriter.PrintStudent(new KeyValuePair<string, List<int>>(userName, studentsByCourse[courseName][userName]));
             }
         }
 
