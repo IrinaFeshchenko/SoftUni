@@ -27,80 +27,39 @@ namespace BashSoft
 
             if (command == "open")
             {
-                if (data.Length == 2)
-                {
-                    TryOpenFile(input, data);
-                }
+                TryOpenFile(data);
             }
             else if (command == "mkdir")
             {
-                if (data.Length == 2)
-                {
-                    TryCreateDirectory(input, data);
-                }
+                TryCreateDirectory(data);
             }
             else if (command == "ls")
             {
-                if (data.Length == 1)
-                {
-                    IOManager.TraverseDirectory(0);
-                }
-                else if (data.Length == 2)
-                {
-                    int depth;
-                    bool hasParsed = int.TryParse(data[1], out depth);
-                    if (hasParsed)
-                    {
-                        IOManager.TraverseDirectory(depth);
-                    }
-                    else
-                    {
-                        OutputWriter.DisplayException(ExceptionMessages.UnableToParseNumber);
-                    }
-                }
+                TryTraverseDIrectory(data);
             }
             else if (command == "cmp")
             {
-                if (data.Length == 3)
-                {
-                    string firstPath = data[1];
-                    string secondPath = data[2];
-
-                    Tester.CompareContent(firstPath, secondPath);
-                }
+                TryCompare(data);
             }
             else if (command == "cdRel")
             {
-                if (data.Length == 2)
-                {
-                    string relPath = data[1];
-                    IOManager.ChangeCurrentDirectoryRelative(relPath);
-                }
+                TryChangeDirectoryRelativePath(data);
             }
             else if (command == "cdAbs")
             {
-                if (data.Length == 2)
-                {
-                    string absPath = data[1];
-                    IOManager.ChangeCurrentDirectoryAbsolute(absPath);
-                }
+                TryChangeDirectoryAbsolutePath(data);
             }
             else if (command == "readDb")
             {
-                if (data.Length == 2)
-                {
-                    string fileName = data[1];
-                    StudentsRepository.InitializeData(fileName);
-                }
+                TryReadDB(data);
             }
             else if (command == "help")
             {
-                if (data.Length == 1)
-                {
-                    OutputWriter.WriteEmptyLine();
-                    OutputWriter.WriteMessage(DisplayHelp());
-                    OutputWriter.WriteEmptyLine();
-                }
+                TryShowHelp(data);
+            }
+            else if (command == "show")
+            {
+                TryShowWantedData(data);
             }
             else if (command == "filter")
             {
@@ -128,6 +87,90 @@ namespace BashSoft
             }
         }
 
+        private static void TryShowHelp(string[] data)
+        {
+            if (data.Length == 1)
+            {
+                OutputWriter.WriteEmptyLine();
+                OutputWriter.WriteMessage(DisplayHelp());
+                OutputWriter.WriteEmptyLine();
+            }
+        }
+
+        private static void TryReadDB(string[] data)
+        {
+            if (data.Length == 2)
+            {
+                string fileName = data[1];
+                StudentsRepository.InitializeData(fileName);
+            }
+        }
+
+        private static void TryChangeDirectoryAbsolutePath(string[] data)
+        {
+            if (data.Length == 2)
+            {
+                string absPath = data[1];
+                IOManager.ChangeCurrentDirectoryAbsolute(absPath);
+            }
+        }
+
+        private static void TryChangeDirectoryRelativePath(string[] data)
+        {
+            if (data.Length == 2)
+            {
+                string relPath = data[1];
+                IOManager.ChangeCurrentDirectoryRelative(relPath);
+            }
+        }
+
+        private static void TryCompare(string[] data)
+        {
+            if (data.Length == 3)
+            {
+                string firstPath = data[1];
+                string secondPath = data[2];
+
+                Tester.CompareContent(firstPath, secondPath);
+            }
+        }
+
+        private static void TryTraverseDIrectory(string[] data)
+        {
+            if (data.Length == 1)
+            {
+                IOManager.TraverseDirectory(0);
+            }
+            else if (data.Length == 2)
+            {
+                int depth;
+                bool hasParsed = int.TryParse(data[1], out depth);
+                if (hasParsed)
+                {
+                    IOManager.TraverseDirectory(depth);
+                }
+                else
+                {
+                    OutputWriter.DisplayException(ExceptionMessages.UnableToParseNumber);
+                }
+            }
+        }
+
+        private static void TryShowWantedData(string[] data)
+        {
+            if (data.Length == 2)
+            {
+                string courseName = data[1];
+                StudentsRepository.GetAllStudentsFromCourse(courseName);
+            }
+            else if (data.Length == 3)
+            {
+                string courseName = data[1];
+                string userName = data[2];
+                StudentsRepository.GetStudentScoresFromCourse(courseName, userName);
+            }
+        }
+
         private static string DisplayHelp()
         {
             return @"•	mkdir directoryName – create a directory in the current directory
@@ -145,16 +188,22 @@ namespace BashSoft
 ";
         }
 
-        private static void TryOpenFile(string input, string[] data)
+        private static void TryOpenFile(string[] data)
         {
-            string fileName = data[1];
-            Process.Start(SessionData.currentPath + "\\" + fileName);
+            if (data.Length == 2)
+            {
+                string fileName = data[1];
+                Process.Start(SessionData.currentPath + "\\" + fileName);
+            }
         }
 
-        private static void TryCreateDirectory(string input, string[] data)
+        private static void TryCreateDirectory(string[] data)
         {
-            string folderName = data[1];
-            IOManager.CreateDirectoryInCurrentFolder(folderName);
+            if (data.Length == 2)
+            {
+                string folderName = data[1];
+                IOManager.CreateDirectoryInCurrentFolder(folderName);
+            }
         }
     }
 }
