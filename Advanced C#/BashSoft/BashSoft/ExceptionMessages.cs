@@ -14,7 +14,7 @@
         public const string UnableToGoHigherInPartitionHierarachy = "Unable to go higher in the directory hierarchy.";
         public const string InvalidCommand = "Invalid command.";
         public const string UnableToParseNumber = "Unable to parse number";
-
+        public const string InvalidStudentFilter = "The given filter is not one of the following: excellent/average/poor";
 
     }
 }
