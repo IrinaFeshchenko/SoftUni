@@ -62,9 +62,9 @@ namespace BashSoft
                         studentsByCourse[courseName][student].Add(studentScoreOnTask);
 
                         isDataInitialized = true;
-                        OutputWriter.WriteMessageOnNewLine("Data read!");
                     }
                 }
+                OutputWriter.WriteMessageOnNewLine("Data read!");
             }
             else
             {
