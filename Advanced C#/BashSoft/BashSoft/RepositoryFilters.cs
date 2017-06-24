@@ -1,5 +1,4 @@
-﻿
-namespace BashSoft
+﻿namespace BashSoft
 {
     using System;
     using System.Collections.Generic;

@@ -15,6 +15,7 @@
         public const string InvalidCommand = "Invalid command.";
         public const string UnableToParseNumber = "Unable to parse number";
         public const string InvalidStudentFilter = "The given filter is not one of the following: excellent/average/poor";
-
+        public const string InvalidComparisonQuery = "The comparison query you want, does not exist in the context of the current program!";
+        public const string InvalidTakeQuantityParameter = "The take command expected does not match the format wanted!";
     }
 }
