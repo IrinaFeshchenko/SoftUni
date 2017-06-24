@@ -1,6 +1,7 @@
-﻿namespace SimpleJudge
+﻿namespace BashSoft.Judge
 {
-    using BashSoft;
+    using IO;
+    using Static_data;
     using System;
     using System.IO;
 
