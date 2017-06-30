@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Person", "Person\Person.csproj", "{A7548E41-A19D-429D-ADAB-AA903ADBF89F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01, 2 Person", "Person\01, 2 Person.csproj", "{A7548E41-A19D-429D-ADAB-AA903ADBF89F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03 Oldest Family Member", "Oldest Family Member\03 Oldest Family Member.csproj", "{00C3335B-CB6F-4239-BCA3-666199D666A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04 Opinion Poll", "4 Opinion Poll\04 Opinion Poll.csproj", "{F9ED55B3-761D-461F-A54E-F1488B9FED53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{A7548E41-A19D-429D-ADAB-AA903ADBF89F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7548E41-A19D-429D-ADAB-AA903ADBF89F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7548E41-A19D-429D-ADAB-AA903ADBF89F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00C3335B-CB6F-4239-BCA3-666199D666A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00C3335B-CB6F-4239-BCA3-666199D666A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00C3335B-CB6F-4239-BCA3-666199D666A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00C3335B-CB6F-4239-BCA3-666199D666A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9ED55B3-761D-461F-A54E-F1488B9FED53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9ED55B3-761D-461F-A54E-F1488B9FED53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9ED55B3-761D-461F-A54E-F1488B9FED53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9ED55B3-761D-461F-A54E-F1488B9FED53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
