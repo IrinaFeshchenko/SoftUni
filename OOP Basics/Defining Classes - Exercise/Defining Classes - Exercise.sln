@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04 Opinion Poll", "4 Opinio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05 Date Modifier", "05 Date Modifier\05 Date Modifier.csproj", "{A52EDE7C-BAA0-4005-926D-B2FCB8E22BC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06 Company Roster", "Company Roster\06 Company Roster.csproj", "{19EC482A-D48C-4DF4-9FF1-F350F836F209}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07 Speed Racing", "07 Speed Racing\07 Speed Racing.csproj", "{9CBA107C-7748-4B6C-A037-1A0BD7E98410}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{A52EDE7C-BAA0-4005-926D-B2FCB8E22BC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A52EDE7C-BAA0-4005-926D-B2FCB8E22BC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A52EDE7C-BAA0-4005-926D-B2FCB8E22BC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19EC482A-D48C-4DF4-9FF1-F350F836F209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19EC482A-D48C-4DF4-9FF1-F350F836F209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19EC482A-D48C-4DF4-9FF1-F350F836F209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19EC482A-D48C-4DF4-9FF1-F350F836F209}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CBA107C-7748-4B6C-A037-1A0BD7E98410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CBA107C-7748-4B6C-A037-1A0BD7E98410}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CBA107C-7748-4B6C-A037-1A0BD7E98410}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CBA107C-7748-4B6C-A037-1A0BD7E98410}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
