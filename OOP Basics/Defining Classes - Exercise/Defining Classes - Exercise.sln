@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10 Car Salesman", "10 Car S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11 Pokemon Trainer", "11 Pokemon Trainer\11 Pokemon Trainer.csproj", "{60F995FA-6C37-412C-BB09-A6F286B0D908}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12 Google", "12 Google\12 Google.csproj", "{165ACA05-A511-4D24-AF7D-338D679615C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13 Family Tree", "13 Family Tree\13 Family Tree.csproj", "{73A1C34B-D4CF-4CBE-91C2-B61C0916599F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{60F995FA-6C37-412C-BB09-A6F286B0D908}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60F995FA-6C37-412C-BB09-A6F286B0D908}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60F995FA-6C37-412C-BB09-A6F286B0D908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{165ACA05-A511-4D24-AF7D-338D679615C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{165ACA05-A511-4D24-AF7D-338D679615C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{165ACA05-A511-4D24-AF7D-338D679615C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{165ACA05-A511-4D24-AF7D-338D679615C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73A1C34B-D4CF-4CBE-91C2-B61C0916599F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73A1C34B-D4CF-4CBE-91C2-B61C0916599F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73A1C34B-D4CF-4CBE-91C2-B61C0916599F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73A1C34B-D4CF-4CBE-91C2-B61C0916599F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

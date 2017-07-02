@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace _12_Google
 {
-    class Car
+    public class Car
     {
+        public Car(string model, int speed)
+        {
+            Model = model;
+            Speed = speed;
+        }
+
+        public string Model { get; set; }
+        public int Speed { get; set; }
     }
 }

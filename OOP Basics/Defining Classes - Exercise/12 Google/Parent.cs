@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace _12_Google
 {
-    public class Pokemon
+    public class Parent
     {
-        public Pokemon(string name, string type)
+        public Parent(string name, string birthday)
         {
             Name = name;
-            Type = type;
+            this.birthday = birthday;
         }
 
         public string Name { get; set; }
-        public string Type { get; set; }
+        public string birthday { get; set; }
     }
 }

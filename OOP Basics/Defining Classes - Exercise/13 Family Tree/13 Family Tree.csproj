@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{165ACA05-A511-4D24-AF7D-338D679615C5}</ProjectGuid>
+    <ProjectGuid>{73A1C34B-D4CF-4CBE-91C2-B61C0916599F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_12_Google</RootNamespace>
-    <AssemblyName>12 Google</AssemblyName>
+    <RootNamespace>_13_Family_Tree</RootNamespace>
+    <AssemblyName>13 Family Tree</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,14 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Car.cs" />
-    <Compile Include="Child.cs" />
-    <Compile Include="Company.cs" />
-    <Compile Include="Parent.cs" />
+    <Compile Include="InputParser.cs" />
+    <Compile Include="Record.cs" />
     <Compile Include="Person.cs" />
-    <Compile Include="Pokemon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordsHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
