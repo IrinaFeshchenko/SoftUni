@@ -3,10 +3,7 @@ namespace _13_Family_Tree
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
     using System.Text.RegularExpressions;
-    using System.Threading.Tasks;
 
     public static class InputParser
     {
@@ -14,13 +11,23 @@ namespace _13_Family_Tree
         {
             List<Record> records = new List<Record>();
 
-            while (true)
+            try
             {
-                string input = Console.ReadLine();
-                if (input == "End") break;
+                while (true)
+                {
+                    string input = Console.ReadLine();
+                    if (input == "End") break;
 
-                var record = GetRecord(input);
-                records.Add(record);
+                    var record = GetRecord(input);
+                    if (record != null)
+                    {
+                        records.Add(record);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("");
             }
 
             return records;
@@ -81,27 +88,29 @@ namespace _13_Family_Tree
 
                 return record;
             }
-            else
-            {
-                throw new Exception("Recoord parse fail");
-            }
+
+            return null;
         }
 
-        public static Person ParseFirstInput()
+        public static string ParseFirstInput(Person mainPerson)
         {
-            var mainPerson = new Person();
-            string firstInput = Console.ReadLine();
+            string firstInput = Console.ReadLine().Trim();
+            string birthdatePattern = @"\d{1,2}\/\d{1,2}\/\d{4}";
+            string namePattern = @"[A-Z][a-z]+\s+[A-Z][a-z]+";
+            string nameOrDate = string.Empty;
 
-            if (char.IsDigit(firstInput[0]))
+            if (Regex.IsMatch(firstInput,birthdatePattern))
             {
                 mainPerson.BirthDate = firstInput;
+                nameOrDate = "date";
             }
-            else
+            else if (Regex.IsMatch(firstInput,namePattern))
             {
                 mainPerson.Name = firstInput;
+                nameOrDate = "name";
             }
 
-            return mainPerson;
+            return nameOrDate;
         }
     }
 }

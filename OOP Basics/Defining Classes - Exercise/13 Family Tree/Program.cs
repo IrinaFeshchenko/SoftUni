@@ -7,26 +7,24 @@ namespace _13_Family_Tree
 
     class Program
     {
-        private static string firtsName;
-
         static void Main()
         {
             // input
-            var mainPerson = InputParser.ParseFirstInput();
+            Person mainPerson = new Person();
+            string nameOrDate = InputParser.ParseFirstInput(mainPerson);
             List<Record> records = InputParser.ParseAllData();
 
-            if (string.IsNullOrEmpty(mainPerson.Name))
+            if (nameOrDate == "date")
             {
                 mainPerson.Name = records.Where(r => r.right == mainPerson.BirthDate && r.version == RecordVersion.v5).FirstOrDefault().left;
             }
-            else
+            else if (nameOrDate == "name")
             {
                 mainPerson.BirthDate = records.Where(r => r.left == mainPerson.Name && r.version == RecordVersion.v5).FirstOrDefault().right;
+
             }
-
-            // output
-            Console.WriteLine($"{mainPerson.Name} {mainPerson.BirthDate}");
-
+            
+            // match records data
             foreach (var record in records)
             {
                 if (RecordsHelper.IsParent(records, record, mainPerson, out Record resultParentRecord))
@@ -39,7 +37,21 @@ namespace _13_Family_Tree
                     mainPerson.AddChild(resultChildrenRecord);
                 }
             }
-            ;
+
+            // output
+            Console.WriteLine($"{mainPerson.Name} {mainPerson.BirthDate}");
+
+            Console.WriteLine("Parents:");
+            foreach (var parent in mainPerson.Parents)
+            {
+                Console.WriteLine($"{parent.left} {parent.right}");
+            }
+
+            Console.WriteLine("Children:");
+            foreach (var child in mainPerson.Children)
+            {
+                Console.WriteLine($"{child.left} {child.right}");
+            }
         }
     }
 }
