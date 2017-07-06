@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{83014F53-FCEC-413F-AA5E-2E6F40875126}</ProjectGuid>
+    <ProjectGuid>{2A4232FD-C158-4AAB-89C0-64A054A5A746}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_03_Animal_Farm</RootNamespace>
-    <AssemblyName>03 Animal Farm</AssemblyName>
+    <RootNamespace>_05_Pizza_Calories</RootNamespace>
+    <AssemblyName>05 Pizza Calories</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,9 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chicken.cs" />
+    <Compile Include="Dough.cs" />
+    <Compile Include="Pizza.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Topping.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
