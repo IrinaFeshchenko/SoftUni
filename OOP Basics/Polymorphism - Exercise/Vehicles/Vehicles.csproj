@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{204EF7FD-E59C-4535-A9AD-52929CF6DD95}</ProjectGuid>
+    <ProjectGuid>{0E82D6E2-FF4A-4807-86E8-22BEAD43B988}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Online_Radio_Database</RootNamespace>
-    <AssemblyName>Online Radio Database</AssemblyName>
+    <RootNamespace>Vehicles</RootNamespace>
+    <AssemblyName>Vehicles</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,8 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Song.cs" />
-    <Compile Include="Startup.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

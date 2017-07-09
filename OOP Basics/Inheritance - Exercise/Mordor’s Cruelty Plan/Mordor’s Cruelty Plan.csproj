@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{204EF7FD-E59C-4535-A9AD-52929CF6DD95}</ProjectGuid>
+    <ProjectGuid>{AF958B43-40BC-4960-BE12-ECC251CD2A48}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Online_Radio_Database</RootNamespace>
-    <AssemblyName>Online Radio Database</AssemblyName>
+    <RootNamespace>Mordor_s_Cruelty_Plan</RootNamespace>
+    <AssemblyName>Mordor’s Cruelty Plan</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,12 +42,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Song.cs" />
+    <Compile Include="Factories\FoodFactory.cs" />
+    <Compile Include="Factories\MoodFactory.cs" />
+    <Compile Include="Models\Food.cs" />
+    <Compile Include="Models\Foods\Apple.cs" />
+    <Compile Include="Models\Foods\Cram.cs" />
+    <Compile Include="Models\Foods\HoneyCake.cs" />
+    <Compile Include="Models\Foods\Junk.cs" />
+    <Compile Include="Models\Foods\Lembas.cs" />
+    <Compile Include="Models\Foods\Melon.cs" />
+    <Compile Include="Models\Foods\Mushrooms.cs" />
+    <Compile Include="Models\Mood.cs" />
+    <Compile Include="Models\Moods\Angry.cs" />
+    <Compile Include="Models\Gandalf.cs" />
+    <Compile Include="Models\Moods\Happy.cs" />
+    <Compile Include="Models\Moods\JavaScript.cs" />
+    <Compile Include="Models\Moods\Sad.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

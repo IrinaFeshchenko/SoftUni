@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{204EF7FD-E59C-4535-A9AD-52929CF6DD95}</ProjectGuid>
+    <ProjectGuid>{4AB763B9-D319-44FA-AD0B-91B4F918B092}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Online_Radio_Database</RootNamespace>
-    <AssemblyName>Online Radio Database</AssemblyName>
+    <RootNamespace>Animals</RootNamespace>
+    <AssemblyName>Animals</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,12 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Song.cs" />
-    <Compile Include="Startup.cs" />
+    <Compile Include="Factories\AnimalFactory.cs" />
+    <Compile Include="Models\Animal.cs" />
+    <Compile Include="Models\Animals\Cat.cs" />
+    <Compile Include="Models\Animals\Cats\Kitten.cs" />
+    <Compile Include="Models\Animals\Cats\Tomcat.cs" />
+    <Compile Include="Models\Animals\Dog.cs" />
+    <Compile Include="Models\Animals\Frog.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

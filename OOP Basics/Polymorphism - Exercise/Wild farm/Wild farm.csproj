@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{204EF7FD-E59C-4535-A9AD-52929CF6DD95}</ProjectGuid>
+    <ProjectGuid>{DE03481A-F996-4E37-9E8B-A0600CF924D6}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Online_Radio_Database</RootNamespace>
-    <AssemblyName>Online Radio Database</AssemblyName>
+    <RootNamespace>Wild_farm</RootNamespace>
+    <AssemblyName>Wild farm</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,12 +42,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Song.cs" />
-    <Compile Include="Startup.cs" />
+    <Compile Include="Factories\AnimalFactory.cs" />
+    <Compile Include="Factories\FoodFactory.cs" />
+    <Compile Include="Models\Animal.cs" />
+    <Compile Include="Models\Animals\Cat.cs" />
+    <Compile Include="Models\Animals\Mouse.cs" />
+    <Compile Include="Models\Animals\Tigeer.cs" />
+    <Compile Include="Models\Animals\Zebra.cs" />
+    <Compile Include="Models\Felime.cs" />
+    <Compile Include="Models\Food.cs" />
+    <Compile Include="Models\Foods\Meat.cs" />
+    <Compile Include="Models\Foods\Vegetable.cs" />
+    <Compile Include="Models\Mammal.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
