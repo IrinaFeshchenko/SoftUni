@@ -21,7 +21,7 @@
                 gandalf.Eat(foodEaten);
             }
 
-            var totalHappinessPoints = gandalf.GetHappinessPoints();
+            int totalHappinessPoints = gandalf.GetHappinessPoints();
             Mood currentMood = moodFactory.GetMood(totalHappinessPoints);
 
             Console.WriteLine(totalHappinessPoints);
