@@ -11,29 +11,30 @@ namespace Wild_farm
     {
         static void Main()
         {
-            try
+            while (true)
             {
-                while (true)
+                string[] animalTokens = Console.ReadLine().Split(new[] { ' ', '\n', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                if (animalTokens[0] == "End") break;
+
+                string[] foodTokens = Console.ReadLine().Split(new[] { ' ', '\n', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                if (animalTokens[0] == "End") break;
+
+                var animal = AnimalFactory.GetAnimal(animalTokens);
+
+                var food = FoodFactory.GetFood(foodTokens);
+
+                Console.WriteLine(animal.MakeSound());
+
+                try
                 {
-                    string[] animalTokens = Console.ReadLine().Split(new[] { ' ', '\n', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                    if (animalTokens[0] == "End") break;
-
-                    string[] foodTokens = Console.ReadLine().Split(new[] { ' ', '\n', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                    if (animalTokens[0] == "End") break;
-
-
-                    var animal = AnimalFactory.GetAnimal(animalTokens);
-
-                    var food = FoodFactory.GetFood(foodTokens);
-
-                    Console.WriteLine(animal.MakeSound());
-                    animal.EatFood(food);
-                    Console.WriteLine(animal);
+                    animal.Eat(food);
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
+                Console.WriteLine(animal);
             }
         }
     }

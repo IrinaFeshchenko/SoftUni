@@ -16,12 +16,7 @@ namespace Wild_farm.Factories
                 return new Meat(foodQuantity);
             }
 
-            if (foodType == "Vegetable")
-            {
-                return new Vegetable(foodQuantity);
-            }
-
-            return null;
+            return new Vegetable(foodQuantity);
         }
     }
 }

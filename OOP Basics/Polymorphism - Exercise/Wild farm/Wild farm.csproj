@@ -47,7 +47,7 @@
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Animals\Cat.cs" />
     <Compile Include="Models\Animals\Mouse.cs" />
-    <Compile Include="Models\Animals\Tigeer.cs" />
+    <Compile Include="Models\Animals\Tiger.cs" />
     <Compile Include="Models\Animals\Zebra.cs" />
     <Compile Include="Models\Felime.cs" />
     <Compile Include="Models\Food.cs" />

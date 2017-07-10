@@ -16,7 +16,7 @@
 
         public abstract string MakeSound();
 
-        public virtual void EatFood(Food food)
+        public virtual void Eat(Food food)
         {
             this.FoodEaten += food.Quantity;
         }

@@ -19,7 +19,7 @@
                 case "Zebra":
                     return new Zebra(animalName, animalType, animalWeight, animalRegion);
                 case "Tiger":
-                    return new Tigeer(animalName, animalType, animalWeight, animalRegion);
+                    return new Tiger(animalName, animalType, animalWeight, animalRegion);
                 case "Cat":
                     return new Cat(animalName, animalType, animalWeight, animalRegion, tokens[4]);
                 default:
