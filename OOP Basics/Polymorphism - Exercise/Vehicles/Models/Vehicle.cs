@@ -8,17 +8,21 @@
 
     public abstract class Vehicle
     {
-        protected Vehicle(double fuelQuantity, double fuelConsumptionPerKm)
+
+        public Vehicle(double fuelQuantity, double fuelConsumptionPerKm, double tankCapacity)
         {
-            this.FuelQuantity = fuelQuantity;
-            this.FuelConsumptionPerKm = fuelConsumptionPerKm;
+            TankCapacity = tankCapacity;
+            FuelQuantity = fuelQuantity;
+            FuelConsumptionPerKm = fuelConsumptionPerKm;
         }
 
-        private double FuelQuantity { get; set; }
+        protected virtual double FuelQuantity { get; set; }
 
-        private double FuelConsumptionPerKm { get; set; }
+        protected double FuelConsumptionPerKm { get; set; }
 
-        private bool Drive(double distance)
+        protected virtual double TankCapacity { get; set; }
+
+        protected virtual bool Drive(double distance, bool isAcOn)
         {
             var fuelRequired = distance * this.FuelConsumptionPerKm;
 
@@ -31,9 +35,9 @@
             return false;
         }
 
-        public string TryTravelDistance(double distance)
+        public string TryTravelDistance(double distance, bool isAcOn)
         {
-            if (this.Drive(distance))
+            if (this.Drive(distance, isAcOn))
             {
                 return $"{this.GetType().Name} travelled {distance} km";
             }
@@ -42,8 +46,20 @@
                 return $"{this.GetType().Name} needs refueling";
             }
         }
-        
-        public virtual void Refuel(double fuelAmount) => this.FuelQuantity += fuelAmount;
+
+        public string TryTravelDistance(double distance)
+        {
+            return this.TryTravelDistance(distance, true);
+        }
+
+        public virtual void Refuel(double fuelAmount)
+        {
+            if (fuelAmount<=0)
+            {
+                throw new ArgumentException("Fuel must be a positive number");
+            }
+            this.FuelQuantity += fuelAmount;
+        }
 
         public override string ToString()
         {
