@@ -14,32 +14,40 @@
     {
         public Animal GetAnimal(string animalType, string animalData)
         {
-            string[] tokens = animalData.Split(new[] { ' ','\t','\n'},StringSplitOptions.RemoveEmptyEntries);
+            string[] tokens = animalData.Split(new[] { ' ', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             string name = tokens[0];
-            int age = int.Parse(tokens[1]);
-            GenderType gender = (GenderType)Enum.Parse(typeof(GenderType), tokens[2].ToLower());
-
-            if (animalType == "Cat")
+            int age;
+            if (!int.TryParse(tokens[1], out age))
             {
-                return new Cat(name, age, gender);
+                throw new ArgumentException("Invalid input!");
             }
-            if (animalType == "Dog")
+            string gender = tokens[2];
+
+            animalType = animalType.ToLower();
+
+
+            if (animalType == "dog")
             {
                 return new Dog(name, age, gender);
             }
-            if (animalType == "Frog")
+            if (animalType == "frog")
             {
                 return new Frog(name, age, gender);
             }
-            if (animalType == "Kitten")
+            if (animalType == "cat")
+            {
+                return new Cat(name, age, gender);
+            }
+            if (animalType == "kitten")
             {
                 return new Kitten(name, age);
             }
-            if (animalType == "Cat")
+            if (animalType == "tomcat")
             {
                 return new Tomcat(name, age);
             }
-            return null;
+
+            throw new ArgumentException("Invalid input!");
         }
     }
 }

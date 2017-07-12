@@ -8,12 +8,12 @@
 
     public class Kitten : Cat
     {
-        private const GenderType kittenGender = GenderType.female;
+        private const string kittenGender = "Female";
         public Kitten(string name, int age) : base(name, age, kittenGender)
         {
         }
 
-        public override string ToString()
+        public override string ProduceSound()
         {
             return "Miau";
         }

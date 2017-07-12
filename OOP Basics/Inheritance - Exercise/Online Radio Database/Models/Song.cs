@@ -1,5 +1,6 @@
 ﻿namespace Online_Radio_Database.Models
 {
+    using Online_Radio_Database.Exceptions;
     using System;
     using System.Globalization;
     using System.Linq;
@@ -8,72 +9,69 @@
     {
         private string artistName;
         private string songName;
-        private TimeSpan songDuration;
+        private int minutes;
+        private int seconds;
+        private int totalLength;
 
-        public Song(string songName, string artistName, string duration)
+        public Song(string artistName, string songName, int minutes, int seconds)
         {
             this.ArtistName = artistName;
             this.SongName = songName;
-            this.SongDuration = ParseDuration(duration);
+            this.Minutes = minutes;
+            this.Seconds = seconds;
         }
 
-        public TimeSpan SongDuration
+        public int Seconds
         {
-            get { return songDuration; }
+            get { return this.seconds; }
             set
             {
-                songDuration = value;
+                if (value < 0 || value > 59)
+                {
+                    throw new InvalidSongSecondsException();
+                }
+
+                this.seconds = value;
+            }
+        }
+
+        public int Minutes
+        {
+            get { return this.minutes; }
+            set
+            {
+                if (value < 0 || value > 14)
+                {
+                    throw new InvalidSongMinutesException();
+                }
+
+                this.minutes = value;
             }
         }
 
         public string SongName
         {
-            get { return songName; }
+            get { return this.songName; }
             set
             {
                 if (value.Length < 3 || value.Length > 30)
                 {
-                    throw new ArgumentException("Song name should be between 3 and 30 symbols.");
+                    throw new InvalidSongNameException();
                 }
-                songName = value;
             }
         }
 
         public string ArtistName
         {
-            get { return artistName; }
+            get { return this.artistName; }
             set
             {
-                if (value.Length<3||value.Length>20)
+                if (value.Length < 3 || value.Length > 20)
                 {
-                    throw new ArgumentException("Artist name should be between 3 and 20 symbols.");
+                    throw new InvalidArtistNameException();
                 }
-                artistName = value;
             }
-        }
-
-        private TimeSpan ParseDuration(string duration)
-        {
-            int[] tokens = duration.Split(':').Select(int.Parse).ToArray();
-            int minutes = tokens[0];
-            int seconds = tokens[1];
-
-            if (minutes<0|| minutes>14)
-            {
-                throw new ArgumentException("Song minutes should be between 0 and 14.");
-            }
-
-            if (seconds < 0 || seconds > 59)
-            {
-                throw new ArgumentException("Song seconds should be between 0 and 59.");
-            }
-
-            if (minutes < 0 || seconds < 0 || (minutes > 14 || seconds > 59))
-            {
-                throw new ArgumentException("Invalid song.");
-            }
-
-            return TimeSpan.ParseExact(duration, "m\\:s", CultureInfo.InvariantCulture);
         }
     }
 }
+

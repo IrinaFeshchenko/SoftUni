@@ -8,12 +8,12 @@
 
     public class Tomcat : Cat
     {
-        private const GenderType tomcatGender = GenderType.male;
+        private const string tomcatGender = "Male";
         public Tomcat(string name, int age) : base(name, age, tomcatGender)
         {
         }
 
-        public override string ToString()
+        public override string ProduceSound()
         {
             return "Give me one million b***h";
         }
