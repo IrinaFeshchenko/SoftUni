@@ -27,6 +27,6 @@ public class WaterBender:Bender
 
     public override string ToString()
     {
-        return $"{base.ToString()}, Water Clarity: {this.waterClarity:f2}";
+        return $"{base.ToString()}, Water Clarity: {this.WaterClarity:f2}";
     }
 }

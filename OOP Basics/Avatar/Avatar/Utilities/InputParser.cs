@@ -7,6 +7,6 @@ public class InputParser
 {
     public List<string> Parse(string inputLine)
     {
-        return new List<string>(inputLine.Split(new[] { ' ','\t', '\n'}, StringSplitOptions.RemoveEmptyEntries));
+        return new List<string>(inputLine.Split(new[] { ' ','\t'}, StringSplitOptions.RemoveEmptyEntries));
     }
 }

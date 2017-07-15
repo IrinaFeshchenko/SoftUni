@@ -50,7 +50,10 @@ public class NationsBuilder
 
         foreach (var nation in nations.Values)
         {
-            nation.DeclareDefeat();
+            if (nation.GetTotalPower()!=victorioutPower)
+            {
+                nation.DeclareDefeat();
+            }
         }
 
         var record = $"War {this.warHistoryRecord.Count+1} issued by {nationsType}";

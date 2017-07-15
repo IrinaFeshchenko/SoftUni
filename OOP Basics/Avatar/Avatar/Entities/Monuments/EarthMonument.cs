@@ -26,6 +26,6 @@ public class EarthMonument:Monument
 
     public override string ToString()
     {
-        return $"{base.ToString()}, Earth Affinity: {this.earthAffinity}";
+        return $"{base.ToString()}, Earth Affinity: {this.EarthAffinity}";
     }
 }

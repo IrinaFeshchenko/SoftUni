@@ -8,7 +8,7 @@ public class WaterMonument:Monument
     //•	WaterAffinity – an integer, holding the waterAffinity of the Monument.
     private int waterAffinity;
 
-    public WaterMonument(string name, int WaterAffinity) : base(name)
+    public WaterMonument(string name, int waterAffinity) : base(name)
     {
         this.WaterAffinity = waterAffinity;
     }
@@ -26,6 +26,6 @@ public class WaterMonument:Monument
 
     public override string ToString()
     {
-        return $"{base.ToString()}, Water Affinity: {waterAffinity}";
+        return $"{base.ToString()}, Water Affinity: {WaterAffinity}";
     }
 }

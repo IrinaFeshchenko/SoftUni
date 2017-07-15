@@ -15,8 +15,8 @@ public abstract class Monument
 
     public string Name
     {
-        get { return name; }
-        set { name = value; }
+        get { return this.name; }
+        set { this.name = value; }
     }
 
     public abstract int GetAffinity();
@@ -27,6 +27,6 @@ public abstract class Monument
         int typeEnd = monumentType.IndexOf("Monument");
         monumentType = monumentType.Insert(typeEnd," ");
 
-        return $"{monumentType}: {this.name}";
+        return $"{monumentType}: {this.Name}";
     }
 }

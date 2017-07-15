@@ -59,7 +59,7 @@ public class Nation
         }
         else
         {
-            sb.AppendLine(" None");
+            sb.Append(" None");
         }
 
         return sb.ToString();

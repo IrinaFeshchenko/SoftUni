@@ -25,6 +25,6 @@ public class AirMonument:Monument
 
     public override string ToString()
     {
-        return $"{base.ToString()}, Air Affinity: {this.airAffinity}";
+        return $"{base.ToString()}, Air Affinity: {this.AirAffinity}";
     }
 }
