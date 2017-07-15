@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6D8116A5-C09A-475F-A5D9-66FDDD763631}</ProjectGuid>
+    <ProjectGuid>{DE7640DE-0FDF-47DB-9EB8-243EBA0ECAD8}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Shapes</RootNamespace>
-    <AssemblyName>Shapes</AssemblyName>
+    <RootNamespace>Avatar</RootNamespace>
+    <AssemblyName>Avatar</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,15 +42,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Circle.cs" />
-    <Compile Include="Rectangle.cs" />
-    <Compile Include="Shape.cs" />
+    <Compile Include="Core\Engine.cs" />
+    <Compile Include="Core\NationsBuilder.cs" />
+    <Compile Include="Entities\Bender.cs" />
+    <Compile Include="Entities\Benders\AirBender.cs" />
+    <Compile Include="Entities\Benders\EarthBender.cs" />
+    <Compile Include="Entities\Benders\FireBender.cs" />
+    <Compile Include="Entities\Benders\WaterBender.cs" />
+    <Compile Include="Entities\Monument.cs" />
+    <Compile Include="Entities\Monuments\AirMonument.cs" />
+    <Compile Include="Entities\Monuments\EarthMonument.cs" />
+    <Compile Include="Entities\Monuments\FireMonument.cs" />
+    <Compile Include="Entities\Monuments\WaterMonument.cs" />
+    <Compile Include="Entities\Nation.cs" />
+    <Compile Include="Factories\BenderFactory.cs" />
+    <Compile Include="Factories\MonumentFactory.cs" />
+    <Compile Include="IO\ConsoleReader.cs" />
+    <Compile Include="IO\ConsoleWriter.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Triangle.cs" />
+    <Compile Include="Utilities\Constants.cs" />
+    <Compile Include="Utilities\InputParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

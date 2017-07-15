@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6D8116A5-C09A-475F-A5D9-66FDDD763631}</ProjectGuid>
+    <ProjectGuid>{04BEC0D7-4625-4F52-A862-CAFF2D1EC048}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Shapes</RootNamespace>
-    <AssemblyName>Shapes</AssemblyName>
+    <RootNamespace>NeedForSpeed</RootNamespace>
+    <AssemblyName>NeedForSpeed</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,15 +42,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Circle.cs" />
-    <Compile Include="Rectangle.cs" />
-    <Compile Include="Shape.cs" />
+    <Compile Include="Core\CarManager.cs" />
+    <Compile Include="Core\Engine.cs" />
+    <Compile Include="Entities\Car.cs" />
+    <Compile Include="Entities\Cars\PerformanceCar.cs" />
+    <Compile Include="Entities\Cars\ShowCar.cs" />
+    <Compile Include="Entities\Garage.cs" />
+    <Compile Include="Entities\Race.cs" />
+    <Compile Include="Entities\Races\CasualRace.cs" />
+    <Compile Include="Entities\Races\DragRace.cs" />
+    <Compile Include="Entities\Races\DriftRace.cs" />
+    <Compile Include="Factories\CarFactory.cs" />
+    <Compile Include="Factories\RaceFactory.cs" />
+    <Compile Include="IO\ConsoleReader.cs" />
+    <Compile Include="IO\ConsoleWriter.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Triangle.cs" />
+    <Compile Include="Utilities\Constants.cs" />
+    <Compile Include="Utilities\InputParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
