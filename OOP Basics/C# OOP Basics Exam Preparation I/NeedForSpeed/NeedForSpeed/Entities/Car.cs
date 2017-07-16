@@ -85,10 +85,29 @@ public abstract class Car
         StringBuilder sb = new StringBuilder();
         sb.AppendLine($"{this.Brand} {this.Model} {this.YearOfProduction}");
         sb.AppendLine($"{this.Horsepower}  HP, 100 m/h in {this.Acceleration} s");
-        sb.AppendLine($"{ this.Suspension} Suspension force, { this.Durability} Durability”");
+        sb.AppendLine($"{ this.Suspension} Suspension force, { this.Durability} Durability");
 
         return sb.ToString();
     }
 
-    public abstract void Tune();
+    public virtual void Tune(int tuneIndex, string addOn)
+    {
+        this.horsepower += tuneIndex;
+        this.suspension += tuneIndex / 2;       
+    }
+
+    public int GetOveralPerformance()
+    {
+        return GetEnginePerformance() + GetSuspensionPerformance();
+    }
+
+    public int GetEnginePerformance()
+    {
+        return this.horsepower / this.acceleration;
+    }
+
+    public int GetSuspensionPerformance()
+    {
+        return this.Suspension + this.Durability;
+    }
 }

@@ -12,13 +12,15 @@ public abstract class Race
     //a prizePool(int), 
     private int prizePool;
     //and participants(Collection of Cars)
-    private List<Car> participants;
+    private Dictionary<int,Car> participants;
+    protected List<Car> winners;
 
     public Race(int length, string route, int prizePool)
     {
         this.Length = length;
         this.Route = route;
         this.PrizePool = prizePool;
+        this.participants = new Dictionary<int, Car>();
     }
 
     public int Length
@@ -39,15 +41,39 @@ public abstract class Race
         set { prizePool = value; }
     }
 
-    public IReadOnlyList<Car> Participants
+    public Dictionary<int,Car> Participants
     {
-        get { return participants.AsReadOnly(); }
+        get { return this.participants; }
     }
 
-    public void AddParticipant(Car participant)
+    public int GetPrize(int place)
     {
-        this.participants.Add(participant);
+        if (place == 1)
+        {
+            return this.PrizePool / 100 * 50;
+        }
+        else if (place == 2)
+        {
+            return this.PrizePool / 100 * 30;
+        }
+        else if (place == 3)
+        {
+            return this.PrizePool / 100 * 20;
+        }
+
+        throw new ArgumentException("Invalid Place");
+    }
+    public void AddParticipant(int id,Car participant)
+    {
+        this.participants.Add(id,participant);
     }
 
     public abstract void Start();
+
+    public override string ToString()
+    {
+        return $"{this.Route} - {this.Length}";
+    }
+
+    public abstract void GetRaceResult();
 }

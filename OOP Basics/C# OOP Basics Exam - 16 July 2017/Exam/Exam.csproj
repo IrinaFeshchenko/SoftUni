@@ -42,7 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\DraftManager.cs" />
     <Compile Include="Core\Engine.cs" />
+    <Compile Include="Entities\DraftObject.cs" />
+    <Compile Include="Entities\Harvester.cs" />
+    <Compile Include="Entities\Harvesters\HammerHarvester.cs" />
+    <Compile Include="Entities\Harvesters\SonicHarvester.cs" />
+    <Compile Include="Entities\Provider.cs" />
+    <Compile Include="Entities\Providers\PressureProvider.cs" />
+    <Compile Include="Entities\Providers\SolarProvider.cs" />
+    <Compile Include="Factories\HarvesterFactory.cs" />
+    <Compile Include="Factories\ProviderFactory.cs" />
     <Compile Include="IO\ConsoleReader.cs" />
     <Compile Include="IO\ConsoleWriter.cs" />
     <Compile Include="Startup.cs" />
@@ -53,9 +63,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Factories\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

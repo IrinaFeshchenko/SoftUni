@@ -9,18 +9,13 @@ public class Engine
     private ConsoleWriter outputWriter;
     private InputParser inputParser;
     private CarManager carManager;
-    private CarFactory carFactory;
-    private RaceFactory raceFactory;
 
     public Engine()
     {
         this.inputReadere = new ConsoleReader();
         this.outputWriter = new ConsoleWriter();
         this.inputParser = new InputParser();
-        
-        this.carFactory = new CarFactory();
-        this.raceFactory = new RaceFactory();
-        this.carManager = new CarManager(carFactory,raceFactory);
+        this.carManager = new CarManager();
     }
 
     public void Run()
@@ -28,7 +23,7 @@ public class Engine
         while (true)
         {
             var commandParams = inputParser.Split((inputReadere.Readline()));
-            if (commandParams[0] != Constants.INPUT_TERMINATING_COMMAND) break;
+            if (commandParams[0] == Constants.INPUT_TERMINATING_COMMAND) break;
 
             this.DispatchCommand(commandParams);
         }
@@ -70,12 +65,6 @@ public class Engine
                 string route = commandParams[3];
                 int prizePool = int.Parse(commandParams[4]);
 
-                if (commandParams.Count > 5)
-                {
-                    int specialRaceParameter = int.Parse(commandParams[5]);
-                    //this.carManager.Open(openId, openType, length, route, prizePool, specialRaceParameter);
-                }
-                else
                 {
                     this.carManager.Open(openId, openType, length, route, prizePool);
                 }

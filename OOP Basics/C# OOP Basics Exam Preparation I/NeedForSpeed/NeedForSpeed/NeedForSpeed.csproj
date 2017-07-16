@@ -50,8 +50,10 @@
     <Compile Include="Entities\Garage.cs" />
     <Compile Include="Entities\Race.cs" />
     <Compile Include="Entities\Races\CasualRace.cs" />
+    <Compile Include="Entities\Races\CircuitRace.cs" />
     <Compile Include="Entities\Races\DragRace.cs" />
     <Compile Include="Entities\Races\DriftRace.cs" />
+    <Compile Include="Entities\Races\TimeLimitRace.cs" />
     <Compile Include="Factories\CarFactory.cs" />
     <Compile Include="Factories\RaceFactory.cs" />
     <Compile Include="IO\ConsoleReader.cs" />

@@ -5,8 +5,6 @@ using System.Text;
 
 public class Garage
 {
-    //todo: modify parked cars ?
-
     //o	Has parkedCars (Collection of Cars).
     private Dictionary<int,Car> parkedCars;
 
@@ -20,6 +18,26 @@ public class Garage
         get { return parkedCars; }
     }
 
+    public bool ContainsCar(int id)
+    {
+        if (this.parkedCars.Any(c=>c.Key==id))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public Car GetCar(int id)
+    {
+        if (this.parkedCars.ContainsKey(id))
+        {
+            return this.parkedCars[id];
+        }
+        return null;
+    }
     public void Park(int id,Car car)
     {
         this.parkedCars.Add(id,car);
@@ -28,5 +46,13 @@ public class Garage
     public void Unpark(int id)
     {
         this.parkedCars.Remove(id);
+    }
+
+    public void TuneCars(int tuneIndex, string addOn)
+    {
+        foreach (var car in parkedCars.Select(c=>c.Value))
+        {
+            car.Tune(tuneIndex, addOn);
+        }
     }
 }

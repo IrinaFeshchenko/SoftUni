@@ -25,6 +25,12 @@ public class ShowCar:Car
         //o	If the car is a ShowCar, you must print “{stars} *”, on the last line.
         StringBuilder sb = new StringBuilder(base.ToString());
         sb.AppendLine($"{this.Stars} *");
-        return sb.ToString();
+        return sb.ToString().Trim();
+    }
+
+    public override void Tune(int tuneIndex, string addOn)
+    {
+        this.stars += tuneIndex;
+        base.Tune(tuneIndex, addOn);
     }
 }

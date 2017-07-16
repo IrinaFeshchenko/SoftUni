@@ -6,15 +6,16 @@ using System.Text;
 public class PerformanceCar:Car
 {
     //o	Has addOns (Collection of strings). (by default – empty)
-    private List<int> addOns;
+    private List<string> addOns;
 
     public PerformanceCar(string brand, string model, int yearOfProduction, int horsepower, int acceleration, int suspension, int durability)
         : base(brand, model, yearOfProduction, horsepower, acceleration, suspension, durability)
     {
         this.ModifyStats();
+        this.addOns = new List<string>();
     }
 
-    public IReadOnlyList<int> AddOns
+    public IReadOnlyList<string> AddOns
     {
         get => addOns.AsReadOnly();
     }
@@ -46,9 +47,15 @@ public class PerformanceCar:Car
         }
         else
         {
-            sb.AppendLine($"None");
+            sb.AppendLine($"Add-ons: None");
         }
 
-        return sb.ToString();
+        return sb.ToString().Trim();
+    }
+
+    public override void Tune(int tuneIndex, string addOn)
+    {
+        this.addOns.Add(addOn);
+        base.Tune(tuneIndex, addOn);
     }
 }

@@ -9,16 +9,17 @@ public class CarManager
 
     private Dictionary<int, Car> registeredCars;
     private Dictionary<int, Race> races;
-    private Dictionary<int, Car> parkedCars;
+    private Garage garage;
     private CarFactory carFactory;
     private RaceFactory raceFactory;
 
-    public CarManager(CarFactory carFactory, RaceFactory raceFactory)
+    public CarManager()
     {
         this.registeredCars = new Dictionary<int, Car>();
         this.races = new Dictionary<int, Race>();
-        this.carFactory = carFactory;
-        this.raceFactory = raceFactory;
+        this.garage = new Garage();
+        this.carFactory = new CarFactory();
+        this.raceFactory = new RaceFactory();
     }
 
     //•	void Register(int id, string type, string brand, string model, int yearOfProduction, int horsepower, int acceleration, int suspension, int durability)
@@ -45,14 +46,29 @@ public class CarManager
         //•	check {id}
         //o CHECKS details about the car with the given id.
         //o RETURNS a string representation of the car.
-        if (registeredCars[id] != null)
+        if (registeredCars.ContainsKey(id))
         {
             return this.registeredCars[id].ToString();
         }
-        else
+
+        var parkedCar = garage.GetCar(id);
+
+        if (parkedCar != null)
         {
-            throw new ArgumentException("Check: car id not found");
+            return parkedCar.ToString();
         }
+
+        foreach (var race in races)
+        {
+            foreach (var car in race.Value.Participants)
+            {
+                if (car.Key == id)
+                {
+                    return car.Value.ToString();
+                }
+            }
+        }
+        return null;
     }
 
     //•	void Open(int id, string type, int length, string route, int prizePool)
@@ -80,19 +96,10 @@ public class CarManager
         //•	participate {carId} {raceId}
         //o	ADDS a car as a participant in the given race.
         //o	Once added, a car CANNOT turn down a race or be REMOVED from it.
-        if (!this.races.ContainsKey(raceId))
+        if (this.registeredCars.ContainsKey(carId))
         {
-            throw new ArgumentException("invalid raceID");
+            this.races[raceId].AddParticipant(carId, this.registeredCars[carId]);
         }
-
-        if (!this.registeredCars.ContainsKey(carId))
-        {
-            throw new ArgumentException("invalid carId");
-        }
-
-        this.races[raceId].AddParticipant(this.registeredCars[carId]);
-        //todo: romove car or check if car is in race garage etc.?
-        registeredCars.Remove(carId);
     }
 
     //•	string Start(int id)
@@ -103,12 +110,19 @@ public class CarManager
         //o	RETURNS detailed information about the race result.
 
         string result = string.Empty;
-        if (!this.races.ContainsKey(id))
+
+        if (this.races[id].Participants.Any())
         {
-            throw new ArgumentException("invalid start race ID");
+            var currentRace = this.races[id];
+            this.races.Remove(id);
+            currentRace.Start();
+            result = currentRace.ToString();
+        }
+        else
+        {
+            result = "Cannot start the race with zero participants.";
         }
 
-        this.races[id].Start();
         return result;
     }
 
@@ -117,7 +131,7 @@ public class CarManager
     {
         if (registeredCars.ContainsKey(id))
         {
-            parkedCars.Add(id, registeredCars[id]);
+            garage.Park(id, registeredCars[id]);
             registeredCars.Remove(id);
         }
     }
@@ -125,12 +139,16 @@ public class CarManager
     //•	void Unpark(int id)
     public void Unpark(int id)
     {
-        this.ga
+        if (this.garage.ContainsCar(id))
+        {
+            registeredCars.Add(id, garage.GetCar(id));
+            garage.Unpark(id);
+        }
     }
 
     //•	void Tune(int tuneIndex, string addOn)
     public void Tune(int tuneIndex, string addOn)
     {
-        
+        this.garage.TuneCars(tuneIndex, addOn);
     }
 }
