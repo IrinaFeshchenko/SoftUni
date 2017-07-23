@@ -1,24 +1,31 @@
-﻿namespace BashSoft.IO
-{
-    using Static_data;
-    using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace BashSoft
+{
     public class InputReader
     {
         private const string endCommand = "quit";
+        private CommandInterpreter interpreter;
 
-        public static void StartReadingCommands()
+        public InputReader(CommandInterpreter interpreter)
         {
-            CommandInterpreter.InterpretCommand("readDb dataNew.txt");
+            this.interpreter = interpreter;
+        }
 
-            while (true)
+        public void StartReadingCommands()
+        {
+            OutputWriter.WriteMessage($"{SessionData.currentPath}" + "> ");
+            string input = Console.ReadLine().Trim();
+
+            while (input != endCommand)
             {
-                //Interpret command
-                OutputWriter.WriteMessage($"{SessionData.currentPath}> ");
-                string input = Console.ReadLine().Trim();
-                if (input == endCommand) break;
-
-                CommandInterpreter.InterpretCommand(input);
+                this.interpreter.InterpredCommand(input);
+                OutputWriter.WriteMessage($"{SessionData.currentPath}" + "> ");
+                input = Console.ReadLine().Trim();
             }
         }
     }

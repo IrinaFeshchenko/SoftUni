@@ -57,6 +57,7 @@
     <Compile Include="Core\CommandDispatcher.cs" />
     <Compile Include="Core\Commands\ExitCommand.cs" />
     <Compile Include="Core\Commands\LoginCommand.cs" />
+    <Compile Include="Core\Commands\LogoutCommand.cs" />
     <Compile Include="Core\Commands\RegisterUserCommand.cs" />
     <Compile Include="Utilities\Check.cs" />
     <Compile Include="Utilities\CommandHelper.cs" />

@@ -32,7 +32,6 @@
             commands.Add("increase", new IncreaseNumberCommand(null));
             commands.Add("print", new PrintStringCommand(null));
             commands.Add("report", new PrintNumberCommand(null));
-
         }
     }
 }

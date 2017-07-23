@@ -1,0 +1,5 @@
+// template for new console app project
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\ProjectTemplates\CSharp\Windows\1033\ConsoleApplication
+
+// template for new class
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\ItemTemplates\CSharp\Code\1033\Class

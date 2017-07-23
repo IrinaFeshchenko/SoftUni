@@ -1,3 +1,6 @@
+// sum llist of timespans
+TimeSpan total = new TimeSpan(list.Sum(t => t.Ticks));
+
 //regex: one or many words with space @ and numbers
 Regex rg = new Regex(@"(?<singer>(\w+ )+)@(?<venue>(\w+ )+)(?<ticketPrice>\d+ )(?<ticketCount>\d+)");
 Match match = rg.Match(input);

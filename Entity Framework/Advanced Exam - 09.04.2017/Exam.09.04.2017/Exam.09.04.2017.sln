@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetHunters.Data", "PlanetHunters.Data\PlanetHunters.Data.csproj", "{E4E633BD-1145-4471-9596-3D1304B794BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetHunters.Models", "PlanetHunters.Models\PlanetHunters.Models.csproj", "{BD3571E8-8E47-4494-82F4-23FA09C9F682}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetHunters.Dto", "PlanetHunters.Dto\PlanetHunters.Dto.csproj", "{3A4400D8-6A63-445D-AFEC-E779E5592081}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetHunters.App", "PlanetHunters.App\PlanetHunters.App.csproj", "{9B18B37A-8584-4C95-9D96-3F2021F80A73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetHunters.Import", "PlanetHunters.Import\PlanetHunters.Import.csproj", "{E2FF0185-6130-4B83-AC24-CDD087BB481D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetHunters.Export", "PlanetHunters.Export\PlanetHunters.Export.csproj", "{B9ABC758-EC41-47E2-8D21-948BB3397860}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "datasets", "datasets", "{3684F27D-569F-4854-BD41-EE9089B4F9A3}"
+	ProjectSection(SolutionItems) = preProject
+		datasets\astronomers.json = datasets\astronomers.json
+		datasets\discoveries.xml = datasets\discoveries.xml
+		datasets\planets.json = datasets\planets.json
+		datasets\stars.xml = datasets\stars.xml
+		datasets\telescopes.json = datasets\telescopes.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exports", "Exports", "{48AE3CB7-3C3B-47B6-B943-ADF482A6D0D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4E633BD-1145-4471-9596-3D1304B794BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4E633BD-1145-4471-9596-3D1304B794BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4E633BD-1145-4471-9596-3D1304B794BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4E633BD-1145-4471-9596-3D1304B794BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD3571E8-8E47-4494-82F4-23FA09C9F682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD3571E8-8E47-4494-82F4-23FA09C9F682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD3571E8-8E47-4494-82F4-23FA09C9F682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD3571E8-8E47-4494-82F4-23FA09C9F682}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A4400D8-6A63-445D-AFEC-E779E5592081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A4400D8-6A63-445D-AFEC-E779E5592081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A4400D8-6A63-445D-AFEC-E779E5592081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A4400D8-6A63-445D-AFEC-E779E5592081}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B18B37A-8584-4C95-9D96-3F2021F80A73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B18B37A-8584-4C95-9D96-3F2021F80A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B18B37A-8584-4C95-9D96-3F2021F80A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B18B37A-8584-4C95-9D96-3F2021F80A73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2FF0185-6130-4B83-AC24-CDD087BB481D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2FF0185-6130-4B83-AC24-CDD087BB481D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2FF0185-6130-4B83-AC24-CDD087BB481D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2FF0185-6130-4B83-AC24-CDD087BB481D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9ABC758-EC41-47E2-8D21-948BB3397860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9ABC758-EC41-47E2-8D21-948BB3397860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9ABC758-EC41-47E2-8D21-948BB3397860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9ABC758-EC41-47E2-8D21-948BB3397860}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

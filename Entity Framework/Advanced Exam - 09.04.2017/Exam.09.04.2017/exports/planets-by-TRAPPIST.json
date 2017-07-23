@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Trappist-1 b",
+    "mass": 0.85,
+    "orbiting": []
+  },
+  {
+    "name": "Trappist-1 c",
+    "mass": 1.38,
+    "orbiting": []
+  },
+  {
+    "name": "Proxima Centauri b",
+    "mass": 1.27,
+    "orbiting": []
+  },
+  {
+    "name": "Wolf 1061 c",
+    "mass": 4.30,
+    "orbiting": []
+  },
+  {
+    "name": "Kepler-413 (AB)b",
+    "mass": 67.00,
+    "orbiting": []
+  }
+]

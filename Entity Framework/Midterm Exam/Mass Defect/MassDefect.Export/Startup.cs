@@ -3,9 +3,9 @@ namespace MassDefect.Export
 {
     using Data;
     using Newtonsoft.Json;
-    using System;
     using System.IO;
     using System.Linq;
+    using System;
 
     class Startup
     {
@@ -13,13 +13,33 @@ namespace MassDefect.Export
         {
             var context = new MassDefectContext();
             ExportPlanetsWhichAreNotAnomalyOrigins(context);
-            //ExportPeopleWhichHaveNotBeenVictims(context);
-            //ExportTopAnomaly();
+            ExportPeopleWhichHaveNotBeenVictims(context);
+            ExportTopAnomaly(context);
+            ExportAllAnomaliesAndPeople(context);
         }
 
-        private static void ExportTopAnomaly()
+        private static void ExportAllAnomaliesAndPeople(MassDefectContext context)
         {
-            throw new NotImplementedException();
+            var anomalies = context.Anomalies.Select(a=> new
+            {
+                
+            }).ToList();
+        }
+
+        private static void ExportTopAnomaly(MassDefectContext context)
+        {
+            var anomaly = context.Anomalies.OrderByDescending(a => a.Persons.Count())
+                .Take(1)
+                .Select(a => new
+                {
+                    id = a.Id,
+                    originPlanet = new { name = a.OriginPlanet.Name },
+                    teleportPlanet = new { name = a.TeleportPlanet.Name },
+                    victimsCount = a.Persons.Count
+                }).ToList();
+
+            var text = JsonConvert.SerializeObject(anomaly, Formatting.Indented);
+            File.WriteAllText("../../export/anomaly.json", text);
         }
 
         private static void ExportPeopleWhichHaveNotBeenVictims(MassDefectContext context)
@@ -28,7 +48,7 @@ namespace MassDefect.Export
                 .Select(p => new
                 {
                     name = p.Name,
-                    homePlamen = p.HomePlanet.Name
+                    homePlanet = new { name = p.HomePlanet.Name }
                 }).ToList();
 
             var text = JsonConvert.SerializeObject(persons, Formatting.Indented);
