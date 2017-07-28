@@ -47,6 +47,10 @@ namespace CustomList
                 {
                     Console.WriteLine(customList.Min());
                 }
+                else if (command == "Sort")
+                {
+                    customList = Sorter.Sort(customList);
+                }
                 else if (command == "Print")
                 {
                     foreach (var item in customList)

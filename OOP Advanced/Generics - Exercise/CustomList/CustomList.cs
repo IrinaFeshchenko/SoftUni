@@ -9,8 +9,13 @@ public class CustomList<T>: ICustomList<T>, IEnumerable<T>
     private IList<T> list;
 
     public CustomList()
+        : this(Enumerable.Empty<T>())
     {
-        list = new List<T>();
+    }
+
+    public CustomList(IEnumerable<T> sortedList)
+    {
+        this.list = new List<T>(sortedList);
     }
 
     public void Add(T element)
@@ -54,6 +59,8 @@ public class CustomList<T>: ICustomList<T>, IEnumerable<T>
     {
         return this.list.Min();
     }
+
+    
 
     public IEnumerator<T> GetEnumerator()
     {
