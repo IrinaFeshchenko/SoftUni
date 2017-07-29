@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericBox", "GenericBox\Ge
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomList", "CustomList\CustomList.csproj", "{84DECEF5-270D-4DC2-AAFB-9AB69404B69A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuple", "Tuple\Tuple.csproj", "{5ED38E67-4E9E-424B-BCF6-9F2D5702CEAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threeuple", "Threeuple\Threeuple.csproj", "{9A24D831-C778-4ACA-8A11-561B9472CDCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{84DECEF5-270D-4DC2-AAFB-9AB69404B69A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84DECEF5-270D-4DC2-AAFB-9AB69404B69A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84DECEF5-270D-4DC2-AAFB-9AB69404B69A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ED38E67-4E9E-424B-BCF6-9F2D5702CEAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ED38E67-4E9E-424B-BCF6-9F2D5702CEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ED38E67-4E9E-424B-BCF6-9F2D5702CEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ED38E67-4E9E-424B-BCF6-9F2D5702CEAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A24D831-C778-4ACA-8A11-561B9472CDCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A24D831-C778-4ACA-8A11-561B9472CDCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A24D831-C778-4ACA-8A11-561B9472CDCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A24D831-C778-4ACA-8A11-561B9472CDCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
