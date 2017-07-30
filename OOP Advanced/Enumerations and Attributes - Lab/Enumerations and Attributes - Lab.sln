@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weekdays", "Weekdays\Weekda
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeMachine", "CoffeeMachine\CoffeeMachine.csproj", "{C9469A3F-E269-467F-95D0-399AA7CC5C66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateAttribute", "CreateAttribute\CreateAttribute.csproj", "{586DAC87-7880-467A-A003-CBA8A8B2B3E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C9469A3F-E269-467F-95D0-399AA7CC5C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9469A3F-E269-467F-95D0-399AA7CC5C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9469A3F-E269-467F-95D0-399AA7CC5C66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{586DAC87-7880-467A-A003-CBA8A8B2B3E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{586DAC87-7880-467A-A003-CBA8A8B2B3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{586DAC87-7880-467A-A003-CBA8A8B2B3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{586DAC87-7880-467A-A003-CBA8A8B2B3E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
