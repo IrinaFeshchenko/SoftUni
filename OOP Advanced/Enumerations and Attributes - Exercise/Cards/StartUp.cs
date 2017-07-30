@@ -13,7 +13,41 @@ namespace Cards
             //PrintCardPower();
             //PrintCardCompareTo();
             //PrintAttribute();
-            PrintDeckOfCards();
+            //PrintDeckOfCards();
+            Game();
+        }
+
+        private static void Game()
+        {
+            Player first = new Player(Console.ReadLine());
+            Player second = new Player(Console.ReadLine());
+
+            while (first.CardsCount() < 5)
+            {
+                try
+                {
+                    first.AddCard(Console.ReadLine());
+                }
+                catch (InvalidOperationException io)
+                {
+                    Console.WriteLine(io.Message);
+                }
+            }
+
+            while (second.CardsCount() < 5)
+            {
+                try
+                {
+                    second.AddCard(Console.ReadLine());
+                }
+                catch (InvalidOperationException io)
+                {
+                    Console.WriteLine(io.Message);
+                }
+            }
+            int firstHighest = first.GetHighestCard().Power;
+            int secondHighest = second.GetHighestCard().Power;
+            Console.WriteLine(firstHighest > secondHighest ? first : second);
         }
 
         private static void PrintDeckOfCards()
@@ -24,7 +58,7 @@ namespace Cards
             {
                 foreach (var rank in Enum.GetNames(typeof(Rank)))
                 {
-                   deck.Add(new Card(rank,suit));
+                    deck.Add(new Card(rank, suit));
                 }
             }
 
@@ -39,7 +73,7 @@ namespace Cards
             var input = Console.ReadLine();
             Type type = null;
 
-            if (input=="Rank")
+            if (input == "Rank")
             {
                 type = typeof(Rank);
                 var attributes = type.GetCustomAttributes(false);
@@ -58,7 +92,7 @@ namespace Cards
             var first = ReadCard();
             var second = ReadCard();
 
-            if (first.CompareTo(second)>0)
+            if (first.CompareTo(second) > 0)
             {
                 Console.WriteLine(first);
             }
@@ -81,7 +115,7 @@ namespace Cards
             string rank = Console.ReadLine();
             string suit = Console.ReadLine();
 
-            var card = new Card(rank,suit);
+            var card = new Card(rank, suit);
             Console.WriteLine(card.ToString());
         }
 

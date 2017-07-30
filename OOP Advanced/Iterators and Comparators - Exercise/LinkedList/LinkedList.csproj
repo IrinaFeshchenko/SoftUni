@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3BBD65B0-138D-4668-B0DD-B3DE2E610F20}</ProjectGuid>
+    <ProjectGuid>{376F61FD-20C4-4C57-B47C-34298CA09F56}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Cards</RootNamespace>
-    <AssemblyName>Cards</AssemblyName>
+    <RootNamespace>LinkedList</RootNamespace>
+    <AssemblyName>LinkedList</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,13 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Card.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="Rank.cs" />
-    <Compile Include="Suit.cs" />
+    <Compile Include="LinkedList.cs" />
+    <Compile Include="Node.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TypeAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
