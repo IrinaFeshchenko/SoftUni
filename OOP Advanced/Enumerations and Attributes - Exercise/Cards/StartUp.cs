@@ -8,13 +8,33 @@ namespace Cards
     {
         public static void Main()
         {
-            //CardSuit();
-            //CardRank();
-            //CardPower();
-            CardCompareTo();
+            //PrintCardSuit();
+            //PrintCardRank();
+            //PrintCardPower();
+            //PrintCardCompareTo();
+            PrintAttribute();
         }
 
-        private static void CardCompareTo()
+        private static void PrintAttribute()
+        {
+            var input = Console.ReadLine();
+            Type type = null;
+
+            if (input=="Rank")
+            {
+                type = typeof(Rank);
+                var attributes = type.GetCustomAttributes(false);
+                Console.WriteLine(attributes[0]);
+            }
+            else
+            {
+                type = typeof(Suit);
+                var attributes = type.GetCustomAttributes(false);
+                Console.WriteLine(attributes[0]);
+            }
+        }
+
+        private static void PrintCardCompareTo()
         {
             var first = ReadCard();
             var second = ReadCard();
@@ -37,7 +57,7 @@ namespace Cards
             return new Card(rank, suit);
         }
 
-        private static void CardPower()
+        private static void PrintCardPower()
         {
             string rank = Console.ReadLine();
             string suit = Console.ReadLine();
@@ -46,7 +66,7 @@ namespace Cards
             Console.WriteLine(card.ToString());
         }
 
-        private static void CardRank()
+        private static void PrintCardRank()
         {
             var input = Console.ReadLine();
             Console.WriteLine($"{input}:");
@@ -57,7 +77,7 @@ namespace Cards
             }
         }
 
-        public static void CardSuit()
+        public static void PrintCardSuit()
         {
             var input = Console.ReadLine();
 

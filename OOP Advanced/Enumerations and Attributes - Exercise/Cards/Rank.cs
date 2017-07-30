@@ -1,4 +1,5 @@
-﻿public enum Rank
+﻿[Type("Rank", "Provides rank constants for a Card class.")]
+public enum Rank
 {
     Ace=14,
     Two =2,
