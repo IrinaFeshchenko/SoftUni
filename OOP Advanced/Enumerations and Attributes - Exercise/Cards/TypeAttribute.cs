@@ -8,7 +8,7 @@ public class TypeAttribute : Attribute
         Description = description;
         this.Type = "Enumeration";
     }
-
+    
     public string Type { get; }
 
     public string Category { get; set; }

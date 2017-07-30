@@ -12,7 +12,26 @@ namespace Cards
             //PrintCardRank();
             //PrintCardPower();
             //PrintCardCompareTo();
-            PrintAttribute();
+            //PrintAttribute();
+            PrintDeckOfCards();
+        }
+
+        private static void PrintDeckOfCards()
+        {
+            var deck = new List<Card>();
+
+            foreach (var suit in Enum.GetNames(typeof(Suit)))
+            {
+                foreach (var rank in Enum.GetNames(typeof(Rank)))
+                {
+                   deck.Add(new Card(rank,suit));
+                }
+            }
+
+            foreach (var card in deck)
+            {
+                Console.WriteLine(card.Name);
+            }
         }
 
         private static void PrintAttribute()
