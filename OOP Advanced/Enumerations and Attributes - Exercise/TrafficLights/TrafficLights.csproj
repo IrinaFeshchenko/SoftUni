@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EA16D1DF-B80C-40AF-B45A-480F9A57B6AE}</ProjectGuid>
+    <ProjectGuid>{61A286F4-A1EC-4D4C-9EDB-F0B443A4B11E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>PetClinics</RootNamespace>
-    <AssemblyName>PetClinics</AssemblyName>
+    <RootNamespace>TrafficLights</RootNamespace>
+    <AssemblyName>TrafficLights</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,9 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Engine.cs" />
-    <Compile Include="Entities\Clinic.cs" />
-    <Compile Include="Entities\Pet.cs" />
+    <Compile Include="Enums\TrafficSignal.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EA16D1DF-B80C-40AF-B45A-480F9A57B6AE}</ProjectGuid>
+    <ProjectGuid>{14EE748B-C738-43B9-9FC1-96B66368E9AB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>PetClinics</RootNamespace>
-    <AssemblyName>PetClinics</AssemblyName>
+    <RootNamespace>CustomAttribute</RootNamespace>
+    <AssemblyName>CustomAttribute</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,11 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Engine.cs" />
-    <Compile Include="Entities\Clinic.cs" />
-    <Compile Include="Entities\Pet.cs" />
+    <Compile Include="BookAttribute.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Weapon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

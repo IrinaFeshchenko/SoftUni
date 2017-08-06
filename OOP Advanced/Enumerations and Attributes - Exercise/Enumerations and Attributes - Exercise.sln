@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cards", "Cards\Cards.csproj", "{3BBD65B0-138D-4668-B0DD-B3DE2E610F20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficLights", "TrafficLights\TrafficLights.csproj", "{61A286F4-A1EC-4D4C-9EDB-F0B443A4B11E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomAttribute", "CustomAttribute\CustomAttribute.csproj", "{14EE748B-C738-43B9-9FC1-96B66368E9AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{3BBD65B0-138D-4668-B0DD-B3DE2E610F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BBD65B0-138D-4668-B0DD-B3DE2E610F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BBD65B0-138D-4668-B0DD-B3DE2E610F20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61A286F4-A1EC-4D4C-9EDB-F0B443A4B11E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61A286F4-A1EC-4D4C-9EDB-F0B443A4B11E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61A286F4-A1EC-4D4C-9EDB-F0B443A4B11E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61A286F4-A1EC-4D4C-9EDB-F0B443A4B11E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14EE748B-C738-43B9-9FC1-96B66368E9AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14EE748B-C738-43B9-9FC1-96B66368E9AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14EE748B-C738-43B9-9FC1-96B66368E9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14EE748B-C738-43B9-9FC1-96B66368E9AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

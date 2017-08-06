@@ -14,6 +14,7 @@ namespace Cards
             //PrintCardCompareTo();
             //PrintAttribute();
             //PrintDeckOfCards();
+
             Game();
         }
 
@@ -26,7 +27,7 @@ namespace Cards
             {
                 try
                 {
-                    first.AddCard(Console.ReadLine());
+                    first.AddCard(GetCard(first, second));
                 }
                 catch (InvalidOperationException io)
                 {
@@ -38,7 +39,7 @@ namespace Cards
             {
                 try
                 {
-                    second.AddCard(Console.ReadLine());
+                    second.AddCard(GetCard(first,second));
                 }
                 catch (InvalidOperationException io)
                 {
@@ -48,6 +49,32 @@ namespace Cards
             int firstHighest = first.GetHighestCard().Power;
             int secondHighest = second.GetHighestCard().Power;
             Console.WriteLine(firstHighest > secondHighest ? first : second);
+        }
+
+        private static Card GetCard(Player first, Player second)
+        {
+            var args = Console.ReadLine().Split(' ');
+            if (args.Length != 3)
+            {
+                throw new InvalidOperationException("No such card exists.");
+            }
+            string rank = args[0];
+            string suit = args[2];
+
+            Card card;
+            try
+            {
+                card = new Card(rank, suit);
+            }
+            catch (Exception)
+            {
+                throw new InvalidOperationException("No such card exists.");
+            }
+            if (first.ContainsCard(card)||second.ContainsCard(card))
+            {
+                throw new InvalidOperationException($"Card is not in the deck.");
+            }
+            return card;
         }
 
         private static void PrintDeckOfCards()

@@ -16,27 +16,8 @@ public class Player
 
     public int CardsCount() => cards.Count;
 
-    public void AddCard(string inputCard)
+    public void AddCard(Card card)
     {
-        var args = inputCard.Split(new []{" of "},StringSplitOptions.RemoveEmptyEntries);
-        string rank = args[0];
-        string suit = args[1];
-
-        Card card;
-        try
-        {
-            card = new Card(rank,suit);
-        }
-        catch (Exception)
-        {
-            throw new InvalidOperationException("No such card exists.");
-        }
-
-        if (cards.Any(c=>c.Name==card.Name))
-        {
-            throw new InvalidOperationException($"Card is not in the deck.");
-        }
-
         this.cards.Add(card);
     }
 
@@ -45,5 +26,10 @@ public class Player
     public override string ToString()
     {
         return $"{this.Name} wins with {this.GetHighestCard().Name}.";
+    }
+
+    public bool ContainsCard(Card card)
+    {
+        return this.cards.Contains(card);
     }
 }

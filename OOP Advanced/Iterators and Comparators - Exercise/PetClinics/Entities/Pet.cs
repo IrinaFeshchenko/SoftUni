@@ -1,15 +1,59 @@
-﻿public class Pet
+﻿using System;
+
+public class Pet
 {
-    public Pet(string name, string age, string kind)
+    private string name;
+    private int age;
+    private string kind;
+
+    public Pet(string name, int age, string kind)
     {
-        Name = name;
-        Age = age;
-        Kind = kind;
+        this.Name = name;
+        this.Age = age;
+        this.Kind = kind;
     }
 
-    public string Name { get; private set; }
+    public string Name
+    {
+        get => this.name;
+        private set
+        {
+            if (value.Length < 1 || value.Length > 100)
+            {
+                throw new ArgumentException("Invalid Operation!");
+            }
+            this.name = value;
+        }
+    }
 
-    public string Age { get; private set; }
+    public int Age
+    {
+        get => this.age;
+        private set
+        {
+            if (value < 1 || value > 100)
+            {
+                throw new ArgumentException("Invalid Operation!");
+            }
+            this.age = value;
+        }
+    }
 
-    public string Kind { get;private set; }
+    public string Kind
+    {
+        get => this.kind;
+        private set
+        {
+            if (value.Length < 1 || value.Length > 100)
+            {
+                throw new ArgumentException("Invalid Operation!");
+            }
+            this.kind = value;
+        }
+    }
+
+    public override string ToString()
+    {
+        return $"{this.Name} {this.Age} {this.Kind}";
+    }
 }

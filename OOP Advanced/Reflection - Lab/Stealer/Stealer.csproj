@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EA16D1DF-B80C-40AF-B45A-480F9A57B6AE}</ProjectGuid>
+    <ProjectGuid>{D68DB010-ED39-4D77-8906-CAB557B5CFC0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>PetClinics</RootNamespace>
-    <AssemblyName>PetClinics</AssemblyName>
+    <RootNamespace>Stealer</RootNamespace>
+    <AssemblyName>Stealer</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,9 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Engine.cs" />
-    <Compile Include="Entities\Clinic.cs" />
-    <Compile Include="Entities\Pet.cs" />
+    <Compile Include="Hacker.cs" />
+    <Compile Include="Spy.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
