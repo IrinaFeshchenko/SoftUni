@@ -44,7 +44,7 @@ namespace BashSoft.DataStructures
             : this(Comparer<T>.Create((x, y) => x.CompareTo(y)), 16)
         {
         }
-
+        
         public int Size => this.size;
 
         public int Capacity
@@ -67,12 +67,16 @@ namespace BashSoft.DataStructures
 
         public void Add(T element)
         {
-            if (this.size == innerCollection.Length)
+            if (element == null)
             {
-                Resize();
+                throw new NullReferenceException();
+            }
+            if (this.size == this.innerCollection.Length)
+            {
+                this.Resize();
             }
 
-            this.innerCollection[size] = element;
+            this.innerCollection[this.size] = element;
             this.size++;
             Array.Sort(this.innerCollection, 0, size, comparison);
         }
@@ -107,7 +111,12 @@ namespace BashSoft.DataStructures
         }
 
         public string JoinWith(string joiner)
-        {
+        {           
+            if (joiner == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             StringBuilder builder = new StringBuilder();
             foreach (var element in this)
             {
@@ -115,12 +124,17 @@ namespace BashSoft.DataStructures
                 builder.Append(joiner);
             }
 
-            builder.Remove(builder.Length - 1, 1);
+            builder.Remove(builder.Length - joiner.Length, joiner.Length);
             return builder.ToString();
         }
 
         public bool Remove(T element)
         {
+            if (element == null)
+            {
+                throw new NullReferenceException();
+            }
+
             bool hasBeenRemoved = false;
             int indexOfRemovedElement = 0;
             for (int i = 0; i < this.Size; i++)
@@ -142,6 +156,7 @@ namespace BashSoft.DataStructures
                 }
 
                 this.innerCollection[this.size - 1] = default(T);
+                this.size--;
             }
 
             return hasBeenRemoved;
