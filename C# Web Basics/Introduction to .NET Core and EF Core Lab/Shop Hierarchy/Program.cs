@@ -16,8 +16,30 @@
                 ReadCommands(context);
                 //PrintSalesmanWithCustomersCount(context);
                 //PrintCustomersWithOrdersAndRevewCount(context);
-                PrintCustomerOrdersAndReviews(context);
+                //PrintCustomerOrdersAndReviews(context);
+                PrintCustomerData(context);
             }
+        }
+
+        private static void PrintCustomerData(ShopDbContext context)
+        {
+            int customerId = int.Parse(Console.ReadLine());
+
+            var customerData = context.Customers
+                .Where(c => c.Id == customerId)
+                .Select(c => new
+                {
+                    c.Name,
+                    Orders = c.Orders.Count,
+                    Reviews = c.Reviews.Count,
+                    Salesman = c.Salesman.Name
+                })
+                .FirstOrDefault();
+
+                Console.WriteLine($"Customer: {customerData.Name}");
+                Console.WriteLine($"Orders count: {customerData.Orders}");
+                Console.WriteLine($"Reviews count: {customerData.Reviews}");
+                Console.WriteLine($"Salesman: {customerData.Salesman}");         
         }
 
         private static void PrintCustomerOrdersAndReviews(ShopDbContext context)
