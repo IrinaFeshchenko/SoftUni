@@ -17,8 +17,18 @@
                 //PrintSalesmanWithCustomersCount(context);
                 //PrintCustomersWithOrdersAndRevewCount(context);
                 //PrintCustomerOrdersAndReviews(context);
-                PrintCustomerData(context);
+                //PrintCustomerData(context);
+                PrintCustomerOrdersWithMoreThanOneItem(context);
             }
+        }
+
+        private static void PrintCustomerOrdersWithMoreThanOneItem(ShopDbContext context)
+        {
+            int customerId = int.Parse(Console.ReadLine());
+
+            var customerData = context.Orders.Count(o => o.CustomerId == customerId && o.ItemOrder.Count > 1);
+
+            Console.WriteLine($"Orders : {customerData}");
         }
 
         private static void PrintCustomerData(ShopDbContext context)
@@ -36,10 +46,10 @@
                 })
                 .FirstOrDefault();
 
-                Console.WriteLine($"Customer: {customerData.Name}");
-                Console.WriteLine($"Orders count: {customerData.Orders}");
-                Console.WriteLine($"Reviews count: {customerData.Reviews}");
-                Console.WriteLine($"Salesman: {customerData.Salesman}");         
+            Console.WriteLine($"Customer: {customerData.Name}");
+            Console.WriteLine($"Orders count: {customerData.Orders}");
+            Console.WriteLine($"Reviews count: {customerData.Reviews}");
+            Console.WriteLine($"Salesman: {customerData.Salesman}");
         }
 
         private static void PrintCustomerOrdersAndReviews(ShopDbContext context)
@@ -54,7 +64,7 @@
                     {
                         o.Id,
                         Items = o.ItemOrder.Count
-                     })
+                    })
                      .OrderBy(o => o.Id),
                     Reviews = c.Reviews.Count
                 })
