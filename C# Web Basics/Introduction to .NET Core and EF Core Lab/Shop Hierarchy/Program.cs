@@ -1,7 +1,6 @@
 ﻿namespace Shop_Hierarchy
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
 
     public class Program
