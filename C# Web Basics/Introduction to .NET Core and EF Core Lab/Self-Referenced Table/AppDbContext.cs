@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace Self_Referenced_Table
+﻿namespace Self_Referenced_Table
 {
+    using Microsoft.EntityFrameworkCore;
+
     public class AppDbContext : DbContext
     {
         public DbSet<Employee> Employee { get; set; }
@@ -11,7 +11,7 @@ namespace Self_Referenced_Table
             builder.UseSqlServer(@"Server=COMP\SQLEXPRESS;Database=TestDb;Integrated Security = True;");
         }
 
-        protected internal void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Employee>()
                    .HasMany<Employee>(e => e.Employees)
