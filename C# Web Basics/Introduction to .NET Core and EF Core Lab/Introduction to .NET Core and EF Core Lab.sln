@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "School Competition", "Schoo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "One-to-Many Relation", "One-to-Many Relation\One-to-Many Relation.csproj", "{5308130E-6D03-416A-9C50-FCD196188A4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Self-Referenced Table", "Self-Referenced Table\Self-Referenced Table.csproj", "{414EFCBE-072A-4927-846A-44C35DBDC116}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Self-Referenced Table", "Self-Referenced Table\Self-Referenced Table.csproj", "{414EFCBE-072A-4927-846A-44C35DBDC116}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Many-to-Many Relation", "Many-to-Many Relation\Many-to-Many Relation.csproj", "{EAA505AA-7BDB-4818-B401-009AE05FB823}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Many-to-Many Relation", "Many-to-Many Relation\Many-to-Many Relation.csproj", "{EAA505AA-7BDB-4818-B401-009AE05FB823}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop Hierarchy", "Shop Hierarchy\Shop Hierarchy.csproj", "{8A2FB0AE-16A9-45EA-AF5F-813C143D141A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{EAA505AA-7BDB-4818-B401-009AE05FB823}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAA505AA-7BDB-4818-B401-009AE05FB823}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAA505AA-7BDB-4818-B401-009AE05FB823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A2FB0AE-16A9-45EA-AF5F-813C143D141A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A2FB0AE-16A9-45EA-AF5F-813C143D141A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A2FB0AE-16A9-45EA-AF5F-813C143D141A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A2FB0AE-16A9-45EA-AF5F-813C143D141A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

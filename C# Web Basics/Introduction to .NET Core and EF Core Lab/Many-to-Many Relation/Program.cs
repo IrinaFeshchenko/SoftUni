@@ -1,4 +1,4 @@
-﻿namespace Self_Referenced_Table
+﻿namespace Many_to_Many_Relation
 {
     public class Program
     {
