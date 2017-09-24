@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Shop_Hierarchy
+﻿namespace Shop_Hierarchy
 {
     public class Review
     {
@@ -11,5 +7,9 @@ namespace Shop_Hierarchy
         public int CustomerId { get; set; }
 
         public Customer Customer { get; set; }
+
+        public int ItemId { get; set; }
+
+        public Item Item { get; set; }
     }
 }

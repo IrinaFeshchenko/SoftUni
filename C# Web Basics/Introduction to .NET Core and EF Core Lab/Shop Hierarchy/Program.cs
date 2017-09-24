@@ -1,8 +1,7 @@
 ﻿namespace Shop_Hierarchy
 {
     using System;
-
-    using Microsoft.EntityFrameworkCore.Extensions.Internal;
+    using System.Collections.Generic;
     using System.Linq;
 
     public class Program
@@ -13,16 +12,70 @@
             {
                 ClearDatabase(context);
                 FillSalesmen(context);
+                SaveItems(context);
                 ReadCommands(context);
                 //PrintSalesmanWithCustomersCount(context);
-                PrintCustomersWithOrdersAndRevewCount(context);
+                //PrintCustomersWithOrdersAndRevewCount(context);
+                PrintCustomerOrdersAndReviews(context);
+            }
+        }
+
+        private static void PrintCustomerOrdersAndReviews(ShopDbContext context)
+        {
+            int customerId = int.Parse(Console.ReadLine());
+
+            var customerData = context.Customers
+                .Where(c => c.Id == customerId)
+                .Select(c => new
+                {
+                    Orders = c.Orders.Select(o => new
+                    {
+                        o.Id,
+                        Items = o.ItemOrder.Count
+                     })
+                     .OrderBy(o => o.Id),
+                    Reviews = c.Reviews.Count
+                })
+                .FirstOrDefault();
+
+            foreach (var order in customerData.Orders)
+            {
+                Console.WriteLine($"order: {order.Id}: {order.Items} items");
+            }
+
+            Console.WriteLine($"reviews: {customerData.Reviews}");
+        }
+
+        private static void SaveItems(ShopDbContext context)
+        {
+            while (true)
+            {
+                string line = Console.ReadLine();
+
+                if (line == "END")
+                {
+                    break;
+                }
+
+                string[] parts = line.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+
+                string name = parts[0];
+                decimal price = decimal.Parse(parts[1]);
+
+                context.Add(new Item()
+                {
+                    Name = name,
+                    Price = price
+                });
+
+                context.SaveChanges();
             }
         }
 
         private static void PrintCustomersWithOrdersAndRevewCount(ShopDbContext context)
         {
             var customerData = context
-                .Customer
+                .Customers
                 .Select(c => new
                 {
                     c.Name,
@@ -96,18 +149,31 @@
 
         private static void SaveReview(ShopDbContext context, string arguments)
         {
-            int customerId = int.Parse(arguments);
+            var parts = arguments.Split(';');
+            int customerId = int.Parse(parts[0]);
+            int itemId = int.Parse(parts[1]);
 
-            context.Add(new Review() { CustomerId = customerId });
+            context.Add(new Review() { CustomerId = customerId, ItemId = itemId });
 
             context.SaveChanges();
         }
 
         private static void SaveOrder(ShopDbContext context, string arguments)
         {
-            int customerId = int.Parse(arguments);
+            var parts = arguments.Split(';');
+            var customerId = int.Parse(parts[0]);
 
-            context.Add(new Order { CustomerId = customerId });
+            var order = new Order { CustomerId = customerId };
+
+            for (int i = 1; i < parts.Length; i++)
+            {
+                order.ItemOrder.Add(new ItemOrder
+                {
+                    ItemId = int.Parse(parts[i])
+                });
+            }
+
+            context.Add(order);
 
             context.SaveChanges();
         }
