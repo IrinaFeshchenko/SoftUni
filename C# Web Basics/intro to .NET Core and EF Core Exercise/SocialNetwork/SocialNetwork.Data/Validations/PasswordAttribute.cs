@@ -5,7 +5,7 @@
 
     public class PasswordAttribute : ValidationAttribute
     {
-        private readonly char[] RequiredSymbols = new[] { '!','@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '<', '>', '?'};
+        private readonly char[] RequiredSymbols = new[] { '!','@', '#', '$', '%', '^', '&', '*', '(',')', '_', '+', '<', '>', '?'};
         public PasswordAttribute()
         {
             this.ErrorMessage = "Password is invalid";
@@ -21,7 +21,7 @@
                 return true;
             }
 
-            return password.Any(s => char.IsLower(s) && char.IsUpper(s) && char.IsDigit(s) && RequiredSymbols.Contains(s));
+            return password.All(s => char.IsLower(s) || char.IsUpper(s) || char.IsDigit(s) || RequiredSymbols.Contains(s));
         }
     }
 }

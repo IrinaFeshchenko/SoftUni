@@ -4,6 +4,7 @@
 
     using SocialNetwork.Data.Validations;
     using System;
+    using System.Collections.Generic;
 
     public class User
     {
@@ -34,5 +35,9 @@
         public int? Age { get; set; }
 
         public bool IsDeleted { get; set; }
+
+        public List<Friendship> FromFriends { get; set; } = new List<Friendship>();
+
+        public List<Friendship> ToFriends { get; set; } = new List<Friendship>();
     }
 }

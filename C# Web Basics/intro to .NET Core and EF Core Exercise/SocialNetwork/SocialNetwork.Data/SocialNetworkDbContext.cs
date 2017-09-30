@@ -12,6 +12,8 @@
     {
         public DbSet<User> Users { get; set; }
 
+        public DbSet<Friendship> Friendships { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
             builder.UseSqlServer(@"Server = COMP\SQLEXPRESS; Database = SocialNetworkDb; Integrated Security = true");
@@ -19,7 +21,27 @@
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder
+                .Entity<Friendship>()
+                .HasKey(f => new
+                {
+                    f.FromUserId,
+                    f.ToUserId
+                });
 
+            builder
+                .Entity<User>()
+                .HasMany(u => u.FromFriends)
+                .WithOne(u => u.FromUser)
+                .HasForeignKey(u => u.FromUserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder
+                .Entity<User>()
+                .HasMany(u => u.ToFriends)
+                .WithOne(f => f.ToUser)
+                .HasForeignKey(u => u.ToUserId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)

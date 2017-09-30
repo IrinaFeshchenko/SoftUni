@@ -11,8 +11,8 @@ using System;
 namespace SocialNetwork.Data.Migrations
 {
     [DbContext(typeof(SocialNetworkDbContext))]
-    [Migration("20170930220156_UsersTable")]
-    partial class UsersTable
+    [Migration("20170930231731_UsersAndFriends")]
+    partial class UsersAndFriends
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,19 @@ namespace SocialNetwork.Data.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.0.0-rtm-26452")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("SocialNetwork.Data.Friendship", b =>
+                {
+                    b.Property<int>("FromUserId");
+
+                    b.Property<int>("ToUserId");
+
+                    b.HasKey("FromUserId", "ToUserId");
+
+                    b.HasIndex("ToUserId");
+
+                    b.ToTable("Friendships");
+                });
 
             modelBuilder.Entity("SocialNetwork.Data.User", b =>
                 {
@@ -51,6 +64,19 @@ namespace SocialNetwork.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Friendship", b =>
+                {
+                    b.HasOne("SocialNetwork.Data.User", "FromUser")
+                        .WithMany("FromFriends")
+                        .HasForeignKey("FromUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("SocialNetwork.Data.User", "ToUser")
+                        .WithMany("ToFriends")
+                        .HasForeignKey("ToUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 #pragma warning restore 612, 618
         }
