@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Even Numbers Thread", "Even Numbers Thread\Even Numbers Thread.csproj", "{80C886BA-C621-4456-861E-8A77E8B8FF5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slice File", "Slice File\Slice File.csproj", "{53ED987D-CADD-4C91-B23C-2B0BDC1EC2D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80C886BA-C621-4456-861E-8A77E8B8FF5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80C886BA-C621-4456-861E-8A77E8B8FF5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80C886BA-C621-4456-861E-8A77E8B8FF5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80C886BA-C621-4456-861E-8A77E8B8FF5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53ED987D-CADD-4C91-B23C-2B0BDC1EC2D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53ED987D-CADD-4C91-B23C-2B0BDC1EC2D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53ED987D-CADD-4C91-B23C-2B0BDC1EC2D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53ED987D-CADD-4C91-B23C-2B0BDC1EC2D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {517385FD-15C3-4293-8DCA-2B2FFCEE10F5}
+	EndGlobalSection
+EndGlobal
