@@ -53,7 +53,7 @@
         private void ParseRequest(string requestText)
         {
             // Split to lines
-            var requestLines = requestText.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
+            var requestLines = requestText.Split(Environment.NewLine);
 
             // If no lines throw exception
             if (!requestLines.Any())
@@ -111,7 +111,7 @@
                     break;
                 }
 
-                var headerParts = line.Split(new[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
+                var headerParts = line.Split(new[] { ": " }, StringSplitOptions.RemoveEmptyEntries);
                 if (headerParts.Length != 2)
                 {
                     BadRequestException.ThrowFromInvalidRequest();

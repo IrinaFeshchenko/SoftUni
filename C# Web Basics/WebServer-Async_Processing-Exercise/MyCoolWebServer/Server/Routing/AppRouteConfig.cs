@@ -6,11 +6,22 @@
 
     using MyCoolWebServer.Server.Enums;
     using MyCoolWebServer.Server.Handlers;
+    using MyCoolWebServer.Server.Http.Contracts;
     using MyCoolWebServer.Server.Routing.Contracts;
 
     public class AppRouteConfig : IAppRouteConfig
     {
         private readonly Dictionary<HttpRequestMethod, Dictionary<string, RequestHandler>> routes;
+
+        public void Get(string route, Func<IHttpRequest,IHttpResponse> handler)
+        {
+            this.AddRoute(route, new GetHandler(handler));
+        }
+
+        public void Post(string route, Func<IHttpRequest, IHttpResponse> handler)
+        {
+            this.AddRoute(route, new PostHandler(handler));
+        }
 
         public AppRouteConfig()
         {

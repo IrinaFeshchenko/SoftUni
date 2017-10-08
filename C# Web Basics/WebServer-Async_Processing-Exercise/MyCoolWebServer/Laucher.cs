@@ -1,12 +1,25 @@
-﻿using System;
-
-namespace MyCoolWebServer
+﻿namespace MyCoolWebServer
 {
-    class Laucher
+    using MyCoolWebServer.Application;
+    using MyCoolWebServer.Server;
+    using MyCoolWebServer.Server.Contracts;
+    using MyCoolWebServer.Server.Routing;
+
+    public class Laucher : IRunnable
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-            Console.WriteLine("Hello World!");
+            new Laucher().Run();
+        }
+
+        public void Run()
+        {
+            var mainApplication = new MainApplication();
+            var appRouteConfig = new AppRouteConfig();
+            mainApplication.Configure(appRouteConfig);
+            var webServer = new WebServer(1337, appRouteConfig);
+
+            webServer.Run();
         }
     }
 }

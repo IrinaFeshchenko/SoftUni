@@ -6,9 +6,9 @@
     {
         private readonly IHttpRequest request;
 
-        public HttpContext(string requestStr)
+        public HttpContext(IHttpRequest request)
         {
-            this.request = new HttpRequest(requestStr);
+            this.request = request;
         }
 
         public IHttpRequest Request => this.request;

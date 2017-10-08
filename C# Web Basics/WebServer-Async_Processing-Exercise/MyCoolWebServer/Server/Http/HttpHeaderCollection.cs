@@ -2,6 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
+
     using MyCoolWebServer.Server.Common;
     using MyCoolWebServer.Server.Http.Contracts;
 
@@ -41,6 +43,6 @@
         }
 
         public override string ToString()
-        => string.Join(Environment.NewLine, this.headers);
+        => string.Join(Environment.NewLine, this.headers.Select(h => h.Value.ToString()));
     }
 }

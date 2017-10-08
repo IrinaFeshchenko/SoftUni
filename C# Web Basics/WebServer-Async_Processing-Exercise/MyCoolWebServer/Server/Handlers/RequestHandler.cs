@@ -19,7 +19,7 @@
         {
             var response = this.handlingFunc(context.Request);
 
-            response.Headers.Add(new Http.HttpHeader("Content-Type", "text/plain"));
+            response.Headers.Add(new Http.HttpHeader("Content-Type", "text/html"));
 
             return response;
         }
