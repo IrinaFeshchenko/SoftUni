@@ -168,5 +168,31 @@
                 dic.Add(key, value);
             }
         }
+        
+        private void ParseCookie()
+        {
+            if (this.Headers.ContainsKey("Cookie"))
+            {
+                var allCookies = this.Headers.Get("Cookies");
+
+                foreach (var cookie in allCookies)
+                {
+                    var parts = cookie.Value.Split(';', StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
+
+                    if (parts == null || !parts.Contains("="))
+                    {
+                        continue;
+                    }
+
+                    var kvp = parts.Split('=', StringSplitOptions.RemoveEmptyEntries);
+
+                    if (kvp.Length == 2)
+                    {
+                        var key = kvp[0];
+                        var value = kvp[1];
+                    }
+                }
+            }
+        }
     }
 }
