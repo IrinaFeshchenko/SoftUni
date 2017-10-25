@@ -53,7 +53,7 @@
 
         private void ParseRequest(string requestText)
         {
-            var requestLines = requestText.Split(Environment.NewLine);
+            var requestLines = requestText.Split(new []{Environment.NewLine}, StringSplitOptions.None);
 
             if (!requestLines.Any())
             {
