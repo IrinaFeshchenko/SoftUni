@@ -1,4 +1,4 @@
-﻿namespace SimpleMvc.Framework
+﻿namespace SimpleMvcFramework
 {
     public class MvcContext
     {

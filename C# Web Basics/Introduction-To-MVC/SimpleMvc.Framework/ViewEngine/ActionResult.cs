@@ -1,8 +1,8 @@
-﻿namespace SimpleMvc.Framework.ViewEngine
+﻿namespace SimpleMvcFramework.ViewEngine
 {
     using System;
 
-    using SimpleMvc.Framework.Contracts;
+    using SimpleMvcFramework.Contracts;
 
     public class ActionResult : IActionResult
     {

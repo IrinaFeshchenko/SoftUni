@@ -1,4 +1,4 @@
-﻿namespace SimpleMvc.Framework.Helpers
+﻿namespace SimpleMvcFramework.Helpers
 {
     public static class ControllerHelpers
     {

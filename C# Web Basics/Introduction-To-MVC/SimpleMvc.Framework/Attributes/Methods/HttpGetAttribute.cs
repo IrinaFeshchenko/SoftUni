@@ -1,4 +1,4 @@
-﻿namespace SimpleMvc.Framework.Attributes.Methods
+﻿namespace SimpleMvcFramework.Attributes.Methods
 {
     public class HttpGetAttribute : HttpMethodAttribure
     {

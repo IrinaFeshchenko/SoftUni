@@ -1,11 +1,11 @@
-﻿namespace SimpleMvc.Framework.Controllers
+﻿namespace SimpleMvcFramework.Controllers
 {
     using System.Runtime.CompilerServices;
-    using SimpleMvc.Framework.Contracts;
-    using SimpleMvc.Framework.Contracts.Generic;
-    using SimpleMvc.Framework.Helpers;
-    using SimpleMvc.Framework.ViewEngine;
-    using SimpleMvc.Framework.ViewEngine.Generic;
+    using SimpleMvcFramework.Contracts;
+    using SimpleMvcFramework.Contracts.Generic;
+    using SimpleMvcFramework.Helpers;
+    using SimpleMvcFramework.ViewEngine;
+    using SimpleMvcFramework.ViewEngine.Generic;
 
     public abstract class Controller
     {

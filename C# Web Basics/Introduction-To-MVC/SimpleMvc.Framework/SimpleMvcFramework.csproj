@@ -8,10 +8,4 @@
     <ProjectReference Include="..\WebServer\WebServer.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Contracts\Generic\" />
-    <Folder Include="Routers\" />
-    <Folder Include="ViewEngine\Generic\" />
-  </ItemGroup>
-
 </Project>

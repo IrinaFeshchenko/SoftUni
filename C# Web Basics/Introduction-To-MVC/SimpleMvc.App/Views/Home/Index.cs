@@ -1,6 +1,6 @@
 ﻿namespace SimpleMvc.App.Views.Home
 {
-    using SimpleMvc.Framework.Contracts;
+    using SimpleMvcFramework.Contracts;
 
     public class Index : IRenderable
     {

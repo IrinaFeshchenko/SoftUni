@@ -1,8 +1,8 @@
-﻿namespace SimpleMvc.Framework.ViewEngine.Generic
+﻿namespace SimpleMvcFramework.ViewEngine.Generic
 {
     using System;
 
-    using SimpleMvc.Framework.Contracts.Generic;
+    using SimpleMvcFramework.Contracts.Generic;
 
     public class ActionResult<TModel> : IActionResult<TModel>
     {

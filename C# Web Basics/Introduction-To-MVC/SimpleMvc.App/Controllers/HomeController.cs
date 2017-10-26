@@ -1,25 +1,22 @@
 ﻿namespace SimpleMvc.App.Controllers
 {
     using System;
-    using Framework.Attributes.Methods;
-    using Framework.Controllers;
+    using SimpleMvc.App.Models;
+    using SimpleMvcFramework.Attributes.Methods;
+    using SimpleMvcFramework.Contracts;
+    using SimpleMvcFramework.Controllers;
 
     public class HomeController : Controller
     {
-        public void Index()
+        public IActionResult Index()
         {
-            throw new NotImplementedException();
-        }
-
-        public void Create()
-        {
-            throw new NotImplementedException();
+            return View();
         }
 
         [HttpPost]
-        public void Create(int id)
+        public IActionResult Index(IndexModel model)
         {
-            throw new NotImplementedException();
+            return View();
         }
     }
 }

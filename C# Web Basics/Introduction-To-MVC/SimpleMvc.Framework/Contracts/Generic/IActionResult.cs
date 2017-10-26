@@ -1,4 +1,4 @@
-﻿namespace SimpleMvc.Framework.Contracts.Generic
+﻿namespace SimpleMvcFramework.Contracts.Generic
 {
     public interface IActionResult<TModel> : IInvocable
     {

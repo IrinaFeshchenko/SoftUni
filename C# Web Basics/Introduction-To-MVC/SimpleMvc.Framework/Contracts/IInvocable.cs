@@ -1,4 +1,4 @@
-﻿namespace SimpleMvc.Framework.Contracts
+﻿namespace SimpleMvcFramework.Contracts
 {
     public interface IInvocable
     {
