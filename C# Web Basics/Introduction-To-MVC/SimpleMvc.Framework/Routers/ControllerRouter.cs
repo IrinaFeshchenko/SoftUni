@@ -6,8 +6,10 @@
     using System.Reflection;
 
     using SimpleMvcFramework.Attributes.Methods;
+    using SimpleMvcFramework.Contracts;
     using SimpleMvcFramework.Helpers;
     using WebServer.Contracts;
+    using WebServer.Enums;
     using WebServer.Exceptions;
     using WebServer.Http.Contracts;
     using WebServer.Http.Response;
@@ -18,8 +20,9 @@
         private IDictionary<string, string> postParameters;
         private string requestMethod;
         private string controllerName;
+        private object controllerInstance;
         private string actionName;
-        private object[] methodParams;
+        private object[] methodParameters;
 
         public IHttpResponse Handle(IHttpRequest request)
         {
@@ -33,7 +36,53 @@
                 return new NotFoundResponse();
             }
 
-            return null;
+            this.PrepareMethodParameters(methodInfo);
+
+            var actionResult = (IInvocable)methodInfo.Invoke(
+                this.GetControllerInstance(), 
+                this.methodParameters);
+
+            var content = actionResult.Invoke();
+
+            return new ContentResponse(HttpStatusCode.Ok, content);
+        }
+
+        private void PrepareMethodParameters(MethodInfo methodInfo)
+        {
+            ParameterInfo[] parameters = methodInfo.GetParameters();
+
+            this.methodParameters = new object[parameters.Count()];
+
+            int index = 0;
+            foreach (var paramether in parameters)
+            {
+                if (paramether.ParameterType.IsPrimitive ||
+                    paramether.ParameterType == typeof(string))
+                {
+                    object value = this.getParameters[paramether.Name];
+                    this.methodParameters[index] = Convert.ChangeType(value, paramether.ParameterType);
+
+                    index++;
+                }
+                else
+                {
+                    Type modelType = paramether.ParameterType;
+                    object bindingModel = Activator.CreateInstance(modelType);
+
+                    var modelProperites = modelType.GetProperties();
+
+                    foreach (var modelProperty in modelProperites)
+                    {
+                        modelProperty.SetValue(
+                            bindingModel,
+                            Convert.ChangeType(this.postParameters[modelProperty.Name], modelProperty.PropertyType));
+                    }
+
+                    this.methodParameters[index] = Convert.ChangeType(bindingModel, modelType);
+
+                    index++;
+                }
+            }
         }
 
         private MethodInfo GetActionForExecution()
@@ -79,6 +128,11 @@
 
         private object GetControllerInstance()
         {
+            if (this.controllerInstance != null)
+            {
+                return this.controllerInstance;
+            }
+
             var controllerFullQualifiedName = string.Format(
                 "{0}.{1}.{2}, {0}",
                 MvcContext.Get.AssemblyName,
@@ -92,7 +146,9 @@
                 return null;
             }
 
-            return Activator.CreateInstance(controllerType);
+            this.controllerInstance = Activator.CreateInstance(controllerType);
+
+            return controllerInstance;
         }
 
         private void prepareControllerAndActionNames(IHttpRequest request)
