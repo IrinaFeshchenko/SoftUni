@@ -1,4 +1,4 @@
-﻿namespace SimpleMvcFramework.Contracts
+﻿namespace SimpleMvc.Framework.Contracts
 {
     public interface IRenderable
     {

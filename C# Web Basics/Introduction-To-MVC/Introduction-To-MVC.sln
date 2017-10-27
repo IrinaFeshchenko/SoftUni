@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebServer", "WebServer\WebServer.csproj", "{DB909C19-036D-4CE9-BA1B-1D4C074107DF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleMvcFramework", "SimpleMvc.Framework\SimpleMvcFramework.csproj", "{E0AEF5B9-20E1-41D1-A6E7-96C335C699F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleMvc.Framework", "SimpleMvc.Framework\SimpleMvc.Framework.csproj", "{E0AEF5B9-20E1-41D1-A6E7-96C335C699F3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleMvc.App", "SimpleMvc.App\SimpleMvc.App.csproj", "{B2C7553D-2802-4ECE-B549-FB82E55A34D1}"
 EndProject

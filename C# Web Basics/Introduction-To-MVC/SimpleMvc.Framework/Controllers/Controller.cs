@@ -1,44 +1,95 @@
-﻿namespace SimpleMvcFramework.Controllers
+﻿namespace SimpleMvc.Framework.Controllers
 {
+    using ActionResults;
+    using Attributes.Validation;
+    using Contracts;
+    using Helpers;
+    using Models;
+    using Security;
+    using System.Linq;
+    using System.Reflection;
     using System.Runtime.CompilerServices;
-    using SimpleMvcFramework.Contracts;
-    using SimpleMvcFramework.Contracts.Generic;
-    using SimpleMvcFramework.Helpers;
-    using SimpleMvcFramework.ViewEngine;
-    using SimpleMvcFramework.ViewEngine.Generic;
+    using ViewEngine;
+    using WebServer.Http;
+    using WebServer.Http.Contracts;
 
     public abstract class Controller
     {
-        protected IActionResult View([CallerMemberName] string caller = "")
+        public Controller()
         {
-            string controllerName = ControllerHelpers.GetControllerName(this);
-
-            string fullQualifiedName = ControllerHelpers.GetFullQualifiedName(controllerName, caller);
-
-            return new ActionResult(fullQualifiedName);
+            this.ViewModel = new ViewModel();
+            this.User = new Authentication();
         }
 
-        protected IActionResult View(string controller, string action)
-        {
-            string fullQualifiedName = ControllerHelpers.GetFullQualifiedName(controller, action);
+        protected ViewModel ViewModel { get; private set; }
 
-            return new ActionResult(fullQualifiedName);
+        protected internal IHttpRequest Request { get; internal set; }
+
+        protected internal Authentication User { get; private set; }
+
+        protected IViewable View([CallerMemberName]string caller = "")
+        {
+            var controllerName = ControllerHelpers.GetControllerName(this);
+
+            var viewFullQualifiedName = ControllerHelpers
+                .GetViewFullQualifiedName(controllerName, caller);
+
+            var view = new View(viewFullQualifiedName, this.ViewModel.Data);
+
+            return new ViewResult(view);
         }
 
-        protected IActionResult<TModel> View<TModel>(TModel model, [CallerMemberName] string caller = "")
+        protected IRedirectable Redirect(string redirectUrl)
+            => new RedirectResult(redirectUrl);
+
+        protected IActionResult NotFound()
+            => new NotFoundResult();
+
+        protected bool IsValidModel(object model)
         {
-            string controllerName = ControllerHelpers.GetControllerName(this);
+            var properties = model.GetType().GetProperties();
 
-            string fullQualifiedName = ControllerHelpers.GetFullQualifiedName(controllerName, caller);
+            foreach (var property in properties)
+            {
+                var attributes = property
+                    .GetCustomAttributes()
+                    .Where(a => a is PropertyValidationAttribute)
+                    .Cast<PropertyValidationAttribute>();
+                
+                foreach (var attribute in attributes)
+                {
+                    var propertyValue = property.GetValue(model);
 
-            return new ActionResult<TModel>(fullQualifiedName, model);
+                    if (!attribute.IsValid(propertyValue))
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
         }
 
-        protected IActionResult<TModel> View<TModel>(TModel model, string controller, string action)
+        protected void SignIn(string name)
         {
-            string fullQualifiedName = ControllerHelpers.GetFullQualifiedName(controller, action);
+            this.Request.Session.Add(SessionStore.CurrentUserKey, name);
+        }
 
-            return new ActionResult<TModel>(fullQualifiedName, model);
+        protected void SignOut()
+        {
+            this.Request.Session.Remove(SessionStore.CurrentUserKey);
+        }
+
+        protected internal virtual void InitializeController()
+        {
+            var user = this.Request
+                .Session
+                .Get<string>(SessionStore.CurrentUserKey);
+
+            if (user != null)
+            {
+                this.User = new Authentication(user);
+            }
         }
     }
 }

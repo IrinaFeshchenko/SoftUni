@@ -1,22 +1,19 @@
-﻿namespace SimpleMvcFramework.Helpers
+﻿namespace SimpleMvc.Framework.Helpers
 {
     public static class ControllerHelpers
     {
         public static string GetControllerName(object controller)
-        {
-            return controller.GetType().Name.Replace(MvcContext.Get.ControllersSuffix, string.Empty);
-        }
+            => controller.GetType()
+                .Name
+                .Replace(MvcContext.Get.ControllerSuffix, string.Empty);
 
-        public static string GetFullQualifiedName(string controller, string action)
-        {
-            string fullQualifiedName = string.Format(
-                "{0}.{1}.{2}.{3}, {0}",
-                MvcContext.Get.AssemblyName,
-                MvcContext.Get.Viewsfolder,
+        public static string GetViewFullQualifiedName(
+            string controller,
+            string action)
+            => string.Format(
+                "{0}\\{1}\\{2}",
+                MvcContext.Get.ViewsFolder,
                 controller,
                 action);
-
-            return fullQualifiedName;
-        }
     }
 }

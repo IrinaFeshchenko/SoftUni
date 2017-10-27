@@ -26,6 +26,16 @@
             this.values[key] = value;
         }
 
+        public void Remove(string key)
+        {
+            CoreValidator.ThrowIfNull(key, nameof(key));
+
+            if (this.values.ContainsKey(key))
+            {
+                this.values.Remove(key);
+            }
+        }
+
         public void Clear() => this.values.Clear();
 
         public object Get(string key)

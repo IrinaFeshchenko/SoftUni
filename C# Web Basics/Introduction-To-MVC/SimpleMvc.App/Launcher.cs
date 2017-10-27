@@ -1,14 +1,14 @@
 ﻿namespace SimpleMvc.App
 {
-    using SimpleMvcFramework;
+    using SimpleMvc.Framework;
     using WebServer;
-    using SimpleMvcFramework.Routers;
+    using SimpleMvc.Framework.Routers;
 
     public class Launcher
     {
         public static void Main()
         {
-            MvcEngine.Run(new WebServer(1337, new ControllerRouter()));
+            MvcEngine.Run(new WebServer(1337, new ControllerRouter(), new ResourceRouter()));
         }
     }
 }

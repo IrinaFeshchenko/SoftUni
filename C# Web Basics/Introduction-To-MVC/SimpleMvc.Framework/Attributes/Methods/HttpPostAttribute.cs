@@ -1,10 +1,8 @@
-﻿namespace SimpleMvcFramework.Attributes.Methods
+﻿namespace SimpleMvc.Framework.Attributes.Methods
 {
-    public class HttpPostAttribute : HttpMethodAttribure
+    public class HttpPostAttribute : HttpMethodAttribute
     {
         public override bool IsValid(string requestMethod)
-        {
-            return requestMethod.ToUpper() == "POST";
-        }
+            => requestMethod.ToUpper() == "POST";
     }
 }

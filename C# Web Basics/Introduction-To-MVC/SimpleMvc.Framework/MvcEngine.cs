@@ -1,4 +1,4 @@
-﻿namespace SimpleMvcFramework
+﻿namespace SimpleMvc.Framework
 {
     using System;
     using System.Reflection;
@@ -9,21 +9,23 @@
         public static void Run(WebServer server)
         {
             RegisterAssemblyName();
-
+            
             try
             {
                 server.Run();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(ex.Message);
             }
         }
 
         private static void RegisterAssemblyName()
         {
-            MvcContext.Get.AssemblyName = Assembly.GetEntryAssembly()
-                .GetName().Name;
+            MvcContext.Get.AssemblyName = Assembly
+                .GetEntryAssembly()
+                .GetName()
+                .Name;
         }
     }
 }

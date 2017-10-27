@@ -1,6 +1,5 @@
-﻿namespace SimpleMvcFramework.Helpers
+﻿namespace SimpleMvc.Framework.Helpers
 {
-    using System.Globalization;
     using System.Linq;
 
     public static class StringExtensions

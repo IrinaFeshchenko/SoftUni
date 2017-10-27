@@ -8,20 +8,27 @@
     using System.Text;
     using System.Threading.Tasks;
     using Contracts;
+    using System.Linq;
+    using global::WebServer.Http.Response;
 
     public class ConnectionHandler
     {
         private readonly Socket client;
-
         private readonly IHandleable mvcRequestHandler;
+        private readonly IHandleable resourceHandler;
 
-        public ConnectionHandler(Socket client, IHandleable mvcRequestHandler)
+        public ConnectionHandler(
+            Socket client, 
+            IHandleable mvcRequestHandler,
+            IHandleable resourceHandler)
         {
             CoreValidator.ThrowIfNull(client, nameof(client));
             CoreValidator.ThrowIfNull(mvcRequestHandler, nameof(mvcRequestHandler));
+            CoreValidator.ThrowIfNull(resourceHandler, nameof(resourceHandler));
 
             this.client = client;
             this.mvcRequestHandler = mvcRequestHandler;
+            this.resourceHandler = resourceHandler;
         }
 
         public async Task ProcessRequestAsync()
@@ -30,9 +37,9 @@
 
             if (httpRequest != null)
             {
-                var httpResponse = this.mvcRequestHandler.Handle(httpRequest);
+                var httpResponse = this.HandleRequest(httpRequest);
 
-                var responseBytes = Encoding.UTF8.GetBytes(httpResponse.ToString());
+                var responseBytes = this.GetResponseBytes(httpResponse);
 
                 var byteSegments = new ArraySegment<byte>(responseBytes);
 
@@ -79,6 +86,61 @@
             }
             
             return new HttpRequest(result.ToString());
+        }
+
+        private IHttpResponse HandleRequest(IHttpRequest httpRequest)
+        {
+            if (httpRequest.Path.Contains("."))
+            {
+                return this.resourceHandler.Handle(httpRequest);
+            }
+            else
+            {
+                string sessionIdToSend = this.SetRequestSession(httpRequest);
+                var response = this.mvcRequestHandler.Handle(httpRequest);
+                this.SetResponseSession(response, sessionIdToSend);
+                return response;
+            }
+        }
+
+        private string SetRequestSession(IHttpRequest request)
+        {
+            if (!request.Cookies.ContainsKey(SessionStore.SessionCookieKey))
+            {
+                var sessionId = Guid.NewGuid().ToString();
+
+                request.Session = SessionStore.Get(sessionId);
+
+                return sessionId;
+            }
+
+            return null;
+        }
+
+        private void SetResponseSession(IHttpResponse response, string sessionIdToSend)
+        {
+            if (sessionIdToSend != null)
+            {
+                response.Headers.Add(
+                    HttpHeader.SetCookie,
+                    $"{SessionStore.SessionCookieKey}={sessionIdToSend}; HttpOnly; path=/");
+            }
+        }
+
+
+        private byte[] GetResponseBytes(IHttpResponse httpResponse)
+        {
+            var responseBytes = Encoding.UTF8
+                .GetBytes(httpResponse.ToString())
+                .ToList();
+
+            var fileResponse = httpResponse as FileResponse;
+            if (fileResponse != null)
+            {
+                responseBytes.AddRange(fileResponse.FileData);
+            }
+
+            return responseBytes.ToArray();
         }
     }
 }
