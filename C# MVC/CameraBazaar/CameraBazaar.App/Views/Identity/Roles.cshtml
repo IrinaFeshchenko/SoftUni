@@ -1,0 +1,22 @@
+﻿@model UserWithRolesViewModel
+@{
+    ViewData["Title"] = "Roles";
+}
+
+<h2>Roles for user @Model.Email</h2>
+
+<div>
+	<a href="/identity/addtorole/@Model.Id" class="btn btn-primary" >Add to Role</a>
+</div>
+
+@if (!Model.Roles.Any())
+{
+	<h2>No Roles for this user</h2>
+}
+
+@foreach (var role in Model.Roles)
+{
+	<ul>
+		<li>@role </li>
+	</ul>
+}

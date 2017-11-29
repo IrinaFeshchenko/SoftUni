@@ -1,0 +1,195 @@
+28/11/2017 19:59:11 - ::1 - user - CamerasController
+28/11/2017 19:59:15 - ::1 - user - CamerasController
+28/11/2017 19:59:20 - ::1 - user - CamerasController
+28/11/2017 19:59:32 - ::1 - user - CamerasController
+28/11/2017 19:59:34 - ::1 - user - CamerasController
+28/11/2017 19:59:37 - ::1 - user - CamerasController
+28/11/2017 20:01:10 - ::1 - user - CamerasController
+28/11/2017 20:01:19 - ::1 - user - CamerasController
+28/11/2017 20:01:29 - ::1 - user - CamerasController
+28/11/2017 20:01:32 - ::1 - user - CamerasController
+28/11/2017 20:07:44 - ::1 - user - CamerasController - All
+28/11/2017 20:07:48 - ::1 - user - CamerasController - details
+28/11/2017 20:07:52 - ::1 - user - CamerasController - seller
+28/11/2017 20:12:27 - ::1 - user - HomeController - Index
+28/11/2017 20:12:33 - ::1 - user - CamerasController - All
+28/11/2017 20:12:35 - ::1 - user - CamerasController - details
+28/11/2017 20:12:37 - ::1 - user - CamerasController - Add
+28/11/2017 20:12:39 - ::1 - user - HomeController - Index
+28/11/2017 20:12:43 - ::1 - user - AccountController - Logout
+28/11/2017 20:12:43 - ::1 - Anonimous - HomeController - Index
+28/11/2017 20:12:45 - ::1 - Anonimous - AccountController - Register
+28/11/2017 20:12:48 - ::1 - Anonimous - AccountController - Login
+28/11/2017 20:12:54 - ::1 - Anonimous - AccountController - Login
+28/11/2017 20:12:54 - ::1 - user - HomeController - Index
+28/11/2017 22:29:38 - HomeController.Index - 00:00:00.0081357
+28/11/2017 22:29:38 - ::1 - user - HomeController - Index
+28/11/2017 22:29:44 - CamerasController.All - 00:00:00.0731023
+28/11/2017 22:29:44 - ::1 - user - CamerasController - All
+28/11/2017 22:29:46 - CamerasController.details - 00:00:00.0458847
+28/11/2017 22:29:46 - ::1 - user - CamerasController - details
+28/11/2017 22:29:48 - CamerasController.Add - 00:00:00.0003032
+28/11/2017 22:29:48 - ::1 - user - CamerasController - Add
+28/11/2017 22:29:49 - HomeController.Index - 00:00:00.0000945
+28/11/2017 22:29:49 - ::1 - user - HomeController - Index
+28/11/2017 22:29:51 - HomeController.Index - 00:00:00.0000871
+28/11/2017 22:29:51 - ::1 - user - HomeController - Index
+28/11/2017 22:29:53 - AccountController.Logout - 00:00:00.0245326
+28/11/2017 22:29:53 - ::1 - user - AccountController - Logout
+28/11/2017 22:29:53 - HomeController.Index - 00:00:00.0000990
+28/11/2017 22:29:53 - ::1 - Anonimous - HomeController - Index
+28/11/2017 22:29:57 - AccountController.Register - 00:00:00.0004963
+28/11/2017 22:29:57 - ::1 - Anonimous - AccountController - Register
+28/11/2017 22:29:58 - AccountController.Login - 00:00:00.0020192
+28/11/2017 22:29:58 - ::1 - Anonimous - AccountController - Login
+28/11/2017 22:29:59 - AccountController.Register - 00:00:00.0001335
+28/11/2017 22:29:59 - ::1 - Anonimous - AccountController - Register
+28/11/2017 22:30:00 - AccountController.Login - 00:00:00.0004705
+28/11/2017 22:30:00 - ::1 - Anonimous - AccountController - Login
+28/11/2017 22:30:07 - AccountController.Login - 00:00:00.1185449
+28/11/2017 22:30:07 - ::1 - Anonimous - AccountController - Login
+28/11/2017 22:30:07 - HomeController.Index - 00:00:00.0001421
+28/11/2017 22:30:07 - ::1 - user - HomeController - Index
+28/11/2017 23:23:33 - ::1 - user - HomeController - Index
+28/11/2017 23:25:34 - ::1 - user - HomeController - Index
+28/11/2017 23:25:48 - ::1 - user - AccountController - Logout
+28/11/2017 23:25:48 - ::1 - Anonimous - HomeController - Index
+28/11/2017 23:25:49 - ::1 - Anonimous - AccountController - Login
+28/11/2017 23:25:57 - ::1 - Anonimous - AccountController - Login
+28/11/2017 23:25:57 - ::1 - user - HomeController - Index
+28/11/2017 23:32:56 - ::1 - user - HomeController - Index
+28/11/2017 23:33:16 - ::1 - user - CamerasController - All
+28/11/2017 23:37:26 - ::1 - user - HomeController - Index
+28/11/2017 23:37:39 - ::1 - user - HomeController - Index
+28/11/2017 23:37:41 - ::1 - user - CamerasController - All
+28/11/2017 23:40:47 - ::1 - user - HomeController - Index
+28/11/2017 23:40:56 - ::1 - user - IdentityController - All
+28/11/2017 23:42:09 - ::1 - user - IdentityController - All
+28/11/2017 23:42:34 - ::1 - user - AccountController - Logout
+28/11/2017 23:42:34 - ::1 - Anonimous - HomeController - Index
+28/11/2017 23:43:03 - ::1 - Anonimous - HomeController - Index
+28/11/2017 23:43:15 - ::1 - Anonimous - AccountController - Login
+28/11/2017 23:43:23 - ::1 - Anonimous - AccountController - Login
+28/11/2017 23:43:24 - ::1 - user - AccountController - AccessDenied
+28/11/2017 23:44:06 - ::1 - user - AccountController - AccessDenied
+28/11/2017 23:50:21 - ::1 - user - HomeController - Index
+28/11/2017 23:50:29 - ::1 - user - AccountController - Logout
+28/11/2017 23:50:29 - ::1 - Anonimous - HomeController - Index
+28/11/2017 23:50:31 - ::1 - Anonimous - HomeController - Index
+28/11/2017 23:50:43 - ::1 - Anonimous - AccountController - Login
+28/11/2017 23:50:52 - ::1 - Anonimous - HomeController - Index
+28/11/2017 23:51:00 - ::1 - Anonimous - AccountController - Login
+28/11/2017 23:51:02 - ::1 - Anonimous - AccountController - Login
+28/11/2017 23:51:15 - ::1 - Anonimous - AccountController - Login
+28/11/2017 23:51:15 - ::1 - user - HomeController - Index
+28/11/2017 23:51:27 - ::1 - user - AccountController - AccessDenied
+28/11/2017 23:51:32 - ::1 - user - AccountController - Logout
+28/11/2017 23:51:32 - ::1 - Anonimous - HomeController - Index
+28/11/2017 23:51:35 - ::1 - Anonimous - AccountController - Login
+28/11/2017 23:51:50 - ::1 - Anonimous - AccountController - Login
+28/11/2017 23:52:49 - ::1 - Anonimous - AccountController - Login
+28/11/2017 23:52:57 - ::1 - Anonimous - AccountController - Login
+28/11/2017 23:52:57 - ::1 - admin@mysite.com - HomeController - Index
+28/11/2017 23:53:04 - ::1 - admin@mysite.com - ManageController - Index
+28/11/2017 23:53:11 - ::1 - admin@mysite.com - ManageController - ChangePassword
+28/11/2017 23:53:47 - ::1 - admin@mysite.com - ManageController - Index
+28/11/2017 23:54:11 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 00:25:08 - ::1 - admin@mysite.com - HomeController - Index
+29/11/2017 00:25:15 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 00:25:18 - ::1 - admin@mysite.com - IdentityController - create
+29/11/2017 00:26:01 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 00:26:08 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 00:26:11 - ::1 - admin@mysite.com - IdentityController - roles
+29/11/2017 00:26:13 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 00:26:15 - ::1 - admin@mysite.com - IdentityController - roles
+29/11/2017 00:26:18 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 00:26:26 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 00:26:51 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 00:26:52 - ::1 - admin@mysite.com - IdentityController - create
+29/11/2017 00:27:40 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 00:27:42 - ::1 - admin@mysite.com - IdentityController - create
+29/11/2017 00:30:14 - ::1 - admin@mysite.com - HomeController - Index
+29/11/2017 00:54:30 - ::1 - admin@mysite.com - HomeController - Index
+29/11/2017 00:54:38 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 00:55:25 - ::1 - admin@mysite.com - HomeController - Index
+29/11/2017 00:55:27 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 00:55:34 - ::1 - admin@mysite.com - IdentityController - changepassword
+29/11/2017 00:56:13 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 00:56:15 - ::1 - admin@mysite.com - IdentityController - changepassword
+29/11/2017 00:56:20 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 00:56:23 - ::1 - admin@mysite.com - IdentityController - changepassword
+29/11/2017 00:56:33 - ::1 - admin@mysite.com - IdentityController - changepassword
+29/11/2017 00:56:33 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 00:56:41 - ::1 - admin@mysite.com - AccountController - Logout
+29/11/2017 00:56:41 - ::1 - Anonimous - HomeController - Index
+29/11/2017 00:56:44 - ::1 - Anonimous - AccountController - Login
+29/11/2017 00:56:52 - ::1 - Anonimous - AccountController - Login
+29/11/2017 00:56:57 - ::1 - Anonimous - AccountController - Login
+29/11/2017 00:57:01 - ::1 - Anonimous - AccountController - Login
+29/11/2017 00:57:18 - ::1 - Anonimous - AccountController - Login
+29/11/2017 00:57:28 - ::1 - Anonimous - AccountController - Login
+29/11/2017 00:57:32 - ::1 - Anonimous - AccountController - Login
+29/11/2017 00:57:32 - ::1 - admin@mysite.com - HomeController - Index
+29/11/2017 00:57:34 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 00:57:38 - ::1 - admin@mysite.com - IdentityController - changepassword
+29/11/2017 00:57:45 - ::1 - admin@mysite.com - IdentityController - changepassword
+29/11/2017 00:57:45 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 18:48:00 - ::1 - admin@mysite.com - HomeController - Index
+29/11/2017 18:48:07 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 18:48:12 - ::1 - admin@mysite.com - IdentityController - changepassword
+29/11/2017 18:48:18 - ::1 - admin@mysite.com - IdentityController - changepassword
+29/11/2017 18:48:18 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 18:48:26 - ::1 - admin@mysite.com - IdentityController - changepassword
+29/11/2017 18:48:31 - ::1 - admin@mysite.com - IdentityController - changepassword
+29/11/2017 18:48:31 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 18:49:56 - ::1 - admin@mysite.com - HomeController - Index
+29/11/2017 18:50:01 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 18:50:03 - ::1 - admin@mysite.com - IdentityController - changepassword
+29/11/2017 18:50:08 - ::1 - admin@mysite.com - IdentityController - changepassword
+29/11/2017 18:50:08 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 18:50:26 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 18:50:28 - ::1 - admin@mysite.com - IdentityController - changepassword
+29/11/2017 18:50:33 - ::1 - admin@mysite.com - IdentityController - changepassword
+29/11/2017 18:50:33 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 20:06:42 - ::1 - admin@mysite.com - HomeController - Index
+29/11/2017 20:08:24 - ::1 - admin@mysite.com - HomeController - Index
+29/11/2017 20:08:32 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 20:41:36 - ::1 - admin@mysite.com - HomeController - Index
+29/11/2017 20:43:19 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 20:43:39 - ::1 - admin@mysite.com - HomeController - Index
+29/11/2017 20:43:40 - ::1 - admin@mysite.com - CamerasController - Add
+29/11/2017 20:44:00 - ::1 - admin@mysite.com - CamerasController - All
+29/11/2017 20:44:03 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 20:44:07 - ::1 - admin@mysite.com - IdentityController - create
+29/11/2017 20:44:26 - ::1 - admin@mysite.com - IdentityController - create
+29/11/2017 20:44:26 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 20:44:29 - ::1 - admin@mysite.com - IdentityController - roles
+29/11/2017 20:44:32 - ::1 - admin@mysite.com - IdentityController - addtorole
+29/11/2017 20:44:36 - ::1 - admin@mysite.com - IdentityController - addtorole
+29/11/2017 20:44:36 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 20:44:40 - ::1 - admin@mysite.com - IdentityController - roles
+29/11/2017 20:44:48 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 20:45:06 - ::1 - admin@mysite.com - IdentityController - changepassword
+29/11/2017 20:45:11 - ::1 - admin@mysite.com - IdentityController - changepassword
+29/11/2017 20:45:11 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 20:45:13 - ::1 - admin@mysite.com - IdentityController - roles
+29/11/2017 20:45:15 - ::1 - admin@mysite.com - IdentityController - addtorole
+29/11/2017 20:45:17 - ::1 - admin@mysite.com - IdentityController - addtorole
+29/11/2017 20:45:17 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 20:45:24 - ::1 - admin@mysite.com - IdentityController - delete
+29/11/2017 20:49:47 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 20:49:54 - ::1 - admin@mysite.com - IdentityController - delete
+29/11/2017 20:51:34 - ::1 - admin@mysite.com - IdentityController - delete
+29/11/2017 20:51:39 - ::1 - admin@mysite.com - IdentityController - delete
+29/11/2017 20:51:39 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 20:51:41 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 20:51:43 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 20:51:46 - ::1 - admin@mysite.com - IdentityController - roles
+29/11/2017 20:51:49 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 20:51:51 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 20:51:52 - ::1 - admin@mysite.com - IdentityController - delete
+29/11/2017 20:52:28 - ::1 - admin@mysite.com - IdentityController - delete
+29/11/2017 20:52:29 - ::1 - admin@mysite.com - IdentityController - destroy
+29/11/2017 20:52:29 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 20:52:39 - ::1 - admin@mysite.com - IdentityController - All
+29/11/2017 20:52:58 - ::1 - admin@mysite.com - IdentityController - All

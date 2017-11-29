@@ -1,0 +1,31 @@
+﻿@model List<AllViewModel>
+@{
+	ViewData["Title"] = "All Cameras";
+}
+<div class="container">
+	<br />
+	<div class="row well">
+		<h2>All Cameras</h2>
+
+		@foreach (var camera in Model)
+		{
+			<div class="form-group table-bordered col-sm-12 well">
+				<div class="col-sm-4">
+					<img src="@camera.ImageURL" width="120" class="table-bordered" />
+				</div>
+				<div class="col-sm-4">
+					<h4>@camera.Make @camera.Model</h4>
+					<a href="details/@camera.Id">Details</a>
+				</div>
+				<div class="col-sm-4">
+					<p class="text-danger">$@camera.Price</p>
+					<h4>@(camera.Quantity > 0 ? Html.Raw("<p class=\"text-info\">IN STOCK</p>") : Html.Raw("<p class=\"text-danger\">OUT OF STOCK</p>"))</h4>
+				</div>
+			</div>
+		}
+	</div>
+</div>
+
+@section Scripts {
+	@await Html.PartialAsync("_ValidationScriptsPartial")
+}

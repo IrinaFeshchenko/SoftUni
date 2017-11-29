@@ -1,0 +1,79 @@
+﻿@model DetailsViewModel
+@{
+	ViewData["Title"] = "Details";
+}
+<br />
+<div class="container">
+	<div class="row table-bordered">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-sm-12">
+					<h4><strong>@Model.Make @Model.CameraModel - $@Model.Price - @(Model.Quantity > 0 ? Html.Raw("<span class=\"text-info\">IN STOCK</span>") : Html.Raw("<span class=\"text-danger\">OUT OF STOCK</span>"))</strong></h4>
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-sm-4">
+					<a href="/cameras/seller/@Model.UserId" class="text-info">Seller: @Model.SellerName</a>
+				</div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-sm-4">
+					<img src="@Model.ImageURL" width="170" />
+				</div>
+			</div>
+			<br />
+			<div class="row">
+				<label class="col-sm-3 text-right">Is Full Frame:</label>
+				<div class="col-sm-4">
+					@Model.IsFullFrame
+				</div>
+			</div>
+			<div class="row">
+				<label class="col-sm-3 text-right">Min Shutter speed:</label>
+				<div class="col-sm-4">
+					@Model.MinShutterSpeed
+				</div>
+			</div>
+			<div class="row">
+				<label class="col-sm-3 text-right">Max Shutter speed:</label>
+				<div class="col-sm-4">
+					@Model.MaxShutterSpeed
+				</div>
+			</div>
+			<div class="row">
+				<label class="col-sm-3 text-right">Min ISO:</label>
+				<div class="col-sm-4">
+					@Model.MinISO
+				</div>
+			</div>
+			<div class="row">
+				<label class="col-sm-3 text-right">Max ISO:</label>
+				<div class="col-sm-4">
+					@Model.MaxISO
+				</div>
+			</div>
+			<div class="row">
+				<label class="col-sm-3 text-right">Video Resolution:</label>
+				<div class="col-sm-4">
+					@Model.VideoResolution
+				</div>
+			</div>
+			<div class="row">
+				<label class="col-sm-3 text-right">Light Metering:</label>
+				<div class="col-sm-4">
+					@foreach (var item in Model.LightMetering)
+					{
+						<p>- @item</p>
+					}
+				</div>
+			</div>
+			<div class="row">
+				<label class="col-sm-3 text-right">Description:</label>
+				<div class="col-sm-4">
+					@Model.Description
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

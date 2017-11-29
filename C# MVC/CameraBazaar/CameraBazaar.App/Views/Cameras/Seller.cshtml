@@ -1,0 +1,54 @@
+﻿@model SellerCamerasViewModel
+@{
+    ViewData["Title"] = "Seller";
+}
+<br />
+<div class="container">
+	<div class="row table-bordered">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-sm-4">
+					<h3>Seller: @Model.UserName</h3>
+				</div>
+			</div>
+			<div class="row">
+				<label class="col-sm-1 text-right">Email:</label>
+				<div class="col-sm-4">
+					@Model.Email
+				</div>
+			</div>
+			<div class="row">
+				<label class="col-sm-1 text-right">Phone:</label>
+				<div class="col-sm-4">
+					@Model.PhoneNumber
+				</div>
+			</div>
+			<div class="row">
+				<label class="col-sm-1 text-right">Cameras:</label>
+				<div class="col-sm-4">
+					@Model.CamerasStock
+					</div>
+				</div>
+				<div class="row well-sm">
+					<h2>Cameras:</h2>
+
+					@foreach (var camera in Model.Cameras)
+					{
+						<div class="form-group table-bordered col-sm-12">
+							<div class="col-sm-4 well-sm">
+								<img src="@camera.ImageURL" width="120" class="table-bordered" />
+							</div>
+							<div class="col-sm-4">
+								<h4>@camera.Make @camera.Model</h4>
+								<a href="details/@camera.Id">Details</a>
+							</div>
+							<div class="col-sm-4">
+								<p class="text-danger">$@camera.Price</p>
+								<h4>@(camera.Quantity > 0 ? Html.Raw("<p class=\"text-info\">IN STOCK</p>") : Html.Raw("<p class=\"text-danger\">OUT OF STOCK</p>"))</h4>
+							</div>
+						</div>
+					}
+				</div>
+			</div>
+		</div>
+	</div>
