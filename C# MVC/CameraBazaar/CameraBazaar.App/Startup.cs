@@ -11,6 +11,7 @@
     using CameraBazaar.App.Infrastructure.Extensions;
     using CameraBazaar.App.Infrastructure.Filters;
     using CameraBazaar.App.Services;
+    using AutoMapper;
 
     public class Startup
     {
@@ -39,6 +40,8 @@
                 .AddDefaultTokenProviders();
 
             services.AddTransient<ICameraService, CameraService>();
+
+            services.AddAutoMapper();
 
             services.AddMvc(
                 options =>
