@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace BookShop.Data
 {
-    public class BookShopDbContext
+    public class BookShopDbContext : DbContext
     {
+        public BookShopDbContext(DbContextOptions<BookShopDbContext> options)
+            : base(options)
+        {
+
+        }
     }
 }
