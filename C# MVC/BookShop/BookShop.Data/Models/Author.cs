@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using static BookShop.Data.DataConstants;
 
 namespace BookShop.Data.Models
@@ -14,5 +15,7 @@ namespace BookShop.Data.Models
         [Required]
         [MaxLength(AuthornameMaxLength)]
         public string LastName { get; set; }
+
+        public List<Book> Books { get; set; } = new List<Book>();
     }
 }

@@ -70,7 +70,7 @@
       <HintPath>..\packages\Microsoft.Extensions.Primitives.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="Remotion.Linq, Version=2.1.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
-      <HintPath>..\packages\Remotion.Linq.2.1.1\lib\net45\Remotion.Linq.dll</HintPath>
+      <HintPath>..\packages\Remotion.Linq.2.1.2\lib\net45\Remotion.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -104,6 +104,11 @@
   <ItemGroup>
     <Compile Include="BookShopDbContext.cs" />
     <Compile Include="DataConstants.cs" />
+    <Compile Include="Migrations\20171205233541_BookShopTables.cs" />
+    <Compile Include="Migrations\20171205233541_BookShopTables.designer.cs">
+      <DependentUpon>20171205233541_BookShopTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\BookShopDbContextModelSnapshot.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Category.cs" />

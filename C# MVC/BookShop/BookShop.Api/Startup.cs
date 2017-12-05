@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using BookShop.Api.Infrastructure.Extensions;
+using BookShop.Data;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,6 +19,9 @@ namespace BookShop.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<BookShopDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddMvc();
         }
 
@@ -25,6 +31,8 @@ namespace BookShop.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseDatabaseMigration();
 
             app.UseMvc();
         }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using static BookShop.Data.DataConstants;
 
 namespace BookShop.Data.Models
@@ -23,8 +24,14 @@ namespace BookShop.Data.Models
 
         public int? Edition { get; set; }
 
+        public int? AgeRestriction { get; set; }
+
+        public System.DateTime ReleaseDate { get; set; }
+
         public int AuthorId { get; set; }
 
         public Author Autor { get; set; }
+
+        public List<CategoryBooks> CategoryBooks { get; set; } = new List<CategoryBooks>();
     }
 }

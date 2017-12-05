@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using static BookShop.Data.DataConstants;
 
 namespace BookShop.Data.Models
@@ -11,8 +12,6 @@ namespace BookShop.Data.Models
         [MaxLength(CategoryNameMaxLength)]
         public string Name { get; set; }
 
-        public int AutrhorId { get; set; }
-
-        public Author Author { get; set; }
+        public List<CategoryBooks> CategoryBooks { get; set; } = new List<CategoryBooks>();
     }
 }
