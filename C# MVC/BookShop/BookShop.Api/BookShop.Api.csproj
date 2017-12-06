@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="6.2.1" />
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.1" />
@@ -21,9 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BookShop.Common\BookShop.Common.csproj" />
-    <ProjectReference Include="..\BookShop.Data\BookShop.Data.csproj" />
-    <ProjectReference Include="..\BookShop.Services\BookShop.Services.csproj" />
+    <ProjectReference Include="..\BookShop.Commons\BookShop.Commons.csproj" />
+    <ProjectReference Include="..\BookShop.Database\BookShop.Database.csproj" />
+    <ProjectReference Include="..\BookShop.Service\BookShop.Service.csproj" />
   </ItemGroup>
 
 </Project>

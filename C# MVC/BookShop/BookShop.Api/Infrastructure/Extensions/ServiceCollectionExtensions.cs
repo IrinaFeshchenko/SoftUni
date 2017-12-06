@@ -1,4 +1,4 @@
-﻿using BookShop.Services;
+﻿using BookShop.Service;
 using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
 using System.Reflection;

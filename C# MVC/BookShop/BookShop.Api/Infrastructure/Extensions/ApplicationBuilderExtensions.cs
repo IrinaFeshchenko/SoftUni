@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using BookShop.Data;
+using BookShop.Database;
 
 namespace BookShop.Api.Infrastructure.Extensions
 {

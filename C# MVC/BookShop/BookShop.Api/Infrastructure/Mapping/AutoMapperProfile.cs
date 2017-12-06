@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using BookShop.Common.Mapping;
+using BookShop.Commons.Mapping;
 using System;
 using System.Linq;
 
@@ -12,7 +12,7 @@ namespace BookShop.Api.Infrastructure.Mapping
             var allTypes = AppDomain
                 .CurrentDomain
                 .GetAssemblies()
-                .Where(a => a.GetName().Name.Contains("AreasDemo"))
+                .Where(a => a.GetName().Name.Contains("BookShop"))
                 .SelectMany(a => a.GetTypes());
 
             allTypes
