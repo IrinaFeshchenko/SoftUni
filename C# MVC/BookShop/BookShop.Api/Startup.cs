@@ -1,4 +1,5 @@
-﻿using BookShop.Api.Infrastructure.Extensions;
+﻿using AutoMapper;
+using BookShop.Api.Infrastructure.Extensions;
 using BookShop.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,6 +22,10 @@ namespace BookShop.Api
         {
             services.AddDbContext<BookShopDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddAutoMapper();
+
+            services.AddDomainServices();
 
             services.AddMvc();
         }
