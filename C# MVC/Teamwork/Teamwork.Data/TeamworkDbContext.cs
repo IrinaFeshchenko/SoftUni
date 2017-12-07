@@ -11,6 +11,12 @@ namespace Teamwork.Web.Data
         {
         }
 
+        public DbSet<Project> Projects { get; set; }
+
+        public DbSet<Assessment> Assessments { get; set; }
+
+        public DbSet<StudentProject> StudentProjects { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
