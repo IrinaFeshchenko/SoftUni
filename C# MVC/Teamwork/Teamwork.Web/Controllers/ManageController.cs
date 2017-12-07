@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 using Teamwork.Web.Models.ManageViewModels;
 using Teamwork.Data.Models;
 using Teamwork.Services.Email;
-using Teamwork.Web.Extesions;
+using Teamwork.Web.Infrastructure.Extensions;
 
 namespace Teamwork.Web.Controllers
 {

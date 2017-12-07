@@ -2,7 +2,7 @@ using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Teamwork.Services.Email;
 
-namespace Teamwork.Web.Extesions
+namespace Teamwork.Web.Infrastructure.Extensions
 {
     public static class EmailSenderExtensions
     {

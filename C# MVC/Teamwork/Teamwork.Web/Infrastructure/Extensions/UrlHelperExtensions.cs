@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Teamwork.Web.Controllers;
 
-namespace Teamwork.Web.Extesions
+namespace Teamwork.Web.Infrastructure.Extensions
 {
     public static class UrlHelperExtensions
     {

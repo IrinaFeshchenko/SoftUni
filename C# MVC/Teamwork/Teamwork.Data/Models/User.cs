@@ -1,9 +1,29 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using static Teamwork.Data.DataConstants;
 
 namespace Teamwork.Data.Models
 {
-    // Add profile data for application users by adding properties to the User class
     public class User : IdentityUser
     {
+        [Required]
+        [MinLength(UserNameMinLength)]
+        [MaxLength(UserNameMaxLength)]
+        public string FirstName { get; set; }
+
+        [Required]
+        [MinLength(UserNameMinLength)]
+        [MaxLength(UserNameMaxLength)]
+        public string LastName { get; set; }
+
+        public DateTime RegistrationDate { get; set; }
+
+        public List<Assessment> AssesmentsGiven { get; set; } = new List<Assessment>();
+
+        public List<Assessment> AssesmentsReceived { get; set; } = new List<Assessment>();
+
+        public List<Project> Projects { get; set; } = new List<Project>();
     }
 }
