@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using static Teamwork.Data.DataConstants;
 
 namespace Teamwork.Data.Models
@@ -18,11 +19,11 @@ namespace Teamwork.Data.Models
 
         public DateTime AssessmentDate { get; set; }
 
-        public int FromStudentId { get; set; }
+        public string FromStudentId { get; set; }
 
         public User FromStudent { get; set; }
 
-        public int ForStudentId { get; set; }
+        public string ForStudentId { get; set; }
 
         public User ForStudent { get; set; }
 

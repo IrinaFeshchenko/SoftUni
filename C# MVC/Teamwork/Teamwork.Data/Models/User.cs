@@ -24,6 +24,8 @@ namespace Teamwork.Data.Models
 
         public List<Assessment> AssesmentsReceived { get; set; } = new List<Assessment>();
 
-        public List<Project> Projects { get; set; } = new List<Project>();
+        public List<StudentProject> StudentProjects { get; set; } = new List<StudentProject>();
+
+        public List<Project> CreatedProjects { get; set; } = new List<Project>();
     }
 }

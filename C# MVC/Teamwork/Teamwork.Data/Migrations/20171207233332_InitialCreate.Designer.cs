@@ -11,9 +11,10 @@ using Teamwork.Web.Data;
 namespace Teamwork.Data.Migrations
 {
     [DbContext(typeof(TeamworkDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171207233332_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

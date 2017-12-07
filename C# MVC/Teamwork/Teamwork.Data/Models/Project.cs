@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using static Teamwork.Data.DataConstants;
 
 namespace Teamwork.Data.Models
@@ -14,9 +15,6 @@ namespace Teamwork.Data.Models
         [MinLength(ProjectNameMaxLength)]
         public string Name { get; set; }
 
-        [Required]
-        public User Creator { get; set; }
-
         public string Description { get; set; }
         
         public DateTime StartDate { get; set; }
@@ -25,6 +23,12 @@ namespace Teamwork.Data.Models
 
         public DateTime LateSubmisionDate { get; set; }
 
-        public List<User> Students { get; set; } = new List<User>();
+        public string CreatorId { get; set; }
+
+        public User Creator { get; set; }
+
+        public List<StudentProject> StudentProjects { get; set; } = new List<StudentProject>();
+
+        public List<Assessment> Assessments { get; set; } = new List<Assessment>();
     }
 }

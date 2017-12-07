@@ -19,10 +19,47 @@ namespace Teamwork.Web.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder
+                .Entity<StudentProject>()
+                .HasKey(sp => new { sp.StudentId, sp.ProjectId });
+
+            builder
+                .Entity<User>()
+                .HasMany(student => student.StudentProjects)
+                .WithOne(sp => sp.Student)
+                .HasForeignKey(sp => sp.StudentId);
+
+            builder
+                .Entity<Project>()
+                .HasMany(p => p.StudentProjects)
+                .WithOne(sp => sp.Project)
+                .HasForeignKey(sp => sp.ProjectId);
+
+            builder
+                .Entity<Project>()
+                .HasOne(p => p.Creator)
+                .WithMany(c => c.CreatedProjects)
+                .HasForeignKey(c => c.CreatorId);
+
+            builder
+                .Entity<Assessment>()
+                .HasOne(a => a.Project)
+                .WithMany(p => p.Assessments)
+                .HasForeignKey(a => a.ProjectId);
+
+            builder
+                .Entity<Assessment>()
+                .HasOne(a => a.FromStudent)
+                .WithMany(fromStudent => fromStudent.AssesmentsGiven)
+                .HasForeignKey(a => a.FromStudentId);
+
+            builder
+                .Entity<Assessment>()
+                .HasOne(a => a.ForStudent)
+                .WithMany(forStudent => forStudent.AssesmentsReceived)
+                .HasForeignKey(a => a.FromStudentId);
+
             base.OnModelCreating(builder);
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
-            // Add your customizations after calling base.OnModelCreating(builder);
         }
     }
 }
