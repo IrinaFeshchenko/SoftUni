@@ -16,7 +16,7 @@ namespace Teamwork.Data.Models
         [Required]
         [MinLength(UserNameMinLength)]
         [MaxLength(UserNameMaxLength)]
-        public string LastName { get; set; }
+        public string Surname { get; set; }
 
         public DateTime RegistrationDate { get; set; }
 

@@ -208,7 +208,7 @@ namespace Teamwork.Web.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
-
+        
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -217,15 +217,28 @@ namespace Teamwork.Web.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = model.Email, Email = model.Email };
+                var user = new User
+                {
+                    UserName = model.Email,
+                    FirstName = model.FirstName,
+                    Surname = model.Surname,
+                    Email = model.Email
+                };
+
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
 
-                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                    var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
-                    await _emailSender.SendEmailConfirmationAsync(model.Email, callbackUrl);
+                    // If the user has provided a student ID we create a student record
+                    if (!string.IsNullOrEmpty(model.StudentNumber))
+                    {
+                        var student = new Student
+                        {
+                            StudentNumber = model.StudentNumber,
+                            UserId = await _userManager.GetUserIdAsync(user)
+                        };
+                    }
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation("User created a new account with password.");

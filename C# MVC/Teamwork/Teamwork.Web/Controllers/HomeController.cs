@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Teamwork.Web.Models;
+using static Teamwork.Web.WebConstants;
 
 namespace Teamwork.Web.Controllers
 {
@@ -12,19 +9,17 @@ namespace Teamwork.Web.Controllers
     {
         public IActionResult Index()
         {
-            return View();
-        }
+            var user = this.HttpContext.User;
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
+            if (user.IsInRole(AdministratorRole))
+            {
+                return RedirectToAction("Index", new { Area = "Admin" });
+            }
 
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
+            if (user.IsInRole(TeacherRole))
+            {
+                return RedirectToAction("Index", new { Area = "Teachers" });
+            }
 
             return View();
         }

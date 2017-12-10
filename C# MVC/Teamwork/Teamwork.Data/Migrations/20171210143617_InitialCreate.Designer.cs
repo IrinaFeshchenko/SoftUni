@@ -11,9 +11,10 @@ using Teamwork.Web.Data;
 namespace Teamwork.Data.Migrations
 {
     [DbContext(typeof(TeamworkDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171210143617_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -229,10 +230,6 @@ namespace Teamwork.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(100);
-
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
@@ -252,6 +249,10 @@ namespace Teamwork.Data.Migrations
                     b.Property<DateTime>("RegistrationDate");
 
                     b.Property<string>("SecurityStamp");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
                     b.Property<bool>("TwoFactorEnabled");
 

@@ -23,7 +23,8 @@ namespace BookShop.Api.Controllers
             return this.OkOrNotFound(await this.authors.Details(id));
         }
 
-        [HttpGet(WithId + )]
+        //[HttpGet(WithId + "/books")]
+
 
 
         [HttpPost]

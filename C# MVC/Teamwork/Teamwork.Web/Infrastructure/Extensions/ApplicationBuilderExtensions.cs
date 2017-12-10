@@ -53,14 +53,15 @@ namespace Teamwork.Web.Infrastructure.Extensions
                             adminUser = new User
                             {
                                 Email = adminEmail,
-                                UserName = adminName,
-                                FirstName = adminName,
+                                UserName = adminEmail,
+                                FirstName = "DefaultAdmin",
+                                Surname = "DefaultAdmin",
                                 RegistrationDate = DateTime.UtcNow
                             };
 
-                            await userManager.CreateAsync(adminUser, "zavodskaParo1a");
+                            var result = await userManager.CreateAsync(adminUser, "zavodskaParo1a");
 
-                            await userManager.AddToRoleAsync(adminUser, adminName);
+                            result = await userManager.AddToRoleAsync(adminUser, adminName);
                         }
                     })
                     .Wait();

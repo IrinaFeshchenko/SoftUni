@@ -2,19 +2,15 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
-using Microsoft.EntityFrameworkCore.Storage;
-using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 using Teamwork.Web.Data;
 
 namespace Teamwork.Data.Migrations
 {
     [DbContext(typeof(TeamworkDbContext))]
-    [Migration("20171210022901_StudentsTable")]
-    partial class StudentsTable
+    partial class TeamworkDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -230,10 +226,6 @@ namespace Teamwork.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(100);
-
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
@@ -253,6 +245,10 @@ namespace Teamwork.Data.Migrations
                     b.Property<DateTime>("RegistrationDate");
 
                     b.Property<string>("SecurityStamp");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
                     b.Property<bool>("TwoFactorEnabled");
 
