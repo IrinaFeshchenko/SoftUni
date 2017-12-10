@@ -20,6 +20,8 @@ namespace Teamwork.Data.Models
 
         public DateTime RegistrationDate { get; set; }
 
+        public Student Student { get; set; }
+
         public List<Assessment> AssesmentsGiven { get; set; } = new List<Assessment>();
 
         public List<Assessment> AssesmentsReceived { get; set; } = new List<Assessment>();

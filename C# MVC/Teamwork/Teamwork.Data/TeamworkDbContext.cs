@@ -17,6 +17,8 @@ namespace Teamwork.Web.Data
 
         public DbSet<StudentProject> StudentProjects { get; set; }
 
+        public DbSet<Student> Student { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder
@@ -58,6 +60,12 @@ namespace Teamwork.Web.Data
                 .HasOne(a => a.ForStudent)
                 .WithMany(forStudent => forStudent.AssesmentsReceived)
                 .HasForeignKey(a => a.FromStudentId);
+
+            builder
+                .Entity<Student>()
+                .HasOne(s => s.User)
+                .WithOne(u => u.Student)
+                .HasForeignKey<Student>(s => s.UserId);
 
             base.OnModelCreating(builder);
         }

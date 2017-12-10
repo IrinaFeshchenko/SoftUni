@@ -25,4 +25,8 @@
     <ProjectReference Include="..\Teamwork.Services\Teamwork.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\" />
+  </ItemGroup>
+
 </Project>
