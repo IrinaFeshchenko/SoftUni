@@ -13,12 +13,12 @@ namespace Teamwork.Web.Controllers
 
             if (user.IsInRole(AdministratorRole))
             {
-                return RedirectToAction("Index", new { Area = "Admin" });
+                return RedirectToAction("Users", new { Area = "Admin" });
             }
 
             if (user.IsInRole(TeacherRole))
             {
-                return RedirectToAction("Index", new { Area = "Teachers" });
+                return RedirectToAction("Project", new { Area = "Teachers" });
             }
 
             return View();

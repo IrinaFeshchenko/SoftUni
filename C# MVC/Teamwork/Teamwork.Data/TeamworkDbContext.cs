@@ -17,7 +17,7 @@ namespace Teamwork.Web.Data
 
         public DbSet<StudentProject> StudentProjects { get; set; }
 
-        public DbSet<Student> Student { get; set; }
+        public DbSet<Student> Students { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

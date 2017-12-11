@@ -13,8 +13,4 @@
     <ProjectReference Include="..\Teamwork.Data\Teamwork.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Students\" />
-  </ItemGroup>
-
 </Project>

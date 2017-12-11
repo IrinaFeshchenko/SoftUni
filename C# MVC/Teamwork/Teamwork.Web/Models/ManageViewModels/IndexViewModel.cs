@@ -1,24 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using static Teamwork.Web.WebConstants;
+
 
 namespace Teamwork.Web.Models.ManageViewModels
 {
     public class IndexViewModel
     {
-        public string Username { get; set; }
-
-        public bool IsEmailConfirmed { get; set; }
+        [Required]
+        [Display(Name = "First Name")]
+        [MinLength(UserNameMinLength)]
+        [MaxLength(UserNameMaxLength)]
+        public string FirstName { get; set; }
 
         [Required]
-        [EmailAddress]
-        public string Email { get; set; }
+        [MinLength(UserNameMinLength)]
+        [MaxLength(UserNameMaxLength)]
+        public string Surname { get; set; }
 
         [Phone]
         [Display(Name = "Phone number")]
         public string PhoneNumber { get; set; }
+
+        [MaxLength(StudentNumberMaxLength)]
+        public string StudentNumber { get; set; }
 
         public string StatusMessage { get; set; }
     }
