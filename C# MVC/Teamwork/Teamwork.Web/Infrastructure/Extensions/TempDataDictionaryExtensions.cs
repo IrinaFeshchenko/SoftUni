@@ -13,5 +13,29 @@ namespace Teamwork.Web.Infrastructure.Extensions
         {
             tempData[WebConstants.TempDataErrorMessageKey] = message;
         }
+
+        public static string SuccessMessage(this ITempDataDictionary tempData)
+        {
+            if (tempData.ContainsKey(WebConstants.TempDataSuccessMessageKey))
+            {
+                return tempData[WebConstants.TempDataSuccessMessageKey].ToString();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static string ErrorMessage(this ITempDataDictionary tempData)
+        {
+            if (tempData.ContainsKey(WebConstants.TempDataErrorMessageKey))
+            {
+                return tempData[WebConstants.TempDataErrorMessageKey].ToString();
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

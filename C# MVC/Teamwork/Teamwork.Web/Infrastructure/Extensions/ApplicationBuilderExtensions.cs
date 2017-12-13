@@ -44,7 +44,7 @@ namespace Teamwork.Web.Infrastructure.Extensions
                             }
                         }
 
-                        var adminEmail = "admin@zavod.com";
+                        var adminEmail = "admin@test.com";
 
                         var adminUser = await userManager.FindByEmailAsync(adminEmail);
 
@@ -59,7 +59,7 @@ namespace Teamwork.Web.Infrastructure.Extensions
                                 RegistrationDate = DateTime.UtcNow
                             };
 
-                            var result = await userManager.CreateAsync(adminUser, "zavodskaParo1a");
+                            var result = await userManager.CreateAsync(adminUser, "123123");
 
                             result = await userManager.AddToRoleAsync(adminUser, adminName);
                         }

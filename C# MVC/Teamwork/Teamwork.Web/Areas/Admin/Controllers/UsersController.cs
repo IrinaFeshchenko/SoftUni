@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Teamwork.Data.Models;
 using Teamwork.Services.Admin;
@@ -13,23 +14,29 @@ namespace Teamwork.Web.Areas.Admin.Controllers
 {
     public class UsersController : BaseAdminController
     {
-        private readonly IAdminUserService users;
+        private readonly IAdminUserService usersService;
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly UserManager<User> userManager;
 
         public UsersController(
-            IAdminUserService users,
+            IAdminUserService usersService,
             UserManager<User> userManager,
             RoleManager<IdentityRole> roleManager)
         {
-            this.users = users;
+            this.usersService = usersService;
             this.userManager = userManager;
             this.roleManager = roleManager;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchTerm = "", int page = 1)
         {
-            var users = await this.users.AllAsync();
+            if (!Regex.IsMatch(searchTerm, @"^\s*[A-Za-z0-9.-_@]*\s*$"))
+            {
+                searchTerm = string.Empty;
+                TempData.AddErrorMessage("Invalid search characters provided.");
+            }
+
+            var users = await this.usersService.AllAsync(searchTerm, page);
             var roles = await this.roleManager
                 .Roles
                 .Select(r => new SelectListItem
@@ -41,12 +48,15 @@ namespace Teamwork.Web.Areas.Admin.Controllers
 
             return View(new UserListingsViewModel
             {
+                TotalUsers = await usersService.TotalAsync(),
                 Users = users,
-                Roles = roles
+                Roles = roles,
+                SearchTerm = searchTerm
             });
         }
 
         [HttpPost]
+       // [ValidateModelState]
         public async Task<IActionResult> AddToRole(AddUserToRoleFormModel model)
         {
             var roleExists = await this.roleManager.RoleExistsAsync(model.Role);
@@ -66,6 +76,30 @@ namespace Teamwork.Web.Areas.Admin.Controllers
             await this.userManager.AddToRoleAsync(user, model.Role);
 
             TempData.AddSuccessMessage($"User {user.UserName} successfully added to the {model.Role} role.");
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        //[ValidateModelState]
+        public async Task<IActionResult> RemoveFromRole(AddUserToRoleFormModel model)
+        {
+            var roleExists = await this.roleManager.RoleExistsAsync(model.Role);
+            var user = await this.userManager.FindByIdAsync(model.UserId);
+            var userExists = user != null;
+
+            if (!roleExists || !userExists)
+            {
+                ModelState.AddModelError(string.Empty, "Invalid identity details.");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            await this.userManager.RemoveFromRoleAsync(user, model.Role);
+
+            TempData.AddSuccessMessage($"User {user.UserName} successfully removed from the {model.Role} role.");
             return RedirectToAction(nameof(Index));
         }
     }

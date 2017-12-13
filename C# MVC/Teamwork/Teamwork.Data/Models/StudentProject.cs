@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Teamwork.Data.Models
+﻿namespace Teamwork.Data.Models
 {
     public class StudentProject
     {

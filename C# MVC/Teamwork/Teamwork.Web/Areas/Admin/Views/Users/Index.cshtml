@@ -1,19 +1,46 @@
 ﻿@model UserListingsViewModel
 
 @{
-    ViewData["Title"] = "User Administration";
+    ViewData["Title"] = "User Roles Administration";
 }
 
 <h1>@ViewData["Title"]</h1>
 
+<div class="row well">
+	<form action="users/Index" method="post">
+		<div class="col-sm-3">
+			<input type="text" class="btn-block" placeholder="@(string.IsNullOrWhiteSpace(Model.SearchTerm)? "Enter search term" : Model.SearchTerm)"  name="SearchTerm" />
+		</div>
+		<div class="col-sm-2">
+			<input type="submit" class="btn btn-sm btn-primary btn-block" value="Search" />
+		</div>
+		<div class="col-sm-2">
+			<input type="submit" class="btn btn-sm btn-primary btn-block" value="Show All" />
+		</div>
+</form>
+</div>
+@if (TempData.ErrorMessage() != null)
+{
+	<div class="red">
+		<p><strong>Error:</strong> @TempData.ErrorMessage()</p>
+	</div>
+}
+
+@if (TempData.SuccessMessage() != null)
+{
+	<div class="green">
+		<p><strong>Success:</strong> @TempData.SuccessMessage()</p>
+	</div>
+}
+
 <table class="table table-bordered table-hover">
-	<thead>
+	<thead class="bg-primary">
 		<tr>
 			<th>
-				Username
+				E-mail
 			</th>
 			<th>
-				E-mail
+				current role
 			</th>
 			<th>
 			</th>
@@ -24,20 +51,26 @@
 		{
 		<tr>
 			<th>
-				@user.Username
-			</th>
-			<th>
 				@user.Email
 			</th>
 			<th>
-				<form asp-action="AddToRole" method="post">
+				<ul>
+					@foreach (var role in user.UserRoles)
+					{
+						<li>@role</li>
+					}
+				</ul>
+			</th>
+			<th>
+				<form action="" method="post">
 					<div class="row">
 						<div class="col-md-9">
 							<input type="hidden" name="UserId" value="@user.Id" />
 							<select name="Role" asp-items="Model.Roles" class="form-control"></select>
 						</div>
 						<div class="col-md-3">
-							<input class="btn btn-sm btn-primary" type="submit" value="Add To Role" />
+							<input class="btn btn-sm btn-primary btn-block" type="submit" value="Add To Role" formaction="users/AddToRole" />
+							<input class="btn btn-sm btn-danger btn-block" type="submit" value="Remove from Role" formaction="users/RemoveFromRole" />
 						</div>
 					</div>
 				</form>
@@ -47,3 +80,21 @@
 		}
 	</tbody>
 </table>
+
+@if (Model.TotalUsers > Model.Users.Count())
+{
+	<ul class="pagination">
+		<li class="@(Model.CurrentPage == 1 ? "disabled" : string.Empty)">
+			<a asp-route-page="@Model.PreviousPage"
+			   aria-label="Previous">
+				<span aria-hidden="true">&laquo;</span>
+			</a>
+		</li>
+		<li class="@(Model.CurrentPage == Model.TotalPages ? "disabled" : string.Empty)">
+			<a asp-route-page="@Model.NextPage"
+			   aria-label="Next">
+				<span aria-hidden="true">&raquo;</span>
+			</a>
+		</li>
+	</ul>
+}

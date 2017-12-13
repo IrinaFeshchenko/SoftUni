@@ -1,4 +1,5 @@
-﻿using Teamwork.Common.Mapping;
+﻿using System.Collections.Generic;
+using Teamwork.Common.Mapping;
 using Teamwork.Data.Models;
 
 namespace Teamwork.Services.Admin.Models
@@ -7,8 +8,8 @@ namespace Teamwork.Services.Admin.Models
     {
         public string Id { get; set; }
 
-        public string Username { get; set; }
-
         public string Email { get; set; }
+
+        public IEnumerable<string> UserRoles { get; set; }
     }
 }
