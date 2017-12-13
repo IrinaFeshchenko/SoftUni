@@ -44,7 +44,7 @@ namespace Teamwork.Web.Infrastructure.Extensions
                             }
                         }
 
-                        var adminEmail = "admin@test.com";
+                        var adminEmail = "admin@bu.com";
 
                         var adminUser = await userManager.FindByEmailAsync(adminEmail);
 

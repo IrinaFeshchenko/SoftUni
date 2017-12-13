@@ -8,6 +8,6 @@ namespace Teamwork.Services.Admin
     {
         Task<IEnumerable<AdminUserListingServiceModel>> AllAsync(string searchTerm = "", int page = 1);
 
-        Task<int> TotalAsync();
+        Task<int> TotalAsync(string searchTerm = "");
     }
 }

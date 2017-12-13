@@ -63,7 +63,16 @@ namespace Teamwork.Services.Admin
             }
         }
 
-        public async Task<int> TotalAsync()
-            => await this.db.Users.CountAsync();
+        public async Task<int> TotalAsync(string searchTerm = "")
+        {
+            if (!string.IsNullOrWhiteSpace(searchTerm))
+            {
+                return await this.db.Users.Where(u => u.Email.Contains(searchTerm)).CountAsync();
+            }
+            else
+            {
+                return await this.db.Users.CountAsync();
+            }
+        }
     }
 }

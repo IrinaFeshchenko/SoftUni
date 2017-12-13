@@ -30,6 +30,11 @@ namespace Teamwork.Web.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index(string searchTerm = "", int page = 1)
         {
+            if (searchTerm == null)
+            {
+                searchTerm = string.Empty;
+            }
+
             if (!Regex.IsMatch(searchTerm, @"^\s*[A-Za-z0-9.-_@]*\s*$"))
             {
                 searchTerm = string.Empty;
@@ -48,10 +53,11 @@ namespace Teamwork.Web.Areas.Admin.Controllers
 
             return View(new UserListingsViewModel
             {
-                TotalUsers = await usersService.TotalAsync(),
+                TotalUsers = await usersService.TotalAsync(searchTerm),
                 Users = users,
                 Roles = roles,
-                SearchTerm = searchTerm
+                SearchTerm = searchTerm,
+                CurrentPage = page
             });
         }
 
