@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using Teamwork.Services.Admin.Models;
 using Teamwork.Web.Data;
 using System.Linq;
-using static Teamwork.Services.ServiceConstants;
+using static Teamwork.Common.GlobalConstants;
 
 namespace Teamwork.Services.Admin
 {
-    public class AdminUserService : IAdminUserService
+    public class AdminUserService : IAdminUserService, IPagination
     {
         private readonly TeamworkDbContext db;
 

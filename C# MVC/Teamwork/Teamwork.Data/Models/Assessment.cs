@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using static Teamwork.Data.DataConstants;
+using static Teamwork.Common.GlobalConstants;
 
 namespace Teamwork.Data.Models
 {

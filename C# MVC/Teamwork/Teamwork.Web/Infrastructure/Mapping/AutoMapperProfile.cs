@@ -39,6 +39,30 @@ namespace Teamwork.Web.Infrastructure.Mapping
                 .ToList()
                 .ForEach(mapping => this.CreateMap(mapping.Source, mapping.Destination));
 
+             allTypes
+                .Where(t => t.IsClass && !t.IsAbstract && t
+                    .GetInterfaces()
+                    .Where(i => i.IsGenericType)
+                    .Select(i => i.GetGenericTypeDefinition())
+                    .Contains(typeof(IMapTo<>)))
+                .Select(t => new
+                {
+                    Source = t,
+                    Destination = t
+                        .GetInterfaces()
+                        .Where(i => i.IsGenericType)
+                        .Select(i => new
+                        {
+                            Definition = i.GetGenericTypeDefinition(),
+                            Arguments = i.GetGenericArguments()
+                        })
+                        .Where(i => i.Definition == typeof(IMapTo<>))
+                        .SelectMany(i => i.Arguments)
+                        .First(),
+                })
+                .ToList()
+                .ForEach(mapping => this.CreateMap(mapping.Source, mapping.Destination));
+
             allTypes
                 .Where(t => t.IsClass
                     && !t.IsAbstract

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using static Teamwork.Common.GlobalConstants;
 
 namespace Teamwork.Web.Infrastructure.Extensions
 {
@@ -6,19 +7,19 @@ namespace Teamwork.Web.Infrastructure.Extensions
     {
         public static void AddSuccessMessage(this ITempDataDictionary tempData, string message)
         {
-            tempData[WebConstants.TempDataSuccessMessageKey] = message;
+            tempData[TempDataSuccessMessageKey] = message;
         }
 
         public static void AddErrorMessage(this ITempDataDictionary tempData, string message)
         {
-            tempData[WebConstants.TempDataErrorMessageKey] = message;
+            tempData[TempDataErrorMessageKey] = message;
         }
 
         public static string SuccessMessage(this ITempDataDictionary tempData)
         {
-            if (tempData.ContainsKey(WebConstants.TempDataSuccessMessageKey))
+            if (tempData.ContainsKey(TempDataSuccessMessageKey))
             {
-                return tempData[WebConstants.TempDataSuccessMessageKey].ToString();
+                return tempData[TempDataSuccessMessageKey].ToString();
             }
             else
             {
@@ -28,9 +29,9 @@ namespace Teamwork.Web.Infrastructure.Extensions
 
         public static string ErrorMessage(this ITempDataDictionary tempData)
         {
-            if (tempData.ContainsKey(WebConstants.TempDataErrorMessageKey))
+            if (tempData.ContainsKey(TempDataErrorMessageKey))
             {
-                return tempData[WebConstants.TempDataErrorMessageKey].ToString();
+                return tempData[TempDataErrorMessageKey].ToString();
             }
             else
             {

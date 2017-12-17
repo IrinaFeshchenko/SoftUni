@@ -1,5 +1,5 @@
 @using Microsoft.AspNetCore.Identity
-@using Teamwork.Web.Models
+@using static Teamwork.Common.GlobalConstants;
 
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
@@ -8,7 +8,7 @@
 {
 	<form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
 		<ul class="nav navbar-nav navbar-right">
-			@if (User.IsInRole(WebConstants.TeacherRole) || User.IsInRole(WebConstants.AdministratorRole))
+			@if (User.IsInRole(TeacherRole) || User.IsInRole(AdministratorRole))
 			{
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-education"></span> Projects Management<span class="caret"></span></a>
@@ -21,7 +21,7 @@
 			</li>
 			}
 
-			@if (User.IsInRole(WebConstants.AdministratorRole))
+			@if (User.IsInRole(AdministratorRole))
 			{
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-wrench"></span> Administration<span class="caret"></span></a>

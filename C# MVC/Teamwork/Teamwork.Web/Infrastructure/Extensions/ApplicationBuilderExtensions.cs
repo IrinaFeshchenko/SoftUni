@@ -6,6 +6,7 @@ using System;
 using System.Threading.Tasks;
 using Teamwork.Data.Models;
 using Teamwork.Web.Data;
+using static Teamwork.Common.GlobalConstants;
 
 namespace Teamwork.Web.Infrastructure.Extensions
 {
@@ -23,12 +24,12 @@ namespace Teamwork.Web.Infrastructure.Extensions
                 Task
                     .Run(async () =>
                     {
-                        var adminName = WebConstants.AdministratorRole;
+                        var adminName = AdministratorRole;
 
                         var roles = new[]
                         {
                             adminName,
-                            WebConstants.TeacherRole,
+                            TeacherRole,
                         };
 
                         foreach (var role in roles)

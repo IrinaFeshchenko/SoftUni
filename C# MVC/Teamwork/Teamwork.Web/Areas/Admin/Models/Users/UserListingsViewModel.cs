@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using Teamwork.Services;
 using Teamwork.Services.Admin.Models;
+using static Teamwork.Common.GlobalConstants;
 
 namespace Teamwork.Web.Areas.Admin.Models.Users
 {
@@ -17,7 +16,7 @@ namespace Teamwork.Web.Areas.Admin.Models.Users
 
         public IEnumerable<SelectListItem> Roles { get; set; }
 
-        public int TotalPages => (int)Math.Ceiling((double)this.TotalUsers / ServiceConstants.AdminUsersPageSize);
+        public int TotalPages => (int)Math.Ceiling((double)this.TotalUsers / AdminUsersPageSize);
 
         public int CurrentPage { get; set; }
 

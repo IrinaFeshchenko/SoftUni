@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Teamwork.Web.Models;
-using static Teamwork.Web.WebConstants;
+using static Teamwork.Common.GlobalConstants;
 
 namespace Teamwork.Web.Controllers
 {

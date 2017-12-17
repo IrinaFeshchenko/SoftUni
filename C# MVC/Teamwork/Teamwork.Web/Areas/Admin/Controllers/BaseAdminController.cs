@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using static Teamwork.Web.WebConstants;
+using static Teamwork.Common.GlobalConstants;
 
 namespace Teamwork.Web.Areas.Admin.Controllers
 {

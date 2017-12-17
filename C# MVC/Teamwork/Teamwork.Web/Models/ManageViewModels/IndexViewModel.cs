@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using static Teamwork.Web.WebConstants;
+using static Teamwork.Common.GlobalConstants;
 
 
 namespace Teamwork.Web.Models.ManageViewModels
