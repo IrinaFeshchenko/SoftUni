@@ -4,22 +4,13 @@
     ViewData["Title"] = "User Roles Administration";
 }
 
-<div class="container">
-	<div class="row well">
-		<form action="/admin/users/index" method="post">
-			<div class="col-sm-3">
-				<input type="text" class="btn-block" placeholder="@(string.IsNullOrWhiteSpace(Model.SearchTerm)? "Enter search term" : Model.SearchTerm)" name="SearchTerm" />
-			</div>
-			<div class="col-sm-2">
-				<input type="submit" class="btn btn-sm btn-primary btn-block" value="Search" />
-			</div>
-			<div class="col-sm-3 pull-right">
-				<h4>@ViewData["Title"]</h4>
-			</div>
-		</form>
-	</div>
-
-
+<div class="row well">
+	<h4>@ViewData["Title"]</h4>
+	<form action="/admin/users/index" method="post">
+		<input type="text" class="btn-sm" placeholder="@(string.IsNullOrWhiteSpace(Model.SearchTerm)? "Enter search term" : Model.SearchTerm)" name="SearchTerm" />
+		<input type="submit" class="btn-sm btn-primary" value="Search" />
+	</form>
+</div>
 	@if (TempData.ErrorMessage() != null)
 	{
 		<div class="red">
@@ -34,14 +25,14 @@
 		</div>
 	}
 
-	<table class="table table-bordered table-hover">
+	<table class="table table-hover">
 		<thead class="bg-primary">
 			<tr>
 				<th>
 					E-mail
 				</th>
 				<th>
-					current role
+					current roles
 				</th>
 				<th>
 				</th>
@@ -51,32 +42,32 @@
 			@foreach (var user in Model.Users)
 			{
 				<tr>
-					<th>
+					<td>
 						@user.Email
-					</th>
-					<th>
+					</td>
+					<td>
 						<ul>
 							@foreach (var role in user.UserRoles)
 							{
 								<li>@role</li>
 							}
 						</ul>
-					</th>
-					<th>
+					</td>
+					<td>
 						<form action="" method="post">
 							<div class="row">
-								<div class="col-md-9">
+								<div class="col-sm-6">
 									<input type="hidden" name="UserId" value="@user.Id" />
-									<select name="Role" asp-items="Model.Roles" class="form-control"></select>
+									<select name="Role" asp-items="Model.Roles" class="form-control btn-sm"></select>
 								</div>
-								<div class="col-md-3">
-									<input class="btn btn-sm btn-primary btn-block" type="submit" value="Add To Role" formaction="/admin/users/AddToRole" />
-									<input class="btn btn-sm btn-danger btn-block" type="submit" value="Remove from Role" formaction="/admin/users/RemoveFromRole" />
+								<div class="col-md-6">
+									<input class="btn-sm btn-info btn-group" type="submit" value="Add To Role" formaction="/admin/users/AddToRole" />
+									<input class="btn-sm btn-danger" type="submit" value="Remove from Role" formaction="/admin/users/RemoveFromRole" />
 								</div>
 							</div>
 						</form>
 
-					</th>
+					</td>
 				</tr>
 			}
 		</tbody>
@@ -99,4 +90,3 @@
 			</li>
 		</ul>
 	}
-</div>

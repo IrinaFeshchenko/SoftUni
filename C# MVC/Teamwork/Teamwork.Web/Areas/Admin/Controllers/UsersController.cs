@@ -29,7 +29,7 @@ namespace Teamwork.Web.Areas.Admin.Controllers
         }
 
         public async Task<IActionResult> Index(string searchTerm = "", int page = 1)
-        {
+        {          
             if (searchTerm == null)
             {
                 searchTerm = string.Empty;
@@ -50,6 +50,8 @@ namespace Teamwork.Web.Areas.Admin.Controllers
                     Value = r.Name
                 })
                 .ToListAsync();
+
+            this.HttpContext.Request.QueryString.Add("searchTerm", searchTerm);
 
             return View(new UserListingsViewModel
             {

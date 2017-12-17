@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Teamwork.Common.Mapping;
 using Teamwork.Data.Models;
-using static Teamwork.Web.WebConstants;
 
 namespace Teamwork.Web.Models.AccountViewModels
 {
@@ -35,9 +34,5 @@ namespace Teamwork.Web.Models.AccountViewModels
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
-
-        [Display(Name = "Student Number")]
-        [MaxLength(StudentNumberMaxLength)]
-        public string StudentNumber { get; set; }
     }
 }

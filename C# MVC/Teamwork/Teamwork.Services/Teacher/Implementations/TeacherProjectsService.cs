@@ -18,7 +18,7 @@ namespace Teamwork.Services.Teacher.Implementations
         public IEnumerable<TeacherProjectsServiceModel> GetProjects(string id)
         {
             var projects = db
-                .Projects.Where(p => p.Creator.Id == id)
+                .Projects.Where(p => p.Creator.UserId == id)
                 .ProjectTo<TeacherProjectsServiceModel>()
                 .ToList();
 

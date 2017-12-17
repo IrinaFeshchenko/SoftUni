@@ -22,12 +22,6 @@ namespace Teamwork.Data.Models
 
         public Student Student { get; set; }
 
-        public List<Assessment> AssesmentsGiven { get; set; } = new List<Assessment>();
-
-        public List<Assessment> AssesmentsReceived { get; set; } = new List<Assessment>();
-
-        public List<StudentProject> StudentProjects { get; set; } = new List<StudentProject>();
-
-        public List<Project> CreatedProjects { get; set; } = new List<Project>();
+        public Teacher Teacher { get; set; }
     }
 }

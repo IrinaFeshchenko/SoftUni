@@ -138,11 +138,11 @@ namespace Teamwork.Data.Migrations
                     b.Property<string>("Comments")
                         .IsRequired();
 
-                    b.Property<string>("ForStudentId");
+                    b.Property<string>("ForStudentId")
+                        .IsRequired();
 
-                    b.Property<string>("FromStudentId");
-
-                    b.Property<string>("FromStudentId1");
+                    b.Property<string>("FromStudentId")
+                        .IsRequired();
 
                     b.Property<int>("Grade");
 
@@ -150,13 +150,27 @@ namespace Teamwork.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FromStudentId");
+                    b.HasIndex("ForStudentId");
 
-                    b.HasIndex("FromStudentId1");
+                    b.HasIndex("FromStudentId");
 
                     b.HasIndex("ProjectId");
 
                     b.ToTable("Assessments");
+                });
+
+            modelBuilder.Entity("Teamwork.Data.Models.Course", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("Teamwork.Data.Models.Project", b =>
@@ -164,7 +178,10 @@ namespace Teamwork.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("CreatorId");
+                    b.Property<int>("CourseId");
+
+                    b.Property<string>("CreatorId")
+                        .IsRequired();
 
                     b.Property<string>("Description");
 
@@ -179,6 +196,8 @@ namespace Teamwork.Data.Migrations
                     b.Property<DateTime>("StartDate");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
 
                     b.HasIndex("CreatorId");
 
@@ -196,6 +215,19 @@ namespace Teamwork.Data.Migrations
                     b.ToTable("Students");
                 });
 
+            modelBuilder.Entity("Teamwork.Data.Models.StudentCourse", b =>
+                {
+                    b.Property<string>("StudentId");
+
+                    b.Property<int>("CourseId");
+
+                    b.HasKey("StudentId", "CourseId");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("StudentCourses");
+                });
+
             modelBuilder.Entity("Teamwork.Data.Models.StudentProject", b =>
                 {
                     b.Property<string>("StudentId");
@@ -207,6 +239,28 @@ namespace Teamwork.Data.Migrations
                     b.HasIndex("ProjectId");
 
                     b.ToTable("StudentProjects");
+                });
+
+            modelBuilder.Entity("Teamwork.Data.Models.Teacher", b =>
+                {
+                    b.Property<string>("UserId");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("Teachers");
+                });
+
+            modelBuilder.Entity("Teamwork.Data.Models.TeacherCourse", b =>
+                {
+                    b.Property<string>("TeacherId");
+
+                    b.Property<int>("CourseId");
+
+                    b.HasKey("TeacherId", "CourseId");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("TeacherCourses");
                 });
 
             modelBuilder.Entity("Teamwork.Data.Models.User", b =>
@@ -317,25 +371,33 @@ namespace Teamwork.Data.Migrations
 
             modelBuilder.Entity("Teamwork.Data.Models.Assessment", b =>
                 {
-                    b.HasOne("Teamwork.Data.Models.User", "ForStudent")
-                        .WithMany("AssesmentsReceived")
-                        .HasForeignKey("FromStudentId");
+                    b.HasOne("Teamwork.Data.Models.Student", "ForStudent")
+                        .WithMany("AssessmentsReceived")
+                        .HasForeignKey("ForStudentId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("Teamwork.Data.Models.User", "FromStudent")
-                        .WithMany("AssesmentsGiven")
-                        .HasForeignKey("FromStudentId1");
+                    b.HasOne("Teamwork.Data.Models.Student", "FromStudent")
+                        .WithMany("AssessmentsGiven")
+                        .HasForeignKey("FromStudentId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Teamwork.Data.Models.Project", "Project")
                         .WithMany("Assessments")
                         .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("Teamwork.Data.Models.Project", b =>
                 {
-                    b.HasOne("Teamwork.Data.Models.User", "Creator")
-                        .WithMany("CreatedProjects")
-                        .HasForeignKey("CreatorId");
+                    b.HasOne("Teamwork.Data.Models.Course", "Course")
+                        .WithMany("Projects")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Teamwork.Data.Models.Teacher", "Creator")
+                        .WithMany("Projects")
+                        .HasForeignKey("CreatorId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("Teamwork.Data.Models.Student", b =>
@@ -343,7 +405,20 @@ namespace Teamwork.Data.Migrations
                     b.HasOne("Teamwork.Data.Models.User", "User")
                         .WithOne("Student")
                         .HasForeignKey("Teamwork.Data.Models.Student", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("Teamwork.Data.Models.StudentCourse", b =>
+                {
+                    b.HasOne("Teamwork.Data.Models.Course", "Course")
+                        .WithMany("StudentCourses")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Teamwork.Data.Models.Student", "Student")
+                        .WithMany("StudentCourses")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("Teamwork.Data.Models.StudentProject", b =>
@@ -351,12 +426,33 @@ namespace Teamwork.Data.Migrations
                     b.HasOne("Teamwork.Data.Models.Project", "Project")
                         .WithMany("StudentProjects")
                         .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("Teamwork.Data.Models.User", "Student")
+                    b.HasOne("Teamwork.Data.Models.Student", "Student")
                         .WithMany("StudentProjects")
                         .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("Teamwork.Data.Models.Teacher", b =>
+                {
+                    b.HasOne("Teamwork.Data.Models.User", "User")
+                        .WithOne("Teacher")
+                        .HasForeignKey("Teamwork.Data.Models.Teacher", "UserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("Teamwork.Data.Models.TeacherCourse", b =>
+                {
+                    b.HasOne("Teamwork.Data.Models.Course", "Course")
+                        .WithMany("TeachersCourses")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Teamwork.Data.Models.Teacher", "Teacher")
+                        .WithMany("TeacherCourses")
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 #pragma warning restore 612, 618
         }

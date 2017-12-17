@@ -22,9 +22,14 @@ namespace Teamwork.Data.Models
 
         public DateTime LateSubmisionDate { get; set; }
 
+        [Required]
         public string CreatorId { get; set; }
 
-        public User Creator { get; set; }
+        public Teacher Creator { get; set; }
+
+        public int CourseId { get; set; }
+
+        public Course Course { get; set; }
 
         public List<StudentProject> StudentProjects { get; set; } = new List<StudentProject>();
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Teamwork.Data
 {
-    public static class DataConstants
+    public class DataConstants
     {
         public const int UserNameMinLength = 2;
         public const int UserNameMaxLength = 100;
@@ -15,5 +15,12 @@ namespace Teamwork.Data
         public const int AssessmentCommentMinLength = 10;
         public const int AssessmentGradeMinValue = 0;
         public const int AssessmentGradeMaxValue = 5;
+
+        public const int GenericNameMaxLength = 100;
+
+        public static void New_method()
+        {
+            ;
+        }
     }
 }

@@ -229,19 +229,8 @@ namespace Teamwork.Web.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-
-                    // If the user has provided a student ID we create a student record
-                    if (!string.IsNullOrEmpty(model.StudentNumber))
-                    {
-                        var student = new Student
-                        {
-                            StudentNumber = model.StudentNumber,
-                            UserId = await _userManager.GetUserIdAsync(user)
-                        };
-                    }
-
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    _logger.LogInformation("User created a new account with password.");
+
                     return RedirectToLocal(returnUrl);
                 }
                 AddErrors(result);
