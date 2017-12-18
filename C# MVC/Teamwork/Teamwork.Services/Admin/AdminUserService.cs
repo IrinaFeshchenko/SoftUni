@@ -3,9 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Teamwork.Services.Admin.Models;
-using Teamwork.Web.Data;
+using Teamwork.Data.Models;
 using System.Linq;
+using Teamwork.Data;
 using static Teamwork.Common.GlobalConstants;
+
 
 namespace Teamwork.Services.Admin
 {
@@ -73,6 +75,39 @@ namespace Teamwork.Services.Admin
             {
                 return await this.db.Users.CountAsync();
             }
+        }
+
+        public async Task<bool> CreateTeacherProfile(string id)
+        {
+            var userAccount = db.Users.Find(id);
+            if (userAccount==null)
+            {
+                return false;
+            }
+
+            if (TeacherProfileExists(id))
+            {
+                return false;
+            }
+
+            db.Teachers.Add(new Data.Models.Teacher {UserId = id });
+            var result = await db.SaveChangesAsync();
+            if (result<=0)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public Data.Models.Teacher GetTeacherProfile(string id)
+        {
+            return db.Teachers.Find(id);
+        }
+
+        public bool TeacherProfileExists(string id)
+        {
+            return db.Teachers.Any(t => t.UserId == id);
         }
     }
 }

@@ -9,6 +9,8 @@ using Teamwork.Data.Models;
 using Teamwork.Services.Admin;
 using Teamwork.Web.Areas.Admin.Models.Users;
 using Teamwork.Web.Infrastructure.Extensions;
+using Teamwork.Web.Infrastructure.Filters;
+using static Teamwork.Common.GlobalConstants;
 
 namespace Teamwork.Web.Areas.Admin.Controllers
 {
@@ -64,7 +66,8 @@ namespace Teamwork.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-       // [ValidateModelState]
+        [ValidateModelState]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddToRole(AddUserToRoleFormModel model)
         {
             var roleExists = await this.roleManager.RoleExistsAsync(model.Role);
@@ -81,14 +84,20 @@ namespace Teamwork.Web.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            await this.userManager.AddToRoleAsync(user, model.Role);
+            var result = await this.userManager.AddToRoleAsync(user, model.Role);
+
+            if (model.Role == TeacherRole && !usersService.TeacherProfileExists(model.UserId))
+            {
+                await usersService.CreateTeacherProfile(model.UserId);
+            }
 
             TempData.AddSuccessMessage($"User {user.UserName} successfully added to the {model.Role} role.");
             return RedirectToAction(nameof(Index));
         }
 
         [HttpPost]
-        //[ValidateModelState]
+        [ValidateModelState]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> RemoveFromRole(AddUserToRoleFormModel model)
         {
             var roleExists = await this.roleManager.RoleExistsAsync(model.Role);

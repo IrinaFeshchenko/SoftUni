@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Teamwork.Data.Models;
 
-namespace Teamwork.Web.Data
+namespace Teamwork.Data
 {
     public class TeamworkDbContext : IdentityDbContext<User>
     {
@@ -112,14 +112,16 @@ namespace Teamwork.Web.Data
                 .Entity<Assessment>()
                 .HasOne(a => a.FromStudent)
                 .WithMany(s => s.AssessmentsGiven)
-                .HasForeignKey(a => a.FromStudentId);
+                .HasForeignKey(a => a.FromStudentId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             // Student Assessment received
             builder
                 .Entity<Assessment>()
                 .HasOne(a => a.ForStudent)
                 .WithMany(s => s.AssessmentsReceived)
-                .HasForeignKey(a => a.ForStudentId);
+                .HasForeignKey(a => a.ForStudentId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             base.OnModelCreating(builder);
         }

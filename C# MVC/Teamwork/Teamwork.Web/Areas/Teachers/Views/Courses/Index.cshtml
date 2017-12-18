@@ -1,0 +1,59 @@
+﻿@using Teamwork.Web.Areas.Teachers.Models.Courses
+@model TeacherCoursesListingViewModel
+@{
+    ViewData["Title"] = "Courses Administration";
+}
+
+<div class="row well">
+	<h4>@ViewData["Title"]</h4>
+	<a class="btn-sm btn-success" asp-action="Create">Create New Course</a>
+	<form action="/teachers/courses/index" method="post">
+		<input type="text" class="btn-sm" placeholder="@(string.IsNullOrWhiteSpace(Model.SearchTerm)? "Enter search term" : Model.SearchTerm)" name="SearchTerm" />
+		<input type="submit" class="btn-sm btn-primary" value="Search" />
+	</form>
+</div>
+<div class="row">
+	<table class="table table-hover">
+		<thead class="bg-primary">
+			<tr>
+				<th>
+					Name
+				</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model.TeacherCourses)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.Name)
+					</td>
+					<td>
+						<a class="btn-sm btn-info" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+						<a class="btn-sm btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a>
+						<a class="btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+					</td>
+				</tr>
+				}
+		</tbody>
+	</table>
+</div>
+
+@if (Model.TotalItems > Model.TeacherCourses.Count())
+{
+	<ul class="pagination">
+		<li class="@(Model.CurrentPage == 1 ? "disabled" : string.Empty)">
+			<a asp-route-page="@Model.PreviousPage"
+			   aria-label="Previous">
+				<span aria-hidden="true">&laquo;</span>
+			</a>
+		</li>
+		<li class="@(Model.CurrentPage == Model.TotalPages ? "disabled" : string.Empty)">
+			<a asp-route-page="@Model.NextPage"
+			   aria-label="Next">
+				<span aria-hidden="true">&raquo;</span>
+			</a>
+		</li>
+	</ul>
+}

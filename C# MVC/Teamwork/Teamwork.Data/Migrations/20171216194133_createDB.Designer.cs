@@ -11,9 +11,10 @@ using Teamwork.Data;
 namespace Teamwork.Data.Migrations
 {
     [DbContext(typeof(TeamworkDbContext))]
-    partial class TeamworkDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171216194133_createDB")]
+    partial class createDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -163,8 +164,6 @@ namespace Teamwork.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Description");
 
                     b.Property<string>("Name")
                         .IsRequired()

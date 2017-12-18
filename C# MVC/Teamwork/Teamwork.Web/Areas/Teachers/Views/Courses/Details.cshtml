@@ -1,0 +1,26 @@
+﻿@using Teamwork.Services.Teacher.Models
+@model TeacherCourseDto
+
+@{
+    ViewData["Title"] = "Course Details";
+}
+
+<div class="row well">
+	<h2>@ViewData["Title"]</h2>
+</div>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn-sm btn-info" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a class="btn-sm btn-info" asp-action="Index">Back to List</a>
+</div>

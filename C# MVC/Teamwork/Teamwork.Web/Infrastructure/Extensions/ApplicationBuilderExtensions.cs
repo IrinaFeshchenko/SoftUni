@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
 using Teamwork.Data.Models;
-using Teamwork.Web.Data;
+using Teamwork.Data;
 using static Teamwork.Common.GlobalConstants;
 
 namespace Teamwork.Web.Infrastructure.Extensions

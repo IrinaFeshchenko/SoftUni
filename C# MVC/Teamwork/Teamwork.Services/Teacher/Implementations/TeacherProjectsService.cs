@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Teamwork.Services.Teacher.Models;
-using Teamwork.Web.Data;
+using Teamwork.Data;
 
 namespace Teamwork.Services.Teacher.Implementations
 {

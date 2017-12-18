@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Teamwork.Web.Data;
+using Teamwork.Data;
 using Teamwork.Data.Models;
 using AutoMapper;
 using Teamwork.Web.Infrastructure.Extensions;

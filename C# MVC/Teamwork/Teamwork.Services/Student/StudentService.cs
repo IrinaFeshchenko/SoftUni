@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Teamwork.Data.Models;
-using Teamwork.Web.Data;
+using Teamwork.Data;
 
 namespace Teamwork.Services.Students
 {
