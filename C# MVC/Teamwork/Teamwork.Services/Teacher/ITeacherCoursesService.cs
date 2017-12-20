@@ -14,8 +14,8 @@ namespace Teamwork.Services.Teacher
         
         Task<bool> UpdateAsync(string teacherId, TeacherCourseDto course);
         
-        Task<bool> DeleteAsync(int id);
+        Task<bool> DeleteAsync(string teacherId, int id);
 
-        Task<int> TotalAsync(string searchTerm = "");
+        Task<int> TotalAsync(string teacherId, string searchTerm = "");
     }
 }

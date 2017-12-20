@@ -1,12 +1,16 @@
 ﻿@using Teamwork.Web.Areas.Teachers.Models.Courses
 @model TeacherCoursesListingViewModel
 @{
-    ViewData["Title"] = "Courses Administration";
+	ViewData["Title"] = "Courses Administration";
 }
 
 <div class="row well">
-	<h4>@ViewData["Title"]</h4>
-	<a class="btn-sm btn-success" asp-action="Create">Create New Course</a>
+	<div>
+		<h4>@ViewData["Title"]</h4>
+		<a class="btn-sm btn-success" asp-action="Create">Create New Course</a>
+		<br />
+		<br />
+	</div>
 	<form action="/teachers/courses/index" method="post">
 		<input type="text" class="btn-sm" placeholder="@(string.IsNullOrWhiteSpace(Model.SearchTerm)? "Enter search term" : Model.SearchTerm)" name="SearchTerm" />
 		<input type="submit" class="btn-sm btn-primary" value="Search" />
@@ -17,7 +21,7 @@
 		<thead class="bg-primary">
 			<tr>
 				<th>
-					Name
+					Courses you teach
 				</th>
 				<th></th>
 			</tr>
@@ -27,15 +31,15 @@
 			{
 				<tr>
 					<td>
-						@Html.DisplayFor(modelItem => item.Name)
+						<a class="btn-sm btn-info"  asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a>
 					</td>
 					<td>
-						<a class="btn-sm btn-info" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
 						<a class="btn-sm btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a>
+						<a class="btn-sm btn-info" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
 						<a class="btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
 					</td>
 				</tr>
-				}
+			}
 		</tbody>
 	</table>
 </div>

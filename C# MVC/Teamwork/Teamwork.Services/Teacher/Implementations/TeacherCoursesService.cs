@@ -8,10 +8,12 @@ using Teamwork.Data.Models;
 using Teamwork.Services.Teacher.Models;
 using Teamwork.Data;
 using static Teamwork.Common.GlobalConstants;
+using System;
+using Z.EntityFramework.Plus;
 
 namespace Teamwork.Services.Teacher.Implementations
 {
-    public class TeacherCoursesService : ITeacherCoursesService, IPagination
+    public class TeacherCoursesService : ITeacherCoursesService, IFilterablePagination
     {
         private readonly TeamworkDbContext db;
 
@@ -119,7 +121,6 @@ namespace Teamwork.Services.Teacher.Implementations
 
             try
             {
-
                 dbCourse.Name = courseDto.Name;
                 dbCourse.Description = courseDto.Description;
                 db.Courses.Update(dbCourse);
@@ -145,21 +146,31 @@ namespace Teamwork.Services.Teacher.Implementations
         }
 
         // Delete Model by Id
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(string teacherId, int id)
         {
             if (!CourseExists(id))
             {
                 return false;
             }
 
-            var course = await db.Courses.SingleOrDefaultAsync(m => m.Id == id);
+            // Get the course teacher
+            var teacher = db.Teachers.Find(teacherId);
+            if (teacher == null)
+            {
+                return false;
+            }
+
+            // If theacher is teaching in the course 
+            var course = await db.Courses.SingleOrDefaultAsync(m => m.Id == id && db.TeacherCourses.Any(tc => (tc.CourseId == m.Id)&&(tc.TeacherId == teacherId)));
             if (course == null)
             {
                 return false;
             }
 
-            db.Courses.Remove(course);
-            var result =  await db.SaveChangesAsync();
+            await db.StudentCourses.Where(sc => sc.CourseId == id).DeleteAsync();
+            await db.TeacherCourses.Where(tc => tc.CourseId == id).DeleteAsync();
+
+            var result = await db.Courses.Where(c => c.Id == id).DeleteAsync();
             if (result <= 0)
             {
                 return false;
@@ -175,16 +186,24 @@ namespace Teamwork.Services.Teacher.Implementations
         }
 
         // Total number of items for searchTerm (used for pagination)
-        public async Task<int> TotalAsync(string searchTerm = "")
+        public async Task<int> TotalAsync(string teacherId = null, string searchTerm = "")
         {
+            var courses = db.Courses.AsQueryable();
+
+            if (teacherId != null)
+            {
+                courses = courses.Where(c =>
+                        c.TeachersCourses.Any(tc => tc.TeacherId == teacherId));
+            }
+
             if (!string.IsNullOrWhiteSpace(searchTerm))
             {
-                return await this.db.Courses.Where(c => c.Name.Contains(searchTerm)).CountAsync();
+
+                courses = courses.Where(c => 
+                        c.Name.Contains(searchTerm));
             }
-            else
-            {
-                return await this.db.Users.CountAsync();
-            }
+
+            return await courses.Select(c => c.Id).CountAsync();
         }
     }
 }

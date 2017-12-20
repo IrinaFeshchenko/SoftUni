@@ -27,7 +27,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Students\Models\" />
-    <Folder Include="Areas\Students\Views\" />
+    <Folder Include="Areas\Students\Views\Student\" />
   </ItemGroup>
 
 </Project>

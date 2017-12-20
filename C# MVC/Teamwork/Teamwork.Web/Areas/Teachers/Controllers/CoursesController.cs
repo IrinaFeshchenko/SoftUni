@@ -34,25 +34,30 @@ namespace Teamwork.Web.Areas.Teachers.Controllers
             this.adminUserService = adminUserService;
         }
 
-    // GET Index
-    public async Task<IActionResult> Index(string searchTerm = "", int page = 1)
+        // GET Index
+        public async Task<IActionResult> Index(string searchTerm = "", int page = 1)
         {
+            if (searchTerm == null)
+            {
+                searchTerm = string.Empty;
+            }
+
             if (!Regex.IsMatch(searchTerm, @"^\s*[A-Za-z0-9.-_]*\s*$"))
             {
                 searchTerm = string.Empty;
                 TempData.AddErrorMessage("Invalid search characters provided.");
             }
 
-            var userId = userManager.GetUserId(User);
-            var items = await teacherCourseService.AllAsync(userId, searchTerm, page);
-            var listing = new TeacherCoursesListingViewModel
+            var courses = await teacherCourseService.AllAsync(TeacherId(), searchTerm, page);
+            var coursesListing = new TeacherCoursesListingViewModel
             {
-                TeacherCourses = items,
+                TeacherCourses = courses,
                 CurrentPage = page,
                 SearchTerm = searchTerm,
-                TotalItems = await teacherCourseService.TotalAsync(searchTerm)
+                TotalItems = await teacherCourseService.TotalAsync(TeacherId(), searchTerm)
             };
-            return View(listing);
+
+            return View(coursesListing);
         }
 
         // GET Details
@@ -143,8 +148,13 @@ namespace Teamwork.Web.Areas.Teachers.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            await teacherCourseService.DeleteAsync(id);
+            await teacherCourseService.DeleteAsync(TeacherId(), id);
             return RedirectToAction(nameof(Index));
+        }
+
+        private string TeacherId()
+        {
+            return userManager.GetUserId(User);
         }
     }
 }

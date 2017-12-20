@@ -11,6 +11,11 @@ namespace Teamwork.Web.Controllers
         {
             var user = this.HttpContext.User;
 
+            if (!user.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login");
+            }
+
             if (user.IsInRole(AdministratorRole))
             {
                 return RedirectToAction("Index", "Users", new { Area = "Admin" });
