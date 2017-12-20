@@ -13,7 +13,7 @@ namespace Teamwork.Web.Controllers
 
             if (!user.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Login");
+                return RedirectToAction("Login", "Account");
             }
 
             if (user.IsInRole(AdministratorRole))
