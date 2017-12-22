@@ -6,7 +6,7 @@ namespace Teamwork.Services.Teacher
 {
     public interface ITeacherCoursesService
     {
-        Task<IEnumerable<TeacherCourseDto>> AllAsync(string teacherId, string searchTerm, int page);
+        Task<IEnumerable<TeacherCourseDto>> AllAsync(string teacherId, string searchTerm ="", int page = 1);
 
         Task<bool> CreateAsync(string creatorId, TeacherCourseCreateDto course);
         

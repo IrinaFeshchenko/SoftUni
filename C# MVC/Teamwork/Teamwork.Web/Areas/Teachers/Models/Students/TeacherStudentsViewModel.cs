@@ -1,13 +1,16 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using Teamwork.Services.Teacher.Models;
 using static Teamwork.Common.GlobalConstants;
 
 namespace Teamwork.Web.Areas.Teachers.Models.Students
 {
-    public class TeacherStudentsViewMode
+    public class TeacherStudentsViewModel
     {
         public IEnumerable<TeacherStudentsDto> students { get; set; }
+
+        public IEnumerable<SelectListItem> Courses { get; set; }
 
         public string SearchTerm { get; set; }
 

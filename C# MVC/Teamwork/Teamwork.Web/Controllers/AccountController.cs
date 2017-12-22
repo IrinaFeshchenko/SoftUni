@@ -10,6 +10,7 @@ using Teamwork.Web.Models.AccountViewModels;
 using Teamwork.Data.Models;
 using Teamwork.Services.Email;
 using Teamwork.Web.Infrastructure.Extensions;
+using Teamwork.Services.Students;
 
 namespace Teamwork.Web.Controllers
 {
@@ -21,17 +22,20 @@ namespace Teamwork.Web.Controllers
         private readonly SignInManager<User> _signInManager;
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
+        private readonly IStudentService studentService;
 
         public AccountController(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
             IEmailSender emailSender,
-            ILogger<AccountController> logger)
+            ILogger<AccountController> logger,
+            IStudentService studentService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
+            this.studentService = studentService;
         }
 
         [TempData]
@@ -230,6 +234,11 @@ namespace Teamwork.Web.Controllers
                 {
                     _logger.LogInformation("User created a new account with password.");
                     await _signInManager.SignInAsync(user, isPersistent: false);
+
+                    if (!model.RegisterAsTeacher)
+                    {
+                        await studentService.CreateAsync(new Student {User = user});
+                    }
 
                     return RedirectToLocal(returnUrl);
                 }

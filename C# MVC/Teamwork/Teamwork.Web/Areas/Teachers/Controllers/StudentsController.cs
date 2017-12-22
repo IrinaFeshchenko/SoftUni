@@ -17,16 +17,19 @@ namespace Teamwork.Web.Areas.Teachers.Controllers
 {
     public class StudentsController : BaseTeachersController
     {
-        private readonly ITeacherStudentService teacherStudentServeice;
+        private readonly ITeacherStudentsService teacherStudentServeice;
+        ITeacherCoursesService teacherCourseService;
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly UserManager<User> userManager;
 
         public StudentsController(
-            ITeacherStudentService teacherStudentServeice,
+            ITeacherStudentsService teacherStudentServeice,
+            ITeacherCoursesService teacherCourseService,
             UserManager<User> userManager,
             RoleManager<IdentityRole> roleManager)
         {
             this.teacherStudentServeice = teacherStudentServeice;
+            this.teacherCourseService = teacherCourseService;
             this.userManager = userManager;
             this.roleManager = roleManager;
         }
@@ -46,19 +49,20 @@ namespace Teamwork.Web.Areas.Teachers.Controllers
             var teacherId = userManager.GetUserId(HttpContext.User);
             var students = await this.teacherStudentServeice.AllAsync(teacherId, searchTerm, page);
 
-            var roles = await this.roleManager
-                .Roles
+            var teacherCourses = teacherCourseService
+                .AllAsync(TeacherId(), "", 1).Result
                 .Select(r => new SelectListItem
                 {
                     Text = r.Name,
-                    Value = r.Name
+                    Value = r.Id.ToString()
                 })
-                .ToListAsync();
+                .ToList();
 
             this.HttpContext.Request.QueryString.Add("searchTerm", searchTerm);
 
-            return View(new TeacherStudentsViewMode
+            return View(new TeacherStudentsViewModel
             {
+                Courses = teacherCourses,
                 TotalItems = await teacherStudentServeice.TotalAsync(searchTerm),
                 students = students,
                 SearchTerm = searchTerm,
@@ -68,17 +72,49 @@ namespace Teamwork.Web.Areas.Teachers.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddToCourse(int courseId, string userId)
+        public async Task<IActionResult> AddToCourse(string studentId, string courseId)
         {
-            var result = await this.teacherStudentServeice.AddStudentToCourseAsync(courseId, userId);
+            int id = -1;
+            int.TryParse(courseId, out id);
+
+            var result = await this.teacherStudentServeice.AddStudentToCourseAsync(studentId, id);
 
             if (!result)
             {
                 TempData.AddErrorMessage($"Error adding Student to the course");
             }
+            else
+            {
+                TempData.AddSuccessMessage($"Student successfully added to the course");
+            }
 
-            TempData.AddSuccessMessage($"Student successfully added to the course");
             return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RemoveFromCourse(string studentId, string courseId)
+        {
+            int id = -1;
+            int.TryParse(courseId, out id);
+
+            var result = await this.teacherStudentServeice.RemoveStudentFromCourseAsync(studentId, id);
+
+            if (!result)
+            {
+                TempData.AddErrorMessage($"Error removing Student from the course");
+            }
+            else
+            {
+                TempData.AddSuccessMessage($"Student successfully removed from the course");
+            }
+            
+            return RedirectToAction(nameof(Index));
+        }
+
+        private string TeacherId()
+        {
+            return userManager.GetUserId(User);
         }
     }
 }

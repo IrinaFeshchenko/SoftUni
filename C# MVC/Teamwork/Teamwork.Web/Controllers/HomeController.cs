@@ -23,7 +23,7 @@ namespace Teamwork.Web.Controllers
 
             if (user.IsInRole(TeacherRole))
             {
-                return RedirectToAction("Index", "Project", new { Area = "Teachers" });
+                return RedirectToAction("Index", "Courses", new { Area = "Teachers" });
             }
 
             return View();

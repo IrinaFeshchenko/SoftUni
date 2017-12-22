@@ -26,6 +26,7 @@ namespace Teamwork.Services.Admin
             {
                 return await Task.Run(() =>
                 db.Users
+                .Where(u => !db.Students.Any(s => s.UserId == u.Id))
                 .Where(u => u.Email.Contains(searchTerm))
                             .Select(user => new
                             {
@@ -47,6 +48,7 @@ namespace Teamwork.Services.Admin
             {
                 return await Task.Run(() =>
                 db.Users
+                .Where(u => !db.Students.Any(s => s.UserId == u.Id))
                             .Select(user => new
                             {
                                 Id = user.Id,
@@ -69,11 +71,15 @@ namespace Teamwork.Services.Admin
         {
             if (!string.IsNullOrWhiteSpace(searchTerm))
             {
-                return await this.db.Users.Where(u => u.Email.Contains(searchTerm)).CountAsync();
+                return await this.db.Users
+                    .Where(u => !db.Students.Any(s => s.UserId == u.Id))
+                    .Where(u => u.Email.Contains(searchTerm)).CountAsync();
             }
             else
             {
-                return await this.db.Users.CountAsync();
+                return await this.db.Users
+                    .Where(u => !db.Students.Any(s => s.UserId == u.Id))
+                    .CountAsync();
             }
         }
 
