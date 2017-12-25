@@ -7,9 +7,5 @@ namespace Teamwork.Web.Areas.Students.Controllers
     [Authorize]
     public abstract class BaseStudentController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
     }
 }

@@ -1,17 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Teamwork.Data.Models;
-using Teamwork.Services.Admin;
 using Teamwork.Services.Teacher;
-using Teamwork.Services.Teacher.Models;
 using Teamwork.Web.Areas.Teachers.Models.Students;
 using Teamwork.Web.Infrastructure.Extensions;
-using Teamwork.Web.Infrastructure.Filters;
 
 namespace Teamwork.Web.Areas.Teachers.Controllers
 {
@@ -64,7 +60,7 @@ namespace Teamwork.Web.Areas.Teachers.Controllers
             {
                 Courses = teacherCourses,
                 TotalItems = await teacherStudentServeice.TotalAsync(searchTerm),
-                students = students,
+                Students = students,
                 SearchTerm = searchTerm,
                 CurrentPage = page
             });

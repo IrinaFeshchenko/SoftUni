@@ -8,7 +8,7 @@ namespace Teamwork.Web.Areas.Teachers.Models.Students
 {
     public class TeacherStudentsViewModel
     {
-        public IEnumerable<TeacherStudentsDto> students { get; set; }
+        public IEnumerable<TeacherStudentsDto> Students { get; set; }
 
         public IEnumerable<SelectListItem> Courses { get; set; }
 

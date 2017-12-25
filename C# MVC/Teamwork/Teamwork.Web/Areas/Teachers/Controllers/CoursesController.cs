@@ -1,15 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Teamwork.Services.Teacher.Models;
 using Teamwork.Web.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Teamwork.Services.Teacher;
 using Teamwork.Services.Admin;
-using Teamwork.Services.Teacher.Implementations;
 using Teamwork.Data.Models;
 using Teamwork.Web.Areas.Teachers.Models.Courses;
 
@@ -24,7 +20,7 @@ namespace Teamwork.Web.Areas.Teachers.Controllers
 
         public CoursesController(
             UserManager<User> userManager,
-            IAdminUserService AdminUserService,
+            IAdminUserService adminUserService,
             ITeacherCoursesService teacherCourseService,
             RoleManager<IdentityRole> roleManager)
         {

@@ -76,16 +76,19 @@ namespace Teamwork.Web.Areas.Admin.Controllers
 
             if (!roleExists || !userExists)
             {
-                ModelState.AddModelError(string.Empty, "Invalid identity details.");
+                ModelState.AddModelError(string.Empty, "User or role does not exists.");
+                return RedirectToAction(nameof(Index));
             }
 
             if (!ModelState.IsValid)
             {
+                ModelState.AddModelError(string.Empty, "Invalid model state.");
                 return RedirectToAction(nameof(Index));
             }
 
-            var result = await this.userManager.AddToRoleAsync(user, model.Role);
+            await this.userManager.AddToRoleAsync(user, model.Role);
 
+            // If the profile does not exists create new teacher profile
             if (model.Role == TeacherRole && !usersService.TeacherProfileExists(model.UserId))
             {
                 await usersService.CreateTeacherProfile(model.UserId);

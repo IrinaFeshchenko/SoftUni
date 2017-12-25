@@ -24,11 +24,9 @@ namespace Teamwork.Web.Infrastructure.Extensions
                 Task
                     .Run(async () =>
                     {
-                        var adminName = AdministratorRole;
-
                         var roles = new[]
                         {
-                            adminName,
+                            AdministratorRole,
                             TeacherRole,
                         };
 
@@ -62,7 +60,7 @@ namespace Teamwork.Web.Infrastructure.Extensions
 
                             var result = await userManager.CreateAsync(adminUser, "123123");
 
-                            result = await userManager.AddToRoleAsync(adminUser, adminName);
+                            result = await userManager.AddToRoleAsync(adminUser, AdministratorRole);
                         }
                     })
                     .Wait();
