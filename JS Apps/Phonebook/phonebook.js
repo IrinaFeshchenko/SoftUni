@@ -1,13 +1,16 @@
-﻿$(function () {
+﻿$(function attachEvents() {
     $('#btnLoad').click(loadContacts);
     $('#btnCreate').click(createContact);
-    const baseUrl = 'https://phonebook-194ba.firebaseio.com/phonebook';
+    const baseUrl = 'https://phonebook-nakov.firebaseio.com/phonebook';
 
     function createContact() {    
         let contact = {
             person: $('#person').val(),
             phone: $('#phone').val()
         };
+        $('#person').val('');
+        $('#phone').val('');
+
         let createRequest = {
             method: 'POST',
             url: baseUrl + '.json',
@@ -36,7 +39,7 @@
                 li.appendTo($('#phonebook'));
                 li.append(' ');
                 li.append(
-                    $('<a href="#">[Delete]</a>').click(function () {
+                    $('<button>Delete</button>').click(function () {
                         deleteContact(key);
                     })
                 );
