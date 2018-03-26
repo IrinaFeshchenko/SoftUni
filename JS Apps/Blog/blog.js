@@ -36,39 +36,32 @@
         setTimeout(function () {
             errDiv.fadeOut(function () { errDiv.remove() });
         }, 2000);
-        console.lo
     }
 
     function viewPostsClicked() {
         let selectedPostId = $('#posts').val();
 
-        let postsRequest = {
+        let postRequest = $.ajax({
             method: "GET",
             url: serviceUrl + '/posts/' + selectedPostId,
             headers: authHeaders,
-        };
+        });
 
-        $.ajax(postsRequest)
-            .then(showPostst)
-            .catch(showError);
-
-        function showPostst(post) {
-            $('#post-title').text(post.title);
-            $('#post-body').text(post.body);
-        }
-
-        let commentsRequest = {
+        let commentsRequest = $.ajax({
             method: "GET",
             url: serviceUrl + `/comments/?query={"post_id":"${selectedPostId}"}`,
             headers: authHeaders,
-        };
+        });
 
-        $.ajax(commentsRequest)
-            .then(showComments)
+        Promise.all([postRequest,commentsRequest])
+            .then(showPostAndComments)
             .catch(showError);
 
-        function showComments(comments) {
+        function showPostAndComments([post, comments]) {
+            $('#post-title').text(post.title);
+            $('#post-body').text(post.body);
 
+            $('#post-comments').empty();
             for(comment of comments) {
                 $('<li>').text(comment.text).appendTo($('#post-comments'));
             }          
