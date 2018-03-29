@@ -27,7 +27,7 @@
 
         let weatherSimbols = {
             'Sunny': '&#x2600;', // ☀
-            'PartlySunny': '&#x26C5;', // ⛅
+            'Partly sunny': '&#x26C5;', // ⛅
             'Overcast': '&#x2601;', // ☁
             'Rain': '&#x2614;', // ☂
             'Degrees': '&#176;'   // °
