@@ -3,7 +3,7 @@
 const app = Sammy ('#main', function() {
     this.use('Handlebars', 'hbs');
 
-    // Show home page
+    // Get index
     this.get('#/index.html', function (ctx) {
         ctx.isAuthenticated = authService.isAuthenticated;      
     
@@ -27,7 +27,7 @@ const app = Sammy ('#main', function() {
         ctx.redirect('/#/index.html');
     });
 
-    // Upload
+    // GET Upload
     this.get('#/upload', (ctx) =>
     {
         $.ajax('/data.json')
@@ -48,7 +48,7 @@ const app = Sammy ('#main', function() {
         ctx.redirect('#/index.html');
     });
 
-    // Show registeration page
+    // GET register
     this.get('#/register', (ctx) =>
     {
         ctx.loadPartials({
@@ -60,7 +60,7 @@ const app = Sammy ('#main', function() {
         });
     });
 
-    // Submit registeration form
+    // POST register
     this.post('#/register', (ctx) => {
         let username = ctx.params.username;
         let password = ctx.params.password;
@@ -77,13 +77,11 @@ const app = Sammy ('#main', function() {
         function registerSuccess(userInfo) {
             authService.saveAuthInSession(userInfo);
             ctx.redirect('#/index.html');
-            // showHideMenuLinks();
-            // showlistAdsView();
-            // showInfo('User registration successful.');
+            console.log('User registration successful.');
         }
     })
 
-    // Show login page
+    // POST login
     this.post('#/login', (ctx) => {
         let username = ctx.params.username;
         let password = ctx.params.password;
@@ -95,13 +93,11 @@ const app = Sammy ('#main', function() {
         function loginSuccess(userInfo) {
             authService.saveAuthInSession(userInfo);
             ctx.redirect('#/index.html');
-            // showHideMenuLinks();
-            // showlistAdsView();
-            // showInfo('Login successful.');
+            cinsole.log('Login successful.');
         }
     })
 
-    // Submit login form
+    // GET Logout
     this.get('#/logout', (ctx) => {
 
         authService.logoutUser()
@@ -111,10 +107,7 @@ const app = Sammy ('#main', function() {
         function logoutSuccess() {
             sessionStorage.clear();
             ctx.redirect('#/index.html');
-            // $('#loggedInUser').text('');
-            // showHideMenuLinks();
-            // showView('viewHome');
-            // showInfo('Logout successful.');
+            console.log('Logout successful.');
         }
     });
 
