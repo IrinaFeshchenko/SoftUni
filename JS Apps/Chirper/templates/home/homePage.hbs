@@ -1,0 +1,14 @@
+{{> header}}
+<section id="viewFeed">
+    <div class="content">
+        {{> chirper}}
+        <div id="chirps" class="chirps"><h2 class="titlebar">Chirps</h2>
+        {{#each chirps}}
+            {{> chirpForm}}
+        {{else}}
+            <p>No chirps in database.</p>
+        {{/each}}
+        </div>
+    </div>
+</section>
+{{> footer}}
