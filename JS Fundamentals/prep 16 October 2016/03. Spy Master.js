@@ -1,6 +1,6 @@
 function solution(rows){
     let key = rows[0];
-    let rgx = new RegExp(`(^|\\s)(${key}\\s+)([A-Z!%$#]{8,})([\\s|.|,|$])`,'gi')
+    let rgx = new RegExp(`(^| )(${key}\\s+)([A-Z!%$#]{8,})( |\\.|,|$)`,'gi')
 
     let result = [];
     for(let i = 1; i<rows.length; i++){
@@ -25,12 +25,16 @@ function solution(rows){
     return encodedWord.replace(/!/g,1)
                     .replace(/%/g,2)
                     .replace(/#/g,3)
-                    .replace(/\$/g,4);
+                    .replace(/\$/g,4)
+                    .toLowerCase();
     }
 };
 
-solution(['specialKey',
-'In this text the specialKey HELLOWORLD! is correct, but',
-'the following specialKey $HelloWorl#d and spEcIaLKEy HOLLOWORLD1 are not, while',
-'SpeCIaLkeY   SOM%%ETH$IN and SPECIALKEY ##$$##$$ are!']
+solution(['secret',
+    'Random text with secrets EVERYWHERE',
+    'secret HEREHERE and one secret OVERTHEREANDEVERYWHERE',
+    'secret SECRETTIME, and secret KINDATHERE.',
+    'secret ONELINER',
+    'and maybe secret FALSESE or secret TRUESECRET or secret ENDONCOMA,',
+    'here are three secrets one secret OVERHERE, one secret OVERTHERE and one secret DISSAPPOINT]']
 );
