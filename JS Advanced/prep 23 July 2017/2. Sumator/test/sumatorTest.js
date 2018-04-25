@@ -7,6 +7,25 @@ describe("Test Sumator", function() {
         sumator = new Sumator();
     })
 
+    describe('Check if functions exist', function() {
+        it('data is not undefined', function() {
+            expect(sumator.data !== undefined).equal(true);
+        })
+
+        it('add num exists', function() {
+            expect(Sumator.prototype.hasOwnProperty('add')).equal(true);
+        })
+        it('sum num exists', function() {
+            expect(Sumator.prototype.hasOwnProperty('sumNums')).equal(true);
+        })
+        it('remove by filter exists', function() {
+            expect(Sumator.prototype.hasOwnProperty('removeByFilter')).equal(true);
+        })
+        it('toString exists', function() {
+            expect(Sumator.prototype.hasOwnProperty('toString')).equal(true);
+        })
+    })
+
     it("test if data length is empty ", function() {
         expect(sumator.data.length).equal(0);
     });
