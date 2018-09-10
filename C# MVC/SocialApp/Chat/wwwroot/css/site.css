@@ -1,0 +1,141 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+html, body, .container, .body-content {
+	height: 95%;
+	width:98%;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+
+.avatar {
+	flex:1;
+	width:50px;
+	height:50px;
+	border-style:solid;
+	border-color:black;
+	border-radius:10px;
+}
+
+.chatMainBox {
+	margin-top: 5%;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
+	background-color: whitesmoke;
+	border-color: royalblue;
+	flex: 1;
+	display: flex;
+	height: 100%;
+	min-height: 100%;
+}
+
+.chatContactsBox {
+	border-right: solid;
+	border-color: royalblue;
+	border-width: 1px;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+}
+
+.chatContactsBox ul {
+	padding: 0;
+	list-style-type: none;
+}
+
+.chatContact {
+	flex: 1;
+	width: 90%;
+	height: 70px;
+	border-style: solid;
+	border-color: royalblue;
+	border-width: 1px;
+	border-radius: 10px;
+	margin: 5px;
+}
+
+.chatContentBox {
+	flex:7;
+	display:flex;
+	flex-direction:column;
+}
+
+.chatDisplayBox {
+	display:flex;
+	flex-direction:row;
+	flex:10;
+}
+
+.chatDisplayMessages {
+	flex: 3
+}
+
+.chatDisplayInfo {
+	border-left: solid;
+	border-color: royalblue;
+	border-width: 1px;
+	flex: 1;
+	align-content:center;
+}
+
+.chatSendMessage {
+	border-top: solid;
+	border-color: royalblue;
+	border-width: 1px;
+	display: flex;
+	flex: 1;
+}
+
+.chatSendMessage input {
+	flex:1;
+	padding:10px;
+}
+
+.scrollable-menu {
+	height: auto;
+	max-height: 100%;
+	overflow-x: hidden;
+}
+
+#profileImage {
+	height:50%;
+	width:80%;
+	margin-bottom:10%;
+}
+
+.chatMessage {
+	flex: 1;
+	width: 95%;
+	border-radius: 10px;
+	margin: 5px;
+	display:flex;
+	align-content:flex-start;
+}
+
+.messageAvatar {
+	order:2;
+	flex:1;
+	width: 20px;
+	border-style: solid;
+	border-color: black;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+.message {
+	order:1;
+	flex: 10;
+	border-style: solid;
+	border-color: royalblue;
+	border-width: 1px;
+	border-radius: 10px;
+	margin: 5px;
+	padding:10px;
+	text-align:start;
+	background-color:papayawhip;
+}
