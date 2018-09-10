@@ -43,72 +43,12 @@
 	</div>
 </div>
 
-
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/chat.js"></script>
 
 <script type="text/javascript">
-	$(document).ready(function () {
-
-		$('.chatContact').on('click', 'div', function () {
-			let selectedProfileId = this.id;
-
-			$.ajax({
-				type: 'POST',
-				url: '@Url.Action("AjaxGetProfileInfo", "Profile", new { area = "" })',
-				dataType: "json",
-				data: { selectedId: selectedProfileId },
-				success: successFunc,
-				error: errorFunc
-			});
-
-			function successFunc(data) {
-				$('#profileImage').attr('src', data.avatar);
-				$('#profileName').text('Name: ' + data.name);
-				$('#profileEmail').text('Email: ' + data.email);
-				$('#profileRegisteredOn').text('Registered: ' + data.registeredOn);
-				$('#profileContactsCount').text('Contacts: ' + data.contactsCount);
-				$('#profileInfoPanel').removeClass('hidden');
-				$('#FriendId').val(selectedProfileId);
-			}
-
-			function errorFunc() {
-			}
-
-		});
-
-		$('#removeContact').on('click', function () {
-			let friendId = $('#FriendId').val();
-			let userId = "@Model.Id";
-
-			$.ajax({
-				type: 'POST',
-				url: '@Url.Action("AjaxRemoveContact", "Profile", new { area = "" })',
-				dataType: "json",
-				data: { contactId: friendId, userId: userId },
-				success: successFunc,
-				error: errorFunc
-			});
-
-			function successFunc(data) {
-				$('#profileInfoPanel').addClass('hidden');
-				$('#' + friendId).parent().remove();
-			}
-
-			function errorFunc() {
-			}
-
-		});
-
-		$('#send-message').on('click', function () {
-
-			let message = $('#message').val();
-			$('#message').val('');
-
-			if (message) {
-
-				$('#messages').prepend('<li class="chatMessage"><img src="@Model.Avatar" alt="Image" class="messageAvatar" /><div class="message">' + message + '<div></li>');
-			}
-		});
-	});
+	let Model_Id = "@Model.Id";
+	let Model_NickName = "@Model.NickName";
+	let Model_Avatar = "@Model.Avatar";
 </script>
