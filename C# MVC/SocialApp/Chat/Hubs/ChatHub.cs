@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.SignalR;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -14,9 +15,17 @@ namespace Chat.Hubs
 		public async override Task OnConnectedAsync()
 		{
 			string connectionId = Context.ConnectionId;
-			string userName = Context.User.Identity.Name;
+			string userId = Context.User.Claims.First().Value;
 
-			ConnectedUsers.TryAdd(connectionId, userName);
+			if(ConnectedUsers.ContainsKey(userId))
+			{
+				ConnectedUsers[userId] = connectionId;
+			}
+			else
+			{
+				ConnectedUsers.TryAdd(userId, connectionId);
+			}
+
 			await base.OnConnectedAsync();
 		}
 
@@ -28,8 +37,10 @@ namespace Chat.Hubs
 		}
 		public async Task SendMessage(string user, string message, string avatar, string friends)
         {
-            await Clients.All.SendAsync("ReceiveMessage", user, message, avatar);
+			List<string> usersToSend = JsonConvert.DeserializeObject<List<string>>(friends);
+			List<string> ids = ConnectedUsers.Where(x => usersToSend.Contains(x.Key)).Select(x => x.Value).ToList();
 
+			await Clients.Clients(ids).SendAsync("ReceiveMessage", user, message, avatar);
         }
     }
 }

@@ -6,6 +6,7 @@
 		var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 		var li = '<li class="chatMessage"><img src="' + avatar + '" alt="Image" class="messageAvatar" /><div class="message">' + message + '<div></li>';
 		$('#messages').prepend(li);
+		$('#messages li:first').hide().fadeIn(2000);
 	});
 
 	connection.start().catch(function (err) {
@@ -66,14 +67,22 @@
 		let message = $('#message').val();
 		let user = Model_NickName;
 		let avatar = Model_Avatar;
+		let friends = [];
+
+		$("#friendsList").find("div").each(function () { friends.push(this.id); });
+		console.log(friends);
+
+		friends = JSON.stringify(friends);
+		console.log(friends);
 
 		$('#message').val('');
 
 		if (message) {
 
-			$('#messages').prepend('<li class="chatMessage"><img src="' + avatar +'" alt="Image" class="messageAvatar" /><div class="message">' + message + '<div></li>');
+			$('#messages').prepend('<li class="chatMessageMine"><img src="' + avatar + '" alt="Image" class="messageAvatarMine" /><div class="messageMine">' + message + '<div></li>');
+			$('#messages li:first').hide().fadeIn(2000);
 
-			connection.invoke("SendMessage", user, message, avatar, '').catch(function (err) {
+			connection.invoke("SendMessage", user, message, avatar, friends).catch(function (err) {
 				return console.error(err.toString());
 			});
 			event.preventDefault();
